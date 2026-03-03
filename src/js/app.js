@@ -303,8 +303,8 @@ function renderExperienceChart() {
     return `
       <div class="exp-bar-row">
         <span class="exp-bar-label">${escapeHtml(label)}</span>
-        <div class="exp-bar-track"><div class="exp-bar-fill" style="width:${pct}%"></div></div>
         <span class="exp-bar-value">${fmtDur(m)}</span>
+        <div class="exp-bar-track"><div class="exp-bar-fill" style="width:${pct}%"></div></div>
       </div>`;
   }).join('');
 }
