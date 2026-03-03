@@ -164,13 +164,13 @@ a:hover { text-decoration: underline; }
 }
 .chip:hover { border-color: var(--accent); color: var(--accent); }
 
-.chip--type.chip--active {
+.chip--role.chip--active {
   background: var(--accent);
   border-color: var(--accent);
   color: #0d1117;
   font-weight: 600;
 }
-.chip--domain.chip--active {
+.chip--experience.chip--active {
   background: var(--purple);
   border-color: var(--purple);
   color: #0d1117;
