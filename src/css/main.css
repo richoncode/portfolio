@@ -449,6 +449,136 @@ body.admin-mode::after {
   pointer-events: none;
 }
 
+/* Duration button on each achievement */
+.admin-dur-btn {
+  display: none;
+  align-items: center;
+  background: rgba(230, 192, 0, 0.07);
+  border: 1px solid rgba(230, 192, 0, 0.25);
+  border-radius: 4px;
+  color: #e6c000;
+  cursor: pointer;
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  padding: 2px 8px;
+  margin-bottom: 5px;
+  transition: all 0.12s;
+}
+.admin-dur-btn--set {
+  background: rgba(230, 192, 0, 0.15);
+  border-color: rgba(230, 192, 0, 0.5);
+}
+.admin-dur-btn:hover { border-color: #e6c000; }
+body.admin-mode .admin-dur-btn { display: inline-flex; }
+
+/* Duration popout */
+.admin-popout {
+  position: fixed;
+  z-index: 10000;
+  display: none;
+  width: 224px;
+  background: #1c2128;
+  border: 1px solid rgba(230, 192, 0, 0.35);
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+.admin-popout--open { display: block; }
+
+.pop-row {
+  display: flex;
+  gap: 6px;
+}
+.pop-divider {
+  height: 1px;
+  background: rgba(230, 192, 0, 0.15);
+  margin: 8px 0;
+}
+.pop-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 4px;
+}
+.pop-btn {
+  background: rgba(230, 192, 0, 0.07);
+  border: 1px solid rgba(230, 192, 0, 0.2);
+  border-radius: 4px;
+  color: #e6c000;
+  cursor: pointer;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  padding: 4px 2px;
+  text-align: center;
+  transition: all 0.1s;
+}
+.pop-btn:hover   { background: rgba(230, 192, 0, 0.15); border-color: rgba(230, 192, 0, 0.5); }
+.pop-btn--on     { background: rgba(230, 192, 0, 0.25); border-color: #e6c000; font-weight: 700; }
+.pop-row .pop-btn { flex: 1; }
+
+.pop-footer {
+  display: flex;
+  gap: 6px;
+  margin-top: 10px;
+}
+.pop-action {
+  flex: 1;
+  background: transparent;
+  border: 1px solid rgba(230, 192, 0, 0.3);
+  border-radius: 4px;
+  color: #e6c000;
+  cursor: pointer;
+  font-family: var(--font);
+  font-size: 0.72rem;
+  padding: 5px;
+  transition: all 0.12s;
+}
+.pop-action:hover         { border-color: #e6c000; background: rgba(230, 192, 0, 0.08); }
+.pop-action--primary      { background: rgba(230, 192, 0, 0.12); }
+.pop-action--primary:hover{ background: rgba(230, 192, 0, 0.22); }
+
+/* Prompt banner in header */
+.admin-prompt-banner:empty { display: none; }
+body:not(.admin-mode) .admin-prompt-banner { display: none; }
+
+.admin-prompt-banner {
+  margin-top: 12px;
+  border: 1px solid rgba(230, 192, 0, 0.3);
+  border-radius: 6px;
+  background: rgba(230, 192, 0, 0.06);
+  padding: 8px 12px;
+}
+.admin-prompt-inner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.admin-prompt-text {
+  flex: 1;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: #e6c000;
+  line-height: 1.5;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.admin-prompt-copy {
+  flex-shrink: 0;
+  background: rgba(230, 192, 0, 0.12);
+  border: 1px solid rgba(230, 192, 0, 0.4);
+  border-radius: 4px;
+  color: #e6c000;
+  cursor: pointer;
+  font-family: var(--font);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  transition: all 0.12s;
+  white-space: nowrap;
+}
+.admin-prompt-copy:hover { background: rgba(230, 192, 0, 0.22); border-color: #e6c000; }
+
 /* ─── Search highlight ────────────────────── */
 mark {
   background: rgba(88, 166, 255, 0.25);

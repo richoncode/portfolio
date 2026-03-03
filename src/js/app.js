@@ -48,6 +48,12 @@ const state = {
 
 let resumeData = null;
 
+// ─── Admin Edit State ─────────────────────────────────────────────────────────
+
+const adminEdits = {};                         // { id: { years, months } }
+let   currentAdminPrompt = '';
+let   popState = { id: null, years: 0, months: 0 };
+
 // ─── Init ─────────────────────────────────────────────────────────────────────
 
 async function init() {
@@ -60,6 +66,7 @@ async function init() {
     renderTimeline();
     initTabs();
     initAdmin();
+    initAdminPopout();
   } catch (err) {
     document.getElementById('timeline').innerHTML =
       `<div class="no-results">Failed to load resume data: ${err.message}</div>`;
@@ -222,9 +229,15 @@ function renderTimeline() {
         const domainTags = (a.tags.domain || []).join(', ');
         const adminAch = `<div class="admin-field">id: ${escapeHtml(a.id)}${domainTags ? ' · domain: ' + escapeHtml(domainTags) : ''}${a.tags.hasMetric ? ' · hasMetric' : ''}</div>`;
 
+        const durEdit  = adminEdits[a.id];
+        const durLabel = durEdit ? fmtDur(durEdit.years * 12 + durEdit.months) : '+ duration';
+        const durSet   = !!durEdit;
+        const adminDurBtn = `<button class="admin-dur-btn${durSet ? ' admin-dur-btn--set' : ''}" data-id="${escapeHtml(a.id)}">${escapeHtml(durLabel)}</button>`;
+
         return `
           <li class="achievement">
             ${adminAch}
+            ${adminDurBtn}
             <p class="achievement-text">${highlight(a.text)}</p>
             ${metricHtml}
             ${hasFooter ? `
@@ -467,6 +480,132 @@ function initAdmin() {
       taps = 0;
       document.body.classList.toggle('admin-mode');
     }
+  });
+}
+
+function initAdminPopout() {
+  // Duration button clicks (delegated — timeline re-renders on filter changes)
+  document.getElementById('timeline').addEventListener('click', e => {
+    const btn = e.target.closest('.admin-dur-btn');
+    if (!btn) return;
+    e.stopPropagation();
+    showPopout(btn.dataset.id, btn);
+  });
+
+  // Popout interactions
+  const popout = document.getElementById('admin-popout');
+  popout.addEventListener('click', e => {
+    const yrBtn = e.target.closest('[data-yr]');
+    const moBtn = e.target.closest('[data-mo]');
+    if (yrBtn) {
+      const v = parseInt(yrBtn.dataset.yr);
+      popState.years = popState.years === v ? 0 : v;
+      renderPopout();
+    } else if (moBtn) {
+      const v = parseInt(moBtn.dataset.mo);
+      popState.months = popState.months === v ? 0 : v;
+      renderPopout();
+    } else if (e.target.id === 'pop-clear') {
+      popState.years = 0;
+      popState.months = 0;
+      renderPopout();
+    } else if (e.target.id === 'pop-done') {
+      commitPopout();
+    }
+  });
+
+  // Close on outside click
+  document.addEventListener('click', e => {
+    if (!popout.contains(e.target) && !e.target.closest('.admin-dur-btn'))
+      popout.classList.remove('admin-popout--open');
+  });
+}
+
+function showPopout(id, anchorEl) {
+  const current = adminEdits[id] || { years: 0, months: 0 };
+  popState = { id, years: current.years, months: current.months };
+  renderPopout();
+
+  const popout = document.getElementById('admin-popout');
+  popout.classList.add('admin-popout--open');
+
+  const rect  = anchorEl.getBoundingClientRect();
+  const popW  = popout.offsetWidth || 220;
+  let   left  = rect.left;
+  if (left + popW > window.innerWidth - 8) left = window.innerWidth - popW - 8;
+  popout.style.top  = `${rect.bottom + 4}px`;
+  popout.style.left = `${Math.max(8, left)}px`;
+}
+
+function renderPopout() {
+  const yrBtns = [1, 2, 3].map(v =>
+    `<button class="pop-btn${popState.years === v ? ' pop-btn--on' : ''}" data-yr="${v}">${v}yr</button>`
+  ).join('');
+
+  const moBtns = Array.from({ length: 12 }, (_, i) => i + 1).map(v =>
+    `<button class="pop-btn${popState.months === v ? ' pop-btn--on' : ''}" data-mo="${v}">${v}</button>`
+  ).join('');
+
+  document.getElementById('admin-popout').innerHTML = `
+    <div class="pop-row">${yrBtns}</div>
+    <div class="pop-divider"></div>
+    <div class="pop-grid">${moBtns}</div>
+    <div class="pop-footer">
+      <button id="pop-clear" class="pop-action">Clear</button>
+      <button id="pop-done"  class="pop-action pop-action--primary">Done</button>
+    </div>`;
+}
+
+function commitPopout() {
+  const { id, years, months } = popState;
+
+  if (years === 0 && months === 0) {
+    delete adminEdits[id];
+  } else {
+    adminEdits[id] = { years, months };
+  }
+
+  // Update button in-place without re-rendering the whole timeline
+  const btn = document.querySelector(`.admin-dur-btn[data-id="${id}"]`);
+  if (btn) {
+    const hasDur = years > 0 || months > 0;
+    btn.textContent = hasDur ? fmtDur(years * 12 + months) : '+ duration';
+    btn.classList.toggle('admin-dur-btn--set', hasDur);
+  }
+
+  document.getElementById('admin-popout').classList.remove('admin-popout--open');
+  updateAdminPrompt();
+}
+
+function updateAdminPrompt() {
+  const banner  = document.getElementById('admin-prompt-banner');
+  const entries = Object.entries(adminEdits).filter(([, e]) => e.years > 0 || e.months > 0);
+
+  if (entries.length === 0) {
+    banner.innerHTML = '';
+    currentAdminPrompt = '';
+    return;
+  }
+
+  const sentences = entries.map(([id, e]) =>
+    `Set achievement "${id}" tags.duration to "${fmtDur(e.years * 12 + e.months)}".`
+  ).join(' ');
+
+  currentAdminPrompt = `Please update resume.json. Add a duration field inside tags for the following achievements: ${sentences}`;
+
+  banner.innerHTML = `
+    <div class="admin-prompt-inner">
+      <span class="admin-prompt-text">${escapeHtml(currentAdminPrompt)}</span>
+      <button class="admin-prompt-copy" onclick="copyAdminPrompt()">Copy Prompt</button>
+    </div>`;
+}
+
+function copyAdminPrompt() {
+  navigator.clipboard.writeText(currentAdminPrompt).then(() => {
+    const btn = document.querySelector('.admin-prompt-copy');
+    if (!btn) return;
+    btn.textContent = 'Copied!';
+    setTimeout(() => { btn.textContent = 'Copy Prompt'; }, 1500);
   });
 }
 
