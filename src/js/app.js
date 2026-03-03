@@ -57,6 +57,7 @@ async function init() {
     renderProfile();
     renderFilters();
     renderTimeline();
+    initTabs();
   } catch (err) {
     document.getElementById('timeline').innerHTML =
       `<div class="no-results">Failed to load resume data: ${err.message}</div>`;
@@ -274,6 +275,121 @@ function formatDate(dateStr) {
   const [year, month] = dateStr.split('-');
   const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
   return `${months[parseInt(month, 10) - 1]} ${year}`;
+}
+
+// ─── Tabs ─────────────────────────────────────────────────────────────────────
+
+function initTabs() {
+  document.querySelectorAll('.tab').forEach(tab =>
+    tab.addEventListener('click', () => switchTab(tab.dataset.tab))
+  );
+}
+
+function switchTab(name) {
+  document.querySelectorAll('.tab')
+    .forEach(t => t.classList.toggle('tab--active', t.dataset.tab === name));
+  document.querySelectorAll('.tab-pane')
+    .forEach(p => p.classList.toggle('tab-pane--active', p.id === `pane-${name}`));
+  if (name === 'timeline' && !document.getElementById('career-timeline').innerHTML)
+    renderCareerTimeline();
+}
+
+// ─── Career Timeline ──────────────────────────────────────────────────────────
+
+function renderCareerTimeline() {
+  const container = document.getElementById('career-timeline');
+
+  const html = resumeData.experiences.map((exp, i) => {
+    const allAchievements = exp.roles.flatMap(r => r.achievements);
+
+    // Top tech chips
+    const techFreq = {};
+    allAchievements.forEach(a => {
+      (a.tags.technologies || []).forEach(t => {
+        techFreq[t] = (techFreq[t] || 0) + 1;
+      });
+    });
+    const topTech = Object.entries(techFreq)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 8)
+      .map(([t]) => t);
+
+    // IC vs TM split
+    let icCount = 0;
+    let tmCount = 0;
+    allAchievements.forEach(a => {
+      const types = a.tags.type || [];
+      if (types.includes('ic')) icCount++;
+      if (types.includes('technical-management')) tmCount++;
+    });
+    const total = icCount + tmCount;
+    const icPct = total > 0 ? Math.round(icCount / total * 100) : 0;
+    const tmPct = total > 0 ? 100 - icPct : 0;
+
+    // Role type badges
+    const roleTypes = [...new Set(exp.roles.flatMap(r => r.roleTypes))];
+    const roleTypeBadges = roleTypes
+      .map(t => `<span class="badge badge--role badge--${t}">${ROLE_LABELS[t] || t}</span>`)
+      .join('');
+
+    // Role titles
+    const roleTitles = exp.roles
+      .map(r => `<div class="tl-role-title">${escapeHtml(r.title)}</div>`)
+      .join('');
+
+    // Dates
+    const dateStr = formatDate(exp.startDate) + ' – ' + (exp.current ? 'Present' : formatDate(exp.endDate));
+
+    // Location
+    const locationHtml = exp.location
+      ? `<div class="tl-location">${escapeHtml(exp.location)}</div>`
+      : '';
+
+    // Split bar
+    let splitBarHtml = '';
+    if (total > 0) {
+      const icLabel  = icPct  >= 15 ? `IC&nbsp;&nbsp;${icPct}%`  : '';
+      const tmLabel  = tmPct  >= 15 ? `TM&nbsp;&nbsp;${tmPct}%`  : '';
+      splitBarHtml = `
+        <div class="tl-split">
+          <div class="tl-split-bar">
+            <div class="tl-split-ic" style="flex:${icPct}">${icLabel}</div>
+            <div class="tl-split-tm" style="flex:${tmPct}">${tmLabel}</div>
+          </div>
+        </div>`;
+    }
+
+    // Tech chips
+    const techChips = topTech.length
+      ? `<div class="tl-tech">${topTech.map(t => `<span class="tl-tech-chip">${escapeHtml(t)}</span>`).join('')}</div>`
+      : '';
+
+    const dotClass = exp.current ? 'tl-dot tl-dot--current' : 'tl-dot';
+
+    return `
+      <div class="tl-entry">
+        <div class="tl-marker">
+          <div class="${dotClass}"></div>
+        </div>
+        <div class="tl-card">
+          <div class="tl-header">
+            <div>
+              <div class="tl-company">${escapeHtml(exp.company)}</div>
+              ${locationHtml}
+            </div>
+            <div class="tl-header-right">
+              <div class="tl-dates">${dateStr}</div>
+              <div class="tl-badges">${roleTypeBadges}</div>
+            </div>
+          </div>
+          <div class="tl-roles">${roleTitles}</div>
+          ${splitBarHtml}
+          ${techChips}
+        </div>
+      </div>`;
+  }).join('');
+
+  container.innerHTML = `<div class="career-timeline">${html}</div>`;
 }
 
 // ─── Boot ─────────────────────────────────────────────────────────────────────

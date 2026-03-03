@@ -13,38 +13,52 @@
       <h1 id="profile-name"></h1>
       <p id="profile-title"></p>
       <div id="profile-contact"></div>
+      <nav class="tabs">
+        <button class="tab tab--active" data-tab="experience">Experience</button>
+        <button class="tab" data-tab="timeline">Timeline</button>
+      </nav>
     </div>
   </header>
 
-  <div class="filter-panel">
-    <div class="container">
-      <div class="search-row">
-        <input type="text" id="search-input" placeholder="Search achievements, technologies, customers…" autocomplete="off">
-        <span id="result-count" class="result-count"></span>
-        <button id="clear-btn" class="clear-btn">Clear All</button>
-      </div>
-      <div class="filter-group">
-        <span class="filter-label">Role</span>
-        <div class="filter-chips" id="type-filters"></div>
-      </div>
-      <div class="filter-group">
-        <span class="filter-label">Experience</span>
-        <div class="filter-chips" id="domain-filters"></div>
-      </div>
-      <div class="filter-group">
-        <label class="toggle-label">
-          <input type="checkbox" id="metrics-toggle">
-          <span>Metrics only</span>
-        </label>
+  <div id="pane-experience" class="tab-pane tab-pane--active">
+    <div class="filter-panel">
+      <div class="container">
+        <div class="search-row">
+          <input type="text" id="search-input" placeholder="Search achievements, technologies, customers…" autocomplete="off">
+          <span id="result-count" class="result-count"></span>
+          <button id="clear-btn" class="clear-btn">Clear All</button>
+        </div>
+        <div class="filter-group">
+          <span class="filter-label">Role</span>
+          <div class="filter-chips" id="type-filters"></div>
+        </div>
+        <div class="filter-group">
+          <span class="filter-label">Experience</span>
+          <div class="filter-chips" id="domain-filters"></div>
+        </div>
+        <div class="filter-group">
+          <label class="toggle-label">
+            <input type="checkbox" id="metrics-toggle">
+            <span>Metrics only</span>
+          </label>
+        </div>
       </div>
     </div>
+
+    <main>
+      <div class="container">
+        <div id="timeline"></div>
+      </div>
+    </main>
   </div>
 
-  <main>
-    <div class="container">
-      <div id="timeline"></div>
-    </div>
-  </main>
+  <div id="pane-timeline" class="tab-pane">
+    <main>
+      <div class="container">
+        <div id="career-timeline"></div>
+      </div>
+    </main>
+  </div>
 
   <script src="src/js/app.js"></script>
 </body>
