@@ -31,6 +31,7 @@ const EXPERIENCE_LABELS = {
   'audio':             'Audio',
   'video':             'Video',
   'mobile':            'Mobile',
+  'desktop':           'Desktop',
   'embedded':          'Embedded',
   'developer-tools':   'Dev Tools',
   'sports-tech':       'Sports Tech',
@@ -39,8 +40,8 @@ const EXPERIENCE_LABELS = {
 // ─── State ────────────────────────────────────────────────────────────────────
 
 const state = {
-  activeTypes:   new Set(),
-  activeDomains: new Set(),
+  activeTypes:       new Set(),
+  activeExperiences: new Set(),
   searchQuery:   '',
   metricsOnly:   false,
 };
@@ -85,8 +86,8 @@ function renderProfile() {
 function renderFilters() {
   const { roles, experiences } = resumeData.filterTaxonomy;
 
-  buildChips(document.getElementById('type-filters'),   roles,       'role',       ROLE_LABELS);
-  buildChips(document.getElementById('domain-filters'), experiences, 'experience', EXPERIENCE_LABELS);
+  buildChips(document.getElementById('type-filters'),       roles,       'role',       ROLE_LABELS);
+  buildChips(document.getElementById('experience-filters'), experiences, 'experience', EXPERIENCE_LABELS);
 
   document.getElementById('search-input').addEventListener('input', e => {
     state.searchQuery = e.target.value.toLowerCase().trim();
@@ -113,7 +114,7 @@ function buildChips(container, values, category, labelMap) {
 }
 
 function toggleFilter(category, value, chipEl) {
-  const set = category === 'role' ? state.activeTypes : state.activeDomains;
+  const set = category === 'role' ? state.activeTypes : state.activeExperiences;
   if (set.has(value)) {
     set.delete(value);
     chipEl.classList.remove('chip--active');
@@ -126,7 +127,7 @@ function toggleFilter(category, value, chipEl) {
 
 function clearFilters() {
   state.activeTypes.clear();
-  state.activeDomains.clear();
+  state.activeExperiences.clear();
   state.searchQuery   = '';
   state.metricsOnly   = false;
   document.getElementById('search-input').value      = '';
@@ -143,7 +144,7 @@ function achievementMatches(a) {
   if (state.metricsOnly && !hasMetric) return false;
 
   if (state.activeTypes.size > 0 && !type?.some(t => state.activeTypes.has(t))) return false;
-  if (state.activeDomains.size > 0 && !domain?.some(d => state.activeDomains.has(d))) return false;
+  if (state.activeExperiences.size > 0 && !domain?.some(d => state.activeExperiences.has(d))) return false;
 
   if (state.searchQuery) {
     const haystack = [
