@@ -59,6 +59,7 @@ async function init() {
     renderFilters();
     renderTimeline();
     initTabs();
+    initAdmin();
   } catch (err) {
     document.getElementById('timeline').innerHTML =
       `<div class="no-results">Failed to load resume data: ${err.message}</div>`;
@@ -218,8 +219,12 @@ function renderTimeline() {
 
         const hasFooter = techBadges || custBadges || roleBadges;
 
+        const domainTags = (a.tags.domain || []).join(', ');
+        const adminAch = `<div class="admin-field">id: ${escapeHtml(a.id)}${domainTags ? ' · domain: ' + escapeHtml(domainTags) : ''}${a.tags.hasMetric ? ' · hasMetric' : ''}</div>`;
+
         return `
           <li class="achievement">
+            ${adminAch}
             <p class="achievement-text">${highlight(a.text)}</p>
             ${metricHtml}
             ${hasFooter ? `
@@ -237,6 +242,7 @@ function renderTimeline() {
       rolesHtml += `
         <div class="role">
           <h3 class="role-title">${escapeHtml(role.title)} ${roleTypeBadges}</h3>
+          <div class="admin-field">id: ${escapeHtml(role.id)}</div>
           <ul class="achievement-list">${achHtml}</ul>
         </div>`;
     });
@@ -252,6 +258,7 @@ function renderTimeline() {
           <div>
             <h2 class="company-name">${escapeHtml(exp.company)}</h2>
             ${location}
+            <div class="admin-field">id: ${escapeHtml(exp.id)} · ${escapeHtml(exp.startDate)} → ${escapeHtml(exp.endDate || 'present')}</div>
           </div>
           <span class="experience-dates">${dateStr}</span>
         </div>
@@ -445,6 +452,22 @@ function renderCareerTimeline() {
   }).join('');
 
   container.innerHTML = `<div class="career-timeline">${html}</div>`;
+}
+
+// ─── Admin Mode ───────────────────────────────────────────────────────────────
+
+function initAdmin() {
+  let taps = 0;
+  let timer = null;
+  document.getElementById('profile-name').addEventListener('click', () => {
+    taps++;
+    clearTimeout(timer);
+    timer = setTimeout(() => { taps = 0; }, 3000);
+    if (taps >= 10) {
+      taps = 0;
+      document.body.classList.toggle('admin-mode');
+    }
+  });
 }
 
 // ─── Boot ─────────────────────────────────────────────────────────────────────

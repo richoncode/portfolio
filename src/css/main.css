@@ -418,6 +418,36 @@ main { padding: 28px 0 60px; }
 .badge--ic                   { background: rgba(88,166,255,0.12);  color: var(--accent);  border: 1px solid rgba(88,166,255,0.25); }
 .badge--technical-management { background: rgba(188,140,255,0.12); color: var(--purple);  border: 1px solid rgba(188,140,255,0.25); }
 
+/* ─── Admin Mode ──────────────────────────── */
+.admin-field {
+  display: none;
+}
+body.admin-mode .admin-field {
+  display: block;
+  color: #e6c000;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  margin-top: 3px;
+  opacity: 0.85;
+}
+body.admin-mode::after {
+  content: 'ADMIN';
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  background: rgba(230, 192, 0, 0.15);
+  border: 1px solid rgba(230, 192, 0, 0.4);
+  color: #e6c000;
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 4px 10px;
+  border-radius: 4px;
+  z-index: 9999;
+  pointer-events: none;
+}
+
 /* ─── Search highlight ────────────────────── */
 mark {
   background: rgba(88, 166, 255, 0.25);
