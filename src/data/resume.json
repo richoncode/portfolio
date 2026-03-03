@@ -1,0 +1,1203 @@
+{
+  "profile": {
+    "name": "Richard Bailey",
+    "location": "San Jose",
+    "email": "richoncode@gmail.com",
+    "linkedin": "linkedin.com/in/richoncode",
+    "title": "Principle iOS Developer",
+    "summary": [
+      "16 years in engineering management from Manager to Vice President",
+      "Led teams ranging from 3 to 70 engineers with high year-over-year developer retention",
+      "Contributed to 5 major cloud-based products over 9 years",
+      "Architectural expertise across embedded systems to cloud infrastructure",
+      "Passionate about machine learning and scalable, ubiquitous computing"
+    ]
+  },
+
+  "filterTaxonomy": {
+    "types": [
+      "ic",
+      "management",
+      "leadership",
+      "architecture",
+      "performance",
+      "product",
+      "prototyping",
+      "api-design",
+      "mentoring",
+      "ml"
+    ],
+    "domains": [
+      "spatial-computing",
+      "visionos",
+      "ar",
+      "vr",
+      "ios",
+      "android",
+      "cloud",
+      "gaming",
+      "automotive",
+      "industrial",
+      "ml",
+      "web",
+      "audio",
+      "video",
+      "mobile",
+      "embedded",
+      "developer-tools",
+      "sports-tech"
+    ]
+  },
+
+  "experiences": [
+    {
+      "id": "quintar",
+      "company": "Quintar, Inc",
+      "location": "Santa Clara, California",
+      "startDate": "2022-09",
+      "endDate": null,
+      "current": true,
+      "roles": [
+        {
+          "id": "quintar-vp",
+          "title": "Vice President of Engineering & Principle Engineer",
+          "roleTypes": ["management", "ic"],
+          "achievements": [
+            {
+              "id": "quintar-a1",
+              "text": "Achieved a 50% reduction in system downtime by implementing operations tools, resulting in a 90% decrease in live event operational costs.",
+              "tags": {
+                "type": ["management", "architecture"],
+                "domain": ["cloud", "sports-tech"],
+                "technologies": [],
+                "customers": [],
+                "impact": { "metric": "system downtime", "value": "50% reduction; 90% cost decrease" },
+                "hasMetric": true
+              }
+            },
+            {
+              "id": "quintar-a2",
+              "text": "Spearheaded the creation of an award-winning PGATour Vision on the Apple Vision Pro platform, resulting in increased brand visibility and customer satisfaction.",
+              "tags": {
+                "type": ["ic", "product", "leadership"],
+                "domain": ["visionos", "spatial-computing", "sports-tech"],
+                "technologies": ["visionOS", "Apple Vision Pro"],
+                "customers": ["PGA Tour"],
+                "impact": { "metric": "award", "value": "Award-winning product" },
+                "hasMetric": false
+              }
+            },
+            {
+              "id": "quintar-a3",
+              "text": "Developed an MV-HEVC video player integrating stereo channels with alpha transparency and 3D augmented graphics for real-world digital-twin viewing of sports events at home. Enabled non-rectangular stereo spatial video augmented with precision 3D graphics that seamlessly blends into the user's room.",
+              "tags": {
+                "type": ["ic", "architecture"],
+                "domain": ["visionos", "video", "spatial-computing", "sports-tech"],
+                "technologies": ["RealityKit", "ShaderGraphMaterials", "SwiftUI", "AVFoundation", "Metal", "MV-HEVC"],
+                "customers": [],
+                "hasMetric": false
+              }
+            },
+            {
+              "id": "quintar-a4",
+              "text": "Developed a series of spatial interactions enabling our SDK to be utilized in diverse environments, from large-scale venues to suites and living rooms. Collected stakeholder requirements, applied human spatial interaction principles, created rapid prototypes, conducted testing, and iterated designs.",
+              "tags": {
+                "type": ["ic", "api-design", "prototyping"],
+                "domain": ["visionos", "spatial-computing", "ios"],
+                "technologies": ["RealityKit", "Unity"],
+                "customers": [],
+                "hasMetric": false
+              }
+            },
+            {
+              "id": "quintar-a5",
+              "text": "Developed a rapid prototype of a Python and ML-based video pipeline to transform multiple stereo video feeds into spatially enhanced at-home sports experiences. Multistage pipeline with modular spatial features; supported tracking, depth, segmentation, and masking. Led to kick-off of a 4-person production development effort.",
+              "tags": {
+                "type": ["ic", "prototyping", "ml", "architecture"],
+                "domain": ["ml", "video", "spatial-computing", "sports-tech"],
+                "technologies": ["Python", "ML", "depth estimation", "segmentation", "tracking"],
+                "customers": [],
+                "hasMetric": false
+              }
+            },
+            {
+              "id": "quintar-a6",
+              "text": "Developed an API to facilitate creation of fast updates and stable synchronization of SharePlay experiences over the existing GroupActivity messaging API. Ensures accurate state synchronization even when network conditions interfere; surfaces overall SharePlay session health to users.",
+              "tags": {
+                "type": ["ic", "api-design"],
+                "domain": ["ios", "visionos"],
+                "technologies": ["SharePlay", "GroupActivity", "Swift"],
+                "customers": [],
+                "hasMetric": false
+              }
+            },
+            {
+              "id": "quintar-a7",
+              "text": "As IC Developer for SwiftUI & RealityKit 3D framework components: 3D Live Sport Streaming Renderer (multithreaded, 100Hz latency-critical); Spatial SharePlay of volumetric sports with interactive betting, gestures, & drawing; 2D & 3D gestures for multi-spatial interaction between diorama sport-field-space to user room-space; 3D Stereo Video Player with Sport Arena Graphic overlays.",
+              "tags": {
+                "type": ["ic", "architecture"],
+                "domain": ["visionos", "spatial-computing", "video", "sports-tech"],
+                "technologies": ["SwiftUI", "RealityKit", "Metal", "VideoToolbox", "SharePlay"],
+                "customers": [],
+                "hasMetric": false
+              }
+            },
+            {
+              "id": "quintar-a8",
+              "text": "VisionOS product deliveries to PGATour, NASCAR, MLB, Apple.",
+              "tags": {
+                "type": ["product"],
+                "domain": ["visionos", "spatial-computing", "sports-tech"],
+                "technologies": ["visionOS"],
+                "customers": ["PGA Tour", "NASCAR", "MLB", "Apple"],
+                "hasMetric": false
+              }
+            },
+            {
+              "id": "quintar-a9",
+              "text": "Conduct performance investigations across all code bases. Deep use of Xcode Instruments and custom tools to isolate memory, CPU, and GPU performance issues. Determine architecture and coding patterns to achieve latency-critical UI and rendering (Swift Concurrency, multithreading, custom caching and network streaming). Mentor team with best design patterns.",
+              "tags": {
+                "type": ["ic", "performance", "mentoring"],
+                "domain": ["ios", "visionos"],
+                "technologies": ["Xcode Instruments", "Swift Concurrency", "Metal", "LLDB"],
+                "customers": [],
+                "hasMetric": false
+              }
+            },
+            {
+              "id": "quintar-a10",
+              "text": "Manage 30-engineer team in the USA and India, setting architecture, coding, and testing standards. 100% retention rate over 2 years. Define staffing and training strategy to minimize growth/budget while building core platform and proof-of-concept prior to Series B.",
+              "tags": {
+                "type": ["management", "leadership"],
+                "domain": [],
+                "technologies": [],
+                "customers": [],
+                "teamSize": 30,
+                "impact": { "metric": "retention rate", "value": "100% over 2 years" },
+                "hasMetric": true
+              }
+            },
+            {
+              "id": "quintar-a11",
+              "text": "Review system and architecture designs for end-to-end data, operations performance monitoring, device performance & reliability, streaming latency, customer scale, and cost efficiency.",
+              "tags": {
+                "type": ["architecture", "leadership"],
+                "domain": ["cloud", "ios", "visionos"],
+                "technologies": [],
+                "customers": [],
+                "hasMetric": false
+              }
+            },
+            {
+              "id": "quintar-a12",
+              "text": "Diagnosed threading performance hangs and reliability memory corruption crashes related to high bandwidth streaming of 3D NASCAR data. Based on findings, created a streaming 3D rendering framework to be used across all Quintar spatial sports customers.",
+              "tags": {
+                "type": ["ic", "performance", "architecture"],
+                "domain": ["ios", "spatial-computing", "sports-tech"],
+                "technologies": ["Swift", "RealityKit", "Swift Concurrency"],
+                "customers": ["NASCAR"],
+                "hasMetric": false
+              }
+            },
+            {
+              "id": "quintar-a13",
+              "text": "iOS product deliveries to PGATour, NBA Summer League, NBA Atlanta Hawks.",
+              "tags": {
+                "type": ["product"],
+                "domain": ["ios", "sports-tech"],
+                "technologies": ["iOS"],
+                "customers": ["PGA Tour", "NBA Summer League", "NBA Atlanta Hawks"],
+                "hasMetric": false
+              }
+            },
+            {
+              "id": "quintar-a14",
+              "text": "Solved framework challenges to maintain 100fps rendering of streaming 3D sports data and video using AVFoundation, Metal, and RealityKit. Balanced spatial video processing, high-speed stream of 40 race cars' 3D data, and RealityKit/SwiftUI attachment updates at 100FPS using one worker thread with Swift Concurrency and actors.",
+              "tags": {
+                "type": ["ic", "performance", "architecture"],
+                "domain": ["visionos", "video", "spatial-computing", "sports-tech"],
+                "technologies": ["AVFoundation", "Metal", "RealityKit", "Swift Concurrency"],
+                "customers": [],
+                "impact": { "metric": "frame rate", "value": "100fps sustained" },
+                "hasMetric": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "niantic",
+      "company": "Niantic, Inc.",
+      "location": "Sunnyvale, California",
+      "startDate": "2020-11",
+      "endDate": "2022-08",
+      "current": false,
+      "roles": [
+        {
+          "id": "niantic-sd",
+          "title": "Senior Director, Lightship ARDK",
+          "roleTypes": ["management", "ic"],
+          "achievements": [
+            {
+              "id": "niantic-a1",
+              "text": "Led 15-engineer team in 18 months to an on-time launch at AWE, resulting in a Best-In-Show AR win. Elevated brand reputation and boosted market recognition of the developer-facing AR framework.",
+              "tags": {
+                "type": ["management", "leadership", "product"],
+                "domain": ["ar", "spatial-computing", "ios", "android"],
+                "technologies": ["Unity", "iOS", "Android"],
+                "customers": [],
+                "teamSize": 15,
+                "impact": { "metric": "award", "value": "Best-In-Show AR at AWE" },
+                "hasMetric": true
+              }
+            },
+            {
+              "id": "niantic-a2",
+              "text": "Defined team policies that drove a +75% customer developer adoption of AR experiences. Aligned engineering with product, support, and games teams to prioritize greatest value.",
+              "tags": {
+                "type": ["leadership", "management"],
+                "domain": ["ar"],
+                "technologies": [],
+                "customers": [],
+                "impact": { "metric": "developer adoption", "value": "+75%" },
+                "hasMetric": true
+              }
+            },
+            {
+              "id": "niantic-a3",
+              "text": "Triaged and prioritized internal technical debt to reduce build times by 70% and increase automation CI testing for low-cost, high-confidence rapid iteration.",
+              "tags": {
+                "type": ["management", "architecture"],
+                "domain": ["ios", "android"],
+                "technologies": ["CI/CD"],
+                "customers": [],
+                "impact": { "metric": "build time", "value": "70% reduction" },
+                "hasMetric": true
+              }
+            },
+            {
+              "id": "niantic-a4",
+              "text": "Developed architecture & performance optimizations to achieve a 1000x performance improvement for applications on pre-V1 release of Magic Leap AR platform. Created architecture for multi-application shared spatial context meetings/workroom experience.",
+              "tags": {
+                "type": ["ic", "architecture", "performance"],
+                "domain": ["ar", "spatial-computing"],
+                "technologies": ["Magic Leap", "C#", "Unity"],
+                "customers": [],
+                "impact": { "metric": "performance", "value": "1000x improvement" },
+                "hasMetric": true
+              }
+            },
+            {
+              "id": "niantic-a5",
+              "text": "Managed Unity iOS/Android SDK by developing target customer use case code samples. Through hands-on customer experience approach, defined viable path to launch the Lightship SDK at AWE.",
+              "tags": {
+                "type": ["ic", "management", "api-design"],
+                "domain": ["ar", "ios", "android"],
+                "technologies": ["Unity", "iOS", "Android", "C#"],
+                "customers": [],
+                "hasMetric": false
+              }
+            },
+            {
+              "id": "niantic-a6",
+              "text": "Designed Unity API with Applied AI (VPS/Mapping, vision segmentation, 3D UI Interaction). Defined Spatial UX API in C# with debugging in Xcode Instruments and ARM assembly.",
+              "tags": {
+                "type": ["ic", "api-design", "ml"],
+                "domain": ["ar", "spatial-computing"],
+                "technologies": ["Unity", "C#", "VPS", "vision segmentation", "ARM assembly", "Xcode Instruments"],
+                "customers": [],
+                "hasMetric": false
+              }
+            },
+            {
+              "id": "niantic-a7",
+              "text": "Identified that framework API plan was research-oriented rather than developer use-case aligned. Drafted experience tent-poles to prioritize and align framework deliverables to enable spatial use-cases efficiently. Ensured APIs named for developer use-cases rather than research jargon (e.g., 'feathered-edges' rather than 'sigma-blending').",
+              "tags": {
+                "type": ["leadership", "api-design"],
+                "domain": ["ar"],
+                "technologies": [],
+                "customers": [],
+                "hasMetric": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "magic-leap",
+      "company": "Magic Leap",
+      "location": "Plantation, Florida",
+      "startDate": "2017-11",
+      "endDate": "2020-11",
+      "current": false,
+      "roles": [
+        {
+          "id": "ml-senior-director",
+          "title": "Senior Director Software – Spatial AR Meetings Platform & Applications",
+          "roleTypes": ["management", "ic"],
+          "achievements": [
+            {
+              "id": "ml-a1",
+              "text": "Led prototypes that became flagship product priorities. Features launched within 1 year of prototyping: Spatial Meetings with personas, collaboration, and laptop interop.",
+              "tags": {
+                "type": ["ic", "prototyping", "product"],
+                "domain": ["ar", "spatial-computing"],
+                "technologies": ["Magic Leap", "C++"],
+                "customers": [],
+                "hasMetric": false
+              }
+            },
+            {
+              "id": "ml-a2",
+              "text": "Grew the development team by 10% during a company-wide 50% staff reduction. Continued to deliver high-value product features and launch with reduced staff.",
+              "tags": {
+                "type": ["management", "leadership"],
+                "domain": [],
+                "technologies": [],
+                "customers": [],
+                "impact": { "metric": "team growth during 50% company reduction", "value": "+10%" },
+                "hasMetric": true
+              }
+            },
+            {
+              "id": "ml-a3",
+              "text": "Developed spatial interactions to scale for multi-modal collaborative experiences on headset AR. Developed architecture for real-time shared companion apps on PC/Mac; API shipped as part of Meetings, March 2020.",
+              "tags": {
+                "type": ["ic", "architecture"],
+                "domain": ["ar", "spatial-computing"],
+                "technologies": ["Magic Leap", "C++"],
+                "customers": [],
+                "hasMetric": false
+              }
+            },
+            {
+              "id": "ml-a4",
+              "text": "Created high-performance architecture to enable streaming 3D spatial interactions, including API layers to connect iOS apps to share 3D content to the Magic Leap device.",
+              "tags": {
+                "type": ["ic", "architecture", "api-design"],
+                "domain": ["ar", "spatial-computing", "ios"],
+                "technologies": ["C++", "iOS", "Magic Leap"],
+                "customers": [],
+                "hasMetric": false
+              }
+            },
+            {
+              "id": "ml-a5",
+              "text": "Created streaming 3D content meetings UX and Sharing API from prototype through staffing, architecture, API design, and engineering management. Designed architecture to meet spatial shared UX performance requirements (device→cloud→device).",
+              "tags": {
+                "type": ["ic", "management", "api-design", "architecture"],
+                "domain": ["ar", "spatial-computing", "cloud"],
+                "technologies": ["C++"],
+                "customers": [],
+                "hasMetric": false
+              }
+            },
+            {
+              "id": "ml-a6",
+              "text": "Performed performance investigations into Android (AOSP-based) native port: network performance, gesture interactions, graphics performance, and DASH adaptive video player performance. Established architecture and coding patterns for best performance and reliability.",
+              "tags": {
+                "type": ["ic", "performance"],
+                "domain": ["ar", "android", "video"],
+                "technologies": ["Android", "AOSP", "DASH", "C++"],
+                "customers": [],
+                "hasMetric": false
+              }
+            },
+            {
+              "id": "ml-a7",
+              "text": "Managed 30-engineer team. Collaborated with UI designers, product managers, and core platform developers to define and deliver developer-facing UI frameworks for spatial applications.",
+              "tags": {
+                "type": ["management"],
+                "domain": ["ar", "spatial-computing"],
+                "technologies": [],
+                "customers": [],
+                "teamSize": 30,
+                "hasMetric": false
+              }
+            },
+            {
+              "id": "ml-a8",
+              "text": "Lead development of multi-user Spatial sharing framework and developer-facing API. Diagnosed latency-critical spatial UI and rendering issues. Established coding patterns for high-performance spatial experiences. Mentored engineers to improve quality.",
+              "tags": {
+                "type": ["ic", "architecture", "performance", "api-design", "mentoring"],
+                "domain": ["ar", "spatial-computing"],
+                "technologies": ["C++", "ARM"],
+                "customers": [],
+                "hasMetric": false
+              }
+            },
+            {
+              "id": "ml-a9",
+              "text": "Designed and built frameworks for C++ developers to create AR applications on multiple Magic Leap HMDs simultaneously while streaming 3D graphics from companion apps on desktop or mobile.",
+              "tags": {
+                "type": ["ic", "api-design", "architecture"],
+                "domain": ["ar", "spatial-computing"],
+                "technologies": ["C++", "Magic Leap"],
+                "customers": [],
+                "hasMetric": false
+              }
+            }
+          ]
+        },
+        {
+          "id": "ml-director",
+          "title": "Director of Systems Application Development",
+          "roleTypes": ["management", "ic"],
+          "achievements": [
+            {
+              "id": "ml-dir-a1",
+              "text": "Formed and led the development team to build and ship the first generation of applications for Magic Leap: Avatars, Media, Mobile Companion, & Contacts.",
+              "tags": {
+                "type": ["management", "leadership", "product"],
+                "domain": ["ar", "spatial-computing", "ios"],
+                "technologies": ["Magic Leap", "C++"],
+                "customers": [],
+                "hasMetric": false
+              }
+            },
+            {
+              "id": "ml-dir-a2",
+              "text": "Increased team productivity by 50% through restructuring for improved ownership and alignment with product goals, resulting in faster development and increased product delivery.",
+              "tags": {
+                "type": ["management", "leadership"],
+                "domain": [],
+                "technologies": [],
+                "customers": [],
+                "impact": { "metric": "team productivity", "value": "+50%" },
+                "hasMetric": true
+              }
+            },
+            {
+              "id": "ml-dir-a3",
+              "text": "Increased engineering team capabilities by 40% through implementing hiring and architecture practices, resulting in a 30% acceleration of platform deliverables.",
+              "tags": {
+                "type": ["management", "leadership"],
+                "domain": [],
+                "technologies": [],
+                "customers": [],
+                "impact": { "metric": "team capabilities +40%; delivery", "value": "30% faster" },
+                "hasMetric": true
+              }
+            },
+            {
+              "id": "ml-dir-a4",
+              "text": "Developed architecture & performance optimizations to achieve 1000x performance for applications on pre-V1 Magic Leap AR platform. Created architecture for multi-application shared spatial context meetings/workroom experience.",
+              "tags": {
+                "type": ["ic", "architecture", "performance"],
+                "domain": ["ar", "spatial-computing"],
+                "technologies": ["C++", "ARM", "Tegra"],
+                "customers": [],
+                "impact": { "metric": "performance", "value": "1000x improvement" },
+                "hasMetric": true
+              }
+            },
+            {
+              "id": "ml-dir-a5",
+              "text": "Managed 15-engineer team from prototypes through Magic Leap product launch and version 2 release. Drove performance, accountability, hiring, executive presentations, and cross-team coordination.",
+              "tags": {
+                "type": ["management"],
+                "domain": ["ar"],
+                "technologies": [],
+                "customers": [],
+                "teamSize": 15,
+                "hasMetric": false
+              }
+            },
+            {
+              "id": "ml-dir-a6",
+              "text": "As leader for first party applications, debugged core framework code and submitted performance and reliability fixes as well as API recommendations.",
+              "tags": {
+                "type": ["ic", "performance"],
+                "domain": ["ar", "spatial-computing"],
+                "technologies": ["C++"],
+                "customers": [],
+                "hasMetric": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "margrave",
+      "company": "Margrave Technologies",
+      "location": "Greater Seattle Area",
+      "startDate": "2016-06",
+      "endDate": "2017-11",
+      "current": false,
+      "roles": [
+        {
+          "id": "margrave-founder",
+          "title": "Founder – CEO – Developer",
+          "roleTypes": ["ic", "leadership"],
+          "achievements": [
+            {
+              "id": "margrave-a1",
+              "text": "Directed all aspects of pre-capital startup building AR/VR developer tools and authoring tools for immersive experiences. Customers included Deutsche Telekom & Sony Pictures.",
+              "tags": {
+                "type": ["leadership", "ic"],
+                "domain": ["ar", "vr"],
+                "technologies": ["Unity3D", "Face Tracking", "HandWriting Recognition", "Speech Phoneme Recognition"],
+                "customers": ["Deutsche Telekom", "Sony Pictures"],
+                "hasMetric": false
+              }
+            },
+            {
+              "id": "margrave-a2",
+              "text": "Developed AR Billboard for Times Square (Sony Pictures/Emoji Movie). Mobile VR German Language training app (Deutsche Telekom). Unity VR Social sharing API.",
+              "tags": {
+                "type": ["ic", "product"],
+                "domain": ["ar", "vr", "ios", "android"],
+                "technologies": ["Unity", "Xcode", "Android Studio", "C#"],
+                "customers": ["Sony Pictures", "Deutsche Telekom"],
+                "hasMetric": false
+              }
+            },
+            {
+              "id": "margrave-a3",
+              "text": "Deep debugging into Unity ARM assembly to track down a crashing bug caused by a 3rd party handwriting framework having mismatched 32-bit/64-bit headers. Ran Unity runtime under Visual Studio debugger.",
+              "tags": {
+                "type": ["ic", "performance"],
+                "domain": ["ios", "android"],
+                "technologies": ["Unity", "ARM assembly", "C#", "Visual Studio"],
+                "customers": [],
+                "hasMetric": false
+              }
+            },
+            {
+              "id": "margrave-a4",
+              "text": "Defined a Unity plugin working across a wide variety of headset models, supporting multiple social network posting APIs, and allowing custom branding (text and image watermarks) for consistent VR app promotion on social media.",
+              "tags": {
+                "type": ["ic", "api-design"],
+                "domain": ["vr", "ar"],
+                "technologies": ["Unity", "C#"],
+                "customers": [],
+                "hasMetric": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "daqri",
+      "company": "DAQRI",
+      "location": "Greater Los Angeles; Sunnyvale, CA; Dublin, Ireland",
+      "startDate": "2015-03",
+      "endDate": "2016-06",
+      "current": false,
+      "roles": [
+        {
+          "id": "daqri-director",
+          "title": "Director of Engineering – Smart Helmet – Augmented Reality",
+          "roleTypes": ["management"],
+          "achievements": [
+            {
+              "id": "daqri-a1",
+              "text": "Managed 45-engineer team to deliver 15+ customer apps and 2 releases of the core spatial frameworks in 9 months. Owned staffing, architecture, strategy planning, budgeting, recruiting oversight, and executive communication.",
+              "tags": {
+                "type": ["management", "leadership"],
+                "domain": ["ar", "industrial"],
+                "technologies": [],
+                "customers": [],
+                "teamSize": 45,
+                "impact": { "metric": "delivery", "value": "15+ customer apps, 2 framework releases in 9 months" },
+                "hasMetric": true
+              }
+            },
+            {
+              "id": "daqri-a2",
+              "text": "Launched AR Smart Helmet for industrial applications. Launch shared CES Keynote stage with Intel CEO.",
+              "tags": {
+                "type": ["product", "leadership"],
+                "domain": ["ar", "industrial"],
+                "technologies": [],
+                "customers": [],
+                "impact": { "metric": "industry recognition", "value": "CES Keynote with Intel CEO" },
+                "hasMetric": false
+              }
+            },
+            {
+              "id": "daqri-a3",
+              "text": "Created Unity/C# spatial framework API for developers to create AR UI in industrial/factory settings: latency-critical info panels, workflow management data, head-relative, body-relative, and world-placed UI panels. Status panels, camera with photo log, task checklist templates, digital gauges, barcode scanners, proximity alerts.",
+              "tags": {
+                "type": ["ic", "api-design"],
+                "domain": ["ar", "industrial"],
+                "technologies": ["Unity", "C#"],
+                "customers": [],
+                "hasMetric": false
+              }
+            },
+            {
+              "id": "daqri-a4",
+              "text": "Traveled frequently and internationally to meet with customers, set standards of execution for the entire team, guide product roadmap direction, and drive constant cross-team collaboration.",
+              "tags": {
+                "type": ["leadership", "management"],
+                "domain": ["ar", "industrial"],
+                "technologies": [],
+                "customers": [],
+                "hasMetric": false
+              }
+            }
+          ]
+        },
+        {
+          "id": "daqri-architect",
+          "title": "Chief Software Architect & Lead, AR Smart Helmet",
+          "roleTypes": ["ic", "management"],
+          "achievements": [
+            {
+              "id": "daqri-arch-a1",
+              "text": "Defined software architecture and engineering practices for DAQRI Smart Helmet. Managed entire software team growing from 3 to 30 engineers while sustaining high engineering excellence and cross-organizational collaboration. Focus on lean agile engineering and individual/team accountability.",
+              "tags": {
+                "type": ["architecture", "management", "leadership"],
+                "domain": ["ar", "industrial"],
+                "technologies": ["Unity", "C#", "ARM", "Intel", "Android Open Source"],
+                "customers": [],
+                "teamSize": 30,
+                "impact": { "metric": "team growth", "value": "3 to 30 engineers" },
+                "hasMetric": true
+              }
+            },
+            {
+              "id": "daqri-arch-a2",
+              "text": "Led architecture design for Augmented Reality Helmet for industrial settings. Enabled spatial computing to make factories and field operations more efficient.",
+              "tags": {
+                "type": ["ic", "architecture"],
+                "domain": ["ar", "industrial"],
+                "technologies": ["Unity", "C#", "ARM", "Intel"],
+                "customers": [],
+                "hasMetric": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "microsoft-2nd",
+      "company": "Microsoft",
+      "location": "Redmond, Washington",
+      "startDate": "2008-04",
+      "endDate": "2015-03",
+      "current": false,
+      "roles": [
+        {
+          "id": "ms2-azure",
+          "title": "Senior Software Engineer – Windows Azure Storage",
+          "roleTypes": ["ic"],
+          "achievements": [
+            {
+              "id": "ms2-az-a1",
+              "text": "Worked on improvements to distributed file system using Fast Multi-Paxos implementation. Maintained and improved cloud service code in C++.",
+              "tags": {
+                "type": ["ic", "architecture"],
+                "domain": ["cloud"],
+                "technologies": ["C++", "Windows", "Distributed Systems", "Paxos"],
+                "customers": [],
+                "hasMetric": false
+              }
+            },
+            {
+              "id": "ms2-az-a2",
+              "text": "Investigated crashes within global storage of 500K compute nodes. Built custom monitoring and diagnosis tools to track down critical failures that had been occurring for several years. Determined root causes and made architectural and code changes to mitigate.",
+              "tags": {
+                "type": ["ic", "performance"],
+                "domain": ["cloud"],
+                "technologies": ["C++", "Windows"],
+                "customers": [],
+                "impact": { "metric": "scale", "value": "500K compute nodes" },
+                "hasMetric": true
+              }
+            }
+          ]
+        },
+        {
+          "id": "ms2-kinect",
+          "title": "Senior Software Development Engineer – XBOX One and Windows Kinect",
+          "roleTypes": ["ic"],
+          "achievements": [
+            {
+              "id": "ms2-kinect-a1",
+              "text": "Developed body-tracking spatial interactions & API using C++; shipped in Windows and Xbox. Designed migration from heuristics to reinforcement learning.",
+              "tags": {
+                "type": ["ic", "api-design", "ml"],
+                "domain": ["spatial-computing", "gaming"],
+                "technologies": ["C++", "Windows", "Xbox"],
+                "customers": [],
+                "hasMetric": false
+              }
+            },
+            {
+              "id": "ms2-kinect-a2",
+              "text": "Delivered an improved NUI interaction that was subjectively 'more natural' and allowed users to complete tests in 80% less time.",
+              "tags": {
+                "type": ["ic", "product"],
+                "domain": ["spatial-computing", "gaming"],
+                "technologies": ["C++", "Windows", "Xbox"],
+                "customers": [],
+                "impact": { "metric": "task completion time", "value": "80% reduction" },
+                "hasMetric": true
+              }
+            },
+            {
+              "id": "ms2-kinect-a3",
+              "text": "Created spatial UI API for developers to build latency-critical UI controlled by user's spatial hand motions.",
+              "tags": {
+                "type": ["ic", "api-design"],
+                "domain": ["spatial-computing"],
+                "technologies": ["C++", "Windows"],
+                "customers": [],
+                "hasMetric": false
+              }
+            },
+            {
+              "id": "ms2-kinect-a4",
+              "text": "Created developer-facing Kinect framework from researcher prototype code. Designed latency-critical multithreaded architecture to launch Kinect on Windows in 64-bit mode. Created skeletal tracking debugging tools (recording and playback of gestures).",
+              "tags": {
+                "type": ["ic", "architecture", "api-design"],
+                "domain": ["spatial-computing"],
+                "technologies": ["C++", "Windows"],
+                "customers": [],
+                "hasMetric": false
+              }
+            }
+          ]
+        },
+        {
+          "id": "ms2-winphone",
+          "title": "Software Technical Lead – Windows Phone Frameworks",
+          "roleTypes": ["ic"],
+          "achievements": [
+            {
+              "id": "ms2-wp-a1",
+              "text": "Created developer-facing UI frameworks to enable public application creation using XAML. Extended XAML tools in Visual Studio to streamline app development.",
+              "tags": {
+                "type": ["ic", "api-design"],
+                "domain": ["mobile"],
+                "technologies": ["C#", "C++", "XAML", "ARM", "Windows Phone", "Visual Studio"],
+                "customers": [],
+                "hasMetric": false
+              }
+            },
+            {
+              "id": "ms2-wp-a2",
+              "text": "Developed early production applications to prove frameworks and runtimes before official release. Drove changes into APIs and best practices for external developers.",
+              "tags": {
+                "type": ["ic", "product"],
+                "domain": ["mobile"],
+                "technologies": ["XAML", "C#", "Windows Phone", "Azure"],
+                "customers": [],
+                "hasMetric": false
+              }
+            },
+            {
+              "id": "ms2-wp-a3",
+              "text": "Became Technical Lead for UX Frameworks and Runtimes. Implemented features to expose key phone shell user experiences to managed apps using managed-native interop. Did API specification and API reviews.",
+              "tags": {
+                "type": ["ic", "leadership", "api-design"],
+                "domain": ["mobile"],
+                "technologies": ["C#", "C++", "XAML", "Windows Phone"],
+                "customers": [],
+                "hasMetric": false
+              }
+            }
+          ]
+        },
+        {
+          "id": "ms2-auto",
+          "title": "Engineering Manager & Architect – Automotive Platform",
+          "roleTypes": ["management", "ic"],
+          "achievements": [
+            {
+              "id": "ms2-auto-a1",
+              "text": "Merged development teams from Redmond and Japan to form a single cohesive international development team.",
+              "tags": {
+                "type": ["management", "leadership"],
+                "domain": ["automotive"],
+                "technologies": [],
+                "customers": [],
+                "hasMetric": false
+              }
+            },
+            {
+              "id": "ms2-auto-a2",
+              "text": "Managed 15-engineer international team. Created developer-facing APIs for latency-critical automotive UI/HMI interactions. Deliveries to Ford Sync, BMW, Citroën, DaimlerChrysler, Fiat, Honda, Hyundai, Kia, Nissan, Toyota, Volvo.",
+              "tags": {
+                "type": ["management", "api-design"],
+                "domain": ["automotive"],
+                "technologies": ["C++", "XAML", "DirectX"],
+                "customers": ["Ford", "BMW", "Citroën", "DaimlerChrysler", "Fiat", "Honda", "Hyundai", "Kia", "Nissan", "Toyota", "Volvo"],
+                "teamSize": 15,
+                "hasMetric": false
+              }
+            },
+            {
+              "id": "ms2-auto-a3",
+              "text": "Led team to deliver complete UI/HMI frameworks with native C++ extension for XAML on Windows Automotive including hardware 2D and 3D acceleration support for maximized performance.",
+              "tags": {
+                "type": ["ic", "architecture"],
+                "domain": ["automotive"],
+                "technologies": ["C++", "MFC", "DirectX", "XAML", "ARM", "Freescale"],
+                "customers": [],
+                "hasMetric": false
+              }
+            },
+            {
+              "id": "ms2-auto-a4",
+              "text": "Evaluated declarative UI markup subsystems (WPF, Silverlight, Media Center XAML) for ARM-based car stereos. Created Windows Automotive XAML solution starting from Silverlight's lightness with C++ interface and 3D features — avoiding C# runtime overhead.",
+              "tags": {
+                "type": ["ic", "architecture"],
+                "domain": ["automotive", "embedded"],
+                "technologies": ["C++", "XAML", "WPF", "Silverlight", "ARM"],
+                "customers": [],
+                "hasMetric": false
+              }
+            },
+            {
+              "id": "ms2-auto-a5",
+              "text": "Guided technical negotiations with customers in Japan. Successfully shipped 3 CTP releases to customers in 2009.",
+              "tags": {
+                "type": ["leadership", "management"],
+                "domain": ["automotive"],
+                "technologies": [],
+                "customers": [],
+                "hasMetric": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "amazon",
+      "company": "Amazon.com",
+      "location": "Seattle, Washington",
+      "startDate": "2007-02",
+      "endDate": "2008-04",
+      "current": false,
+      "roles": [
+        {
+          "id": "amazon-sde",
+          "title": "Senior Software Development Engineer, Scaled Cloud Services",
+          "roleTypes": ["ic"],
+          "achievements": [
+            {
+              "id": "amz-a1",
+              "text": "Proposed and created peta-byte scale low-latency high-demand web service for 900,000 book page images, reducing delivery time by 30%. Served 220 million images (90+ terabytes) worldwide with caching for Europe, Asia, and Americas.",
+              "tags": {
+                "type": ["ic", "architecture"],
+                "domain": ["cloud", "web"],
+                "technologies": ["Java", "Perl", "S3", "EC2", "RESTful"],
+                "customers": [],
+                "impact": { "metric": "delivery time reduction", "value": "30% for 900K books; 220M images, 90TB worldwide" },
+                "hasMetric": true
+              }
+            },
+            {
+              "id": "amz-a2",
+              "text": "Developed and maintained scripts to migrate 80TB of data from 25 legacy storage servers to Amazon S3. Service is self-diagnosing with logging, dashboard, and notifications.",
+              "tags": {
+                "type": ["ic"],
+                "domain": ["cloud"],
+                "technologies": ["Perl", "S3"],
+                "customers": [],
+                "hasMetric": false
+              }
+            },
+            {
+              "id": "amz-a3",
+              "text": "Kindle developer API architecture. Defined application UI APIs enabling e-paper interactions for launch experiences on Kindle E-book reader.",
+              "tags": {
+                "type": ["ic", "api-design"],
+                "domain": ["mobile", "embedded"],
+                "technologies": ["C++", "Kindle"],
+                "customers": [],
+                "hasMetric": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "microsoft-1st",
+      "company": "Microsoft (1st tenure)",
+      "location": "Redmond, Washington",
+      "startDate": "1998-12",
+      "endDate": "2007-01",
+      "current": false,
+      "roles": [
+        {
+          "id": "ms1-xaml",
+          "title": "Senior Software Development Engineer – Visual Studio XAML Designer",
+          "roleTypes": ["ic"],
+          "achievements": [
+            {
+              "id": "ms1-xaml-a1",
+              "text": "Created XAML designer UI-layout interactions and tools within Visual Studio. Created developer-facing framework for adding custom editors and adorners to the XAML designer.",
+              "tags": {
+                "type": ["ic", "api-design"],
+                "domain": ["developer-tools"],
+                "technologies": ["C#", "XAML", "Visual Studio"],
+                "customers": [],
+                "hasMetric": false
+              }
+            },
+            {
+              "id": "ms1-xaml-a2",
+              "text": "Conducted performance investigations and optimizations to ensure low-latency UI interactions in the Visual Studio XAML designer.",
+              "tags": {
+                "type": ["ic", "performance"],
+                "domain": ["developer-tools"],
+                "technologies": ["C#", "XAML"],
+                "customers": [],
+                "hasMetric": false
+              }
+            }
+          ]
+        },
+        {
+          "id": "ms1-forza",
+          "title": "Senior Software Development Engineer – XBox Forza Motorsports (Turn10 Studios)",
+          "roleTypes": ["ic"],
+          "achievements": [
+            {
+              "id": "ms1-forza-a1",
+              "text": "Created Spatial Audio simulation, Haptic physics, UI frameworks, and rendering for Xbox & Forza Motorsports Version 1 — AAA top grossing racing game franchise.",
+              "tags": {
+                "type": ["ic"],
+                "domain": ["gaming", "audio"],
+                "technologies": ["C++", "Xbox", "DirectX"],
+                "customers": [],
+                "hasMetric": false
+              }
+            }
+          ]
+        },
+        {
+          "id": "ms1-auto",
+          "title": "Senior Software Development Engineer – Microsoft Automotive HMI Platform",
+          "roleTypes": ["ic"],
+          "achievements": [
+            {
+              "id": "ms1-auto-a1",
+              "text": "Created developer-facing UI Frameworks API for Automotive HMI (infotainment) using C++, MFC, and ARM.",
+              "tags": {
+                "type": ["ic", "api-design"],
+                "domain": ["automotive", "embedded"],
+                "technologies": ["C++", "MFC", "ARM"],
+                "customers": [],
+                "hasMetric": false
+              }
+            },
+            {
+              "id": "ms1-auto-a2",
+              "text": "Designed and built a UI framework with rich interaction controls, customizable themes, and Visual Studio design tools working with UI controls and themes. Resulted in multiple patents related to skinnable UI, multi-modal interactions, and embedded speech-controlled devices.",
+              "tags": {
+                "type": ["ic", "architecture", "api-design"],
+                "domain": ["automotive", "embedded"],
+                "technologies": ["C++", "MFC", "ARM", "Visual Studio"],
+                "customers": [],
+                "impact": { "metric": "patents", "value": "Multiple patents: skinnable UI, multi-modal interactions, embedded speech" },
+                "hasMetric": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "nada",
+      "company": "National Automobile Dealers Assoc (NADA)",
+      "location": "",
+      "startDate": "1997-06",
+      "endDate": "1997-12",
+      "current": false,
+      "roles": [
+        {
+          "id": "nada-dev",
+          "title": "Consultant / Developer / Architect, Valuation Application",
+          "roleTypes": ["ic"],
+          "achievements": [
+            {
+              "id": "nada-a1",
+              "text": "Designed and developed 3-tier car valuation application for subscription customers: secure core 'blue book' database, databound blue book controls, and out-of-the-box dealer information manager GUI software.",
+              "tags": {
+                "type": ["ic", "architecture"],
+                "domain": ["web", "desktop"],
+                "technologies": ["C++"],
+                "customers": [],
+                "hasMetric": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "spc",
+      "company": "Software Productivity Consortium",
+      "location": "",
+      "startDate": "1997-01",
+      "endDate": "1997-06",
+      "current": false,
+      "roles": [
+        {
+          "id": "spc-dev",
+          "title": "Consultant Software Engineer, Web Scraping Language Model",
+          "roleTypes": ["ic"],
+          "achievements": [
+            {
+              "id": "spc-a1",
+              "text": "Developed multi-threaded WWW website scanning spider using networked work queue job processing. Multiple machines consumed URLs from work queues, loaded and parsed websites, and queued further jobs. Centralized queue management coordinated progress and scaling across virtually unlimited machines.",
+              "tags": {
+                "type": ["ic", "architecture"],
+                "domain": ["web", "cloud"],
+                "technologies": ["C++", "multithreading"],
+                "customers": [],
+                "hasMetric": false
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+
+  "skills": {
+    "engineering": [
+      "3D Math", "Android", "Frameworks/API Design", "Heterogeneous/Coprocessor Utilization",
+      "Metal Shaders", "MV-HEVC", "Performance Optimization", "Reality Composer", "RealityKit",
+      "Real-time Networking", "Shader Graph Materials", "Spatial Audio", "Spatial Interaction Creation",
+      "SwiftUI", "Systems Architecture"
+    ],
+    "leadership": [
+      "Engineer Coaching", "Engineering Planning", "Negotiation", "Presentations",
+      "Roadmap Planning", "Staffing/Growth", "Strategy"
+    ],
+    "spatial": [
+      "3D Math", "3D Rendering", "Human Anatomy & Ergonomics", "RealityKit",
+      "Spatial Audio", "SwiftUI", "VisionOS"
+    ],
+    "general": [
+      "Developer Tools Creation", "Edge AI", "ML (GAN, LLM, RAG)", "Spatial Computing",
+      "Ubiquitous Computing", "Communication", "Distributed Systems", "iOS Development",
+      "Mobile Application Development", "MVC", "MVVM", "OOP", "Performance Analysis",
+      "Software Architecture", "Swift", "Technical Leadership"
+    ],
+    "tools": [
+      "Architecture Optimization", "C++", "Cross-Process dev/debug", "iOS", "Leadership",
+      "LLDB", "Multithreaded dev/debug", "Performance Optimization (Instruments)", "Swift",
+      "Swift Concurrency", "Xcode Leak Tracking", "Xcode Memory Graph", "Xcode Scene Graph Debugger"
+    ]
+  },
+
+  "publications": [
+    {
+      "id": "pub-1",
+      "title": "Teach Yourself Windows Phone 7 Application Development",
+      "publisher": "Sams",
+      "date": "2012-01",
+      "role": "Author"
+    },
+    {
+      "id": "pub-2",
+      "title": "Audio Anecdotes III: Chapter: Spatial Audio",
+      "publisher": "A. K. Peters",
+      "date": "2006-01",
+      "role": "Chapter Author"
+    }
+  ],
+
+  "volunteering": [
+    {
+      "id": "vol-1",
+      "organization": "Seattle AR/VR Hackathon",
+      "role": "Mentor",
+      "startDate": "2017-09",
+      "endDate": null,
+      "description": "Industry expert and mentor for Seattle AR/VR hackathon."
+    },
+    {
+      "id": "vol-2",
+      "organization": "Seattle AEC AR/VR Hackathon",
+      "role": "Judge",
+      "startDate": "2017-03",
+      "endDate": null,
+      "description": "Industry expert and judge for Seattle augmented reality and virtual reality hackathon."
+    },
+    {
+      "id": "vol-3",
+      "organization": "AT&T Seattle AR/VR Hackathon",
+      "role": "Judge & Mentor",
+      "date": "2017-03"
+    },
+    {
+      "id": "vol-4",
+      "organization": "Seattle VR Hackathon",
+      "role": "Judge",
+      "date": "2016-09"
+    },
+    {
+      "id": "vol-5",
+      "organization": "Pacific Science Center",
+      "role": "Exhibit Creator",
+      "startDate": "2010-10",
+      "endDate": "2011-08",
+      "description": "Installation of giant interactive Rubik's cube to inspire children to be interested in maths and puzzles."
+    }
+  ],
+
+  "certifications": [
+    { "id": "cert-1",  "title": "Creating Your First Android App with Kotlin",                        "issuer": "LinkedIn", "date": "2022-10" },
+    { "id": "cert-2",  "title": "5G Technology Strategy: Next-Generation Mobile Networking",          "issuer": "LinkedIn", "date": "2022-09" },
+    { "id": "cert-3",  "title": "Animation Foundations: Gesture",                                     "issuer": "LinkedIn", "date": "2022-09" },
+    { "id": "cert-4",  "title": "Apple watchOS App Development: Advanced APIs",                       "issuer": "LinkedIn", "date": "2022-09" },
+    { "id": "cert-5",  "title": "Building iOS Apps with CloudKit",                                    "issuer": "LinkedIn", "date": "2022-09" },
+    { "id": "cert-6",  "title": "Core Data in iOS: 2 Intermediate Topics",                           "issuer": "LinkedIn", "date": "2022-09" },
+    { "id": "cert-7",  "title": "Making Hybrid Teams Work",                                           "issuer": "LinkedIn", "date": "2022-09" },
+    { "id": "cert-8",  "title": "Presenting to Senior Executives",                                    "issuer": "LinkedIn", "date": "2022-09" },
+    { "id": "cert-9",  "title": "Satellite Internet and Communications: Fundamentals",                "issuer": "LinkedIn", "date": "2022-09" },
+    { "id": "cert-10", "title": "iOS 16 First Look for Developers",                                   "issuer": "LinkedIn", "date": "2022-09" },
+    { "id": "cert-11", "title": "Advanced iOS App Development: Core Animation",                       "issuer": "LinkedIn", "date": "2022-08" },
+    { "id": "cert-12", "title": "Advanced iOS App Development: Core Motion",                          "issuer": "LinkedIn", "date": "2022-08" },
+    { "id": "cert-13", "title": "Apple watchOS 7 App Development Essential Training",                 "issuer": "LinkedIn", "date": "2022-08" },
+    { "id": "cert-14", "title": "Learning TinyML",                                                    "issuer": "LinkedIn", "date": "2022-08" },
+    { "id": "cert-15", "title": "Practical Design Patterns in Swift",                                 "issuer": "LinkedIn", "date": "2022-08" },
+    { "id": "cert-16", "title": "Swift: Delegations and Data Sources",                                "issuer": "LinkedIn", "date": "2022-08" }
+  ],
+
+  "projects": [
+    {
+      "id": "proj-1",
+      "title": "Kinect for Windows",
+      "startDate": "2011-05",
+      "endDate": null
+    },
+    {
+      "id": "proj-2",
+      "title": "Xbox One – Kinect User Interactions",
+      "date": "2013-10",
+      "description": "Developed interpretation of body movements into interactions with on-screen interfaces."
+    },
+    {
+      "id": "proj-3",
+      "title": "Sams Windows Phone 7 Application Development",
+      "startDate": "2010-09",
+      "endDate": "2011-01",
+      "description": "Technical editor responsible for reviewing all content and samples for clarity and accuracy."
+    }
+  ]
+}

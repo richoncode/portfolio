@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Richard Bailey – Portfolio</title>
+  <link rel="stylesheet" href="src/css/main.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <h1 id="profile-name"></h1>
+      <p id="profile-title"></p>
+      <div id="profile-contact"></div>
+    </div>
+  </header>
+
+  <div class="filter-panel">
+    <div class="container">
+      <div class="search-row">
+        <input type="text" id="search-input" placeholder="Search achievements, technologies, customers…" autocomplete="off">
+        <span id="result-count" class="result-count"></span>
+        <button id="clear-btn" class="clear-btn">Clear All</button>
+      </div>
+      <div class="filter-group">
+        <span class="filter-label">Role</span>
+        <div class="filter-chips" id="type-filters"></div>
+      </div>
+      <div class="filter-group">
+        <span class="filter-label">Domain</span>
+        <div class="filter-chips" id="domain-filters"></div>
+      </div>
+      <div class="filter-group">
+        <label class="toggle-label">
+          <input type="checkbox" id="metrics-toggle">
+          <span>Metrics only</span>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <div class="container">
+      <div id="timeline"></div>
+    </div>
+  </main>
+
+  <script src="src/js/app.js"></script>
+</body>
+</html>
