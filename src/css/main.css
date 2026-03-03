@@ -163,10 +163,18 @@ a:hover { text-decoration: underline; }
   line-height: 1.4;
 }
 .chip:hover { border-color: var(--accent); color: var(--accent); }
+.chip--role[data-value="technical-management"]:hover { border-color: var(--purple); color: var(--purple); }
 
-.chip--role.chip--active {
+/* IC → blue, Technical Management → purple, matching role title badges */
+.chip--role.chip--active[data-value="ic"] {
   background: var(--accent);
   border-color: var(--accent);
+  color: #0d1117;
+  font-weight: 600;
+}
+.chip--role.chip--active[data-value="technical-management"] {
+  background: var(--purple);
+  border-color: var(--purple);
   color: #0d1117;
   font-weight: 600;
 }
