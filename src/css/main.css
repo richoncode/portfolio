@@ -261,6 +261,7 @@ a:hover { text-decoration: underline; }
   width: 38px;
   text-align: left;
   flex-shrink: 0;
+  white-space: nowrap;
 }
 
 /* ─── Metrics toggle ──────────────────────── */
