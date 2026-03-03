@@ -264,12 +264,66 @@ function renderTimeline() {
   }
 
   timeline.innerHTML = html;
+  renderExperienceChart();
 
   document.getElementById('result-count').textContent =
     `${totalVisible} achievement${totalVisible !== 1 ? 's' : ''}`;
 }
 
+// ─── Experience Chart ─────────────────────────────────────────────────────────
+
+function renderExperienceChart() {
+  const container = document.getElementById('experience-chart');
+  if (!container) return;
+
+  if (state.activeExperiences.size === 0) {
+    container.innerHTML = '';
+    return;
+  }
+
+  const months = {};
+  state.activeExperiences.forEach(exp => { months[exp] = 0; });
+
+  resumeData.experiences.forEach(exp => {
+    const dur = expDurationMonths(exp);
+    state.activeExperiences.forEach(filterExp => {
+      const present = exp.roles.some(role =>
+        role.achievements.some(a => (a.tags.domain || []).includes(filterExp))
+      );
+      if (present) months[filterExp] += dur;
+    });
+  });
+
+  const maxMonths = Math.max(...Object.values(months), 1);
+
+  container.innerHTML = [...state.activeExperiences].map(exp => {
+    const m = months[exp];
+    const pct = Math.round(m / maxMonths * 100);
+    const label = EXPERIENCE_LABELS[exp] || exp;
+    return `
+      <div class="exp-bar-row">
+        <span class="exp-bar-label">${escapeHtml(label)}</span>
+        <div class="exp-bar-track"><div class="exp-bar-fill" style="width:${pct}%"></div></div>
+        <span class="exp-bar-value">${fmtDur(m)}</span>
+      </div>`;
+  }).join('');
+}
+
 // ─── Helpers ──────────────────────────────────────────────────────────────────
+
+function expDurationMonths(exp) {
+  const start = new Date(exp.startDate + '-01');
+  const end   = exp.current ? new Date() : new Date(exp.endDate + '-01');
+  return Math.max(0, (end.getFullYear() - start.getFullYear()) * 12 + (end.getMonth() - start.getMonth()));
+}
+
+function fmtDur(months) {
+  const y = Math.floor(months / 12);
+  const m = months % 12;
+  if (y === 0) return `${m}m`;
+  if (m === 0) return `${y}y`;
+  return `${y}y ${m}m`;
+}
 
 function formatDate(dateStr) {
   if (!dateStr) return '';
