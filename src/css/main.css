@@ -316,9 +316,8 @@ main { padding: 28px 0 60px; }
   border-radius: 10px;
   font-weight: 600;
 }
-.badge--ic         { background: rgba(88,166,255,0.12);  color: var(--accent);  border: 1px solid rgba(88,166,255,0.25); }
-.badge--management { background: rgba(188,140,255,0.12); color: var(--purple);  border: 1px solid rgba(188,140,255,0.25); }
-.badge--leadership { background: rgba(210,153,34,0.12);  color: var(--orange);  border: 1px solid rgba(210,153,34,0.25); }
+.badge--ic                   { background: rgba(88,166,255,0.12);  color: var(--accent);  border: 1px solid rgba(88,166,255,0.25); }
+.badge--technical-management { background: rgba(188,140,255,0.12); color: var(--purple);  border: 1px solid rgba(188,140,255,0.25); }
 
 /* ─── Search highlight ────────────────────── */
 mark {

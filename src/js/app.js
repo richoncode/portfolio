@@ -2,20 +2,21 @@
 
 // ─── Label Maps ───────────────────────────────────────────────────────────────
 
-const TYPE_LABELS = {
-  'ic':           'Individual Contributor',
-  'management':   'Management',
-  'leadership':   'Leadership',
-  'architecture': 'Architecture',
-  'performance':  'Performance',
-  'product':      'Product',
-  'prototyping':  'Prototyping',
-  'api-design':   'API Design',
-  'mentoring':    'Mentoring',
-  'ml':           'ML / AI',
+const ROLE_LABELS = {
+  'ic':                   'Individual Contributor',
+  'technical-management': 'Technical Management',
 };
 
-const DOMAIN_LABELS = {
+const EXPERIENCE_LABELS = {
+  // experience types
+  'architecture':  'Architecture',
+  'performance':   'Performance',
+  'product':       'Product',
+  'prototyping':   'Prototyping',
+  'api-design':    'API Design',
+  'mentoring':     'Mentoring',
+  'ml':            'ML / AI',
+  // domains
   'spatial-computing': 'Spatial Computing',
   'visionos':          'VisionOS',
   'ar':                'AR',
@@ -26,7 +27,6 @@ const DOMAIN_LABELS = {
   'gaming':            'Gaming',
   'automotive':        'Automotive',
   'industrial':        'Industrial',
-  'ml':                'ML / AI',
   'web':               'Web',
   'audio':             'Audio',
   'video':             'Video',
@@ -82,10 +82,10 @@ function renderProfile() {
 // ─── Filters ──────────────────────────────────────────────────────────────────
 
 function renderFilters() {
-  const { types, domains } = resumeData.filterTaxonomy;
+  const { roles, experiences } = resumeData.filterTaxonomy;
 
-  buildChips(document.getElementById('type-filters'),   types,   'type',   TYPE_LABELS);
-  buildChips(document.getElementById('domain-filters'), domains, 'domain', DOMAIN_LABELS);
+  buildChips(document.getElementById('type-filters'),   roles,       'role',       ROLE_LABELS);
+  buildChips(document.getElementById('domain-filters'), experiences, 'experience', EXPERIENCE_LABELS);
 
   document.getElementById('search-input').addEventListener('input', e => {
     state.searchQuery = e.target.value.toLowerCase().trim();
@@ -112,7 +112,7 @@ function buildChips(container, values, category, labelMap) {
 }
 
 function toggleFilter(category, value, chipEl) {
-  const set = category === 'type' ? state.activeTypes : state.activeDomains;
+  const set = category === 'role' ? state.activeTypes : state.activeDomains;
   if (set.has(value)) {
     set.delete(value);
     chipEl.classList.remove('chip--active');
@@ -221,7 +221,7 @@ function renderTimeline() {
       }).join('');
 
       const roleTypeBadges = role.roleTypes
-        .map(t => `<span class="badge badge--role badge--${t}">${TYPE_LABELS[t] || t}</span>`)
+        .map(t => `<span class="badge badge--role badge--${t}">${ROLE_LABELS[t] || t}</span>`)
         .join('');
 
       rolesHtml += `
