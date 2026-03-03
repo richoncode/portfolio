@@ -206,17 +206,25 @@ function renderTimeline() {
           .map(c => `<span class="badge badge--customer">${escapeHtml(c)}</span>`)
           .join('');
 
+        const roleBadges = (a.tags.type || [])
+          .map(t => `<span class="badge badge--role badge--${t}">${ROLE_LABELS[t] || t}</span>`)
+          .join('');
+
         const metricHtml = a.tags.impact
           ? `<div class="achievement-metric">▲ ${escapeHtml(a.tags.impact.metric)}: <strong>${escapeHtml(a.tags.impact.value)}</strong></div>`
           : '';
 
-        const hasBadges = techBadges || custBadges;
+        const hasFooter = techBadges || custBadges || roleBadges;
 
         return `
           <li class="achievement">
             <p class="achievement-text">${highlight(a.text)}</p>
             ${metricHtml}
-            ${hasBadges ? `<div class="achievement-badges">${techBadges}${custBadges}</div>` : ''}
+            ${hasFooter ? `
+            <div class="achievement-footer">
+              <div class="achievement-badges">${techBadges}${custBadges}</div>
+              <div class="achievement-roles">${roleBadges}</div>
+            </div>` : ''}
           </li>`;
       }).join('');
 

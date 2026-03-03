@@ -289,11 +289,24 @@ main { padding: 28px 0 60px; }
   font-family: var(--mono);
 }
 
-.achievement-badges {
+.achievement-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 12px;
   margin-top: 8px;
+}
+
+.achievement-badges {
   display: flex;
   flex-wrap: wrap;
   gap: 4px;
+}
+
+.achievement-roles {
+  display: flex;
+  gap: 4px;
+  flex-shrink: 0;
 }
 
 /* ─── Badges ──────────────────────────────── */
