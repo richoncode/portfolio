@@ -62,6 +62,7 @@ async function init() {
     if (!resp.ok) throw new Error(resp.statusText);
     resumeData = await resp.json();
     renderProfile();
+    renderIntro();
     renderFilters();
     renderTimeline();
     initTabs();
@@ -91,6 +92,14 @@ function renderProfile() {
     <a href="https://${p.linkedin}" target="_blank" rel="noopener">${p.linkedin}</a>
     ${p.version ? `<span class="profile-version">v${escapeHtml(p.version)}</span>` : ''}
   `;
+}
+
+// ─── Intro ────────────────────────────────────────────────────────────────────
+
+function renderIntro() {
+  const paras = resumeData.profile.intro || [];
+  document.getElementById('intro-content').innerHTML =
+    paras.map(p => `<p class="intro-para">${escapeHtml(p)}</p>`).join('');
 }
 
 // ─── Filters ──────────────────────────────────────────────────────────────────

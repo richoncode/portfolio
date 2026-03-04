@@ -6,6 +6,10 @@
     "linkedin": "linkedin.com/in/richoncode",
     "title": "Technical Management & Individual Contributor",
     "version": "1.0",
+    "intro": [
+      "As a proven developer, I have successfully shipped over 20 products using C++, with additional projects in C#, Unity 3D, and Java, encompassing areas such as embedded systems, IoT, and cloud computing. My technical proficiency is complemented by a strong patent portfolio that includes more than 20 patents in consumer device technology, natural interaction, and complex 3D game engine architecture, underscoring my capability to deliver pioneering and strategic solutions in technology development.",
+      "My development background is extensive, with a deep understanding of algorithms, design patterns, and multiple programming languages. I have focused for 25+ years on C++ and have significant experience in Python, Swift, & C#. I have pioneered 9 version-1 devices and numerous non-device products, achieving substantial market adoption. My projects in AI and machine learning have spanned estimation, prediction, and advanced neural network applications, including DNNs, CNNs, DCGANs, and time-series analysis with LSTMs."
+    ],
     "summary": [
       "16 years in engineering management from Manager to Vice President",
       "Led teams ranging from 3 to 70 engineers with high year-over-year developer retention",

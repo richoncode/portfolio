@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Richard Bailey – Portfolio</title>
-  <link rel="stylesheet" href="src/css/main.css?v=11">
+  <link rel="stylesheet" href="src/css/main.css?v=12">
 </head>
 <body>
 
@@ -15,13 +15,22 @@
       <div id="profile-contact"></div>
       <div id="admin-prompt-banner" class="admin-prompt-banner"></div>
       <nav class="tabs">
-        <button class="tab tab--active" data-tab="experience">Experience</button>
+        <button class="tab tab--active" data-tab="intro">Introduction</button>
+        <button class="tab" data-tab="experience">Experience</button>
         <button class="tab" data-tab="timeline">Timeline</button>
       </nav>
     </div>
   </header>
 
-  <div id="pane-experience" class="tab-pane tab-pane--active">
+  <div id="pane-intro" class="tab-pane tab-pane--active">
+    <main>
+      <div class="container">
+        <div id="intro-content" class="intro-content"></div>
+      </div>
+    </main>
+  </div>
+
+  <div id="pane-experience" class="tab-pane">
     <div class="filter-panel">
       <div class="container">
         <div class="filter-bar">
@@ -73,6 +82,6 @@
 
   <div id="admin-popout" class="admin-popout"></div>
 
-  <script src="src/js/app.js?v=10"></script>
+  <script src="src/js/app.js?v=11"></script>
 </body>
 </html>

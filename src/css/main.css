@@ -661,6 +661,20 @@ mark {
   font-size: 1.1rem;
 }
 
+/* ─── Intro ───────────────────────────────── */
+.intro-content {
+  max-width: 680px;
+  padding: 40px 0 60px;
+}
+
+.intro-para {
+  font-size: 1rem;
+  line-height: 1.85;
+  color: var(--text);
+  margin-bottom: 28px;
+}
+.intro-para:last-child { margin-bottom: 0; }
+
 /* ─── Career Timeline ─────────────────────── */
 .career-timeline {
   position: relative;
