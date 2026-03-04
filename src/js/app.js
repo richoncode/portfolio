@@ -397,6 +397,8 @@ function switchTab(name) {
     .forEach(p => p.classList.toggle('tab-pane--active', p.id === `pane-${name}`));
   if (name === 'timeline' && !document.getElementById('career-timeline').innerHTML)
     renderCareerTimeline();
+  if (name === 'learning' && !document.getElementById('learning-content').innerHTML)
+    renderLearning();
 }
 
 // ─── Career Timeline ──────────────────────────────────────────────────────────
@@ -495,6 +497,60 @@ function renderCareerTimeline() {
   }).join('');
 
   container.innerHTML = `<div class="career-timeline">${html}</div>`;
+}
+
+// ─── Learning ─────────────────────────────────────────────────────────────────
+
+function renderLearning() {
+  const { certifications, projects, volunteering } = resumeData.learning;
+
+  const certsHtml = certifications.map(c => `
+    <div class="learn-cert-row">
+      <span class="learn-cert-title">${escapeHtml(c.title)}</span>
+      <span class="learn-cert-meta">
+        <span class="learn-issuer-badge">${escapeHtml(c.issuer)}</span>
+        <span class="learn-date">${formatDate(c.date)}</span>
+      </span>
+    </div>`).join('');
+
+  const projectsHtml = projects.map(p => {
+    const dateStr = formatDate(p.startDate) + ' – ' + (p.current ? 'Present' : formatDate(p.endDate));
+    return `
+      <div class="learn-card">
+        <div class="learn-card-header">
+          <span class="learn-card-title">${escapeHtml(p.title)}</span>
+          <span class="learn-date">${dateStr}</span>
+        </div>
+        ${p.description ? `<p class="learn-card-desc">${escapeHtml(p.description)}</p>` : ''}
+      </div>`;
+  }).join('');
+
+  const volHtml = volunteering.map(v => {
+    const dateStr = formatDate(v.startDate) + ' – ' + (v.current ? 'Present' : formatDate(v.endDate));
+    return `
+      <div class="learn-card">
+        <div class="learn-card-header">
+          <span class="learn-card-title">${escapeHtml(v.org)}</span>
+          <span class="learn-date">${dateStr}</span>
+        </div>
+        <div class="learn-card-role">${escapeHtml(v.role)}</div>
+        ${v.description ? `<p class="learn-card-desc">${escapeHtml(v.description)}</p>` : ''}
+      </div>`;
+  }).join('');
+
+  document.getElementById('learning-content').innerHTML = `
+    <div class="learn-section">
+      <h2 class="learn-section-title">Certifications</h2>
+      <div class="learn-cert-list">${certsHtml}</div>
+    </div>
+    <div class="learn-section">
+      <h2 class="learn-section-title">Projects</h2>
+      ${projectsHtml}
+    </div>
+    <div class="learn-section">
+      <h2 class="learn-section-title">Volunteering &amp; Leadership</h2>
+      ${volHtml}
+    </div>`;
 }
 
 // ─── Admin Mode ───────────────────────────────────────────────────────────────

@@ -40,6 +40,42 @@
       "Passionate about machine learning and scalable, ubiquitous computing"
     ]
   },
+  "learning": {
+    "certifications": [
+      { "title": "Creating Your First Android App with Kotlin",                                         "date": "2022-10", "issuer": "LinkedIn" },
+      { "title": "5G Technology Strategy: Next-Generation Mobile Networking",                           "date": "2022-09", "issuer": "LinkedIn" },
+      { "title": "Animation Foundations: Gesture",                                                      "date": "2022-09", "issuer": "LinkedIn" },
+      { "title": "Apple watchOS App Development: Advanced APIs",                                        "date": "2022-09", "issuer": "LinkedIn" },
+      { "title": "Building iOS Apps with CloudKit",                                                     "date": "2022-09", "issuer": "LinkedIn" },
+      { "title": "Code Clinic: R",                                                                      "date": "2022-09", "issuer": "LinkedIn" },
+      { "title": "Core Data in iOS: 2 Intermediate Topics",                                             "date": "2022-09", "issuer": "LinkedIn" },
+      { "title": "Design Your First Infographic",                                                       "date": "2022-09", "issuer": "LinkedIn" },
+      { "title": "Making Hybrid Teams Work",                                                            "date": "2022-09", "issuer": "LinkedIn" },
+      { "title": "Presenting to Senior Executives",                                                     "date": "2022-09", "issuer": "LinkedIn" },
+      { "title": "Satellite Internet and Communications: Fundamentals",                                 "date": "2022-09", "issuer": "LinkedIn" },
+      { "title": "The Third Door: How the World's Most Successful People Launched Their Careers",       "date": "2022-09", "issuer": "LinkedIn" },
+      { "title": "iOS 16 First Look for Developers",                                                    "date": "2022-09", "issuer": "LinkedIn" },
+      { "title": "Accounting Foundations: Statement of Cash Flows",                                     "date": "2022-08", "issuer": "LinkedIn" },
+      { "title": "Advanced iOS App Development: Core Animation",                                        "date": "2022-08", "issuer": "LinkedIn" },
+      { "title": "Advanced iOS App Development: Core Motion",                                           "date": "2022-08", "issuer": "LinkedIn" },
+      { "title": "Apple watchOS 7 App Development Essential Training",                                  "date": "2022-08", "issuer": "LinkedIn" },
+      { "title": "Learning TinyML",                                                                     "date": "2022-08", "issuer": "LinkedIn" },
+      { "title": "Practical Design Patterns in Swift",                                                  "date": "2022-08", "issuer": "LinkedIn" },
+      { "title": "Swift: Delegations and Data Sources",                                                 "date": "2022-08", "issuer": "LinkedIn" }
+    ],
+    "projects": [
+      { "title": "Kinect for Windows",                              "startDate": "2011-05", "endDate": null,      "current": true,  "description": null },
+      { "title": "Xbox One - Kinect User Interactions",             "startDate": "2013-10", "endDate": "2013-10", "current": false, "description": "Developed interpretation of body movements into interactions with on screen interfaces." },
+      { "title": "Sams Windows Phone 7 Application Development",   "startDate": "2010-09", "endDate": "2011-01", "current": false, "description": "Technical editor responsible for reviewing all content and samples for clarity and accuracy." }
+    ],
+    "volunteering": [
+      { "org": "Seattle AR/VR Hackathon",       "startDate": "2017-09", "endDate": null,      "current": true,  "role": "Mentor",          "description": "Industry expert and mentor for Seattle AR/VR hackathon." },
+      { "org": "Seattle AEC AR/VR Hackathon",   "startDate": "2017-03", "endDate": null,      "current": true,  "role": "Judge",           "description": "Industry expert and judge for Seattle augmented reality and virtual reality hackathon." },
+      { "org": "AT&T Seattle AR/VR Hackathon",  "startDate": "2017-03", "endDate": "2017-03", "current": false, "role": "Judge & Mentor",  "description": null },
+      { "org": "Seattle VR Hackathon",           "startDate": "2016-09", "endDate": "2016-09", "current": false, "role": "Judge",           "description": null },
+      { "org": "Pacific Science Center",         "startDate": "2010-10", "endDate": "2011-08", "current": false, "role": "Exhibit Creator", "description": "Installation of giant interactive Rubik's cube to inspire children to be interested in maths and puzzles." }
+    ]
+  },
   "filterTaxonomy": {
     "roles": [
       "ic",
