@@ -67,6 +67,8 @@ async function init() {
     initTabs();
     initAdmin();
     initAdminPopout();
+    syncStickyTop();
+    window.addEventListener('resize', syncStickyTop);
   } catch (err) {
     document.getElementById('timeline').innerHTML =
       `<div class="no-results">Failed to load resume data: ${err.message}</div>`;
@@ -577,6 +579,11 @@ function commitPopout() {
   updateAdminPrompt();
 }
 
+function syncStickyTop() {
+  const h = document.querySelector('.site-header').offsetHeight;
+  document.querySelector('.filter-panel').style.top = h + 'px';
+}
+
 function updateAdminPrompt() {
   const banner  = document.getElementById('admin-prompt-banner');
   const entries = Object.entries(adminEdits).filter(([, e]) => e.years > 0 || e.months > 0);
@@ -584,6 +591,7 @@ function updateAdminPrompt() {
   if (entries.length === 0) {
     banner.innerHTML = '';
     currentAdminPrompt = '';
+    syncStickyTop();
     return;
   }
 
@@ -598,6 +606,8 @@ function updateAdminPrompt() {
       <span class="admin-prompt-text">${escapeHtml(currentAdminPrompt)}</span>
       <button class="admin-prompt-copy" onclick="copyAdminPrompt()">Copy Prompt</button>
     </div>`;
+
+  syncStickyTop();
 }
 
 function copyAdminPrompt() {
