@@ -397,6 +397,8 @@ function switchTab(name) {
     .forEach(p => p.classList.toggle('tab-pane--active', p.id === `pane-${name}`));
   if (name === 'timeline' && !document.getElementById('career-timeline').innerHTML)
     renderCareerTimeline();
+  if (name === 'projects' && !document.getElementById('projects-content').innerHTML)
+    renderProjects();
   if (name === 'learning' && !document.getElementById('learning-content').innerHTML)
     renderLearning();
 }
@@ -501,8 +503,26 @@ function renderCareerTimeline() {
 
 // ─── Learning ─────────────────────────────────────────────────────────────────
 
+function renderProjects() {
+  const { projects } = resumeData.learning;
+  document.getElementById('projects-content').innerHTML = `
+    <div class="learn-section" style="border-top:none; padding-top:32px">
+      ${projects.map(p => {
+        const dateStr = formatDate(p.startDate) + ' – ' + (p.current ? 'Present' : formatDate(p.endDate));
+        return `
+          <div class="learn-card">
+            <div class="learn-card-header">
+              <span class="learn-card-title">${escapeHtml(p.title)}</span>
+              <span class="learn-date">${dateStr}</span>
+            </div>
+            ${p.description ? `<p class="learn-card-desc">${escapeHtml(p.description)}</p>` : ''}
+          </div>`;
+      }).join('')}
+    </div>`;
+}
+
 function renderLearning() {
-  const { certifications, projects, volunteering } = resumeData.learning;
+  const { certifications, volunteering } = resumeData.learning;
 
   const certsHtml = certifications.map(c => `
     <div class="learn-cert-row">
@@ -512,18 +532,6 @@ function renderLearning() {
         <span class="learn-date">${formatDate(c.date)}</span>
       </span>
     </div>`).join('');
-
-  const projectsHtml = projects.map(p => {
-    const dateStr = formatDate(p.startDate) + ' – ' + (p.current ? 'Present' : formatDate(p.endDate));
-    return `
-      <div class="learn-card">
-        <div class="learn-card-header">
-          <span class="learn-card-title">${escapeHtml(p.title)}</span>
-          <span class="learn-date">${dateStr}</span>
-        </div>
-        ${p.description ? `<p class="learn-card-desc">${escapeHtml(p.description)}</p>` : ''}
-      </div>`;
-  }).join('');
 
   const volHtml = volunteering.map(v => {
     const dateStr = formatDate(v.startDate) + ' – ' + (v.current ? 'Present' : formatDate(v.endDate));
@@ -542,10 +550,6 @@ function renderLearning() {
     <div class="learn-section">
       <h2 class="learn-section-title">Certifications</h2>
       <div class="learn-cert-list">${certsHtml}</div>
-    </div>
-    <div class="learn-section">
-      <h2 class="learn-section-title">Projects</h2>
-      ${projectsHtml}
     </div>
     <div class="learn-section">
       <h2 class="learn-section-title">Volunteering &amp; Leadership</h2>
