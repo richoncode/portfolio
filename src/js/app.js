@@ -65,6 +65,7 @@ async function init() {
     renderFilters();
     renderTimeline();
     initTabs();
+    initFilterToggle();
     initAdmin();
     initAdminPopout();
     syncStickyTop();
@@ -88,6 +89,7 @@ function renderProfile() {
     <a href="mailto:${p.email}">${p.email}</a>
     <span class="sep">·</span>
     <a href="https://${p.linkedin}" target="_blank" rel="noopener">${p.linkedin}</a>
+    ${p.version ? `<span class="profile-version">v${escapeHtml(p.version)}</span>` : ''}
   `;
 }
 
@@ -287,6 +289,7 @@ function renderTimeline() {
 
   timeline.innerHTML = html;
   renderExperienceChart();
+  updateFilterCount();
 
   document.getElementById('result-count').textContent =
     `${totalVisible} achievement${totalVisible !== 1 ? 's' : ''}`;
@@ -352,6 +355,22 @@ function formatDate(dateStr) {
   const [year, month] = dateStr.split('-');
   const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
   return `${months[parseInt(month, 10) - 1]} ${year}`;
+}
+
+// ─── Filter Toggle ────────────────────────────────────────────────────────────
+
+function initFilterToggle() {
+  document.getElementById('filter-toggle').addEventListener('click', () => {
+    document.querySelector('.filter-panel').classList.toggle('filter-panel--open');
+    syncStickyTop();
+  });
+}
+
+function updateFilterCount() {
+  const n = state.activeTypes.size + state.activeExperiences.size
+    + (state.metricsOnly ? 1 : 0) + (state.searchQuery ? 1 : 0);
+  const el = document.getElementById('filter-active-count');
+  if (el) el.textContent = n > 0 ? String(n) : '';
 }
 
 // ─── Tabs ─────────────────────────────────────────────────────────────────────
