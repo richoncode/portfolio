@@ -3496,16 +3496,6 @@
           ],
           "url": "https://patents.google.com/patent/US12159359",
           "summary": "An AR system that combines multiple spatial registrations or coordinate systems to accurately place virtual overlays during live events. By blending different tracking sources—camera tracking, venue models, broadcast feeds—the system improves stability and alignment of AR graphics displayed to viewers."
-        },
-        {
-          "id": "pat-av-presence",
-          "title": "Audiovisual Presence Transitions in Collaborative Reality",
-          "numbers": [
-            "US 12,014,455 (2024)",
-            "US 12,354,204 (2025)"
-          ],
-          "url": "https://patents.google.com/patent/US12014455",
-          "summary": "Technology that manages transitions between different forms of user presence in collaborative XR environments. A participant may move between avatar representations, live video, spatial audio, or immersive perspectives. The system orchestrates audiovisual changes smoothly so users perceive consistent identity and presence across collaboration modes."
         }
       ]
     },
