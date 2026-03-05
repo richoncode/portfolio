@@ -3470,16 +3470,6 @@
           "summary": "A cursor system designed specifically for mixed-reality environments where virtual content is layered over the real world. The system dynamically adjusts cursor appearance and interaction behavior depending on depth, occlusion, and visual context. The \"eclipse\" metaphor allows the cursor to partially mask or highlight objects so users can accurately target virtual elements without losing situational awareness of the real environment."
         },
         {
-          "id": "pat-ar-scrollbar",
-          "title": "Augmented Reality Scrollbar",
-          "numbers": [
-            "US 11,157,159 (2021)",
-            "US 11,520,477 (2022)"
-          ],
-          "url": "https://patents.google.com/patent/US11520477",
-          "summary": "A scrolling control designed for augmented reality interfaces, where conventional UI widgets like scrollbars are difficult to represent spatially. The system maps scrolling to spatial gestures and contextual UI overlays so users can navigate large content lists within AR displays while maintaining a stable visual reference in 3D space."
-        },
-        {
           "id": "pat-locate-friends",
           "title": "Locating Friends Within Venue in an Augmented Reality System",
           "numbers": [
