@@ -401,6 +401,8 @@ function switchTab(name) {
     renderProjects();
   if (name === 'learning' && !document.getElementById('learning-content').innerHTML)
     renderLearning();
+  if (name === 'skills' && !document.getElementById('skills-content').innerHTML)
+    renderSkills();
 }
 
 // ─── Career Timeline ──────────────────────────────────────────────────────────
@@ -597,6 +599,37 @@ function renderLearning() {
       renderLearning();
     });
   });
+}
+
+// ─── Skills & Publications ────────────────────────────────────────────────────
+
+function renderSkills() {
+  const { skills = [], publications = [] } = resumeData;
+
+  const skillsHtml = skills.map(group => `
+    <div class="skill-group">
+      <h3 class="skill-group-title">${escapeHtml(group.category)}</h3>
+      <div class="skill-chips">
+        ${group.items.map(s => `<span class="skill-chip">${escapeHtml(s)}</span>`).join('')}
+      </div>
+    </div>`).join('');
+
+  const pubHtml = publications.length ? publications.map(p => `
+    <div class="pub-card">
+      <div class="pub-title">${p.url ? `<a href="${p.url}" target="_blank" rel="noopener">${escapeHtml(p.title)}</a>` : escapeHtml(p.title)}</div>
+      ${p.venue ? `<div class="pub-venue">${escapeHtml(p.venue)}</div>` : ''}
+      ${p.date ? `<div class="pub-date">${formatDate(p.date)}</div>` : ''}
+    </div>`).join('') : '';
+
+  document.getElementById('skills-content').innerHTML = `
+    <div class="skills-section">
+      ${skillsHtml}
+    </div>
+    ${publications.length ? `
+    <div class="skills-section skills-section--pubs">
+      <h2 class="learn-section-title">Publications</h2>
+      ${pubHtml}
+    </div>` : ''}`;
 }
 
 // ─── Admin Mode ───────────────────────────────────────────────────────────────

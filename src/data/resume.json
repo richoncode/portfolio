@@ -3300,92 +3300,102 @@
       ]
     }
   ],
-  "skills": {
-    "engineering": [
-      "3D Math",
-      "Android",
-      "Frameworks/API Design",
-      "Heterogeneous/Coprocessor Utilization",
-      "Metal Shaders",
-      "MV-HEVC",
-      "Performance Optimization",
-      "Reality Composer",
-      "RealityKit",
-      "Real-time Networking",
-      "Shader Graph Materials",
-      "Spatial Audio",
-      "Spatial Interaction Creation",
-      "SwiftUI",
-      "Systems Architecture"
-    ],
-    "leadership": [
-      "Engineer Coaching",
-      "Engineering Planning",
-      "Negotiation",
-      "Presentations",
-      "Roadmap Planning",
-      "Staffing/Growth",
-      "Strategy"
-    ],
-    "spatial": [
-      "3D Math",
-      "3D Rendering",
-      "Human Anatomy & Ergonomics",
-      "RealityKit",
-      "Spatial Audio",
-      "SwiftUI",
-      "VisionOS"
-    ],
-    "general": [
-      "Developer Tools Creation",
-      "Edge AI",
-      "ML (GAN, LLM, RAG)",
-      "Spatial Computing",
-      "Ubiquitous Computing",
-      "Communication",
-      "Distributed Systems",
-      "iOS Development",
-      "Mobile Application Development",
-      "MVC",
-      "MVVM",
-      "OOP",
-      "Performance Analysis",
-      "Software Architecture",
-      "Swift",
-      "Technical Leadership"
-    ],
-    "tools": [
-      "Architecture Optimization",
-      "C++",
-      "Cross-Process dev/debug",
-      "iOS",
-      "Leadership",
-      "LLDB",
-      "Multithreaded dev/debug",
-      "Performance Optimization (Instruments)",
-      "Swift",
-      "Swift Concurrency",
-      "Xcode Leak Tracking",
-      "Xcode Memory Graph",
-      "Xcode Scene Graph Debugger"
-    ]
-  },
-  "publications": [
+  "skills": [
     {
-      "id": "pub-1",
-      "title": "Teach Yourself Windows Phone 7 Application Development",
-      "publisher": "Sams",
-      "date": "2012-01",
-      "role": "Author"
+      "category": "Specialties",
+      "items": [
+        "Developer Tools Creation",
+        "Edge AI",
+        "ML (GAN, LLM, RAG)",
+        "Spatial Computing",
+        "Ubiquitous Computing"
+      ]
     },
     {
-      "id": "pub-2",
-      "title": "Audio Anecdotes III: Chapter: Spatial Audio",
-      "publisher": "A. K. Peters",
-      "date": "2006-01",
-      "role": "Chapter Author"
+      "category": "Engineering",
+      "items": [
+        "3D Math",
+        "Android",
+        "Frameworks / API Design",
+        "Heterogeneous / Coprocessor Utilization",
+        "Metal Shaders",
+        "MV-HEVC",
+        "Performance Optimization",
+        "Reality Composer",
+        "RealityKit",
+        "Real-time Networking",
+        "Shader Graph Materials",
+        "Spatial Audio",
+        "Spatial Interaction Creation",
+        "SwiftUI",
+        "Systems Architecture"
+      ]
+    },
+    {
+      "category": "Teamwork",
+      "items": [
+        "Engineer Coaching",
+        "Engineering Planning",
+        "Negotiation",
+        "Presentations",
+        "Roadmap Planning",
+        "Staffing / Growth",
+        "Strategy"
+      ]
+    },
+    {
+      "category": "Spatial Computing",
+      "items": [
+        "3D Math",
+        "3D Rendering",
+        "Human Anatomy & Ergonomics",
+        "RealityKit",
+        "Spatial Audio",
+        "SwiftUI",
+        "VisionOS"
+      ]
+    },
+    {
+      "category": "General",
+      "items": [
+        "Architecture Optimization",
+        "C++",
+        "Cross-Process dev/debug",
+        "iOS",
+        "Leadership",
+        "LLDB",
+        "Multithreaded dev/debug",
+        "Performance Optimization (Instruments)",
+        "Swift",
+        "Swift Concurrency",
+        "Xcode Leak Tracking",
+        "Xcode Memory Graph",
+        "Xcode Scene Graph Debugger"
+      ]
+    },
+    {
+      "category": "Foundations",
+      "items": [
+        "Communication",
+        "Computer Science",
+        "Distributed Systems",
+        "iOS Development",
+        "Mobile Application Development",
+        "MVC",
+        "MVVM",
+        "Object-Oriented Programming (OOP)",
+        "Optimization",
+        "Performance Analysis",
+        "Software Architecture",
+        "Software Design",
+        "Software Development",
+        "Software Engineering",
+        "Swift",
+        "Technical Leadership"
+      ]
     }
   ],
+  "publications": [],
   "volunteering": [
     {
       "id": "vol-1",
