@@ -3585,7 +3585,7 @@
         },
         {
           "id": "pat-auto-reverb",
-          "title": "Automatic Reverberation from Game Geometry",
+          "title": "Automatic Reverberation from Spatial Geometry",
           "numbers": [
             "US 7,606,375 (2009)",
             "US 8,249,264 (2012)"
