@@ -3486,6 +3486,45 @@
           ],
           "url": "https://patents.google.com/patent/US12159359",
           "summary": "An AR system that combines multiple spatial registrations or coordinate systems to accurately place virtual overlays during live events. By blending different tracking sources—camera tracking, venue models, broadcast feeds—the system improves stability and alignment of AR graphics displayed to viewers."
+        },
+        {
+          "id": "pat-dynamic-ui",
+          "title": "Dynamic Adjustment of User Interface",
+          "numbers": [
+            "US 9,423,939 (2016)",
+            "US 10,394,314 (2019)",
+            "US 11,099,637 (2021)"
+          ],
+          "url": "https://patents.google.com/patent/US9423939",
+          "summary": "Adapts graphical user interfaces dynamically based on user behavior, context, and interaction state. UI elements may resize, reposition, or change functionality depending on how the user interacts with the system, improving usability across devices and input methods."
+        },
+        {
+          "id": "pat-ergonomic-cursor",
+          "title": "Ergonomic Physical Interaction Zone Cursor Mapping",
+          "numbers": [
+            "US 9,063,578 (2015)",
+            "US 9,342,160 (2016)"
+          ],
+          "url": "https://patents.google.com/patent/US9063578",
+          "summary": "Maps physical hand movement zones to cursor motion in a way that reduces fatigue and improves precision. The system adjusts the control mapping to match ergonomic interaction zones, supporting natural input devices such as motion controllers or touchless sensors."
+        },
+        {
+          "id": "pat-target-press",
+          "title": "Target and Press Natural User Input",
+          "numbers": [
+            "US 13/715,686 (2014)"
+          ],
+          "url": "https://patents.google.com/patent/US20140173179",
+          "summary": "A natural interaction model where users target objects and perform press-like gestures without physical buttons. The system interprets gestures and motion patterns as virtual presses to interact with UI elements."
+        },
+        {
+          "id": "pat-motion-effect",
+          "title": "Motion Effect Reduction for Displays and Touch Input",
+          "numbers": [
+            "US 9,990,003 (2018)"
+          ],
+          "url": "https://patents.google.com/patent/US9990003",
+          "summary": "Reduces motion artifacts that occur when users interact with displays during movement. It compensates for visual latency and touch input discrepancies to maintain stable interaction in mobile or head-tracked displays."
         }
       ]
     },
@@ -3553,50 +3592,6 @@
           ],
           "url": "https://patents.google.com/patent/US7606375",
           "summary": "Automatically computes environmental reverberation effects based on 3D game geometry. By analyzing the shapes and materials of virtual spaces, the system generates realistic acoustic reflections without manual tuning by audio designers."
-        }
-      ]
-    },
-    {
-      "group": "XR / Natural User Interface Techniques",
-      "inventions": [
-        {
-          "id": "pat-dynamic-ui",
-          "title": "Dynamic Adjustment of User Interface",
-          "numbers": [
-            "US 9,423,939 (2016)",
-            "US 10,394,314 (2019)",
-            "US 11,099,637 (2021)"
-          ],
-          "url": "https://patents.google.com/patent/US9423939",
-          "summary": "Adapts graphical user interfaces dynamically based on user behavior, context, and interaction state. UI elements may resize, reposition, or change functionality depending on how the user interacts with the system, improving usability across devices and input methods."
-        },
-        {
-          "id": "pat-ergonomic-cursor",
-          "title": "Ergonomic Physical Interaction Zone Cursor Mapping",
-          "numbers": [
-            "US 9,063,578 (2015)",
-            "US 9,342,160 (2016)"
-          ],
-          "url": "https://patents.google.com/patent/US9063578",
-          "summary": "Maps physical hand movement zones to cursor motion in a way that reduces fatigue and improves precision. The system adjusts the control mapping to match ergonomic interaction zones, supporting natural input devices such as motion controllers or touchless sensors."
-        },
-        {
-          "id": "pat-target-press",
-          "title": "Target and Press Natural User Input",
-          "numbers": [
-            "US 13/715,686 (2014)"
-          ],
-          "url": "https://patents.google.com/patent/US20140173179",
-          "summary": "A natural interaction model where users target objects and perform press-like gestures without physical buttons. The system interprets gestures and motion patterns as virtual presses to interact with UI elements."
-        },
-        {
-          "id": "pat-motion-effect",
-          "title": "Motion Effect Reduction for Displays and Touch Input",
-          "numbers": [
-            "US 9,990,003 (2018)"
-          ],
-          "url": "https://patents.google.com/patent/US9990003",
-          "summary": "Reduces motion artifacts that occur when users interact with displays during movement. It compensates for visual latency and touch input discrepancies to maintain stable interaction in mobile or head-tracked displays."
         }
       ]
     },
