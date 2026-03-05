@@ -42,38 +42,1439 @@
   },
   "learning": {
     "certifications": [
-      { "title": "Creating Your First Android App with Kotlin",                                         "date": "2022-10", "issuer": "LinkedIn" },
-      { "title": "5G Technology Strategy: Next-Generation Mobile Networking",                           "date": "2022-09", "issuer": "LinkedIn" },
-      { "title": "Animation Foundations: Gesture",                                                      "date": "2022-09", "issuer": "LinkedIn" },
-      { "title": "Apple watchOS App Development: Advanced APIs",                                        "date": "2022-09", "issuer": "LinkedIn" },
-      { "title": "Building iOS Apps with CloudKit",                                                     "date": "2022-09", "issuer": "LinkedIn" },
-      { "title": "Code Clinic: R",                                                                      "date": "2022-09", "issuer": "LinkedIn" },
-      { "title": "Core Data in iOS: 2 Intermediate Topics",                                             "date": "2022-09", "issuer": "LinkedIn" },
-      { "title": "Design Your First Infographic",                                                       "date": "2022-09", "issuer": "LinkedIn" },
-      { "title": "Making Hybrid Teams Work",                                                            "date": "2022-09", "issuer": "LinkedIn" },
-      { "title": "Presenting to Senior Executives",                                                     "date": "2022-09", "issuer": "LinkedIn" },
-      { "title": "Satellite Internet and Communications: Fundamentals",                                 "date": "2022-09", "issuer": "LinkedIn" },
-      { "title": "The Third Door: How the World's Most Successful People Launched Their Careers",       "date": "2022-09", "issuer": "LinkedIn" },
-      { "title": "iOS 16 First Look for Developers",                                                    "date": "2022-09", "issuer": "LinkedIn" },
-      { "title": "Accounting Foundations: Statement of Cash Flows",                                     "date": "2022-08", "issuer": "LinkedIn" },
-      { "title": "Advanced iOS App Development: Core Animation",                                        "date": "2022-08", "issuer": "LinkedIn" },
-      { "title": "Advanced iOS App Development: Core Motion",                                           "date": "2022-08", "issuer": "LinkedIn" },
-      { "title": "Apple watchOS 7 App Development Essential Training",                                  "date": "2022-08", "issuer": "LinkedIn" },
-      { "title": "Learning TinyML",                                                                     "date": "2022-08", "issuer": "LinkedIn" },
-      { "title": "Practical Design Patterns in Swift",                                                  "date": "2022-08", "issuer": "LinkedIn" },
-      { "title": "Swift: Delegations and Data Sources",                                                 "date": "2022-08", "issuer": "LinkedIn" }
+      {
+        "id": "cert-1",
+        "title": "Introducing Functional Programming in C++",
+        "issuer": "LinkedIn",
+        "completedDate": "2022-07-22",
+        "url": "https://www.linkedin.com/learning/introducing-functional-programming-in-c",
+        "author": "Troy Miles",
+        "tags": [
+          "engineering",
+          "performance"
+        ],
+        "duration": "1h 15m"
+      },
+      {
+        "id": "cert-2",
+        "title": "C++ Design Patterns: Behavioral",
+        "issuer": "LinkedIn",
+        "completedDate": "2022-07-22",
+        "url": "https://www.linkedin.com/learning/c-design-patterns-behavioral",
+        "author": "Shaun Wassell",
+        "tags": [
+          "engineering"
+        ],
+        "duration": "3h 29m"
+      },
+      {
+        "id": "cert-3",
+        "title": "Parallel and Concurrent Programming with C++ Part 1",
+        "issuer": "LinkedIn",
+        "completedDate": "2022-07-23",
+        "url": "https://www.linkedin.com/learning/parallel-and-concurrent-programming-with-c-part-1",
+        "author": "Olivia Chiu Stone and Barron Stone",
+        "tags": [
+          "engineering",
+          "performance"
+        ],
+        "duration": "1h 59m"
+      },
+      {
+        "id": "cert-4",
+        "title": "Parallel and Concurrent Programming with C++ Part 2",
+        "issuer": "LinkedIn",
+        "completedDate": "2022-07-23",
+        "url": "https://www.linkedin.com/learning/parallel-and-concurrent-programming-with-c-part-2",
+        "author": "Olivia Chiu Stone and Barron Stone",
+        "tags": [
+          "engineering",
+          "performance"
+        ],
+        "duration": "2h 13m"
+      },
+      {
+        "id": "cert-5",
+        "title": "C++ Templates and the STL",
+        "issuer": "LinkedIn",
+        "completedDate": "2022-07-22",
+        "url": "https://www.linkedin.com/learning/c-templates-and-the-stl",
+        "author": "Bill Weinman",
+        "tags": [
+          "engineering",
+          "performance"
+        ],
+        "duration": "2h 13m"
+      },
+      {
+        "id": "cert-6",
+        "title": "Code Clinic: C++",
+        "issuer": "LinkedIn",
+        "completedDate": "2022-07-22",
+        "url": "https://www.linkedin.com/learning/code-clinic-c",
+        "author": "Olivia Chiu Stone",
+        "tags": [
+          "engineering"
+        ],
+        "duration": "1h 39m"
+      },
+      {
+        "id": "cert-7",
+        "title": "C++ Standard Template Library",
+        "issuer": "LinkedIn",
+        "completedDate": "2022-09-15",
+        "url": "https://www.linkedin.com/learning/c-standard-template-library",
+        "author": "Eduardo Corpeño",
+        "tags": [
+          "engineering",
+          "performance"
+        ],
+        "duration": "2h 23m"
+      },
+      {
+        "id": "cert-8",
+        "title": "Software Architecture Foundations",
+        "issuer": "LinkedIn",
+        "completedDate": "2022-07-30",
+        "url": "https://www.linkedin.com/learning/software-architecture-foundations",
+        "author": "Allen Holub",
+        "tags": [
+          "engineering"
+        ],
+        "duration": "1h 36m"
+      },
+      {
+        "id": "cert-9",
+        "title": "iOS Development: Architecture",
+        "issuer": "LinkedIn",
+        "completedDate": "2022-08-26",
+        "url": "https://www.linkedin.com/learning/ios-development-architecture",
+        "author": "Károly Nyisztor",
+        "tags": [
+          "engineering"
+        ],
+        "duration": "2h"
+      },
+      {
+        "id": "cert-10",
+        "title": "iOS Development: Threading and Grand Central Dispatch",
+        "issuer": "LinkedIn",
+        "completedDate": "2022-08-26",
+        "url": "https://www.linkedin.com/learning/ios-development-threading-and-grand-central-dispatch",
+        "author": "Grace Njoroge",
+        "tags": [
+          "engineering",
+          "performance"
+        ],
+        "duration": "39m"
+      },
+      {
+        "id": "cert-11",
+        "title": "iOS App Development: Essential Courses",
+        "issuer": "LinkedIn",
+        "completedDate": "2022-08-26",
+        "url": "https://www.linkedin.com/learning/ios-app-development-essential-courses",
+        "author": "Mike Wong",
+        "tags": [
+          "engineering"
+        ],
+        "duration": "37m"
+      },
+      {
+        "id": "cert-12",
+        "title": "iOS Lean Controllers: 1 Setup, Persistent Data, and Implementation",
+        "issuer": "LinkedIn",
+        "completedDate": "2022-08-29",
+        "url": "https://www.linkedin.com/learning/ios-lean-controllers-1-setup-persistent-data-and-implementation",
+        "author": "Mohammad Azam",
+        "tags": [
+          "engineering"
+        ],
+        "duration": "1h 47m"
+      },
+      {
+        "id": "cert-13",
+        "title": "iOS 13 Development Essential Training: 1 Fundamentals, UI, and Architecture",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-09-25",
+        "url": "https://www.linkedin.com/learning/ios-13-development-essential-training-1-fundamentals-ui-and-architecture",
+        "author": "Todd Perkins",
+        "tags": [
+          "engineering"
+        ],
+        "duration": "2h 14m"
+      },
+      {
+        "id": "cert-14",
+        "title": "iOS 16 First Look for Developers",
+        "issuer": "LinkedIn",
+        "completedDate": "2022-09-16",
+        "url": "https://www.linkedin.com/learning/ios-16-first-look-for-developers",
+        "author": "Todd Perkins",
+        "tags": [
+          "engineering"
+        ],
+        "duration": "12m"
+      },
+      {
+        "id": "cert-15",
+        "title": "Advanced iOS App Development: Core Motion",
+        "issuer": "LinkedIn",
+        "completedDate": "2022-08-26",
+        "url": "https://www.linkedin.com/learning/advanced-ios-app-development-core-motion",
+        "author": "Steven Lipton",
+        "tags": [
+          "engineering"
+        ],
+        "duration": "2h 20m"
+      },
+      {
+        "id": "cert-16",
+        "title": "Advanced iOS App Development: Core Animation",
+        "issuer": "LinkedIn",
+        "completedDate": "2022-08-27",
+        "url": "https://www.linkedin.com/learning/advanced-ios-app-development-core-animation",
+        "author": "Harrison Ferrone",
+        "tags": [
+          "engineering"
+        ],
+        "duration": "2h 33m"
+      },
+      {
+        "id": "cert-17",
+        "title": "Practical Design Patterns in Swift",
+        "issuer": "LinkedIn",
+        "completedDate": "2022-08-27",
+        "url": "https://www.linkedin.com/learning/practical-design-patterns-in-swift",
+        "author": "Károly Nyisztor",
+        "tags": [
+          "engineering"
+        ],
+        "duration": "2h 35m"
+      },
+      {
+        "id": "cert-18",
+        "title": "Swift: Delegations and Data Sources",
+        "issuer": "LinkedIn",
+        "completedDate": "2022-08-30",
+        "url": "https://www.linkedin.com/learning/swift-delegations-and-data-sources",
+        "author": "Steven Lipton",
+        "tags": [
+          "engineering"
+        ],
+        "duration": "1h 6m"
+      },
+      {
+        "id": "cert-19",
+        "title": "Swift 5 Essential Training",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-09-23",
+        "url": "https://www.linkedin.com/learning/swift-5-essential-training",
+        "author": "Harrison Ferrone",
+        "tags": [
+          "engineering"
+        ],
+        "duration": "4h 3m"
+      },
+      {
+        "id": "cert-20",
+        "title": "Apple watchOS 7 App Development Essential Training",
+        "issuer": "LinkedIn",
+        "completedDate": "2022-08-30",
+        "url": "https://www.linkedin.com/learning/apple-watchos-7-app-development-essential-training",
+        "author": "Steven Lipton",
+        "tags": [
+          "engineering"
+        ],
+        "duration": "3h 35m"
+      },
+      {
+        "id": "cert-21",
+        "title": "Apple watchOS App Development: Advanced APIs",
+        "issuer": "LinkedIn",
+        "completedDate": "2022-09-12",
+        "url": "https://www.linkedin.com/learning/apple-watchos-app-development-advanced-apis",
+        "author": "Steven Lipton",
+        "tags": [
+          "engineering"
+        ],
+        "duration": "3h 11m"
+      },
+      {
+        "id": "cert-22",
+        "title": "Building iOS Apps with CloudKit",
+        "issuer": "LinkedIn",
+        "completedDate": "2022-09-16",
+        "url": "https://www.linkedin.com/learning/building-ios-apps-with-cloudkit",
+        "author": "Doron Katz",
+        "tags": [
+          "engineering"
+        ],
+        "duration": "2h 6m"
+      },
+      {
+        "id": "cert-23",
+        "title": "Core Data in iOS: 2 Intermediate Topics",
+        "issuer": "LinkedIn",
+        "completedDate": "2022-09-16",
+        "url": "https://www.linkedin.com/learning/core-data-in-ios-2-intermediate-topics",
+        "author": "Mohammad Azam",
+        "tags": [
+          "engineering"
+        ]
+      },
+      {
+        "id": "cert-24",
+        "title": "Creating Your First Android App with Kotlin",
+        "issuer": "LinkedIn",
+        "completedDate": "2022-10-25",
+        "url": "https://www.linkedin.com/learning/creating-your-first-android-app-with-kotlin",
+        "author": "Chiu-Ki Chan",
+        "tags": [
+          "engineering"
+        ],
+        "duration": "33m"
+      },
+      {
+        "id": "cert-25",
+        "title": "Objective-C Essential Training",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-09-24",
+        "url": "https://www.linkedin.com/learning/objective-c-essential-training",
+        "author": "Simon Allardice",
+        "tags": [
+          "engineering"
+        ],
+        "duration": "6h 2m"
+      },
+      {
+        "id": "cert-26",
+        "title": "Learning ARKit for Developers",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-06-07",
+        "url": "https://www.linkedin.com/learning/learning-arkit-for-developers",
+        "author": "Brian Advent",
+        "tags": [
+          "engineering"
+        ],
+        "duration": "1h 33m"
+      },
+      {
+        "id": "cert-27",
+        "title": "Machine Learning for iOS: Core ML and Create ML",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-08-24",
+        "url": "https://www.linkedin.com/learning/machine-learning-for-ios-core-ml-and-create-ml",
+        "author": "Emmanuel Henri",
+        "tags": [
+          "ai",
+          "engineering"
+        ],
+        "duration": "38m"
+      },
+      {
+        "id": "cert-28",
+        "title": "Learning TinyML: A Hands-On Course",
+        "issuer": "LinkedIn",
+        "completedDate": "2022-08-26",
+        "url": "https://www.linkedin.com/learning/learning-tinyml-a-hands-on-course",
+        "author": "Archana Vaidheeswaran",
+        "tags": [
+          "ai",
+          "engineering"
+        ],
+        "duration": "1h 10m"
+      },
+      {
+        "id": "cert-29",
+        "title": "Code Clinic: R",
+        "issuer": "LinkedIn",
+        "completedDate": "2022-09-28",
+        "url": "https://www.linkedin.com/learning/code-clinic-r",
+        "author": "Mark Niemann-Ross",
+        "tags": [
+          "engineering"
+        ],
+        "duration": "1h 18m"
+      },
+      {
+        "id": "cert-30",
+        "title": "Learning R (2019)",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-06-07",
+        "url": "https://www.linkedin.com/learning/learning-r-2019",
+        "author": "Barton Poulson",
+        "tags": [
+          "engineering"
+        ],
+        "duration": "2h 51m"
+      },
+      {
+        "id": "cert-31",
+        "title": "JavaScript Essential Training (2017)",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-06-03",
+        "url": "https://www.linkedin.com/learning/javascript-essential-training-2017",
+        "author": "Morten Rand-Hendriksen",
+        "tags": [
+          "engineering"
+        ],
+        "duration": "5h 32m"
+      },
+      {
+        "id": "cert-32",
+        "title": "Python: Working with REST and Web Data",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-08-12",
+        "url": "https://www.linkedin.com/learning/python-working-with-rest-and-web-data",
+        "author": "Joe Marini",
+        "tags": [
+          "engineering"
+        ],
+        "duration": "1h 38m"
+      },
+      {
+        "id": "cert-33",
+        "title": "Python Essential Libraries",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-07-08",
+        "url": "https://www.linkedin.com/learning/python-essential-libraries",
+        "author": "Joe Marini",
+        "tags": [
+          "engineering"
+        ],
+        "duration": "2h 15m"
+      },
+      {
+        "id": "cert-34",
+        "title": "Faster Python Code",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-07-10",
+        "url": "https://www.linkedin.com/learning/faster-python-code",
+        "author": "Miki Tebeka",
+        "tags": [
+          "engineering",
+          "performance"
+        ],
+        "duration": "2h 5m"
+      },
+      {
+        "id": "cert-35",
+        "title": "Nail Your Python Interview",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-05-19",
+        "url": "https://www.linkedin.com/learning/nail-your-python-interview",
+        "author": "Erin Allard",
+        "tags": [
+          "engineering"
+        ],
+        "duration": "56m"
+      },
+      {
+        "id": "cert-36",
+        "title": "NLP with Python for Machine Learning Essential Training",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-07-11",
+        "url": "https://www.linkedin.com/learning/nlp-with-python-for-machine-learning-essential-training",
+        "author": "Derek Jedamski",
+        "tags": [
+          "ai"
+        ],
+        "duration": "4h 14m"
+      },
+      {
+        "id": "cert-37",
+        "title": "GraphQL Essential Training (2018)",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-07-21",
+        "url": "https://www.linkedin.com/learning/graphql-essential-training-2018",
+        "author": "Emmanuel Henri",
+        "tags": [
+          "engineering"
+        ],
+        "duration": "1h 54m"
+      },
+      {
+        "id": "cert-38",
+        "title": "Migrating from REST to GraphQL (2018)",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-07-10",
+        "url": "https://www.linkedin.com/learning/migrating-from-rest-to-graphql-2018",
+        "author": "Emmanuel Henri",
+        "tags": [
+          "engineering"
+        ],
+        "duration": "1h 3m"
+      },
+      {
+        "id": "cert-39",
+        "title": "5G Technology Strategy: Next-Generation Mobile Networking",
+        "issuer": "LinkedIn",
+        "completedDate": "2022-09-16",
+        "url": "https://www.linkedin.com/learning/5g-technology-strategy-next-generation-mobile-networking",
+        "author": "Ryan Spence",
+        "tags": [
+          "engineering"
+        ],
+        "duration": "40m"
+      },
+      {
+        "id": "cert-40",
+        "title": "Satellite Internet and Communications: Fundamentals",
+        "issuer": "LinkedIn",
+        "completedDate": "2022-09-16",
+        "url": "https://www.linkedin.com/learning/satellite-internet-and-communications-fundamentals",
+        "author": "Ryan Hu",
+        "tags": [
+          "engineering"
+        ],
+        "duration": "51m"
+      },
+      {
+        "id": "cert-41",
+        "title": "Introduction to Quantum Computing",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-09-20",
+        "url": "https://www.linkedin.com/learning/introduction-to-quantum-computing",
+        "author": "Jonathan Reichental",
+        "tags": [
+          "engineering"
+        ],
+        "duration": "1h 24m"
+      },
+      {
+        "id": "cert-42",
+        "title": "Game Design Foundations: 1 Ideas, Core Loops, and Goals",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-11-21",
+        "url": "https://www.linkedin.com/learning/game-design-foundations-1-ideas-core-loops-and-goals",
+        "author": "Brenda Romero",
+        "tags": [
+          "engineering"
+        ],
+        "duration": "1h 32m"
+      },
+      {
+        "id": "cert-43",
+        "title": "Gamification of Learning",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-11-26",
+        "url": "https://www.linkedin.com/learning/gamification-of-learning",
+        "author": "Karl Kapp",
+        "tags": [
+          "management"
+        ],
+        "duration": "2h 16m"
+      },
+      {
+        "id": "cert-44",
+        "title": "Animation Foundations: Gesture",
+        "issuer": "LinkedIn",
+        "completedDate": "2022-09-17",
+        "url": "https://www.linkedin.com/learning/animation-foundations-gesture",
+        "author": "Andrew Gordon",
+        "tags": [
+          "communication"
+        ],
+        "duration": "1h 19m"
+      },
+      {
+        "id": "cert-45",
+        "title": "Design Your First Infographic",
+        "issuer": "LinkedIn",
+        "completedDate": "2022-09-16",
+        "url": "https://www.linkedin.com/learning/design-your-first-infographic",
+        "author": "Nigel French",
+        "tags": [
+          "communication"
+        ],
+        "duration": "22m"
+      },
+      {
+        "id": "cert-46",
+        "title": "Persuasive UX: Influencing Behavior Patterns",
+        "issuer": "LinkedIn",
+        "completedDate": "2017-11-24",
+        "url": "https://www.linkedin.com/learning/persuasive-ux-influencing-behavior-patterns",
+        "author": "Chris Nodder",
+        "tags": [
+          "engineering",
+          "communication"
+        ],
+        "duration": "28m"
+      },
+      {
+        "id": "cert-47",
+        "title": "Design Thinking: Understanding the Process (2016)",
+        "issuer": "LinkedIn",
+        "completedDate": "2017-11-24",
+        "url": "https://www.linkedin.com/learning/design-thinking-understanding-the-process-2016",
+        "author": "Chris Nodder",
+        "tags": [
+          "management",
+          "engineering"
+        ],
+        "duration": "41m"
+      },
+      {
+        "id": "cert-48",
+        "title": "Design Thinking: Implementing the Process (2016)",
+        "issuer": "LinkedIn",
+        "completedDate": "2017-11-24",
+        "url": "https://www.linkedin.com/learning/design-thinking-implementing-the-process-2016",
+        "author": "Chris Nodder",
+        "tags": [
+          "management",
+          "engineering"
+        ],
+        "duration": "46m"
+      },
+      {
+        "id": "cert-49",
+        "title": "Alex McDowell: World Building and Narrative",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-09-28",
+        "url": "https://www.linkedin.com/learning/alex-mcdowell-world-building-and-narrative",
+        "author": "Alex McDowell",
+        "tags": [
+          "communication"
+        ],
+        "duration": "28m"
+      },
+      {
+        "id": "cert-50",
+        "title": "Architecting Big Data Applications: Batch Mode Application Engineering (2017)",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-07-14",
+        "url": "https://www.linkedin.com/learning/architecting-big-data-applications-batch-mode-application-engineering-2017",
+        "author": "Kumaran Ponnambalam",
+        "tags": [
+          "engineering"
+        ],
+        "duration": "1h 37m"
+      },
+      {
+        "id": "cert-51",
+        "title": "Google Cloud Platform Essential Training (2019)",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-07-19",
+        "url": "https://www.linkedin.com/learning/google-cloud-platform-essential-training-2019",
+        "author": "Lynn Langit",
+        "tags": [
+          "engineering"
+        ],
+        "duration": "3h 20m"
+      },
+      {
+        "id": "cert-52",
+        "title": "Cloud Architecture: Design Decisions (2018)",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-07-10",
+        "url": "https://www.linkedin.com/learning/cloud-architecture-design-decisions-2018",
+        "author": "David Linthicum",
+        "tags": [
+          "engineering"
+        ],
+        "duration": "1h 24m"
+      },
+      {
+        "id": "cert-53",
+        "title": "Cloud Architecture: Advanced Concepts (2019)",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-05-28",
+        "url": "https://www.linkedin.com/learning/cloud-architecture-advanced-concepts-2019",
+        "author": "David Linthicum",
+        "tags": [
+          "engineering"
+        ],
+        "duration": "1h 15m"
+      },
+      {
+        "id": "cert-54",
+        "title": "AWS Certified Solutions Architect - Associate (SAA-C01): 1 Cloud Services Overview (2019)",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-05-28",
+        "url": "https://www.linkedin.com/learning/aws-certified-solutions-architect-associate-saa-c01-1-cloud-services-overview-2019",
+        "author": "Tom Carpenter",
+        "tags": [
+          "engineering"
+        ],
+        "duration": "1h 7m"
+      },
+      {
+        "id": "cert-55",
+        "title": "Google Cloud Video Intelligence API by Example",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-05-29",
+        "url": "https://www.linkedin.com/learning/google-cloud-video-intelligence-api-by-example",
+        "author": "Jonathan Fernandes",
+        "tags": [
+          "ai"
+        ],
+        "duration": "30m"
+      },
+      {
+        "id": "cert-56",
+        "title": "Introduction to AWS DeepLens",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-05-29",
+        "url": "https://www.linkedin.com/learning/introduction-to-aws-deeplens",
+        "author": "Jonathan Fernandes",
+        "tags": [
+          "ai"
+        ],
+        "duration": "33m"
+      },
+      {
+        "id": "cert-57",
+        "title": "AWS Machine Learning by Example",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-06-01",
+        "url": "https://www.linkedin.com/learning/aws-machine-learning-by-example",
+        "author": "Jonathan Fernandes",
+        "tags": [
+          "ai"
+        ],
+        "duration": "1h 25m"
+      },
+      {
+        "id": "cert-58",
+        "title": "Learning Amazon SageMaker (2019)",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-05-28",
+        "url": "https://www.linkedin.com/learning/learning-amazon-sagemaker-2019",
+        "author": "Martin Kemka",
+        "tags": [
+          "ai"
+        ],
+        "duration": "1h 11m"
+      },
+      {
+        "id": "cert-59",
+        "title": "Amazon Web Services Machine Learning Essential Training",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-05-19",
+        "url": "https://www.linkedin.com/learning/amazon-web-services-machine-learning-essential-training",
+        "author": "Lynn Langit",
+        "tags": [
+          "ai"
+        ],
+        "duration": "3h 7m"
+      },
+      {
+        "id": "cert-60",
+        "title": "Google Cloud Platform for Machine Learning Essential Training (2018)",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-07-20",
+        "url": "https://www.linkedin.com/learning/google-cloud-platform-for-machine-learning-essential-training-2018",
+        "author": "Lynn Langit",
+        "tags": [
+          "ai"
+        ],
+        "duration": "2h 57m"
+      },
+      {
+        "id": "cert-61",
+        "title": "Machine Learning and AI Foundations: Value Estimations",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-07-12",
+        "url": "https://www.linkedin.com/learning/machine-learning-and-ai-foundations-value-estimations",
+        "author": "Adam Geitgey",
+        "tags": [
+          "ai"
+        ],
+        "duration": "1h 4m"
+      },
+      {
+        "id": "cert-62",
+        "title": "Machine Learning and AI Foundations: Recommendations",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-09-21",
+        "url": "https://www.linkedin.com/learning/machine-learning-and-ai-foundations-recommendations",
+        "author": "Adam Geitgey",
+        "tags": [
+          "ai"
+        ],
+        "duration": "58m"
+      },
+      {
+        "id": "cert-63",
+        "title": "Machine Learning and AI Foundations: Clustering and Association",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-07-14",
+        "url": "https://www.linkedin.com/learning/machine-learning-and-ai-foundations-clustering-and-association",
+        "author": "Keith McCormick",
+        "tags": [
+          "ai"
+        ],
+        "duration": "3h 33m"
+      },
+      {
+        "id": "cert-64",
+        "title": "Machine Learning and AI Foundations: Decision Trees with SPSS",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-05-29",
+        "url": "https://www.linkedin.com/learning/machine-learning-and-ai-foundations-decision-trees-with-spss",
+        "author": "Keith McCormick",
+        "tags": [
+          "ai"
+        ],
+        "duration": "1h 27m"
+      },
+      {
+        "id": "cert-65",
+        "title": "Neural Networks and Convolutional Neural Networks Essential Training (2018)",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-06-12",
+        "url": "https://www.linkedin.com/learning/neural-networks-and-convolutional-neural-networks-essential-training-2018",
+        "author": "Jonathan Fernandes",
+        "tags": [
+          "ai"
+        ],
+        "duration": "1h 19m"
+      },
+      {
+        "id": "cert-66",
+        "title": "Deep Learning: Image Recognition (2018)",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-07-08",
+        "url": "https://www.linkedin.com/learning/deep-learning-image-recognition-2018",
+        "author": "Adam Geitgey",
+        "tags": [
+          "ai"
+        ],
+        "duration": "1h 43m"
+      },
+      {
+        "id": "cert-67",
+        "title": "Introduction to Deep Learning with OpenCV",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-05-21",
+        "url": "https://www.linkedin.com/learning/introduction-to-deep-learning-with-opencv",
+        "author": "Jonathan Fernandes",
+        "tags": [
+          "ai"
+        ],
+        "duration": "49m"
+      },
+      {
+        "id": "cert-68",
+        "title": "Transfer Learning for Images Using PyTorch: Essential Training",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-09-22",
+        "url": "https://www.linkedin.com/learning/transfer-learning-for-images-using-pytorch-essential-training",
+        "author": "Jonathan Fernandes",
+        "tags": [
+          "ai"
+        ],
+        "duration": "58m"
+      },
+      {
+        "id": "cert-69",
+        "title": "PyTorch Essential Training: Deep Learning (2019)",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-06-08",
+        "url": "https://www.linkedin.com/learning/pytorch-essential-training-deep-learning-2019",
+        "author": "Jonathan Fernandes",
+        "tags": [
+          "ai"
+        ],
+        "duration": "56m"
+      },
+      {
+        "id": "cert-70",
+        "title": "Building and Deploying Deep Learning Applications with TensorFlow",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-05-28",
+        "url": "https://www.linkedin.com/learning/building-and-deploying-deep-learning-applications-with-tensorflow",
+        "author": "Adam Geitgey",
+        "tags": [
+          "ai"
+        ],
+        "duration": "1h 46m"
+      },
+      {
+        "id": "cert-71",
+        "title": "Deploying Scalable Machine Learning for Data Science",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-06-17",
+        "url": "https://www.linkedin.com/learning/deploying-scalable-machine-learning-for-data-science",
+        "author": "Dan Sullivan",
+        "tags": [
+          "ai"
+        ],
+        "duration": "1h 43m"
+      },
+      {
+        "id": "cert-72",
+        "title": "Building a Recommendation System with Python Machine Learning & AI",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-07-13",
+        "url": "https://www.linkedin.com/learning/building-a-recommendation-system-with-python-machine-learning-and-ai",
+        "author": "Lillian Pierson, P.E.",
+        "tags": [
+          "ai"
+        ],
+        "duration": "1h 38m"
+      },
+      {
+        "id": "cert-73",
+        "title": "Spark for Machine Learning & AI",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-07-13",
+        "url": "https://www.linkedin.com/learning/spark-for-machine-learning-and-ai",
+        "author": "Dan Sullivan",
+        "tags": [
+          "ai"
+        ],
+        "duration": "1h 51m"
+      },
+      {
+        "id": "cert-74",
+        "title": "Insights on Data Science: Lillian Pierson",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-07-14",
+        "url": "https://www.linkedin.com/learning/insights-on-data-science-lillian-pierson",
+        "author": "Lillian Pierson, P.E.",
+        "tags": [
+          "ai"
+        ],
+        "duration": "23m"
+      },
+      {
+        "id": "cert-75",
+        "title": "Mistakes to Avoid in Machine Learning",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-09-26",
+        "url": "https://www.linkedin.com/learning/mistakes-to-avoid-in-machine-learning",
+        "author": "Brett Vanderblock",
+        "tags": [
+          "ai"
+        ],
+        "duration": "39m"
+      },
+      {
+        "id": "cert-76",
+        "title": "Designing for Neural Networks and AI Interfaces",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-10-21",
+        "url": "https://www.linkedin.com/learning/designing-for-neural-networks-and-ai-interfaces",
+        "author": "Emmanuel Henri",
+        "tags": [
+          "ai"
+        ],
+        "duration": "24m"
+      },
+      {
+        "id": "cert-77",
+        "title": "Artificial Intelligence for Project Managers (2019)",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-06-09",
+        "url": "https://www.linkedin.com/learning/artificial-intelligence-for-project-managers-2019",
+        "author": "Oliver Yarbrough",
+        "tags": [
+          "ai",
+          "management"
+        ],
+        "duration": "41m"
+      },
+      {
+        "id": "cert-78",
+        "title": "Becoming an AI-First Product Leader",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-06-15",
+        "url": "https://www.linkedin.com/learning/becoming-an-ai-first-product-leader",
+        "author": "Tomer Cohen",
+        "tags": [
+          "ai",
+          "management"
+        ],
+        "duration": "32m"
+      },
+      {
+        "id": "cert-79",
+        "title": "Making Hybrid Teams Work",
+        "issuer": "LinkedIn",
+        "completedDate": "2022-09-18",
+        "url": "https://www.linkedin.com/learning/making-hybrid-teams-work",
+        "author": "Melanie Proshchenko",
+        "tags": [
+          "management",
+          "communication"
+        ],
+        "duration": "1h 8m"
+      },
+      {
+        "id": "cert-80",
+        "title": "Presenting to Senior Executives",
+        "issuer": "LinkedIn",
+        "completedDate": "2022-09-16",
+        "url": "https://www.linkedin.com/learning/presenting-to-senior-executives",
+        "author": "Tatiana Kolovou",
+        "tags": [
+          "management",
+          "communication"
+        ],
+        "duration": "49m"
+      },
+      {
+        "id": "cert-81",
+        "title": "The Third Door: How the World's Most Successful People Launched Their Careers",
+        "issuer": "LinkedIn",
+        "completedDate": "2022-09-15",
+        "url": "https://www.linkedin.com/learning/the-third-door-how-the-worlds-most-successful-people-launched-their-careers",
+        "author": "Alex Banayan",
+        "tags": [
+          "management",
+          "communication"
+        ],
+        "duration": "47m"
+      },
+      {
+        "id": "cert-82",
+        "title": "Developing Executive Presence",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-09-28",
+        "url": "https://www.linkedin.com/learning/developing-executive-presence",
+        "author": "John Ullmen",
+        "tags": [
+          "management",
+          "communication"
+        ],
+        "duration": "1h 12m"
+      },
+      {
+        "id": "cert-83",
+        "title": "Change Management Foundations (2016)",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-09-28",
+        "url": "https://www.linkedin.com/learning/change-management-foundations-2016",
+        "author": "Bob McGannon",
+        "tags": [
+          "management"
+        ],
+        "duration": "1h 40m"
+      },
+      {
+        "id": "cert-84",
+        "title": "Leading like a Futurist",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-10-29",
+        "url": "https://www.linkedin.com/learning/leading-like-a-futurist",
+        "author": "Lisa Kay Solomon",
+        "tags": [
+          "management"
+        ],
+        "duration": "1h 15m"
+      },
+      {
+        "id": "cert-85",
+        "title": "Transitioning from Manager to Leader",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-07-16",
+        "url": "https://www.linkedin.com/learning/transitioning-from-manager-to-leader",
+        "author": "Sara Canaday",
+        "tags": [
+          "management"
+        ],
+        "duration": "59m"
+      },
+      {
+        "id": "cert-86",
+        "title": "Succession Planning",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-07-16",
+        "url": "https://www.linkedin.com/learning/succession-planning",
+        "author": "Bonnie Hagemann",
+        "tags": [
+          "management"
+        ],
+        "duration": "48m"
+      },
+      {
+        "id": "cert-87",
+        "title": "Building High-Performance Teams",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-07-14",
+        "url": "https://www.linkedin.com/learning/building-high-performance-teams",
+        "author": "Mike Figliuolo",
+        "tags": [
+          "management"
+        ],
+        "duration": "2h"
+      },
+      {
+        "id": "cert-88",
+        "title": "Managing New Managers",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-07-14",
+        "url": "https://www.linkedin.com/learning/managing-new-managers",
+        "author": "Sara Canaday",
+        "tags": [
+          "management"
+        ],
+        "duration": "20m"
+      },
+      {
+        "id": "cert-89",
+        "title": "Management Essentials",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-07-14",
+        "url": "https://www.linkedin.com/learning/management-essentials",
+        "author": "Ellen Ensher",
+        "tags": [
+          "management"
+        ],
+        "duration": "1h 21m"
+      },
+      {
+        "id": "cert-90",
+        "title": "Foundations of Performance Management",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-07-23",
+        "url": "https://www.linkedin.com/learning/foundations-of-performance-management",
+        "author": "Nigel Cumberland",
+        "tags": [
+          "management"
+        ],
+        "duration": "53m"
+      },
+      {
+        "id": "cert-91",
+        "title": "Leadership Mindsets",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-07-22",
+        "url": "https://www.linkedin.com/learning/leadership-mindsets",
+        "author": "Sesil Pir",
+        "tags": [
+          "management"
+        ],
+        "duration": "34m"
+      },
+      {
+        "id": "cert-92",
+        "title": "Coaching and Developing Employees (2019)",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-06-15",
+        "url": "https://www.linkedin.com/learning/coaching-and-developing-employees-2019",
+        "author": "Lisa Gates",
+        "tags": [
+          "management"
+        ],
+        "duration": "53m"
+      },
+      {
+        "id": "cert-93",
+        "title": "Human-Centered Leadership",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-06-15",
+        "url": "https://www.linkedin.com/learning/human-centered-leadership",
+        "author": "Sesil Pir",
+        "tags": [
+          "management"
+        ],
+        "duration": "27m"
+      },
+      {
+        "id": "cert-94",
+        "title": "Strategic Leadership: Deploying Intelligent Disobedience",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-07-10",
+        "url": "https://www.linkedin.com/learning/strategic-leadership-deploying-intelligent-disobedience",
+        "author": "Bob McGannon",
+        "tags": [
+          "management"
+        ],
+        "duration": "34m"
+      },
+      {
+        "id": "cert-95",
+        "title": "Transitioning from Waterfall to Agile Project Management",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-06-28",
+        "url": "https://www.linkedin.com/learning/transitioning-from-waterfall-to-agile-project-management",
+        "author": "Kelley O'Connell",
+        "tags": [
+          "management"
+        ],
+        "duration": "40m"
+      },
+      {
+        "id": "cert-96",
+        "title": "Scrum: The Basics",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-06-28",
+        "url": "https://www.linkedin.com/learning/scrum-the-basics",
+        "author": "Kelley O'Connell",
+        "tags": [
+          "management"
+        ],
+        "duration": "1h 10m"
+      },
+      {
+        "id": "cert-97",
+        "title": "Product Marketing Foundations (2018)",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-07-14",
+        "url": "https://www.linkedin.com/learning/product-marketing-foundations-2018",
+        "author": "Brad Batesole",
+        "tags": [
+          "management"
+        ],
+        "duration": "54m"
+      },
+      {
+        "id": "cert-98",
+        "title": "Determining Market Size for Your Product or Service",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-09-25",
+        "url": "https://www.linkedin.com/learning/determining-market-size-for-your-product-or-service",
+        "author": "EntrepreneurNOW",
+        "tags": [
+          "management"
+        ],
+        "duration": "32m"
+      },
+      {
+        "id": "cert-99",
+        "title": "Diversity, Inclusion, and Belonging",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-09-18",
+        "url": "https://www.linkedin.com/learning/diversity-inclusion-and-belonging",
+        "author": "Pat Wadors",
+        "tags": [
+          "management",
+          "communication"
+        ],
+        "duration": "35m"
+      },
+      {
+        "id": "cert-100",
+        "title": "Unconscious Bias (2017)",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-09-18",
+        "url": "https://www.linkedin.com/learning/unconscious-bias-2017",
+        "author": "Stacey Gordon",
+        "tags": [
+          "management"
+        ],
+        "duration": "23m"
+      },
+      {
+        "id": "cert-101",
+        "title": "Developing a Diversity, Inclusion, and Belonging Program",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-09-18",
+        "url": "https://www.linkedin.com/learning/developing-a-diversity-inclusion-and-belonging-program",
+        "author": "Stefanie Johnson",
+        "tags": [
+          "management"
+        ],
+        "duration": "29m"
+      },
+      {
+        "id": "cert-102",
+        "title": "Communicating about Culturally Sensitive Issues (2022)",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-10-06",
+        "url": "https://www.linkedin.com/learning/communicating-about-culturally-sensitive-issues-2022",
+        "author": "Daisy Lovelace",
+        "tags": [
+          "management",
+          "communication"
+        ],
+        "duration": "55m"
+      },
+      {
+        "id": "cert-103",
+        "title": "Supporting the Whole Self at Work, a Diversity and Inclusion Imperative",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-09-18",
+        "url": "https://www.linkedin.com/learning/supporting-the-whole-self-at-work-a-diversity-and-inclusion-imperative",
+        "author": "Big Think",
+        "tags": [
+          "management"
+        ]
+      },
+      {
+        "id": "cert-104",
+        "title": "Getting into the Mind of the Hiring Manager (2020)",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-09-22",
+        "url": "https://www.linkedin.com/learning/getting-into-the-mind-of-the-hiring-manager-2020",
+        "author": "Dawn Graham",
+        "tags": [
+          "management",
+          "communication"
+        ],
+        "duration": "26m"
+      },
+      {
+        "id": "cert-105",
+        "title": "Selling to Executives",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-06-13",
+        "url": "https://www.linkedin.com/learning/selling-to-executives",
+        "author": "Mike Gamson",
+        "tags": [
+          "management",
+          "communication"
+        ],
+        "duration": "23m"
+      },
+      {
+        "id": "cert-106",
+        "title": "Advanced Business Development: Communication and Negotiation",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-07-10",
+        "url": "https://www.linkedin.com/learning/advanced-business-development-communication-and-negotiation",
+        "author": "Elizabeth Lotardo and Lisa Earle McLeod",
+        "tags": [
+          "management",
+          "communication"
+        ],
+        "duration": "45m"
+      },
+      {
+        "id": "cert-107",
+        "title": "Negotiating Your Compensation Package",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-07-10",
+        "url": "https://www.linkedin.com/learning/negotiating-your-compensation-package",
+        "author": "Emilie Aries",
+        "tags": [
+          "management",
+          "communication"
+        ],
+        "duration": "31m"
+      },
+      {
+        "id": "cert-108",
+        "title": "Overcome Overthinking",
+        "issuer": "LinkedIn",
+        "completedDate": "2022-07-30",
+        "url": "https://www.linkedin.com/learning/overcome-overthinking",
+        "author": "Melody Wilding",
+        "tags": [
+          "communication"
+        ],
+        "duration": "36m"
+      },
+      {
+        "id": "cert-109",
+        "title": "Body Language for Leaders (2015)",
+        "issuer": "LinkedIn",
+        "completedDate": "2017-10-16",
+        "url": "https://www.linkedin.com/learning/body-language-for-leaders-2015",
+        "author": "Carol Kinsey Goman, PhD",
+        "tags": [
+          "management",
+          "communication"
+        ],
+        "duration": "51m"
+      },
+      {
+        "id": "cert-110",
+        "title": "Deep Work: Rules for Focused Success in a Distracted World (Blinkist Summary)",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-07-15",
+        "url": "https://www.linkedin.com/learning/deep-work-rules-for-focused-success-in-a-distracted-world-blinkist-summary",
+        "author": "Blinkist",
+        "tags": [
+          "management",
+          "communication"
+        ],
+        "duration": "9m"
+      },
+      {
+        "id": "cert-111",
+        "title": "Strategy: A History (getAbstract Summary)",
+        "issuer": "LinkedIn",
+        "completedDate": "2020-08-24",
+        "url": "https://www.linkedin.com/learning/strategy-a-history-getabstract-summary",
+        "author": "getAbstract",
+        "tags": [
+          "management"
+        ],
+        "duration": "9m"
+      },
+      {
+        "id": "cert-112",
+        "title": "Accounting Foundations: Statement of Cash Flows",
+        "issuer": "LinkedIn",
+        "completedDate": "2022-08-25",
+        "url": "https://www.linkedin.com/learning/accounting-foundations-statement-of-cash-flows",
+        "author": "Jim Stice and Kay Stice",
+        "tags": [
+          "management"
+        ],
+        "duration": "1h 49m"
+      }
     ],
     "projects": [
-      { "title": "Kinect for Windows",                              "startDate": "2011-05", "endDate": null,      "current": true,  "description": null },
-      { "title": "Xbox One - Kinect User Interactions",             "startDate": "2013-10", "endDate": "2013-10", "current": false, "description": "Developed interpretation of body movements into interactions with on screen interfaces." },
-      { "title": "Sams Windows Phone 7 Application Development",   "startDate": "2010-09", "endDate": "2011-01", "current": false, "description": "Technical editor responsible for reviewing all content and samples for clarity and accuracy." }
+      {
+        "title": "Kinect for Windows",
+        "startDate": "2011-05",
+        "endDate": null,
+        "current": true,
+        "description": null
+      },
+      {
+        "title": "Xbox One - Kinect User Interactions",
+        "startDate": "2013-10",
+        "endDate": "2013-10",
+        "current": false,
+        "description": "Developed interpretation of body movements into interactions with on screen interfaces."
+      },
+      {
+        "title": "Sams Windows Phone 7 Application Development",
+        "startDate": "2010-09",
+        "endDate": "2011-01",
+        "current": false,
+        "description": "Technical editor responsible for reviewing all content and samples for clarity and accuracy."
+      }
     ],
     "volunteering": [
-      { "org": "Seattle AR/VR Hackathon",       "startDate": "2017-09", "endDate": null,      "current": true,  "role": "Mentor",          "description": "Industry expert and mentor for Seattle AR/VR hackathon." },
-      { "org": "Seattle AEC AR/VR Hackathon",   "startDate": "2017-03", "endDate": null,      "current": true,  "role": "Judge",           "description": "Industry expert and judge for Seattle augmented reality and virtual reality hackathon." },
-      { "org": "AT&T Seattle AR/VR Hackathon",  "startDate": "2017-03", "endDate": "2017-03", "current": false, "role": "Judge & Mentor",  "description": null },
-      { "org": "Seattle VR Hackathon",           "startDate": "2016-09", "endDate": "2016-09", "current": false, "role": "Judge",           "description": null },
-      { "org": "Pacific Science Center",         "startDate": "2010-10", "endDate": "2011-08", "current": false, "role": "Exhibit Creator", "description": "Installation of giant interactive Rubik's cube to inspire children to be interested in maths and puzzles." }
+      {
+        "org": "Seattle AR/VR Hackathon",
+        "startDate": "2017-09",
+        "endDate": null,
+        "current": true,
+        "role": "Mentor",
+        "description": "Industry expert and mentor for Seattle AR/VR hackathon."
+      },
+      {
+        "org": "Seattle AEC AR/VR Hackathon",
+        "startDate": "2017-03",
+        "endDate": null,
+        "current": true,
+        "role": "Judge",
+        "description": "Industry expert and judge for Seattle augmented reality and virtual reality hackathon."
+      },
+      {
+        "org": "AT&T Seattle AR/VR Hackathon",
+        "startDate": "2017-03",
+        "endDate": "2017-03",
+        "current": false,
+        "role": "Judge & Mentor",
+        "description": null
+      },
+      {
+        "org": "Seattle VR Hackathon",
+        "startDate": "2016-09",
+        "endDate": "2016-09",
+        "current": false,
+        "role": "Judge",
+        "description": null
+      },
+      {
+        "org": "Pacific Science Center",
+        "startDate": "2010-10",
+        "endDate": "2011-08",
+        "current": false,
+        "role": "Exhibit Creator",
+        "description": "Installation of giant interactive Rubik's cube to inspire children to be interested in maths and puzzles."
+      }
     ]
   },
   "filterTaxonomy": {
@@ -2021,104 +3422,6 @@
       "startDate": "2010-10",
       "endDate": "2011-08",
       "description": "Installation of giant interactive Rubik's cube to inspire children to be interested in maths and puzzles."
-    }
-  ],
-  "certifications": [
-    {
-      "id": "cert-1",
-      "title": "Creating Your First Android App with Kotlin",
-      "issuer": "LinkedIn",
-      "date": "2022-10"
-    },
-    {
-      "id": "cert-2",
-      "title": "5G Technology Strategy: Next-Generation Mobile Networking",
-      "issuer": "LinkedIn",
-      "date": "2022-09"
-    },
-    {
-      "id": "cert-3",
-      "title": "Animation Foundations: Gesture",
-      "issuer": "LinkedIn",
-      "date": "2022-09"
-    },
-    {
-      "id": "cert-4",
-      "title": "Apple watchOS App Development: Advanced APIs",
-      "issuer": "LinkedIn",
-      "date": "2022-09"
-    },
-    {
-      "id": "cert-5",
-      "title": "Building iOS Apps with CloudKit",
-      "issuer": "LinkedIn",
-      "date": "2022-09"
-    },
-    {
-      "id": "cert-6",
-      "title": "Core Data in iOS: 2 Intermediate Topics",
-      "issuer": "LinkedIn",
-      "date": "2022-09"
-    },
-    {
-      "id": "cert-7",
-      "title": "Making Hybrid Teams Work",
-      "issuer": "LinkedIn",
-      "date": "2022-09"
-    },
-    {
-      "id": "cert-8",
-      "title": "Presenting to Senior Executives",
-      "issuer": "LinkedIn",
-      "date": "2022-09"
-    },
-    {
-      "id": "cert-9",
-      "title": "Satellite Internet and Communications: Fundamentals",
-      "issuer": "LinkedIn",
-      "date": "2022-09"
-    },
-    {
-      "id": "cert-10",
-      "title": "iOS 16 First Look for Developers",
-      "issuer": "LinkedIn",
-      "date": "2022-09"
-    },
-    {
-      "id": "cert-11",
-      "title": "Advanced iOS App Development: Core Animation",
-      "issuer": "LinkedIn",
-      "date": "2022-08"
-    },
-    {
-      "id": "cert-12",
-      "title": "Advanced iOS App Development: Core Motion",
-      "issuer": "LinkedIn",
-      "date": "2022-08"
-    },
-    {
-      "id": "cert-13",
-      "title": "Apple watchOS 7 App Development Essential Training",
-      "issuer": "LinkedIn",
-      "date": "2022-08"
-    },
-    {
-      "id": "cert-14",
-      "title": "Learning TinyML",
-      "issuer": "LinkedIn",
-      "date": "2022-08"
-    },
-    {
-      "id": "cert-15",
-      "title": "Practical Design Patterns in Swift",
-      "issuer": "LinkedIn",
-      "date": "2022-08"
-    },
-    {
-      "id": "cert-16",
-      "title": "Swift: Delegations and Data Sources",
-      "issuer": "LinkedIn",
-      "date": "2022-08"
     }
   ],
   "projects": [

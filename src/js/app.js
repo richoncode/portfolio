@@ -521,17 +521,46 @@ function renderProjects() {
     </div>`;
 }
 
+const LEARN_FILTERS = [
+  { id: 'management',   label: 'Management' },
+  { id: 'engineering',  label: 'Engineering' },
+  { id: 'ai',           label: 'AI & Related' },
+  { id: 'performance',  label: 'Performance & Multiprocessor' },
+  { id: 'communication', label: 'Communication' },
+];
+
+let learnActiveFilters = new Set();
+
 function renderLearning() {
+  const container = document.getElementById('learning-content');
   const { certifications, volunteering } = resumeData.learning;
 
-  const certsHtml = certifications.map(c => `
-    <div class="learn-cert-row">
-      <span class="learn-cert-title">${escapeHtml(c.title)}</span>
-      <span class="learn-cert-meta">
-        <span class="learn-issuer-badge">${escapeHtml(c.issuer)}</span>
-        <span class="learn-date">${formatDate(c.date)}</span>
-      </span>
-    </div>`).join('');
+  const filterChips = LEARN_FILTERS.map(f => `
+    <button class="learn-filter-chip${learnActiveFilters.has(f.id) ? ' learn-filter-chip--active' : ''}"
+            data-tag="${f.id}">${escapeHtml(f.label)}</button>`).join('');
+
+  const filtered = learnActiveFilters.size === 0
+    ? certifications
+    : certifications.filter(c => c.tags && c.tags.some(t => learnActiveFilters.has(t)));
+
+  const certsHtml = filtered.map(c => {
+    const titleEl = c.url
+      ? `<a class="learn-cert-title" href="${c.url}" target="_blank" rel="noopener">${escapeHtml(c.title)}</a>`
+      : `<span class="learn-cert-title">${escapeHtml(c.title)}</span>`;
+    const metaParts = [];
+    if (c.author) metaParts.push(`<span class="learn-cert-author">${escapeHtml(c.author)}</span>`);
+    if (c.duration) metaParts.push(`<span class="learn-cert-dur">${escapeHtml(c.duration)}</span>`);
+    metaParts.push(`<span class="learn-issuer-badge">${escapeHtml(c.issuer)}</span>`);
+    metaParts.push(`<span class="learn-date">${formatDate(c.completedDate || c.date)}</span>`);
+    return `
+      <div class="learn-cert-row">
+        ${titleEl}
+        <span class="learn-cert-meta">${metaParts.join('')}</span>
+      </div>`;
+  }).join('');
+
+  const countLabel = learnActiveFilters.size > 0
+    ? `<span class="learn-cert-count">${filtered.length} of ${certifications.length}</span>` : '';
 
   const volHtml = volunteering.map(v => {
     const dateStr = formatDate(v.startDate) + ' – ' + (v.current ? 'Present' : formatDate(v.endDate));
@@ -546,15 +575,25 @@ function renderLearning() {
       </div>`;
   }).join('');
 
-  document.getElementById('learning-content').innerHTML = `
+  container.innerHTML = `
     <div class="learn-section">
       <h2 class="learn-section-title">Certifications</h2>
+      <div class="learn-filter-bar">${filterChips}${countLabel}</div>
       <div class="learn-cert-list">${certsHtml}</div>
     </div>
     <div class="learn-section">
       <h2 class="learn-section-title">Volunteering &amp; Leadership</h2>
       ${volHtml}
     </div>`;
+
+  container.querySelectorAll('.learn-filter-chip').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const tag = btn.dataset.tag;
+      if (learnActiveFilters.has(tag)) learnActiveFilters.delete(tag);
+      else learnActiveFilters.add(tag);
+      renderLearning();
+    });
+  });
 }
 
 // ─── Admin Mode ───────────────────────────────────────────────────────────────
