@@ -3510,8 +3510,57 @@
       ]
     },
     {
-      "group": "Spatial Multiuser Interactions",
+      "group": "Spatial AI & Multiuser Interactions",
       "inventions": [
+        {
+          "id": "pat-eclipse-cursor",
+          "title": "Eclipse Cursor for Virtual Content in Mixed Reality Displays",
+          "numbers": [
+            "US 11,567,627 (2023)",
+            "US 12,449,950 (2025)",
+            "US 19/340,734 (2026)"
+          ],
+          "url": "https://patents.google.com/patent/US11567627",
+          "summary": "A cursor system designed specifically for mixed-reality environments where virtual content is layered over the real world. The system dynamically adjusts cursor appearance and interaction behavior depending on depth, occlusion, and visual context. The \"eclipse\" metaphor allows the cursor to partially mask or highlight objects so users can accurately target virtual elements without losing situational awareness of the real environment."
+        },
+        {
+          "id": "pat-ar-scrollbar",
+          "title": "Augmented Reality Scrollbar",
+          "numbers": [
+            "US 11,157,159 (2021)",
+            "US 11,520,477 (2022)"
+          ],
+          "url": "https://patents.google.com/patent/US11520477",
+          "summary": "A scrolling control designed for augmented reality interfaces, where conventional UI widgets like scrollbars are difficult to represent spatially. The system maps scrolling to spatial gestures and contextual UI overlays so users can navigate large content lists within AR displays while maintaining a stable visual reference in 3D space."
+        },
+        {
+          "id": "pat-locate-friends",
+          "title": "Locating Friends Within Venue in an Augmented Reality System",
+          "numbers": [
+            "US 19/020,735 (2025)"
+          ],
+          "url": "https://patents.google.com/patent/US20250126573",
+          "summary": "A system that enables real-time spatial discovery of friends inside large venues using AR overlays. The platform tracks user locations and renders directional indicators or avatars within an augmented reality view, allowing users to locate each other inside environments such as stadiums or events without needing traditional maps."
+        },
+        {
+          "id": "pat-multi-registration",
+          "title": "Use of Multiple Registrations for Augmented Reality Event Viewing",
+          "numbers": [
+            "US 12,159,359 (2024)"
+          ],
+          "url": "https://patents.google.com/patent/US12159359",
+          "summary": "An AR system that combines multiple spatial registrations or coordinate systems to accurately place virtual overlays during live events. By blending different tracking sources—camera tracking, venue models, broadcast feeds—the system improves stability and alignment of AR graphics displayed to viewers."
+        },
+        {
+          "id": "pat-av-presence",
+          "title": "Audiovisual Presence Transitions in Collaborative Reality",
+          "numbers": [
+            "US 12,014,455 (2024)",
+            "US 12,354,204 (2025)"
+          ],
+          "url": "https://patents.google.com/patent/US12014455",
+          "summary": "Technology that manages transitions between different forms of user presence in collaborative XR environments. A participant may move between avatar representations, live video, spatial audio, or immersive perspectives. The system orchestrates audiovisual changes smoothly so users perceive consistent identity and presence across collaboration modes."
+        },
         {
           "id": "pat-session-manager",
           "title": "Session Manager",
