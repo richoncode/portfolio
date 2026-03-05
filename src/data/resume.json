@@ -3470,15 +3470,6 @@
           "summary": "A cursor system designed specifically for mixed-reality environments where virtual content is layered over the real world. The system dynamically adjusts cursor appearance and interaction behavior depending on depth, occlusion, and visual context. The \"eclipse\" metaphor allows the cursor to partially mask or highlight objects so users can accurately target virtual elements without losing situational awareness of the real environment."
         },
         {
-          "id": "pat-locate-friends",
-          "title": "Locating Friends Within Venue in an Augmented Reality System",
-          "numbers": [
-            "US 19/020,735 (2025)"
-          ],
-          "url": "https://patents.google.com/patent/US20250126573",
-          "summary": "A system that enables real-time spatial discovery of friends inside large venues using AR overlays. The platform tracks user locations and renders directional indicators or avatars within an augmented reality view, allowing users to locate each other inside environments such as stadiums or events without needing traditional maps."
-        },
-        {
           "id": "pat-multi-registration",
           "title": "Multiple VPS Synchronization for Live Spatial Event Viewing",
           "numbers": [
@@ -3565,6 +3556,15 @@
           ],
           "url": "https://patents.google.com/patent/US11763559",
           "summary": "Techniques for anchoring annotations to real-world 3D objects. The system enables users to attach metadata, comments, or instructions to physical objects within spatial computing systems. These annotations remain spatially aligned as users move around the object and can be shared across collaborators."
+        },
+        {
+          "id": "pat-locate-friends",
+          "title": "Locating Friends Within Venue in an Augmented Reality System",
+          "numbers": [
+            "US 19/020,735 (2025)"
+          ],
+          "url": "https://patents.google.com/patent/US20250126573",
+          "summary": "A system that enables real-time spatial discovery of friends inside large venues using AR overlays. The platform tracks user locations and renders directional indicators or avatars within an augmented reality view, allowing users to locate each other inside environments such as stadiums or events without needing traditional maps."
         }
       ]
     },
