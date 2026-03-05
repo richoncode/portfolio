@@ -403,6 +403,8 @@ function switchTab(name) {
     renderLearning();
   if (name === 'skills' && !document.getElementById('skills-content').innerHTML)
     renderSkills();
+  if (name === 'patents' && !document.getElementById('patents-content').innerHTML)
+    renderPatents();
 }
 
 // ─── Career Timeline ──────────────────────────────────────────────────────────
@@ -598,6 +600,66 @@ function renderLearning() {
       else learnActiveFilters.add(tag);
       renderLearning();
     });
+  });
+}
+
+// ─── Patents ──────────────────────────────────────────────────────────────────
+
+function renderPatents() {
+  const container = document.getElementById('patents-content');
+  const groups = resumeData.patents || [];
+
+  const total = groups.reduce((n, g) => n + g.inventions.length, 0);
+
+  const html = groups.map(g => `
+    <div class="patent-group">
+      <h2 class="patent-group-title">${escapeHtml(g.group)}</h2>
+      ${g.inventions.map(p => {
+        const nums = p.numbers.map(n => `<span class="patent-num">${escapeHtml(n)}</span>`).join('');
+        return `
+        <div class="patent-card" data-id="${p.id}">
+          <div class="patent-header">
+            <div class="patent-title-row">
+              <a class="patent-title" href="${p.url}" target="_blank" rel="noopener">${escapeHtml(p.title)}</a>
+              <button class="patent-toggle" data-id="${p.id}" aria-expanded="false">Summary ▸</button>
+            </div>
+            <div class="patent-nums">${nums}</div>
+          </div>
+          <div class="patent-summary" id="summary-${p.id}" hidden>${escapeHtml(p.summary)}</div>
+        </div>`;
+      }).join('')}
+    </div>`).join('');
+
+  container.innerHTML = `
+    <div class="patent-meta">
+      <span class="patent-total">${total} inventions across ${groups.length} technical domains</span>
+      <button class="patent-expand-all" id="patent-expand-all">Expand all summaries</button>
+    </div>
+    ${html}`;
+
+  let allExpanded = false;
+  container.addEventListener('click', e => {
+    const toggleBtn = e.target.closest('.patent-toggle');
+    const expandAll  = e.target.closest('#patent-expand-all');
+
+    if (toggleBtn) {
+      const id = toggleBtn.dataset.id;
+      const summary = document.getElementById(`summary-${id}`);
+      const open = summary.hidden;
+      summary.hidden = !open;
+      toggleBtn.textContent = open ? 'Summary ▾' : 'Summary ▸';
+      toggleBtn.setAttribute('aria-expanded', String(open));
+    }
+
+    if (expandAll) {
+      allExpanded = !allExpanded;
+      container.querySelectorAll('.patent-summary').forEach(s => { s.hidden = !allExpanded; });
+      container.querySelectorAll('.patent-toggle').forEach(b => {
+        b.textContent = allExpanded ? 'Summary ▾' : 'Summary ▸';
+        b.setAttribute('aria-expanded', String(allExpanded));
+      });
+      expandAll.textContent = allExpanded ? 'Collapse all summaries' : 'Expand all summaries';
+    }
   });
 }
 

@@ -485,6 +485,116 @@ main { padding: 28px 0 60px; }
 .badge--ic                   { background: rgba(88,166,255,0.12);  color: var(--accent);  border: 1px solid rgba(88,166,255,0.25); }
 .badge--technical-management { background: rgba(188,140,255,0.12); color: var(--purple);  border: 1px solid rgba(188,140,255,0.25); }
 
+/* ─── Patents ────────────────────────────── */
+.patent-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 0 16px;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.patent-total {
+  font-size: 0.75rem;
+  color: var(--text-2);
+  font-family: var(--mono);
+}
+
+.patent-expand-all {
+  font-size: 0.72rem;
+  padding: 4px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-2);
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+}
+.patent-expand-all:hover { color: var(--text); border-color: var(--border-hover); }
+
+.patent-group {
+  padding: 20px 0 4px;
+  border-top: 1px solid var(--border);
+}
+.patent-group:first-of-type { border-top: none; }
+
+.patent-group-title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-2);
+  margin-bottom: 12px;
+}
+
+.patent-card {
+  padding: 10px 12px;
+  border-radius: 6px;
+  margin-bottom: 4px;
+  transition: background 0.1s;
+}
+.patent-card:hover { background: rgba(255,255,255,0.03); }
+
+.patent-header { display: flex; flex-direction: column; gap: 6px; }
+
+.patent-title-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.patent-title {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text);
+  text-decoration: none;
+  flex: 1;
+}
+.patent-title:hover { color: var(--accent); text-decoration: underline; }
+
+.patent-toggle {
+  font-size: 0.68rem;
+  padding: 2px 8px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-2);
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: color 0.15s, border-color 0.15s;
+}
+.patent-toggle:hover { color: var(--accent); border-color: var(--accent); }
+
+.patent-nums {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.patent-num {
+  font-size: 0.65rem;
+  font-family: var(--mono);
+  padding: 1px 7px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  color: var(--text-2);
+  white-space: nowrap;
+}
+
+.patent-summary {
+  font-size: 0.82rem;
+  color: var(--text-2);
+  line-height: 1.6;
+  margin-top: 10px;
+  padding: 10px 12px;
+  border-left: 2px solid var(--border);
+  border-radius: 0 4px 4px 0;
+  background: rgba(255,255,255,0.02);
+}
+
 /* ─── Skills & Publications ──────────────── */
 .skills-section {
   padding: 28px 0 8px;
