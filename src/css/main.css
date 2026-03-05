@@ -779,6 +779,11 @@ a.learn-cert-title:hover { color: var(--accent); text-decoration: underline; }
   background: rgba(88,166,255,0.1);
   color: var(--accent);
   border: 1px solid rgba(88,166,255,0.2);
+  text-decoration: none;
+}
+a.learn-issuer-badge:hover {
+  background: rgba(88,166,255,0.2);
+  border-color: var(--accent);
 }
 
 .learn-date {

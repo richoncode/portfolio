@@ -550,7 +550,10 @@ function renderLearning() {
     const metaParts = [];
     if (c.author) metaParts.push(`<span class="learn-cert-author">${escapeHtml(c.author)}</span>`);
     if (c.duration) metaParts.push(`<span class="learn-cert-dur">${escapeHtml(c.duration)}</span>`);
-    metaParts.push(`<span class="learn-issuer-badge">${escapeHtml(c.issuer)}</span>`);
+    const issuerEl = c.url
+      ? `<a class="learn-issuer-badge" href="${c.url}" target="_blank" rel="noopener">${escapeHtml(c.issuer)}</a>`
+      : `<span class="learn-issuer-badge">${escapeHtml(c.issuer)}</span>`;
+    metaParts.push(issuerEl);
     metaParts.push(`<span class="learn-date">${formatDate(c.completedDate || c.date)}</span>`);
     return `
       <div class="learn-cert-row">
@@ -577,7 +580,7 @@ function renderLearning() {
 
   container.innerHTML = `
     <div class="learn-section">
-      <h2 class="learn-section-title">Certifications</h2>
+      <h2 class="learn-section-title">Continuous Learning</h2>
       <div class="learn-filter-bar">${filterChips}${countLabel}</div>
       <div class="learn-cert-list">${certsHtml}</div>
     </div>
