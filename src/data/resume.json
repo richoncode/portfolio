@@ -1409,6 +1409,54 @@
           "management"
         ],
         "duration": "1h 49m"
+      },
+      {
+        "id": "cert-113",
+        "title": "Image Super Resolution Using Autoencoders in Keras",
+        "issuer": "Coursera",
+        "completedDate": "2020-07-23",
+        "url": "https://www.coursera.org/account/accomplishments/verify/W92LKWH5BHBT",
+        "duration": "1h",
+        "author": "Coursera Project Network",
+        "tags": [
+          "ai"
+        ]
+      },
+      {
+        "id": "cert-114",
+        "title": "Generate Synthetic Images with DCGANs in Keras",
+        "issuer": "Coursera",
+        "completedDate": "2020-07-21",
+        "url": "https://www.coursera.org/account/accomplishments/verify/X88L7X7J8YUV",
+        "duration": "1h",
+        "author": "Coursera Project Network",
+        "tags": [
+          "ai"
+        ]
+      },
+      {
+        "id": "cert-115",
+        "title": "Sequences, Time Series and Prediction",
+        "issuer": "Coursera",
+        "completedDate": "2020-07-20",
+        "url": "https://www.coursera.org/account/accomplishments/verify/QCN8DJM9R85Z",
+        "duration": "21h",
+        "author": "DeepLearning.AI",
+        "tags": [
+          "ai"
+        ]
+      },
+      {
+        "id": "cert-116",
+        "title": "Neural Networks and Deep Learning",
+        "issuer": "Coursera",
+        "completedDate": "2017-11-19",
+        "url": "https://www.coursera.org/account/accomplishments/verify/XFUAR8SSVR6P",
+        "duration": "24h",
+        "author": "DeepLearning.AI",
+        "tags": [
+          "ai"
+        ]
       }
     ],
     "projects": [
