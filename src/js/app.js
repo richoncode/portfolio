@@ -95,10 +95,45 @@ function renderProfile() {
 
 // ─── Intro ────────────────────────────────────────────────────────────────────
 
+const INTRO_FILTERS = [
+  { id: 'engineering',  label: 'Engineering' },
+  { id: 'management',   label: 'Management' },
+  { id: 'ai',           label: 'AI' },
+  { id: 'spatial',      label: 'Spatial' },
+  { id: 'apple',        label: 'Apple' },
+  { id: 'culture',      label: 'Culture' },
+];
+
+let introActiveFilters = new Set();
+
 function renderIntro() {
   const paras = resumeData.profile.intro || [];
-  document.getElementById('intro-content').innerHTML =
-    paras.map(p => `<p class="intro-para">${escapeHtml(p)}</p>`).join('');
+  const container = document.getElementById('intro-content');
+
+  const chips = INTRO_FILTERS.map(f => `
+    <button class="learn-filter-chip${introActiveFilters.has(f.id) ? ' learn-filter-chip--active' : ''}"
+            data-tag="${f.id}">${escapeHtml(f.label)}</button>`).join('');
+
+  const filtered = introActiveFilters.size === 0
+    ? paras
+    : paras.filter(p => p.tags && p.tags.some(t => introActiveFilters.has(t)));
+
+  const getText = p => typeof p === 'string' ? p : p.text;
+  const countLabel = introActiveFilters.size > 0
+    ? `<span class="learn-cert-count">${filtered.length} of ${paras.length}</span>` : '';
+
+  container.innerHTML = `
+    <div class="learn-filter-bar intro-filter-bar">${chips}${countLabel}</div>
+    ${filtered.map(p => `<p class="intro-para">${escapeHtml(getText(p))}</p>`).join('')}`;
+
+  container.querySelectorAll('.learn-filter-chip').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const tag = btn.dataset.tag;
+      if (introActiveFilters.has(tag)) introActiveFilters.delete(tag);
+      else introActiveFilters.add(tag);
+      renderIntro();
+    });
+  });
 }
 
 // ─── Filters ──────────────────────────────────────────────────────────────────
