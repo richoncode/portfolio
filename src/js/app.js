@@ -110,30 +110,36 @@ function renderIntro() {
   const paras = resumeData.profile.intro || [];
   const container = document.getElementById('intro-content');
 
-  const chips = INTRO_FILTERS.map(f => `
-    <button class="learn-filter-chip${introActiveFilters.has(f.id) ? ' learn-filter-chip--active' : ''}"
-            data-tag="${f.id}">${escapeHtml(f.label)}</button>`).join('');
-
-  const filtered = introActiveFilters.size === 0
-    ? paras
-    : paras.filter(p => p.tags && p.tags.some(t => introActiveFilters.has(t)));
-
-  const getText = p => typeof p === 'string' ? p : p.text;
-  const countLabel = introActiveFilters.size > 0
-    ? `<span class="learn-cert-count">${filtered.length} of ${paras.length}</span>` : '';
-
-  container.innerHTML = `
-    <div class="learn-filter-bar intro-filter-bar">${chips}${countLabel}</div>
-    ${filtered.map(p => `<p class="intro-para">${escapeHtml(getText(p))}</p>`).join('')}`;
-
-  container.querySelectorAll('.learn-filter-chip').forEach(btn => {
-    btn.addEventListener('click', () => {
+  // Attach delegated listener once
+  if (!container._introListenerAttached) {
+    container.addEventListener('click', e => {
+      const btn = e.target.closest('.intro-filter-chip');
+      if (!btn) return;
       const tag = btn.dataset.tag;
       if (introActiveFilters.has(tag)) introActiveFilters.delete(tag);
       else introActiveFilters.add(tag);
       renderIntro();
     });
-  });
+    container._introListenerAttached = true;
+  }
+
+  const getText = p => typeof p === 'string' ? p : p.text;
+
+  const chips = INTRO_FILTERS.map(f => `
+    <button class="learn-filter-chip intro-filter-chip${introActiveFilters.has(f.id) ? ' learn-filter-chip--active' : ''}"
+            data-tag="${f.id}">${escapeHtml(f.label)}</button>`).join('');
+
+  const activeTags = Array.from(introActiveFilters);
+  const filtered = activeTags.length === 0
+    ? paras
+    : paras.filter(p => p.tags && p.tags.some(t => activeTags.includes(t)));
+
+  const countLabel = activeTags.length > 0
+    ? `<span class="learn-cert-count">${filtered.length} of ${paras.length}</span>` : '';
+
+  container.innerHTML = `
+    <div class="learn-filter-bar intro-filter-bar">${chips}${countLabel}</div>
+    ${filtered.map(p => `<p class="intro-para">${escapeHtml(getText(p))}</p>`).join('')}`;
 }
 
 // ─── Filters ──────────────────────────────────────────────────────────────────
