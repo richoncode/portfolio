@@ -137,9 +137,18 @@ function renderIntro() {
   const countLabel = activeTags.length > 0
     ? `<span class="learn-cert-count">${filtered.length} of ${paras.length}</span>` : '';
 
+  const tagLabel = tag => INTRO_FILTERS.find(f => f.id === tag)?.label || tag;
+
   container.innerHTML = `
     <div class="learn-filter-bar intro-filter-bar">${chips}${countLabel}</div>
-    ${filtered.map(p => `<p class="intro-para">${escapeHtml(getText(p))}</p>`).join('')}`;
+    ${filtered.map(p => {
+      const tags = (typeof p === 'string' ? [] : p.tags || []);
+      const tagBadges = tags.map(t => `<span class="intro-tag-badge">${escapeHtml(tagLabel(t))}</span>`).join('');
+      return `<div class="intro-para-block">
+        <p class="intro-para">${escapeHtml(getText(p))}</p>
+        ${tagBadges ? `<div class="intro-tag-row">${tagBadges}</div>` : ''}
+      </div>`;
+    }).join('')}`;
 }
 
 // ─── Filters ──────────────────────────────────────────────────────────────────

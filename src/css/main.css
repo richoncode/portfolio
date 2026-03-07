@@ -845,13 +845,36 @@ mark {
   margin-bottom: 24px;
 }
 
+.intro-para-block {
+  margin-bottom: 28px;
+}
+.intro-para-block:last-child { margin-bottom: 0; }
+
+.intro-tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 8px;
+}
+
+.intro-tag-badge {
+  font-size: 0.62rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 1px 7px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  color: var(--text-2);
+  background: var(--bg-card);
+}
+
 .intro-para {
   font-size: 1rem;
   line-height: 1.85;
   color: var(--text);
-  margin-bottom: 28px;
+  margin-bottom: 0;
 }
-.intro-para:last-child { margin-bottom: 0; }
 
 /* ─── Learning ────────────────────────────── */
 .learn-section {
