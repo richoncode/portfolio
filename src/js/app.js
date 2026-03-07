@@ -604,70 +604,83 @@ function renderCareerTimeline() {
 function renderProjects() {
   const { sections } = resumeData.learning.projects;
   document.getElementById('projects-content').innerHTML = sections.map((section, i) => {
-    const isFirst = i === 0;
-    const borderStyle = isFirst ? 'border-top:none; padding-top:32px' : '';
+    const borderStyle = i === 0 ? 'border-top:none; padding-top:32px' : '';
 
     if (section.id === 'experiments') {
-      const categoriesHtml = section.categories.map(cat => {
-        if (cat.groups) {
-          const groupsHtml = cat.groups.map(g => `
-            <div class="proj-group-card">
-              <div class="proj-group-title">
-                ${g.url ? `<a href="${g.url}" target="_blank" rel="noopener" class="proj-group-link">${escapeHtml(g.title)}</a>` : escapeHtml(g.title)}
-              </div>
-              <div class="proj-group-topics">
-                ${g.topics.map(t => t.url
-                  ? `<a href="${t.url}" target="_blank" rel="noopener" class="proj-topic-chip proj-topic-chip--link"${t.summary ? ` data-summary="${escapeHtml(t.summary)}"` : ''}>${escapeHtml(t.title)}</a>`
-                  : `<span class="proj-topic-chip">${escapeHtml(t.title)}</span>`
-                ).join('')}
-              </div>
-            </div>`).join('');
-          return `
-            <div class="proj-category">
-              <div class="proj-category-label">${escapeHtml(cat.title)}</div>
-              <div class="proj-group-grid">${groupsHtml}</div>
-            </div>`;
-        } else {
-          return `
-            <div class="proj-category">
-              <div class="proj-category-label">${escapeHtml(cat.title)}</div>
-              <div class="proj-exp-chips">
-                ${cat.items.map(item => item.url
-                  ? `<a href="${item.url}" target="_blank" rel="noopener" class="proj-exp-chip proj-exp-chip--link"${item.summary ? ` data-summary="${escapeHtml(item.summary)}"` : ''}>${escapeHtml(item.title)}</a>`
-                  : `<span class="proj-exp-chip">${escapeHtml(item.title || item)}</span>`
-                ).join('')}
-              </div>
-            </div>`;
-        }
-      }).join('');
       const titleHtml = section.url
         ? `<a href="${section.url}" target="_blank" rel="noopener" class="proj-section-link">${escapeHtml(section.title)} ↗</a>`
         : escapeHtml(section.title);
       return `
         <div class="learn-section" style="${borderStyle}">
           <div class="proj-section-title">${titleHtml}</div>
-          ${categoriesHtml}
-        </div>`;
-
-    } else {
-      const itemsHtml = section.items.map(p => {
-        const dateStr = formatDate(p.startDate) + ' – ' + (p.current ? 'Present' : formatDate(p.endDate));
-        return `
-          <div class="learn-card">
-            <div class="learn-card-header">
-              <span class="learn-card-title">${escapeHtml(p.title)}</span>
-              <span class="learn-date">${dateStr}</span>
-            </div>
-            ${p.description ? `<p class="learn-card-desc">${escapeHtml(p.description)}</p>` : ''}
-          </div>`;
-      }).join('');
-      return `
-        <div class="learn-section" style="${borderStyle}">
-          <div class="proj-section-title">${escapeHtml(section.title)}</div>
-          ${itemsHtml}
+          <div class="proj-outline">
+            ${section.categories.map(cat => renderProjCategory(cat)).join('')}
+          </div>
         </div>`;
     }
+
+    const itemsHtml = section.items.map(p => {
+      const dateStr = formatDate(p.startDate) + ' – ' + (p.current ? 'Present' : formatDate(p.endDate));
+      return `
+        <div class="learn-card">
+          <div class="learn-card-header">
+            <span class="learn-card-title">${escapeHtml(p.title)}</span>
+            <span class="learn-date">${dateStr}</span>
+          </div>
+          ${p.description ? `<p class="learn-card-desc">${escapeHtml(p.description)}</p>` : ''}
+        </div>`;
+    }).join('');
+    return `
+      <div class="learn-section" style="${borderStyle}">
+        <div class="proj-section-title">${escapeHtml(section.title)}</div>
+        ${itemsHtml}
+      </div>`;
   }).join('');
+}
+
+function renderProjCategory(cat) {
+  let innerHtml = '';
+  if (cat.series) {
+    innerHtml = cat.series.map(s => {
+      const titleEl = s.url
+        ? `<a href="${s.url}" target="_blank" rel="noopener" class="proj-series-title">${escapeHtml(s.title)} <span aria-hidden="true">↗</span></a>`
+        : `<span class="proj-series-title">${escapeHtml(s.title)}</span>`;
+      const lessonsHtml = s.sections
+        ? s.sections.map(sec => `
+            <div class="proj-sec-label">${escapeHtml(sec.title)}</div>
+            ${sec.lessons.map(l => renderProjLesson(l)).join('')}`).join('')
+        : (s.lessons || []).map(l => renderProjLesson(l)).join('');
+      return `
+        <div class="proj-series-block">
+          ${titleEl}
+          ${s.subtitle ? `<div class="proj-series-subtitle">${escapeHtml(s.subtitle)}</div>` : ''}
+          ${lessonsHtml}
+        </div>`;
+    }).join('');
+  } else if (cat.items) {
+    innerHtml = `<div class="proj-exp-chips">
+      ${cat.items.map(item => item.url
+        ? `<a href="${item.url}" target="_blank" rel="noopener" class="proj-exp-chip proj-exp-chip--link"${item.summary ? ` data-summary="${escapeHtml(item.summary)}"` : ''}>${escapeHtml(item.title)}</a>`
+        : `<span class="proj-exp-chip">${escapeHtml(item.title)}</span>`
+      ).join('')}
+    </div>`;
+  }
+  return `
+    <div class="proj-cat-block">
+      <div class="proj-cat-header">${escapeHtml(cat.title)}</div>
+      ${innerHtml}
+    </div>`;
+}
+
+function renderProjLesson(l) {
+  const linkEl = l.url
+    ? `<a href="${l.url}" target="_blank" rel="noopener" class="proj-lesson-link"${l.summary ? ` data-summary="${escapeHtml(l.summary)}"` : ''}>${escapeHtml(l.title)}</a>`
+    : `<span class="proj-lesson-link">${escapeHtml(l.title)}</span>`;
+  return `
+    <div class="proj-lesson">
+      ${l.num !== undefined ? `<span class="proj-lesson-num">${escapeHtml(l.num)}</span>` : ''}
+      ${linkEl}
+    </div>`;
 }
 
 const LEARN_FILTERS = [
