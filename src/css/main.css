@@ -139,8 +139,8 @@ a:hover { text-decoration: underline; }
   padding: 4px 10px;
   transition: all 0.15s;
 }
-.filter-toggle-btn:hover           { border-color: var(--accent); color: var(--text); }
-.filter-panel--open .filter-toggle-btn { border-color: var(--accent); color: var(--text); }
+.filter-toggle-btn:hover           { border-color: var(--accent); color: var(--accent); background: rgba(88,166,255,0.08); }
+.filter-panel--open .filter-toggle-btn { border-color: var(--accent); color: var(--accent); background: rgba(88,166,255,0.1); }
 
 .filter-active-count {
   display: inline-flex;
@@ -266,18 +266,21 @@ a:hover { text-decoration: underline; }
   color: #0d1117;
   font-weight: 600;
 }
+.chip--role.chip--active[data-value="ic"]:hover { filter: brightness(0.82); }
 .chip--role.chip--active[data-value="technical-management"] {
   background: var(--purple);
   border-color: var(--purple);
   color: #0d1117;
   font-weight: 600;
 }
+.chip--role.chip--active[data-value="technical-management"]:hover { filter: brightness(0.82); }
 .chip--experience.chip--active {
   background: var(--purple);
   border-color: var(--purple);
   color: #0d1117;
   font-weight: 600;
 }
+.chip--experience.chip--active:hover { filter: brightness(0.82); }
 
 /* ─── Experience Chart ────────────────────── */
 .experience-chart {
@@ -912,11 +915,17 @@ mark {
   cursor: pointer;
   transition: background 0.15s, color 0.15s, border-color 0.15s;
 }
-.learn-filter-chip:hover { border-color: var(--border-hover); color: var(--text); }
+.learn-filter-chip:hover { border-color: var(--accent); color: var(--accent); }
 .learn-filter-chip--active {
-  background: rgba(88,166,255,0.12);
+  background: rgba(88,166,255,0.15);
   border-color: var(--accent);
   color: var(--accent);
+  font-weight: 600;
+}
+.learn-filter-chip--active:hover {
+  background: rgba(88,166,255,0.28);
+  border-color: var(--accent-2);
+  color: var(--accent-2);
 }
 
 .learn-cert-count {
