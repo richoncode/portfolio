@@ -65,6 +65,12 @@ async function init() {
     renderFilters();
     renderTimeline();
     initTabs();
+    const initialTab = window.location.hash.slice(1);
+    if (initialTab) switchTab(initialTab, false);
+    window.addEventListener('popstate', () => {
+      const tab = window.location.hash.slice(1);
+      switchTab(tab || 'intro', false);
+    });
     initFilterToggle();
     initAdmin();
     initAdminPopout();
@@ -474,11 +480,15 @@ function initTabs() {
   );
 }
 
-function switchTab(name) {
+const VALID_TABS = new Set(['intro','experience','timeline','projects','patents','learning','skills']);
+
+function switchTab(name, pushState = true) {
+  if (!VALID_TABS.has(name)) name = 'intro';
   document.querySelectorAll('.tab')
     .forEach(t => t.classList.toggle('tab--active', t.dataset.tab === name));
   document.querySelectorAll('.tab-pane')
     .forEach(p => p.classList.toggle('tab-pane--active', p.id === `pane-${name}`));
+  if (pushState) history.pushState(null, '', `#${name}`);
   if (name === 'timeline' && !document.getElementById('career-timeline').innerHTML)
     renderCareerTimeline();
   if (name === 'projects' && !document.getElementById('projects-content').innerHTML)
