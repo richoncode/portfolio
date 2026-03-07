@@ -1243,6 +1243,11 @@ a.learn-issuer-badge:hover {
   color: var(--text);
   margin-bottom: 8px;
 }
+.proj-group-link {
+  color: var(--text);
+  text-decoration: none;
+}
+.proj-group-link:hover { color: var(--accent); text-decoration: none; }
 
 .proj-group-topics {
   display: flex;
@@ -1257,7 +1262,10 @@ a.learn-issuer-badge:hover {
   border: 1px solid var(--border);
   color: var(--text-2);
   background: transparent;
+  text-decoration: none;
+  display: inline-block;
 }
+.proj-topic-chip--link:hover { border-color: var(--accent); color: var(--accent); }
 
 .proj-exp-chips {
   display: flex;
@@ -1272,7 +1280,10 @@ a.learn-issuer-badge:hover {
   border: 1px solid var(--border);
   color: var(--text);
   background: var(--bg-card);
+  text-decoration: none;
+  display: inline-block;
 }
+.proj-exp-chip--link:hover { border-color: var(--accent); color: var(--accent); }
 
 /* ─── Responsive ──────────────────────────── */
 @media (max-width: 640px) {

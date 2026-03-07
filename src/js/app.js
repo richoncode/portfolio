@@ -567,9 +567,14 @@ function renderProjects() {
         if (cat.groups) {
           const groupsHtml = cat.groups.map(g => `
             <div class="proj-group-card">
-              <div class="proj-group-title">${escapeHtml(g.title)}</div>
+              <div class="proj-group-title">
+                ${g.url ? `<a href="${g.url}" target="_blank" rel="noopener" class="proj-group-link">${escapeHtml(g.title)}</a>` : escapeHtml(g.title)}
+              </div>
               <div class="proj-group-topics">
-                ${g.topics.map(t => `<span class="proj-topic-chip">${escapeHtml(t)}</span>`).join('')}
+                ${g.topics.map(t => t.url
+                  ? `<a href="${t.url}" target="_blank" rel="noopener" class="proj-topic-chip proj-topic-chip--link">${escapeHtml(t.title)}</a>`
+                  : `<span class="proj-topic-chip">${escapeHtml(t.title)}</span>`
+                ).join('')}
               </div>
             </div>`).join('');
           return `
@@ -582,7 +587,10 @@ function renderProjects() {
             <div class="proj-category">
               <div class="proj-category-label">${escapeHtml(cat.title)}</div>
               <div class="proj-exp-chips">
-                ${cat.items.map(item => `<span class="proj-exp-chip">${escapeHtml(item)}</span>`).join('')}
+                ${cat.items.map(item => item.url
+                  ? `<a href="${item.url}" target="_blank" rel="noopener" class="proj-exp-chip proj-exp-chip--link">${escapeHtml(item.title)}</a>`
+                  : `<span class="proj-exp-chip">${escapeHtml(item.title || item)}</span>`
+                ).join('')}
               </div>
             </div>`;
         }
