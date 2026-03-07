@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Style Guide – Richard Bailey Portfolio</title>
+  <link rel="stylesheet" href="src/css/main.css?v=21">
+  <style>
+    .sg-page { padding: 40px 0 80px; }
+    .sg-section { margin-bottom: 56px; }
+    .sg-title {
+      font-size: 0.65rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.12em; color: var(--text-2); margin-bottom: 20px;
+      padding-bottom: 8px; border-bottom: 1px solid var(--border);
+    }
+    .sg-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-bottom: 12px; }
+    .sg-label { font-size: 0.68rem; font-family: var(--mono); color: var(--text-2); margin-top: 4px; }
+
+    /* Color swatches */
+    .swatch { width: 72px; text-align: center; }
+    .swatch-box {
+      width: 72px; height: 40px; border-radius: var(--radius);
+      border: 1px solid var(--border); margin-bottom: 4px;
+    }
+    .swatch-label { font-size: 0.62rem; font-family: var(--mono); color: var(--text-2); }
+
+    /* Type specimens */
+    .sg-type-row { margin-bottom: 16px; }
+
+    /* Spacing tokens */
+    .sg-space { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+    .sg-space-bar { height: 12px; background: rgba(88,166,255,0.3); border-radius: 2px; }
+
+    /* Demo card wrapper */
+    .sg-demo { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; }
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <h1 style="background: linear-gradient(135deg,#58a6ff 0%,#bc8cff 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">
+      Style Guide
+    </h1>
+    <p style="color:var(--text-2); font-size:0.88rem; margin-top:4px;">
+      Richard Bailey Portfolio — Visual Design System
+    </p>
+  </div>
+</header>
+
+<div class="sg-page">
+  <div class="container">
+
+    <!-- ── Colour Palette ───────────────────────────────────────────── -->
+    <div class="sg-section">
+      <div class="sg-title">Colour Palette</div>
+      <div class="sg-row">
+        <div class="swatch"><div class="swatch-box" style="background:#0d1117"></div><div class="swatch-label">--bg<br>#0d1117</div></div>
+        <div class="swatch"><div class="swatch-box" style="background:#161b22"></div><div class="swatch-label">--bg-card<br>#161b22</div></div>
+        <div class="swatch"><div class="swatch-box" style="background:#30363d"></div><div class="swatch-label">--border<br>#30363d</div></div>
+        <div class="swatch"><div class="swatch-box" style="background:#48535e"></div><div class="swatch-label">--border-hover<br>#48535e</div></div>
+        <div class="swatch"><div class="swatch-box" style="background:#e6edf3"></div><div class="swatch-label">--text<br>#e6edf3</div></div>
+        <div class="swatch"><div class="swatch-box" style="background:#8b949e"></div><div class="swatch-label">--text-2<br>#8b949e</div></div>
+        <div class="swatch"><div class="swatch-box" style="background:#58a6ff"></div><div class="swatch-label">--accent<br>#58a6ff</div></div>
+        <div class="swatch"><div class="swatch-box" style="background:#79c0ff"></div><div class="swatch-label">--accent-2<br>#79c0ff</div></div>
+        <div class="swatch"><div class="swatch-box" style="background:#3fb950"></div><div class="swatch-label">--green<br>#3fb950</div></div>
+        <div class="swatch"><div class="swatch-box" style="background:#d29922"></div><div class="swatch-label">--orange<br>#d29922</div></div>
+        <div class="swatch"><div class="swatch-box" style="background:#bc8cff"></div><div class="swatch-label">--purple<br>#bc8cff</div></div>
+        <div class="swatch"><div class="swatch-box" style="background:#f85149"></div><div class="swatch-label">--red<br>#f85149</div></div>
+      </div>
+      <div class="sg-row" style="margin-top:16px;">
+        <div class="swatch" style="width:200px">
+          <div class="swatch-box" style="width:200px; background:linear-gradient(135deg,#58a6ff 0%,#bc8cff 100%)"></div>
+          <div class="swatch-label">Name gradient (accent→purple)</div>
+        </div>
+        <div class="swatch" style="width:200px">
+          <div class="swatch-box" style="width:200px; background:linear-gradient(135deg,#1a1f2e 0%,#0d1117 100%)"></div>
+          <div class="swatch-label">Header bg gradient</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Typography ───────────────────────────────────────────────── -->
+    <div class="sg-section">
+      <div class="sg-title">Typography</div>
+      <div class="sg-demo">
+        <div class="sg-type-row">
+          <h1 style="font-size:1.9rem; font-weight:700; background:linear-gradient(135deg,#58a6ff,#bc8cff); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">Profile Name — 1.9rem / 700</h1>
+          <div class="sg-label">h1 · gradient · letter-spacing -0.5px</div>
+        </div>
+        <div class="sg-type-row">
+          <p style="font-size:0.92rem; color:var(--text-2);">Profile Title — 0.92rem / text-2</p>
+          <div class="sg-label">#profile-title</div>
+        </div>
+        <div class="sg-type-row" style="margin-top:12px;">
+          <p style="font-size:1rem; line-height:1.85;">Body paragraph — 1rem / 1.85 line-height. Used for intro paragraphs. Primary text colour var(--text).</p>
+          <div class="sg-label">.intro-para</div>
+        </div>
+        <div class="sg-type-row" style="margin-top:12px;">
+          <p style="font-size:0.88rem; font-weight:500;">Card title — 0.88rem / 500</p>
+          <div class="sg-label">.patent-title · .learn-card-title</div>
+        </div>
+        <div class="sg-type-row">
+          <p style="font-size:0.85rem;">Cert row title — 0.85rem / regular</p>
+          <div class="sg-label">.learn-cert-title</div>
+        </div>
+        <div class="sg-type-row">
+          <p style="font-size:0.83rem; color:var(--text-2);">Card description — 0.83rem / text-2</p>
+          <div class="sg-label">.learn-card-desc</div>
+        </div>
+        <div class="sg-type-row">
+          <p style="font-size:0.78rem;">Skill chip text — 0.78rem</p>
+          <div class="sg-label">.skill-chip</div>
+        </div>
+        <div class="sg-type-row">
+          <p style="font-size:0.72rem; color:var(--text-2);">Meta / secondary text — 0.72rem / text-2</p>
+          <div class="sg-label">.learn-cert-author · .learn-cert-dur</div>
+        </div>
+        <div class="sg-type-row">
+          <p style="font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--text-2);">Section Label — 0.7rem / 700 / uppercase / 0.1em spacing</p>
+          <div class="sg-label">.learn-section-title · .skill-group-title · .patent-group-title</div>
+        </div>
+        <div class="sg-type-row" style="margin-top:8px;">
+          <p style="font-size:0.72rem; font-family:'SF Mono','Fira Code',monospace; color:var(--text-2); white-space:nowrap;">2022-10-25 · mono date — 0.72rem var(--mono)</p>
+          <div class="sg-label">.learn-date · .patent-num</div>
+        </div>
+        <div class="sg-type-row">
+          <p style="font-size:0.6rem; font-family:'SF Mono','Fira Code',monospace; opacity:0.4;">v1.0 — version text 0.6rem mono / 0.4 opacity</p>
+          <div class="sg-label">.profile-version</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Buttons ──────────────────────────────────────────────────── -->
+    <div class="sg-section">
+      <div class="sg-title">Buttons &amp; Controls</div>
+      <div class="sg-demo">
+        <div class="sg-row">
+          <button class="tab tab--active">Active Tab</button>
+          <button class="tab">Inactive Tab</button>
+          <div class="sg-label" style="width:100%">.tab · .tab--active — border-bottom accent underline</div>
+        </div>
+        <div class="sg-row" style="margin-top:16px;">
+          <button class="filter-toggle-btn">Filters <span class="filter-active-count">3</span> <span class="filter-chevron">▾</span></button>
+          <button class="filter-toggle-btn" style="border-color:var(--accent); color:var(--text);">Filters (open)</button>
+          <div class="sg-label" style="width:100%">.filter-toggle-btn — ghost border, accent on hover/open</div>
+        </div>
+        <div class="sg-row" style="margin-top:16px;">
+          <button class="learn-filter-chip">Engineering</button>
+          <button class="learn-filter-chip learn-filter-chip--active">AI</button>
+          <button class="learn-filter-chip">Spatial</button>
+          <button class="learn-filter-chip learn-filter-chip--active">Management</button>
+          <div class="sg-label" style="width:100%">.learn-filter-chip · .learn-filter-chip--active — pill, accent fill when active</div>
+        </div>
+        <div class="sg-row" style="margin-top:16px;">
+          <button class="patent-toggle">Summary ▸</button>
+          <button class="patent-toggle" style="color:var(--accent); border-color:var(--accent);">Summary ▾</button>
+          <button class="patent-expand-all">Expand all summaries</button>
+          <div class="sg-label" style="width:100%">.patent-toggle · .patent-expand-all</div>
+        </div>
+        <div class="sg-row" style="margin-top:16px;">
+          <button class="clear-btn">Clear All</button>
+          <div class="sg-label" style="width:100%">.clear-btn</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Badges & Chips ───────────────────────────────────────────── -->
+    <div class="sg-section">
+      <div class="sg-title">Badges &amp; Chips</div>
+      <div class="sg-demo">
+        <div class="sg-row">
+          <span class="learn-issuer-badge">LinkedIn</span>
+          <span class="learn-issuer-badge">Coursera</span>
+          <div class="sg-label" style="width:100%">.learn-issuer-badge — accent pill, links to course URL</div>
+        </div>
+        <div class="sg-row" style="margin-top:12px;">
+          <span class="patent-num">US 11,567,627 (2023)</span>
+          <span class="patent-num">US 12,449,950 (2025)</span>
+          <div class="sg-label" style="width:100%">.patent-num — mono bordered pill, text-2</div>
+        </div>
+        <div class="sg-row" style="margin-top:12px;">
+          <span class="skill-chip">Swift</span>
+          <span class="skill-chip">RealityKit</span>
+          <span class="skill-chip">C++</span>
+          <span class="skill-chip">Spatial Computing</span>
+          <div class="sg-label" style="width:100%">.skill-chip — bg-card border pill</div>
+        </div>
+        <div class="sg-row" style="margin-top:12px;">
+          <span class="intro-tag-badge">Engineering</span>
+          <span class="intro-tag-badge">AI</span>
+          <span class="intro-tag-badge">Spatial</span>
+          <span class="intro-tag-badge">Apple</span>
+          <div class="sg-label" style="width:100%">.intro-tag-badge — tiny uppercase category label on intro paragraphs</div>
+        </div>
+        <div class="sg-row" style="margin-top:12px;">
+          <span class="badge badge--ic">IC</span>
+          <span class="badge badge--technical-management">TM</span>
+          <div class="sg-label" style="width:100%">.badge--ic (blue) · .badge--technical-management (purple)</div>
+        </div>
+        <div class="sg-row" style="margin-top:12px;">
+          <span class="filter-active-count">5</span>
+          <span class="learn-cert-count">12 of 116</span>
+          <div class="sg-label" style="width:100%">.filter-active-count (accent dot) · .learn-cert-count (mono dim)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Cards ────────────────────────────────────────────────────── -->
+    <div class="sg-section">
+      <div class="sg-title">Cards</div>
+      <div class="sg-demo">
+
+        <!-- Learn card -->
+        <div class="learn-card" style="margin-bottom:16px;">
+          <div class="learn-card-header">
+            <span class="learn-card-title">Kinect for Windows</span>
+            <span class="learn-date">2011-05 – Present</span>
+          </div>
+          <div class="learn-card-role">Developer Evangelist</div>
+          <p class="learn-card-desc">Published open-source samples and documentation for the Kinect SDK.</p>
+        </div>
+        <div class="sg-label" style="margin-bottom:20px;">.learn-card — bg-card border radius, hover border brightens</div>
+
+        <!-- Patent card -->
+        <div class="patent-card">
+          <div class="patent-header">
+            <div class="patent-title-row">
+              <a class="patent-title" href="#">Eclipse Cursor for Virtual Content in Mixed Reality Displays</a>
+              <button class="patent-toggle">Summary ▸</button>
+            </div>
+            <div class="patent-nums">
+              <span class="patent-num">US 11,567,627 (2023)</span>
+              <span class="patent-num">US 12,449,950 (2025)</span>
+            </div>
+          </div>
+          <div class="patent-summary" style="display:block; margin-top:10px;">
+            This invention describes a cursor system designed for mixed-reality environments where virtual content is layered over the real world.
+          </div>
+        </div>
+        <div class="sg-label" style="margin-top:8px;">.patent-card · .patent-header · .patent-title-row · .patent-summary (left-border accent)</div>
+      </div>
+    </div>
+
+    <!-- ── Cert Row ──────────────────────────────────────────────────── -->
+    <div class="sg-section">
+      <div class="sg-title">Certification Row</div>
+      <div class="sg-demo">
+        <div class="learn-cert-list">
+          <div class="learn-cert-row">
+            <a class="learn-cert-title" href="#">Neural Networks and Deep Learning</a>
+            <span class="learn-cert-meta">
+              <span class="learn-cert-author">DeepLearning.AI</span>
+              <span class="learn-cert-dur">24h</span>
+              <a class="learn-issuer-badge" href="#">Coursera</a>
+              <span class="learn-date">2017-11-19</span>
+            </span>
+          </div>
+          <div class="learn-cert-row">
+            <a class="learn-cert-title" href="#">Parallel and Concurrent Programming with C++ Part 1</a>
+            <span class="learn-cert-meta">
+              <span class="learn-cert-author">Olivia Chiu Stone and Barron Stone</span>
+              <span class="learn-cert-dur">1h 59m</span>
+              <a class="learn-issuer-badge" href="#">LinkedIn</a>
+              <span class="learn-date">2022-07-23</span>
+            </span>
+          </div>
+        </div>
+        <div class="sg-label" style="margin-top:8px;">.learn-cert-row — flex space-between, hover bg. Title links to course. Issuer badge links to course.</div>
+      </div>
+    </div>
+
+    <!-- ── Form Controls ────────────────────────────────────────────── -->
+    <div class="sg-section">
+      <div class="sg-title">Form Controls</div>
+      <div class="sg-demo">
+        <div class="search-row">
+          <input type="text" id="search-input" placeholder="Search achievements, technologies, customers…" autocomplete="off" style="max-width:480px;">
+        </div>
+        <div class="sg-label" style="margin-bottom:16px;">#search-input — bg-card border, accent on focus</div>
+        <div class="filter-group">
+          <label class="toggle-label">
+            <input type="checkbox">
+            <span>Metrics only</span>
+          </label>
+        </div>
+        <div class="sg-label">.toggle-label — checkbox + label inline</div>
+      </div>
+    </div>
+
+    <!-- ── Section Patterns ─────────────────────────────────────────── -->
+    <div class="sg-section">
+      <div class="sg-title">Section Patterns</div>
+      <div class="sg-demo">
+        <div class="skill-group" style="margin-bottom:20px;">
+          <h3 class="skill-group-title">Engineering</h3>
+          <div class="skill-chips">
+            <span class="skill-chip">Swift</span>
+            <span class="skill-chip">RealityKit</span>
+            <span class="skill-chip">C++</span>
+            <span class="skill-chip">Metal Shaders</span>
+            <span class="skill-chip">Spatial Audio</span>
+          </div>
+        </div>
+        <div class="sg-label" style="margin-bottom:20px;">.skill-group · .skill-group-title · .skill-chips</div>
+
+        <h2 class="learn-section-title" style="margin-bottom:12px;">Continuous Learning</h2>
+        <div class="learn-filter-bar" style="margin-bottom:0;">
+          <button class="learn-filter-chip learn-filter-chip--active">AI</button>
+          <button class="learn-filter-chip">Engineering</button>
+          <button class="learn-filter-chip">Management</button>
+          <span class="learn-cert-count">28 of 116</span>
+        </div>
+        <div class="sg-label" style="margin-top:8px;">.learn-section-title · .learn-filter-bar with chips and count</div>
+      </div>
+    </div>
+
+    <!-- ── Admin Mode ────────────────────────────────────────────────── -->
+    <div class="sg-section">
+      <div class="sg-title">Admin Mode</div>
+      <div class="sg-demo">
+        <p style="font-size:0.82rem; color:var(--text-2); margin-bottom:12px;">
+          Activated by tapping the profile name 10 times. Reveals hidden fields in yellow.
+        </p>
+        <span class="admin-field" style="display:inline-block; color:#e3b341; font-size:0.75rem; font-family:var(--mono); background:rgba(227,179,65,0.08); border:1px solid rgba(227,179,65,0.25); border-radius:4px; padding:2px 8px;">
+          hidden field value
+        </span>
+        <div class="sg-label" style="margin-top:8px;">.admin-field — yellow mono text, shown only in .admin-mode body class</div>
+      </div>
+    </div>
+
+    <!-- ── Spacing & Radius ──────────────────────────────────────────── -->
+    <div class="sg-section">
+      <div class="sg-title">Spacing &amp; Radius</div>
+      <div class="sg-demo">
+        <div class="sg-space"><div class="sg-space-bar" style="width:4px"></div><span style="font-size:0.72rem; font-family:var(--mono); color:var(--text-2);">4px — chip gap, tight</span></div>
+        <div class="sg-space"><div class="sg-space-bar" style="width:6px"></div><span style="font-size:0.72rem; font-family:var(--mono); color:var(--text-2);">6px — filter chip gap</span></div>
+        <div class="sg-space"><div class="sg-space-bar" style="width:8px"></div><span style="font-size:0.72rem; font-family:var(--mono); color:var(--text-2);">8px — card inner gap</span></div>
+        <div class="sg-space"><div class="sg-space-bar" style="width:12px"></div><span style="font-size:0.72rem; font-family:var(--mono); color:var(--text-2);">12px — row gap</span></div>
+        <div class="sg-space"><div class="sg-space-bar" style="width:16px"></div><span style="font-size:0.72rem; font-family:var(--mono); color:var(--text-2);">16px — section gap</span></div>
+        <div class="sg-space"><div class="sg-space-bar" style="width:24px"></div><span style="font-size:0.72rem; font-family:var(--mono); color:var(--text-2);">24px — container padding</span></div>
+        <div class="sg-space"><div class="sg-space-bar" style="width:28px"></div><span style="font-size:0.72rem; font-family:var(--mono); color:var(--text-2);">28px — section top padding</span></div>
+        <div style="margin-top:12px; display:flex; gap:12px; align-items:center;">
+          <div style="width:40px; height:40px; background:var(--bg-card); border:1px solid var(--border); border-radius:4px;"></div>
+          <span style="font-size:0.72rem; font-family:var(--mono); color:var(--text-2);">4px — small pill/badge</span>
+          <div style="width:40px; height:40px; background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius);"></div>
+          <span style="font-size:0.72rem; font-family:var(--mono); color:var(--text-2);">8px — --radius (cards, inputs)</span>
+          <div style="width:40px; height:24px; background:var(--bg-card); border:1px solid var(--border); border-radius:12px;"></div>
+          <span style="font-size:0.72rem; font-family:var(--mono); color:var(--text-2);">12px — pill chips</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
