@@ -1596,29 +1596,125 @@
         ]
       }
     ],
-    "projects": [
-      {
-        "title": "Kinect for Windows",
-        "startDate": "2011-05",
-        "endDate": null,
-        "current": true,
-        "description": null
-      },
-      {
-        "title": "Xbox One - Kinect User Interactions",
-        "startDate": "2013-10",
-        "endDate": "2013-10",
-        "current": false,
-        "description": "Developed interpretation of body movements into interactions with on screen interfaces."
-      },
-      {
-        "title": "Sams Windows Phone 7 Application Development",
-        "startDate": "2010-09",
-        "endDate": "2011-01",
-        "current": false,
-        "description": "Technical editor responsible for reviewing all content and samples for clarity and accuracy."
-      }
-    ],
+    "projects": {
+      "sections": [
+        {
+          "id": "experiments",
+          "title": "Experiments & Teaching",
+          "url": "https://richoncode.github.io/webartests/",
+          "categories": [
+            {
+              "title": "Teaching",
+              "groups": [
+                {
+                  "title": "Learning LLMs",
+                  "topics": [
+                    "Attention Mechanism",
+                    "The Transformer",
+                    "Autoregressive Generation",
+                    "Serial Decoding Limits",
+                    "Diffusion LLMs"
+                  ]
+                },
+                {
+                  "title": "Learning Fintech-AI",
+                  "topics": [
+                    "HMM Trader",
+                    "RL Markets",
+                    "Time Series Forecasting"
+                  ]
+                },
+                {
+                  "title": "Learning Gaussian Splatting",
+                  "topics": [
+                    "SAT Collision",
+                    "Oriented Bounding Boxes",
+                    "smoothStep",
+                    "Alpha Blending",
+                    "2D Gaussian",
+                    "GPU Parallel Algorithms",
+                    "Tile Rasterization",
+                    "Render Pipeline",
+                    "Differentiable Rendering"
+                  ]
+                },
+                {
+                  "title": "Learning Vectorization",
+                  "topics": [
+                    "Ramer–Douglas–Peucker",
+                    "Marching Squares",
+                    "Visvalingam–Whyatt",
+                    "Bézier Fitting",
+                    "Canny Edge Detection",
+                    "Freeman Chain Code"
+                  ]
+                },
+                {
+                  "title": "Sound Synthesis",
+                  "topics": [
+                    "Vibrating String",
+                    "Modal Synthesis",
+                    "Excitation Models",
+                    "Coupled Systems",
+                    "Nonlinear Interactions",
+                    "Environmental Sounds"
+                  ]
+                },
+                {
+                  "title": "Dynamic Audio on the Web",
+                  "topics": [
+                    "Oscillators & Waveforms",
+                    "Envelopes (ADSR)",
+                    "Filters",
+                    "Noise & Percussion",
+                    "Sequencer",
+                    "Effects",
+                    "Analyser & Visualiser"
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "Experiments",
+              "items": [
+                "AR Cube Placer",
+                "WebGL Shader",
+                "Slang Playground",
+                "Laser Experiments",
+                "Geo Tests"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "products",
+          "title": "Products",
+          "items": [
+            {
+              "title": "Kinect for Windows",
+              "startDate": "2011-05",
+              "endDate": null,
+              "current": true,
+              "description": null
+            },
+            {
+              "title": "Xbox One - Kinect User Interactions",
+              "startDate": "2013-10",
+              "endDate": "2013-10",
+              "current": false,
+              "description": "Developed interpretation of body movements into interactions with on screen interfaces."
+            },
+            {
+              "title": "Sams Windows Phone 7 Application Development",
+              "startDate": "2010-09",
+              "endDate": "2011-01",
+              "current": false,
+              "description": "Technical editor responsible for reviewing all content and samples for clarity and accuracy."
+            }
+          ]
+        }
+      ]
+    },
     "volunteering": [
       {
         "org": "Seattle AR/VR Hackathon",

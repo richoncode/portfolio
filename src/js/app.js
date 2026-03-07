@@ -557,10 +557,47 @@ function renderCareerTimeline() {
 // ─── Learning ─────────────────────────────────────────────────────────────────
 
 function renderProjects() {
-  const { projects } = resumeData.learning;
-  document.getElementById('projects-content').innerHTML = `
-    <div class="learn-section" style="border-top:none; padding-top:32px">
-      ${projects.map(p => {
+  const { sections } = resumeData.learning.projects;
+  document.getElementById('projects-content').innerHTML = sections.map((section, i) => {
+    const isFirst = i === 0;
+    const borderStyle = isFirst ? 'border-top:none; padding-top:32px' : '';
+
+    if (section.id === 'experiments') {
+      const categoriesHtml = section.categories.map(cat => {
+        if (cat.groups) {
+          const groupsHtml = cat.groups.map(g => `
+            <div class="proj-group-card">
+              <div class="proj-group-title">${escapeHtml(g.title)}</div>
+              <div class="proj-group-topics">
+                ${g.topics.map(t => `<span class="proj-topic-chip">${escapeHtml(t)}</span>`).join('')}
+              </div>
+            </div>`).join('');
+          return `
+            <div class="proj-category">
+              <div class="proj-category-label">${escapeHtml(cat.title)}</div>
+              <div class="proj-group-grid">${groupsHtml}</div>
+            </div>`;
+        } else {
+          return `
+            <div class="proj-category">
+              <div class="proj-category-label">${escapeHtml(cat.title)}</div>
+              <div class="proj-exp-chips">
+                ${cat.items.map(item => `<span class="proj-exp-chip">${escapeHtml(item)}</span>`).join('')}
+              </div>
+            </div>`;
+        }
+      }).join('');
+      const titleHtml = section.url
+        ? `<a href="${section.url}" target="_blank" rel="noopener" class="proj-section-link">${escapeHtml(section.title)} ↗</a>`
+        : escapeHtml(section.title);
+      return `
+        <div class="learn-section" style="${borderStyle}">
+          <div class="proj-section-title">${titleHtml}</div>
+          ${categoriesHtml}
+        </div>`;
+
+    } else {
+      const itemsHtml = section.items.map(p => {
         const dateStr = formatDate(p.startDate) + ' – ' + (p.current ? 'Present' : formatDate(p.endDate));
         return `
           <div class="learn-card">
@@ -570,8 +607,14 @@ function renderProjects() {
             </div>
             ${p.description ? `<p class="learn-card-desc">${escapeHtml(p.description)}</p>` : ''}
           </div>`;
-      }).join('')}
-    </div>`;
+      }).join('');
+      return `
+        <div class="learn-section" style="${borderStyle}">
+          <div class="proj-section-title">${escapeHtml(section.title)}</div>
+          ${itemsHtml}
+        </div>`;
+    }
+  }).join('');
 }
 
 const LEARN_FILTERS = [
