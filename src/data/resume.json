@@ -1612,23 +1612,28 @@
                   "topics": [
                     {
                       "title": "Attention Mechanism",
-                      "url": "https://richoncode.github.io/webartests/learning-llm/01-attention/"
+                      "url": "https://richoncode.github.io/webartests/learning-llm/01-attention/",
+                      "summary": "Interactive visualizations of how tokens query and attend to each other using Queries, Keys, and Values — with demos for temperature effects, multi-head attention patterns, and positional encoding."
                     },
                     {
                       "title": "The Transformer",
-                      "url": "https://richoncode.github.io/webartests/learning-llm/02-transformer/"
+                      "url": "https://richoncode.github.io/webartests/learning-llm/02-transformer/",
+                      "summary": "Visualizes token embeddings flowing through attention and feed-forward layers with residual connections, causal masking, and stacked blocks forming a complete transformer model."
                     },
                     {
                       "title": "Autoregressive Generation",
-                      "url": "https://richoncode.github.io/webartests/learning-llm/03-autoregressive/"
+                      "url": "https://richoncode.github.io/webartests/learning-llm/03-autoregressive/",
+                      "summary": "Explains how LLMs predict sequences one token at a time through tokenization, temperature-based sampling, and the KV cache optimization that reduces inference cost."
                     },
                     {
                       "title": "Serial Decoding Limits",
-                      "url": "https://richoncode.github.io/webartests/learning-llm/04-serial-limits/"
+                      "url": "https://richoncode.github.io/webartests/learning-llm/04-serial-limits/",
+                      "summary": "Demonstrates the fundamental serial bottleneck in autoregressive inference — memory bandwidth, not compute, is the limit — and how speculative decoding partially addresses it."
                     },
                     {
                       "title": "Diffusion LLMs",
-                      "url": "https://richoncode.github.io/webartests/learning-llm/05-diffusion/"
+                      "url": "https://richoncode.github.io/webartests/learning-llm/05-diffusion/",
+                      "summary": "Shows how diffusion LLMs denoise masked sequences in parallel, trading autoregressive guarantees for GPU throughput in ~10–50 denoising steps."
                     }
                   ]
                 },
@@ -1638,15 +1643,18 @@
                   "topics": [
                     {
                       "title": "HMM Trader",
-                      "url": "https://richoncode.github.io/webartests/learning-fintech-ai/hmm-trader/"
+                      "url": "https://richoncode.github.io/webartests/learning-fintech-ai/hmm-trader/",
+                      "summary": "Builds a complete trading system using Hidden Markov Models to detect market regimes, from price returns and feature engineering through to a working Python dashboard."
                     },
                     {
                       "title": "RL Markets",
-                      "url": "https://richoncode.github.io/webartests/learning-fintech-ai/rl-markets/"
+                      "url": "https://richoncode.github.io/webartests/learning-fintech-ai/rl-markets/",
+                      "summary": "Teaches deep reinforcement learning for trading: from Markov decision processes and Q-learning to a full DQN agent that autonomously trades on market data."
                     },
                     {
                       "title": "Time Series Forecasting",
-                      "url": "https://richoncode.github.io/webartests/learning-fintech-ai/ts-forecasting/"
+                      "url": "https://richoncode.github.io/webartests/learning-fintech-ai/ts-forecasting/",
+                      "summary": "Covers financial time series prediction from ARIMA through GARCH volatility modeling to modern transformer-based deep learning approaches."
                     }
                   ]
                 },
@@ -1656,39 +1664,48 @@
                   "topics": [
                     {
                       "title": "SAT Collision",
-                      "url": "https://richoncode.github.io/webartests/learning-gaussian-splatting/sat-collision/"
+                      "url": "https://richoncode.github.io/webartests/learning-gaussian-splatting/sat-collision/",
+                      "summary": "Interactive walkthrough of the Separating Axis Theorem for convex shape collision detection, with minimum translation vectors and physics-based collision responses."
                     },
                     {
                       "title": "Oriented Bounding Boxes",
-                      "url": "https://richoncode.github.io/webartests/learning-gaussian-splatting/obb/"
+                      "url": "https://richoncode.github.io/webartests/learning-gaussian-splatting/obb/",
+                      "summary": "Teaches how Oriented Bounding Boxes represent anisotropic Gaussian distributions and how SAT detects their collisions, with interactive demos and shader code."
                     },
                     {
                       "title": "smoothStep",
-                      "url": "https://richoncode.github.io/webartests/learning-gaussian-splatting/smooth-step/"
+                      "url": "https://richoncode.github.io/webartests/learning-gaussian-splatting/smooth-step/",
+                      "summary": "Demonstrates how smoothStep Hermite interpolation keeps parameters in valid ranges while maintaining differentiability — and how Slang's [Differentiable] enables automatic differentiation for training."
                     },
                     {
                       "title": "Alpha Blending",
-                      "url": "https://richoncode.github.io/webartests/learning-gaussian-splatting/alpha-blending/"
+                      "url": "https://richoncode.github.io/webartests/learning-gaussian-splatting/alpha-blending/",
+                      "summary": "Shows how Gaussian Splatting composites semi-transparent blobs using order-dependent alpha blending, with a backward pass that analytically inverts each blend step for gradient flow."
                     },
                     {
                       "title": "2D Gaussian",
-                      "url": "https://richoncode.github.io/webartests/learning-gaussian-splatting/gaussian-2d/"
+                      "url": "https://richoncode.github.io/webartests/learning-gaussian-splatting/gaussian-2d/",
+                      "summary": "Demonstrates how 2D Gaussians are parameterized by covariance matrices, evaluated at pixel coordinates, and bounded via eigendecomposition for efficient rendering."
                     },
                     {
                       "title": "GPU Parallel Algorithms",
-                      "url": "https://richoncode.github.io/webartests/learning-gaussian-splatting/gpu-parallel/"
+                      "url": "https://richoncode.github.io/webartests/learning-gaussian-splatting/gpu-parallel/",
+                      "summary": "Demonstrates three parallel GPU algorithms used in Gaussian Splatting: bitonic sort for depth ordering, binary tree reduction for gradient aggregation, and atomic compare-and-swap."
                     },
                     {
                       "title": "Tile Rasterization",
-                      "url": "https://richoncode.github.io/webartests/learning-gaussian-splatting/tile-rasterization/"
+                      "url": "https://richoncode.github.io/webartests/learning-gaussian-splatting/tile-rasterization/",
+                      "summary": "Teaches how GPUs divide the screen into tiles and use shared memory shortlists to efficiently determine which Gaussians affect each pixel."
                     },
                     {
                       "title": "Render Pipeline",
-                      "url": "https://richoncode.github.io/webartests/learning-gaussian-splatting/render-pipeline/"
+                      "url": "https://richoncode.github.io/webartests/learning-gaussian-splatting/render-pipeline/",
+                      "summary": "Explains the four-stage splatBlobs() pipeline where only the final blending step is differentiable and participates in gradient computation during training."
                     },
                     {
                       "title": "Differentiable Rendering",
-                      "url": "https://richoncode.github.io/webartests/learning-gaussian-splatting/differentiable-rendering/"
+                      "url": "https://richoncode.github.io/webartests/learning-gaussian-splatting/differentiable-rendering/",
+                      "summary": "Demonstrates Slang's automatic differentiation with a hand-written backward pass using state reconstruction, enabling efficient end-to-end training of Gaussian blob parameters via Adam."
                     }
                   ]
                 },
@@ -1698,27 +1715,33 @@
                   "topics": [
                     {
                       "title": "Ramer–Douglas–Peucker",
-                      "url": "https://richoncode.github.io/webartests/learning-vectorization/rdp/"
+                      "url": "https://richoncode.github.io/webartests/learning-vectorization/rdp/",
+                      "summary": "Interactive demo of RDP polyline simplification — recursively removes points within a tolerance distance of the connecting line, with step-through visualization."
                     },
                     {
                       "title": "Marching Squares",
-                      "url": "https://richoncode.github.io/webartests/learning-vectorization/marching-squares/"
+                      "url": "https://richoncode.github.io/webartests/learning-vectorization/marching-squares/",
+                      "summary": "Visualizes how marching squares extracts iso-lines from a 2D scalar field by classifying each grid cell into one of 16 cases and linearly interpolating edge positions."
                     },
                     {
                       "title": "Visvalingam–Whyatt",
-                      "url": "https://richoncode.github.io/webartests/learning-vectorization/visvalingam-whyatt/"
+                      "url": "https://richoncode.github.io/webartests/learning-vectorization/visvalingam-whyatt/",
+                      "summary": "Demonstrates the perceptually-aware VW simplification algorithm that iteratively removes the point forming the smallest triangle area with its neighbors, compared to RDP."
                     },
                     {
                       "title": "Bézier Fitting",
-                      "url": "https://richoncode.github.io/webartests/learning-vectorization/bezier-curve-fitting/"
+                      "url": "https://richoncode.github.io/webartests/learning-vectorization/bezier-curve-fitting/",
+                      "summary": "Shows how the Schneider algorithm fits smooth cubic Bézier curves to a point sequence by minimizing squared distances, recursively splitting when error exceeds the threshold."
                     },
                     {
                       "title": "Canny Edge Detection",
-                      "url": "https://richoncode.github.io/webartests/learning-vectorization/canny-edge-detection/"
+                      "url": "https://richoncode.github.io/webartests/learning-vectorization/canny-edge-detection/",
+                      "summary": "Multi-stage edge detection pipeline: Gaussian blur → gradient magnitude → non-maximum suppression → hysteresis thresholding, with interactive stage controls."
                     },
                     {
                       "title": "Freeman Chain Code",
-                      "url": "https://richoncode.github.io/webartests/learning-vectorization/freeman-chain-code/"
+                      "url": "https://richoncode.github.io/webartests/learning-vectorization/freeman-chain-code/",
+                      "summary": "Encodes shape boundaries as compact directional step sequences in 8-connected notation — only 3 bits per step vs. storing (x, y) pairs — with live draw-and-trace demo."
                     }
                   ]
                 },
@@ -1728,27 +1751,33 @@
                   "topics": [
                     {
                       "title": "Vibrating String",
-                      "url": "https://richoncode.github.io/webartests/sound-synthesis/vibrating-string/"
+                      "url": "https://richoncode.github.io/webartests/sound-synthesis/vibrating-string/",
+                      "summary": "Demonstrates the Karplus-Strong algorithm, modeling a plucked string as a wave bouncing between fixed endpoints to synthesize realistic pitch, timbre, and natural decay."
                     },
                     {
                       "title": "Modal Synthesis",
-                      "url": "https://richoncode.github.io/webartests/sound-synthesis/modal-synthesis/"
+                      "url": "https://richoncode.github.io/webartests/sound-synthesis/modal-synthesis/",
+                      "summary": "Interactive demo of how different materials produce distinctive sounds from unique combinations of vibrating modes — each with characteristic frequencies and decay rates."
                     },
                     {
                       "title": "Excitation Models",
-                      "url": "https://richoncode.github.io/webartests/sound-synthesis/excitation/"
+                      "url": "https://richoncode.github.io/webartests/sound-synthesis/excitation/",
+                      "summary": "Shows how hammer, mallet, bow, and scrape excitation methods applied to the same resonating object produce completely different sounds."
                     },
                     {
                       "title": "Coupled Systems",
-                      "url": "https://richoncode.github.io/webartests/sound-synthesis/coupled-systems/"
+                      "url": "https://richoncode.github.io/webartests/sound-synthesis/coupled-systems/",
+                      "summary": "Demonstrates how vibrating systems produce richer sounds when coupled — the output of each stage becomes the input to the next, with adjustable coupling strength and resonance."
                     },
                     {
                       "title": "Nonlinear Interactions",
-                      "url": "https://richoncode.github.io/webartests/sound-synthesis/nonlinear/"
+                      "url": "https://richoncode.github.io/webartests/sound-synthesis/nonlinear/",
+                      "summary": "Demonstrates how stick-slip friction between bow and string creates self-sustaining oscillation, with interactive controls for bow speed, pressure, and position."
                     },
                     {
                       "title": "Environmental Sounds",
-                      "url": "https://richoncode.github.io/webartests/sound-synthesis/environmental/"
+                      "url": "https://richoncode.github.io/webartests/sound-synthesis/environmental/",
+                      "summary": "Shows how physical synthesis models realistic footsteps, scrapes, and collisions by simulating material acoustic behavior rather than playing pre-recorded samples."
                     }
                   ]
                 },
@@ -1758,31 +1787,38 @@
                   "topics": [
                     {
                       "title": "Oscillators & Waveforms",
-                      "url": "https://richoncode.github.io/webartests/web-audio/oscillators/"
+                      "url": "https://richoncode.github.io/webartests/web-audio/oscillators/",
+                      "summary": "Demonstrates how waveform shape determines harmonic content and timbre — interactive exploration of sine, square, sawtooth, and triangle waves and their frequency spectra."
                     },
                     {
                       "title": "Envelopes (ADSR)",
-                      "url": "https://richoncode.github.io/webartests/web-audio/envelopes/"
+                      "url": "https://richoncode.github.io/webartests/web-audio/envelopes/",
+                      "summary": "Shows how ADSR envelopes shape sound across Attack, Decay, Sustain, Release stages using exponential ramps to create natural-feeling played notes."
                     },
                     {
                       "title": "Filters",
-                      "url": "https://richoncode.github.io/webartests/web-audio/filters/"
+                      "url": "https://richoncode.github.io/webartests/web-audio/filters/",
+                      "summary": "Interactive BiquadFilterNode demo with adjustable type, cutoff frequency, and resonance to shape audio frequency content of white noise in real time."
                     },
                     {
                       "title": "Noise & Percussion",
-                      "url": "https://richoncode.github.io/webartests/web-audio/noise-percussion/"
+                      "url": "https://richoncode.github.io/webartests/web-audio/noise-percussion/",
+                      "summary": "Builds kick, snare, and hi-hat drum sounds entirely from oscillators, noise generation, and envelope controls — no pre-recorded samples required."
                     },
                     {
                       "title": "Sequencer",
-                      "url": "https://richoncode.github.io/webartests/web-audio/sequencer/"
+                      "url": "https://richoncode.github.io/webartests/web-audio/sequencer/",
+                      "summary": "16-step drum sequencer using lookahead scheduling against the audio hardware clock for rock-solid timing — the technique used in professional web audio apps."
                     },
                     {
                       "title": "Effects",
-                      "url": "https://richoncode.github.io/webartests/web-audio/effects/"
+                      "url": "https://richoncode.github.io/webartests/web-audio/effects/",
+                      "summary": "Interactive signal chain demo of delay, distortion, and reverb effects using the Web Audio API, with real-time parameter adjustment and audible results."
                     },
                     {
                       "title": "Analyser & Visualiser",
-                      "url": "https://richoncode.github.io/webartests/web-audio/analyser/"
+                      "url": "https://richoncode.github.io/webartests/web-audio/analyser/",
+                      "summary": "Demonstrates the Web Audio AnalyserNode for capturing and displaying both the waveform in the time domain and frequency distribution via FFT analysis."
                     }
                   ]
                 }
@@ -1793,23 +1829,28 @@
               "items": [
                 {
                   "title": "AR Cube Placer",
-                  "url": "https://richoncode.github.io/webartests/ar-cube-placer/"
+                  "url": "https://richoncode.github.io/webartests/ar-cube-placer/",
+                  "summary": "Augmented reality app that places and customizes virtual cubes on flat surfaces detected by the device camera using WebXR."
                 },
                 {
                   "title": "WebGL Shader",
-                  "url": "https://richoncode.github.io/webartests/webgl-shader/"
+                  "url": "https://richoncode.github.io/webartests/webgl-shader/",
+                  "summary": "Real-time animated blob rendered using raymarching, signed distance functions, Phong shading, soft shadows, and ambient occlusion — all in a WebGL fragment shader."
                 },
                 {
                   "title": "Slang Playground",
-                  "url": "https://richoncode.github.io/webartests/slang-playground/"
+                  "url": "https://richoncode.github.io/webartests/slang-playground/",
+                  "summary": "Interactive browser environment for writing and running Slang GPU shaders with live compilation and output."
                 },
                 {
                   "title": "Laser Experiments",
-                  "url": "https://richoncode.github.io/webartests/laser-experiments/"
+                  "url": "https://richoncode.github.io/webartests/laser-experiments/",
+                  "summary": "Tools for preparing images for laser cutting — raster-to-vector conversion and AI prompt testing for laser suitability assessment."
                 },
                 {
                   "title": "Geo Tests",
-                  "url": "https://richoncode.github.io/webartests/geo-tests/"
+                  "url": "https://richoncode.github.io/webartests/geo-tests/",
+                  "summary": "Browser geolocation API test suite for building location-aware outdoor experiences, covering GPS, mapping, device orientation, and motion sensing on mobile."
                 }
               ]
             }

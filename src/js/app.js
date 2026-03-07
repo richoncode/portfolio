@@ -68,6 +68,7 @@ async function init() {
     initFilterToggle();
     initAdmin();
     initAdminPopout();
+    initTooltip();
     syncStickyTop();
     window.addEventListener('resize', syncStickyTop);
   } catch (err) {
@@ -433,6 +434,40 @@ function updateFilterCount() {
 
 // ─── Tabs ─────────────────────────────────────────────────────────────────────
 
+function initTooltip() {
+  const tip = document.createElement('div');
+  tip.className = 'proj-tooltip';
+  document.body.appendChild(tip);
+
+  let active = false;
+
+  document.addEventListener('mouseover', e => {
+    const el = e.target.closest('[data-summary]');
+    if (!el) return;
+    tip.textContent = el.dataset.summary;
+    active = true;
+    tip.classList.add('proj-tooltip--visible');
+    position(e);
+  });
+
+  document.addEventListener('mousemove', e => {
+    if (active) position(e);
+  });
+
+  document.addEventListener('mouseout', e => {
+    const el = e.target.closest('[data-summary]');
+    if (el) { active = false; tip.classList.remove('proj-tooltip--visible'); }
+  });
+
+  function position(e) {
+    const pad = 14, tw = tip.offsetWidth, th = tip.offsetHeight;
+    const x = e.clientX + pad + tw > window.innerWidth  ? e.clientX - tw - pad : e.clientX + pad;
+    const y = e.clientY + pad + th > window.innerHeight ? e.clientY - th - pad : e.clientY + pad;
+    tip.style.left = x + 'px';
+    tip.style.top  = y + 'px';
+  }
+}
+
 function initTabs() {
   document.querySelectorAll('.tab').forEach(tab =>
     tab.addEventListener('click', () => switchTab(tab.dataset.tab))
@@ -572,7 +607,7 @@ function renderProjects() {
               </div>
               <div class="proj-group-topics">
                 ${g.topics.map(t => t.url
-                  ? `<a href="${t.url}" target="_blank" rel="noopener" class="proj-topic-chip proj-topic-chip--link">${escapeHtml(t.title)}</a>`
+                  ? `<a href="${t.url}" target="_blank" rel="noopener" class="proj-topic-chip proj-topic-chip--link"${t.summary ? ` data-summary="${escapeHtml(t.summary)}"` : ''}>${escapeHtml(t.title)}</a>`
                   : `<span class="proj-topic-chip">${escapeHtml(t.title)}</span>`
                 ).join('')}
               </div>
@@ -588,7 +623,7 @@ function renderProjects() {
               <div class="proj-category-label">${escapeHtml(cat.title)}</div>
               <div class="proj-exp-chips">
                 ${cat.items.map(item => item.url
-                  ? `<a href="${item.url}" target="_blank" rel="noopener" class="proj-exp-chip proj-exp-chip--link">${escapeHtml(item.title)}</a>`
+                  ? `<a href="${item.url}" target="_blank" rel="noopener" class="proj-exp-chip proj-exp-chip--link"${item.summary ? ` data-summary="${escapeHtml(item.summary)}"` : ''}>${escapeHtml(item.title)}</a>`
                   : `<span class="proj-exp-chip">${escapeHtml(item.title || item)}</span>`
                 ).join('')}
               </div>

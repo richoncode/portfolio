@@ -1285,6 +1285,25 @@ a.learn-issuer-badge:hover {
 }
 .proj-exp-chip--link:hover { border-color: var(--accent); color: var(--accent); }
 
+/* ─── Project Tooltip ────────────────────── */
+.proj-tooltip {
+  position: fixed;
+  z-index: 2000;
+  max-width: 300px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-hover);
+  border-radius: var(--radius);
+  padding: 10px 14px;
+  font-size: 0.78rem;
+  line-height: 1.55;
+  color: var(--text-2);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.5);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.1s;
+}
+.proj-tooltip--visible { opacity: 1; }
+
 /* ─── Responsive ──────────────────────────── */
 @media (max-width: 640px) {
   .site-header h1    { font-size: 1.8rem; }
