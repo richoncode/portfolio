@@ -2064,24 +2064,21 @@
           ],
           "achievements": [
             {
-              "id": "quintar-a0",
-              "text": "Built a spatial AI platform that uses live sports as the proving ground — the highest-stakes, highest-volume, most data-rich environment to establish what interactive holographic replay can actually be. Real tracking data. AR overlays locked to the actual game. A unified experience across projection, data, and broadcast on Meta Quest 3. Sports is where we prove it. What comes next is much bigger.",
+              "id": "quintar-a10",
+              "text": "Manage 30-engineer team in the USA and India, setting architecture, coding, and testing standards. 100% retention rate over 2 years. Define staffing and training strategy to minimize growth/budget while building core platform and proof-of-concept prior to Series B.",
               "tags": {
                 "type": [
-                  "ic",
                   "technical-management"
                 ],
-                "domain": [
-                  "spatial-computing",
-                  "sports-tech",
-                  "architecture",
-                  "product"
-                ],
-                "technologies": [
-                  "Meta Quest 3"
-                ],
+                "domain": [],
+                "technologies": [],
                 "customers": [],
-                "hasMetric": false
+                "teamSize": 30,
+                "impact": {
+                  "metric": "retention rate",
+                  "value": "100% over 2 years"
+                },
+                "hasMetric": true
               }
             },
             {
@@ -2103,6 +2100,68 @@
                   "value": "50% reduction; 90% cost decrease"
                 },
                 "hasMetric": true
+              }
+            },
+            {
+              "id": "quintar-a11",
+              "text": "Review system and architecture designs for end-to-end data, operations performance monitoring, device performance & reliability, streaming latency, customer scale, and cost efficiency.",
+              "tags": {
+                "type": [
+                  "technical-management"
+                ],
+                "domain": [
+                  "cloud",
+                  "ios",
+                  "visionos",
+                  "architecture"
+                ],
+                "technologies": [],
+                "customers": [],
+                "hasMetric": false
+              }
+            },
+            {
+              "id": "quintar-a13",
+              "text": "iOS product deliveries to PGATour, NBA Summer League, NBA Atlanta Hawks.",
+              "tags": {
+                "type": [],
+                "domain": [
+                  "ios",
+                  "sports-tech",
+                  "product"
+                ],
+                "technologies": [
+                  "iOS"
+                ],
+                "customers": [
+                  "PGA Tour",
+                  "NBA Summer League",
+                  "NBA Atlanta Hawks"
+                ],
+                "hasMetric": false
+              }
+            },
+            {
+              "id": "quintar-a8",
+              "text": "VisionOS product deliveries to PGATour, NASCAR, MLB, Apple.",
+              "tags": {
+                "type": [],
+                "domain": [
+                  "visionos",
+                  "spatial-computing",
+                  "sports-tech",
+                  "product"
+                ],
+                "technologies": [
+                  "visionOS"
+                ],
+                "customers": [
+                  "PGA Tour",
+                  "NASCAR",
+                  "MLB",
+                  "Apple"
+                ],
+                "hasMetric": false
               }
             },
             {
@@ -2160,51 +2219,32 @@
               }
             },
             {
-              "id": "quintar-a4",
-              "text": "Developed a series of spatial interactions enabling our SDK to be utilized in diverse environments, from large-scale venues to suites and living rooms. Collected stakeholder requirements, applied human spatial interaction principles, created rapid prototypes, conducted testing, and iterated designs.",
+              "id": "quintar-a14",
+              "text": "Solved framework challenges to maintain 100fps rendering of streaming 3D sports data and video using AVFoundation, Metal, and RealityKit. Balanced spatial video processing, high-speed stream of 40 race cars' 3D data, and RealityKit/SwiftUI attachment updates at 100FPS using one worker thread with Swift Concurrency and actors.",
               "tags": {
                 "type": [
                   "ic"
                 ],
                 "domain": [
                   "visionos",
-                  "spatial-computing",
-                  "ios",
-                  "api-design",
-                  "prototyping"
-                ],
-                "technologies": [
-                  "RealityKit",
-                  "Unity"
-                ],
-                "customers": [],
-                "hasMetric": false
-              }
-            },
-            {
-              "id": "quintar-a5",
-              "text": "Developed a rapid prototype of a Python and ML-based video pipeline to transform multiple stereo video feeds into spatially enhanced at-home sports experiences. Multistage pipeline with modular spatial features; supported tracking, depth, segmentation, and masking. Led to kick-off of a 4-person production development effort.",
-              "tags": {
-                "type": [
-                  "ic"
-                ],
-                "domain": [
-                  "ml",
                   "video",
                   "spatial-computing",
                   "sports-tech",
-                  "prototyping",
+                  "performance",
                   "architecture"
                 ],
                 "technologies": [
-                  "Python",
-                  "ML",
-                  "depth estimation",
-                  "segmentation",
-                  "tracking"
+                  "AVFoundation",
+                  "Metal",
+                  "RealityKit",
+                  "Swift Concurrency"
                 ],
                 "customers": [],
-                "hasMetric": false
+                "impact": {
+                  "metric": "frame rate",
+                  "value": "100fps sustained"
+                },
+                "hasMetric": true
               }
             },
             {
@@ -2254,25 +2294,24 @@
               }
             },
             {
-              "id": "quintar-a8",
-              "text": "VisionOS product deliveries to PGATour, NASCAR, MLB, Apple.",
+              "id": "quintar-a4",
+              "text": "Developed a series of spatial interactions enabling our SDK to be utilized in diverse environments, from large-scale venues to suites and living rooms. Collected stakeholder requirements, applied human spatial interaction principles, created rapid prototypes, conducted testing, and iterated designs.",
               "tags": {
-                "type": [],
+                "type": [
+                  "ic"
+                ],
                 "domain": [
                   "visionos",
                   "spatial-computing",
-                  "sports-tech",
-                  "product"
+                  "ios",
+                  "api-design",
+                  "prototyping"
                 ],
                 "technologies": [
-                  "visionOS"
+                  "RealityKit",
+                  "Unity"
                 ],
-                "customers": [
-                  "PGA Tour",
-                  "NASCAR",
-                  "MLB",
-                  "Apple"
-                ],
+                "customers": [],
                 "hasMetric": false
               }
             },
@@ -2295,42 +2334,6 @@
                   "Metal",
                   "LLDB"
                 ],
-                "customers": [],
-                "hasMetric": false
-              }
-            },
-            {
-              "id": "quintar-a10",
-              "text": "Manage 30-engineer team in the USA and India, setting architecture, coding, and testing standards. 100% retention rate over 2 years. Define staffing and training strategy to minimize growth/budget while building core platform and proof-of-concept prior to Series B.",
-              "tags": {
-                "type": [
-                  "technical-management"
-                ],
-                "domain": [],
-                "technologies": [],
-                "customers": [],
-                "teamSize": 30,
-                "impact": {
-                  "metric": "retention rate",
-                  "value": "100% over 2 years"
-                },
-                "hasMetric": true
-              }
-            },
-            {
-              "id": "quintar-a11",
-              "text": "Review system and architecture designs for end-to-end data, operations performance monitoring, device performance & reliability, streaming latency, customer scale, and cost efficiency.",
-              "tags": {
-                "type": [
-                  "technical-management"
-                ],
-                "domain": [
-                  "cloud",
-                  "ios",
-                  "visionos",
-                  "architecture"
-                ],
-                "technologies": [],
                 "customers": [],
                 "hasMetric": false
               }
@@ -2361,53 +2364,50 @@
               }
             },
             {
-              "id": "quintar-a13",
-              "text": "iOS product deliveries to PGATour, NBA Summer League, NBA Atlanta Hawks.",
-              "tags": {
-                "type": [],
-                "domain": [
-                  "ios",
-                  "sports-tech",
-                  "product"
-                ],
-                "technologies": [
-                  "iOS"
-                ],
-                "customers": [
-                  "PGA Tour",
-                  "NBA Summer League",
-                  "NBA Atlanta Hawks"
-                ],
-                "hasMetric": false
-              }
-            },
-            {
-              "id": "quintar-a14",
-              "text": "Solved framework challenges to maintain 100fps rendering of streaming 3D sports data and video using AVFoundation, Metal, and RealityKit. Balanced spatial video processing, high-speed stream of 40 race cars' 3D data, and RealityKit/SwiftUI attachment updates at 100FPS using one worker thread with Swift Concurrency and actors.",
+              "id": "quintar-a5",
+              "text": "Developed a rapid prototype of a Python and ML-based video pipeline to transform multiple stereo video feeds into spatially enhanced at-home sports experiences. Multistage pipeline with modular spatial features; supported tracking, depth, segmentation, and masking. Led to kick-off of a 4-person production development effort.",
               "tags": {
                 "type": [
                   "ic"
                 ],
                 "domain": [
-                  "visionos",
+                  "ml",
                   "video",
                   "spatial-computing",
                   "sports-tech",
-                  "performance",
+                  "prototyping",
                   "architecture"
                 ],
                 "technologies": [
-                  "AVFoundation",
-                  "Metal",
-                  "RealityKit",
-                  "Swift Concurrency"
+                  "Python",
+                  "ML",
+                  "depth estimation",
+                  "segmentation",
+                  "tracking"
                 ],
                 "customers": [],
-                "impact": {
-                  "metric": "frame rate",
-                  "value": "100fps sustained"
-                },
-                "hasMetric": true
+                "hasMetric": false
+              }
+            },
+            {
+              "id": "quintar-a0",
+              "text": "Built a spatial AI platform that uses live sports as the proving ground — the highest-stakes, highest-volume, most data-rich environment to establish what interactive holographic replay can actually be. Real tracking data. AR overlays locked to the actual game. A unified experience across projection, data, and broadcast on Meta Quest 3. Sports is where we prove it. What comes next is much bigger.",
+              "tags": {
+                "type": [
+                  "ic",
+                  "technical-management"
+                ],
+                "domain": [
+                  "spatial-computing",
+                  "sports-tech",
+                  "architecture",
+                  "product"
+                ],
+                "technologies": [
+                  "Meta Quest 3"
+                ],
+                "customers": [],
+                "hasMetric": false
               }
             }
           ]
