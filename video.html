@@ -27,9 +27,7 @@
     }
 
     /* ── Company groups ── */
-    .vid-company {
-      margin-bottom: 48px;
-    }
+    .vid-company { margin-bottom: 48px; }
     .vid-company-header {
       padding: 36px 0 20px;
       border-top: 2px solid var(--border);
@@ -50,14 +48,9 @@
     }
 
     /* ── Sections ── */
-    .vid-section {
-      padding: 24px 0 8px;
-      border-top: 1px solid var(--border);
-    }
+    .vid-section { padding: 24px 0 8px; border-top: 1px solid var(--border); }
     .vid-company .vid-section:first-child { border-top: none; }
-
     .vid-section-header { margin-bottom: 20px; }
-
     .vid-section-title {
       font-size: 1rem;
       font-weight: 700;
@@ -80,15 +73,10 @@
     .vid-section-badge--stream { color: var(--purple);  border-color: rgba(188,140,255,0.3); background: rgba(188,140,255,0.08); }
     .vid-section-badge--3d     { color: var(--orange);  border-color: rgba(210,153,34,0.3);  background: rgba(210,153,34,0.08); }
     .vid-section-badge--yt     { color: var(--green);   border-color: rgba(63,185,80,0.3);   background: rgba(63,185,80,0.08); }
-
-    .vid-section-desc {
-      font-size: 0.78rem;
-      color: var(--text-2);
-    }
+    .vid-section-desc { font-size: 0.78rem; color: var(--text-2); }
 
     /* ── Sport groups ── */
     .vid-sport-group { margin-bottom: 24px; }
-
     .vid-sport-label {
       font-size: 0.68rem;
       font-weight: 700;
@@ -116,11 +104,23 @@
       flex-direction: column;
       gap: 5px;
       transition: border-color 0.15s, background 0.15s;
+      overflow: hidden;
     }
     .vid-card:hover {
       border-color: var(--border-hover);
       background: rgba(255,255,255,0.02);
       text-decoration: none;
+    }
+
+    /* ── Thumbnail ── */
+    .vid-card-thumb {
+      display: block;
+      width: calc(100% + 32px);
+      margin: -14px -16px 10px;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      border-radius: var(--radius) var(--radius) 0 0;
+      background: var(--border);
     }
 
     .vid-card-title {
@@ -129,18 +129,8 @@
       color: var(--text);
       line-height: 1.4;
     }
-
-    .vid-card-customer {
-      font-size: 0.72rem;
-      color: var(--text-2);
-    }
-
-    .vid-card-watch {
-      font-size: 0.7rem;
-      color: var(--accent);
-      margin-top: 4px;
-      font-weight: 500;
-    }
+    .vid-card-customer { font-size: 0.72rem; color: var(--text-2); }
+    .vid-card-watch { font-size: 0.7rem; color: var(--accent); margin-top: 4px; font-weight: 500; }
 
     /* ── Section accent border on hover ── */
     .vid-section--ar     .vid-card:hover { border-color: rgba(88,166,255,0.4); }
@@ -361,6 +351,7 @@
           </div>
           <div class="vid-grid">
             <a href="https://www.youtube.com/watch?v=Do2_cXN3p1c" target="_blank" rel="noopener" class="vid-card">
+              <img class="vid-card-thumb" src="https://img.youtube.com/vi/Do2_cXN3p1c/mqdefault.jpg" alt="" loading="lazy">
               <div class="vid-card-title">Lightship Platform — Global Launch</div>
               <div class="vid-card-customer">Niantic · 2021</div>
               <div class="vid-card-watch">Watch on YouTube ↗</div>
@@ -373,21 +364,58 @@
       <div class="vid-company">
         <div class="vid-company-header">
           <div class="vid-company-name">Magic Leap</div>
-          <div class="vid-company-meta">2017 – 2019 · First-generation spatial computing platform — Magic Leap One</div>
+          <div class="vid-company-meta">2017 – 2019 · Spatial computing platform — Magic Leap One &amp; Two</div>
         </div>
 
         <section class="vid-section vid-section--yt">
           <div class="vid-section-header">
             <h2 class="vid-section-title">
-              Avatar Chat
+              Spatial Applications
               <span class="vid-section-badge vid-section-badge--yt">YouTube</span>
             </h2>
-            <p class="vid-section-desc">Social AR application — real-time volumetric avatars, expressive faces driven by sensor data, multiplayer spatial presence.</p>
+            <p class="vid-section-desc">Social AR, productivity, collaboration, sports, and industrial applications across Magic Leap platforms.</p>
           </div>
           <div class="vid-grid">
+            <a href="https://www.youtube.com/watch?v=wol82uZX1TA" target="_blank" rel="noopener" class="vid-card">
+              <img class="vid-card-thumb" src="https://img.youtube.com/vi/wol82uZX1TA/mqdefault.jpg" alt="" loading="lazy">
+              <div class="vid-card-title">Avatar Chat: Magic Leap's Social AR App</div>
+              <div class="vid-card-customer">Magic Leap · 2018</div>
+              <div class="vid-card-watch">Watch on YouTube ↗</div>
+            </a>
             <a href="https://www.youtube.com/watch?v=n7gRdlnwfq0" target="_blank" rel="noopener" class="vid-card">
+              <img class="vid-card-thumb" src="https://img.youtube.com/vi/n7gRdlnwfq0/mqdefault.jpg" alt="" loading="lazy">
               <div class="vid-card-title">Avatar Chat on Magic Leap One</div>
               <div class="vid-card-customer">Magic Leap · 2018</div>
+              <div class="vid-card-watch">Watch on YouTube ↗</div>
+            </a>
+            <a href="https://www.youtube.com/watch?v=bpOyqWN9NEQ" target="_blank" rel="noopener" class="vid-card">
+              <img class="vid-card-thumb" src="https://img.youtube.com/vi/bpOyqWN9NEQ/mqdefault.jpg" alt="" loading="lazy">
+              <div class="vid-card-title">Working from Home with Magic Leap 1</div>
+              <div class="vid-card-customer">Magic Leap · Spatial &amp; Meetings Apps</div>
+              <div class="vid-card-watch">Watch on YouTube ↗</div>
+            </a>
+            <a href="https://www.youtube.com/watch?v=c2K5e8LrNvY" target="_blank" rel="noopener" class="vid-card">
+              <img class="vid-card-thumb" src="https://img.youtube.com/vi/c2K5e8LrNvY/mqdefault.jpg" alt="" loading="lazy">
+              <div class="vid-card-title">Live AR Basketball — Magic Leap &amp; NBA</div>
+              <div class="vid-card-customer">Magic Leap · NBA Collaboration</div>
+              <div class="vid-card-watch">Watch on YouTube ↗</div>
+            </a>
+            <a href="https://www.youtube.com/watch?v=WD-h0_hxE3k" target="_blank" rel="noopener" class="vid-card">
+              <img class="vid-card-thumb" src="https://img.youtube.com/vi/WD-h0_hxE3k/mqdefault.jpg" alt="" loading="lazy">
+              <div class="vid-card-title">AR for Manufacturing</div>
+              <div class="vid-card-customer">Magic Leap · Industrial</div>
+              <div class="vid-card-watch">Watch on YouTube ↗</div>
+            </a>
+            <a href="https://www.youtube.com/watch?v=n53gTPPeqcQ" target="_blank" rel="noopener" class="vid-card">
+              <img class="vid-card-thumb" src="https://img.youtube.com/vi/n53gTPPeqcQ/mqdefault.jpg" alt="" loading="lazy">
+              <div class="vid-card-title">Test Driving Magic Leap's AR Goggles</div>
+              <div class="vid-card-customer">Magic Leap One · Review</div>
+              <div class="vid-card-watch">Watch on YouTube ↗</div>
+            </a>
+            <a href="https://www.youtube.com/watch?v=fFB_doH8FyE" target="_blank" rel="noopener" class="vid-card">
+              <img class="vid-card-thumb" src="https://img.youtube.com/vi/fFB_doH8FyE/mqdefault.jpg" alt="" loading="lazy">
+              <div class="vid-card-title">New Magic Leap 2 App</div>
+              <div class="vid-card-customer">Magic Leap 2 · 2022</div>
               <div class="vid-card-watch">Watch on YouTube ↗</div>
             </a>
           </div>
@@ -411,6 +439,7 @@
           </div>
           <div class="vid-grid">
             <a href="https://www.youtube.com/watch?v=fCAShzXhBCI" target="_blank" rel="noopener" class="vid-card">
+              <img class="vid-card-thumb" src="https://img.youtube.com/vi/fCAShzXhBCI/mqdefault.jpg" alt="" loading="lazy">
               <div class="vid-card-title">Making of the DAQRI Smart Helmet</div>
               <div class="vid-card-customer">DAQRI · 2015</div>
               <div class="vid-card-watch">Watch on YouTube ↗</div>
@@ -436,6 +465,7 @@
           </div>
           <div class="vid-grid">
             <a href="https://www.youtube.com/watch?v=xhe6jV-APwM" target="_blank" rel="noopener" class="vid-card">
+              <img class="vid-card-thumb" src="https://img.youtube.com/vi/xhe6jV-APwM/mqdefault.jpg" alt="" loading="lazy">
               <div class="vid-card-title">Xbox One — Comprehensive Launch Demo</div>
               <div class="vid-card-customer">Microsoft · November 2013</div>
               <div class="vid-card-watch">Watch on YouTube ↗</div>
