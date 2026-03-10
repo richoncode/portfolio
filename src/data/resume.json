@@ -2064,6 +2064,27 @@
           ],
           "achievements": [
             {
+              "id": "quintar-a0",
+              "text": "Built a spatial AI platform that uses live sports as the proving ground — the highest-stakes, highest-volume, most data-rich environment to establish what interactive holographic replay can actually be. Real tracking data. AR overlays locked to the actual game. A unified experience across projection, data, and broadcast on Meta Quest 3. Sports is where we prove it. What comes next is much bigger.",
+              "tags": {
+                "type": [
+                  "ic",
+                  "technical-management"
+                ],
+                "domain": [
+                  "spatial-computing",
+                  "sports-tech",
+                  "architecture",
+                  "product"
+                ],
+                "technologies": [
+                  "Meta Quest 3"
+                ],
+                "customers": [],
+                "hasMetric": false
+              }
+            },
+            {
               "id": "quintar-a1",
               "text": "Achieved a 50% reduction in system downtime by implementing operations tools, resulting in a 90% decrease in live event operational costs.",
               "tags": {
