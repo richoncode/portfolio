@@ -1947,18 +1947,60 @@
           "title": "Products",
           "items": [
             {
-              "title": "Kinect for Windows",
-              "startDate": "2011-05",
+              "title": "Quintar – Spatial Sports Platform (visionOS)",
+              "startDate": "2022-09",
               "endDate": null,
               "current": true,
-              "description": null
+              "description": "Award-winning spatial sports experience on Apple Vision Pro. Delivered to PGA Tour, NASCAR, MLB, and Apple — live AR overlays, MV-HEVC stereo video, 100fps 3D rendering, and SharePlay multiplayer."
             },
             {
-              "title": "Xbox One - Kinect User Interactions",
-              "startDate": "2013-10",
-              "endDate": "2013-10",
+              "title": "Quintar – Spatial Sports Platform (iOS)",
+              "startDate": "2022-09",
+              "endDate": null,
+              "current": true,
+              "description": "AR-enhanced live sports experiences for PGA Tour, NBA Summer League, and NBA Atlanta Hawks on iOS."
+            },
+            {
+              "title": "Lightship ARDK",
+              "startDate": "2020-11",
+              "endDate": "2022-08",
               "current": false,
-              "description": "Developed interpretation of body movements into interactions with on screen interfaces."
+              "description": "Developer-facing augmented reality SDK that won Best-In-Show AR at AWE. Drove a 75% increase in customer developer adoption of AR experiences on the Niantic platform."
+            },
+            {
+              "title": "Magic Leap – First Generation Applications",
+              "startDate": "2017-11",
+              "endDate": "2020-11",
+              "current": false,
+              "description": "Built and shipped the first generation of Magic Leap applications: Avatars, Media player, and Mobile Companion app."
+            },
+            {
+              "title": "AR Billboard – Times Square",
+              "startDate": "2016-06",
+              "endDate": "2017-11",
+              "current": false,
+              "description": "Augmented reality billboard experience for Sony Pictures / The Emoji Movie, deployed in Times Square. Also delivered mobile VR language training for Deutsche Telekom."
+            },
+            {
+              "title": "DAQRI AR Smart Helmet",
+              "startDate": "2015-03",
+              "endDate": "2016-06",
+              "current": false,
+              "description": "Industrial AR wearable for factory-floor applications. Shared CES keynote stage with Intel CEO at launch."
+            },
+            {
+              "title": "Xbox One – Kinect User Interactions",
+              "startDate": "2013-10",
+              "endDate": "2015-03",
+              "current": false,
+              "description": "Developed interpretation of body movements into interactions with on-screen interfaces."
+            },
+            {
+              "title": "Kinect for Windows",
+              "startDate": "2011-05",
+              "endDate": "2015-03",
+              "current": false,
+              "description": "Developer-facing SDK and body-tracking framework shipped in Windows and Xbox. Designed latency-critical multithreaded architecture and API from researcher prototype."
             },
             {
               "title": "Sams Windows Phone 7 Application Development",
@@ -1966,6 +2008,13 @@
               "endDate": "2011-01",
               "current": false,
               "description": "Technical editor responsible for reviewing all content and samples for clarity and accuracy."
+            },
+            {
+              "title": "Kindle Developer API",
+              "startDate": "2007-02",
+              "endDate": "2008-04",
+              "current": false,
+              "description": "Designed application UI APIs enabling e-paper interactions for Kindle e-reader launch experiences."
             }
           ]
         }
