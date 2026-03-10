@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quintar – Product Videos</title>
+  <link rel="stylesheet" href="src/css/main.css?v=25">
+  <style>
+    .vid-header {
+      background: linear-gradient(135deg, #1a1f2e 0%, #0d1117 100%);
+      padding: 28px 0 24px;
+      border-bottom: 1px solid var(--border);
+    }
+    .vid-header h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      background: linear-gradient(135deg, #58a6ff 0%, #bc8cff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 4px;
+    }
+    .vid-header p {
+      font-size: 0.88rem;
+      color: var(--text-2);
+    }
+
+    /* ── Sections ── */
+    .vid-section {
+      padding: 32px 0 8px;
+      border-top: 1px solid var(--border);
+    }
+    .vid-section:first-of-type { border-top: none; }
+
+    .vid-section-header { margin-bottom: 20px; }
+
+    .vid-section-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 4px;
+    }
+    .vid-section-badge {
+      font-size: 0.62rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 2px 8px;
+      border-radius: 10px;
+      border: 1px solid;
+    }
+    .vid-section-badge--ar     { color: var(--accent);  border-color: rgba(88,166,255,0.3);  background: rgba(88,166,255,0.08); }
+    .vid-section-badge--stream { color: var(--purple);  border-color: rgba(188,140,255,0.3); background: rgba(188,140,255,0.08); }
+    .vid-section-badge--3d     { color: var(--orange);  border-color: rgba(210,153,34,0.3);  background: rgba(210,153,34,0.08); }
+
+    .vid-section-desc {
+      font-size: 0.78rem;
+      color: var(--text-2);
+    }
+
+    /* ── Sport groups ── */
+    .vid-sport-group { margin-bottom: 24px; }
+
+    .vid-sport-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-2);
+      margin-bottom: 10px;
+      opacity: 0.7;
+    }
+
+    /* ── Card grid ── */
+    .vid-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 8px;
+    }
+
+    .vid-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      transition: border-color 0.15s, background 0.15s;
+    }
+    .vid-card:hover {
+      border-color: var(--border-hover);
+      background: rgba(255,255,255,0.02);
+      text-decoration: none;
+    }
+
+    .vid-card-title {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text);
+      line-height: 1.4;
+    }
+
+    .vid-card-customer {
+      font-size: 0.72rem;
+      color: var(--text-2);
+    }
+
+    .vid-card-watch {
+      font-size: 0.7rem;
+      color: var(--accent);
+      margin-top: 4px;
+      font-weight: 500;
+    }
+
+    /* ── Section accent border-left on hover ── */
+    .vid-section--ar     .vid-card:hover { border-color: rgba(88,166,255,0.4); }
+    .vid-section--stream .vid-card:hover { border-color: rgba(188,140,255,0.4); }
+    .vid-section--3d     .vid-card:hover { border-color: rgba(210,153,34,0.4); }
+
+    @media (max-width: 640px) {
+      .vid-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="vid-header">
+    <div class="container">
+      <h1>Quintar — Product Videos</h1>
+      <p>Spatial sports experiences across Mobile AR, Spatial Stream, and 3D Live Data platforms.</p>
+    </div>
+  </header>
+
+  <main style="padding-bottom: 60px;">
+    <div class="container">
+
+      <!-- ── MOBILE AR ── -->
+      <section class="vid-section vid-section--ar">
+        <div class="vid-section-header">
+          <h2 class="vid-section-title">
+            Mobile AR
+            <span class="vid-section-badge vid-section-badge--ar">iOS</span>
+          </h2>
+          <p class="vid-section-desc">Augmented reality overlays on live sports via phone camera — real venue, real data, real time.</p>
+        </div>
+
+        <div class="vid-sport-group">
+          <div class="vid-sport-label">Golf</div>
+          <div class="vid-grid">
+            <a href="https://www.quintar.ai/video-tour-championship-along-the-sides" target="_blank" rel="noopener" class="vid-card">
+              <div class="vid-card-title">Tour Championship — Along the Sides</div>
+              <div class="vid-card-customer">PGA TOUR</div>
+              <div class="vid-card-watch">Watch ↗</div>
+            </a>
+            <a href="https://www.quintar.ai/pga-tour-golf" target="_blank" rel="noopener" class="vid-card">
+              <div class="vid-card-title">PGA Tour Golf</div>
+              <div class="vid-card-customer">PGA TOUR</div>
+              <div class="vid-card-watch">Watch ↗</div>
+            </a>
+          </div>
+        </div>
+
+        <div class="vid-sport-group">
+          <div class="vid-sport-label">Baseball</div>
+          <div class="vid-grid">
+            <a href="https://www.quintar.ai/video-baseball" target="_blank" rel="noopener" class="vid-card">
+              <div class="vid-card-title">Baseball AR</div>
+              <div class="vid-card-customer">Boston Red Sox</div>
+              <div class="vid-card-watch">Watch ↗</div>
+            </a>
+          </div>
+        </div>
+
+        <div class="vid-sport-group">
+          <div class="vid-sport-label">Basketball</div>
+          <div class="vid-grid">
+            <a href="https://www.quintar.ai/video-nba-g-league-ignite-test" target="_blank" rel="noopener" class="vid-card">
+              <div class="vid-card-title">NBA G League Ignite</div>
+              <div class="vid-card-customer">G League Ignite</div>
+              <div class="vid-card-watch">Watch ↗</div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── SPATIAL STREAM ── -->
+      <section class="vid-section vid-section--stream">
+        <div class="vid-section-header">
+          <h2 class="vid-section-title">
+            Spatial Stream
+            <span class="vid-section-badge vid-section-badge--stream">visionOS · Quest 3</span>
+          </h2>
+          <p class="vid-section-desc">Volumetric sports viewing — live data streams, diorama field-space, and multiplayer spatial experiences.</p>
+        </div>
+
+        <div class="vid-sport-group">
+          <div class="vid-sport-label">Golf</div>
+          <div class="vid-grid">
+            <a href="https://www.quintar.ai/players-championship-art-of-the-possible" target="_blank" rel="noopener" class="vid-card">
+              <div class="vid-card-title">Players Championship — Art of the Possible</div>
+              <div class="vid-card-customer">PGA TOUR</div>
+              <div class="vid-card-watch">Watch ↗</div>
+            </a>
+            <a href="https://www.quintar.ai/tabletop" target="_blank" rel="noopener" class="vid-card">
+              <div class="vid-card-title">Tabletop Experience</div>
+              <div class="vid-card-customer">PGA TOUR — Art of the Possible</div>
+              <div class="vid-card-watch">Watch ↗</div>
+            </a>
+            <a href="https://www.quintar.ai/spatial-stream-golf" target="_blank" rel="noopener" class="vid-card">
+              <div class="vid-card-title">Spatial Stream Golf</div>
+              <div class="vid-card-customer">PGA TOUR — Art of the Possible</div>
+              <div class="vid-card-watch">Watch ↗</div>
+            </a>
+            <a href="https://www.quintar.ai/spatial-stream-golf-office" target="_blank" rel="noopener" class="vid-card">
+              <div class="vid-card-title">Spatial Stream Golf — Office</div>
+              <div class="vid-card-customer">PGA TOUR — Art of the Possible</div>
+              <div class="vid-card-watch">Watch ↗</div>
+            </a>
+            <a href="https://www.quintar.ai/spatial-stream-golf-vision" target="_blank" rel="noopener" class="vid-card">
+              <div class="vid-card-title">Spatial Stream Golf — Apple Vision Pro</div>
+              <div class="vid-card-customer">PGA TOUR — Art of the Possible</div>
+              <div class="vid-card-watch">Watch ↗</div>
+            </a>
+          </div>
+        </div>
+
+        <div class="vid-sport-group">
+          <div class="vid-sport-label">Baseball</div>
+          <div class="vid-grid">
+            <a href="https://www.quintar.ai/spatial-stream-baseball" target="_blank" rel="noopener" class="vid-card">
+              <div class="vid-card-title">Spatial Stream Baseball</div>
+              <div class="vid-card-customer">Boston Red Sox — Art of the Possible</div>
+              <div class="vid-card-watch">Watch ↗</div>
+            </a>
+          </div>
+        </div>
+
+        <div class="vid-sport-group">
+          <div class="vid-sport-label">Basketball</div>
+          <div class="vid-grid">
+            <a href="https://www.quintar.ai/spatialsports" target="_blank" rel="noopener" class="vid-card">
+              <div class="vid-card-title">Spatial Sports</div>
+              <div class="vid-card-customer">Golden State Warriors — Art of the Possible</div>
+              <div class="vid-card-watch">Watch ↗</div>
+            </a>
+            <a href="https://www.quintar.ai/spatial-stream-basketball" target="_blank" rel="noopener" class="vid-card">
+              <div class="vid-card-title">Spatial Stream Basketball</div>
+              <div class="vid-card-customer">Golden State Warriors — Art of the Possible</div>
+              <div class="vid-card-watch">Watch ↗</div>
+            </a>
+            <a href="https://www.quintar.ai/spatial-stream-basketball-office" target="_blank" rel="noopener" class="vid-card">
+              <div class="vid-card-title">Spatial Stream Basketball — Office</div>
+              <div class="vid-card-customer">Golden State Warriors — Art of the Possible</div>
+              <div class="vid-card-watch">Watch ↗</div>
+            </a>
+            <a href="https://www.quintar.ai/nba-2k25-summer-league" target="_blank" rel="noopener" class="vid-card">
+              <div class="vid-card-title">NBA 2K25 Summer League</div>
+              <div class="vid-card-customer">NBA 2K25 Summer League</div>
+              <div class="vid-card-watch">Watch ↗</div>
+            </a>
+          </div>
+        </div>
+
+        <div class="vid-sport-group">
+          <div class="vid-sport-label">Football</div>
+          <div class="vid-grid">
+            <a href="https://www.quintar.ai/spatial-stream-football" target="_blank" rel="noopener" class="vid-card">
+              <div class="vid-card-title">Spatial Stream Football</div>
+              <div class="vid-card-customer">WSU — Art of the Possible</div>
+              <div class="vid-card-watch">Watch ↗</div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── 3D MODEL W/ LIVE DATA ── -->
+      <section class="vid-section vid-section--3d">
+        <div class="vid-section-header">
+          <h2 class="vid-section-title">
+            3D Model with Live Data
+            <span class="vid-section-badge vid-section-badge--3d">Apple Vision Pro</span>
+          </h2>
+          <p class="vid-section-desc">Real-time 3D course models, player tracking, and live scoring on Apple Vision Pro.</p>
+        </div>
+
+        <div class="vid-sport-group">
+          <div class="vid-sport-label">Golf</div>
+          <div class="vid-grid">
+            <a href="https://www.quintar.ai/pga-tour-vision-app" target="_blank" rel="noopener" class="vid-card">
+              <div class="vid-card-title">PGA Tour Vision App — Sizzle</div>
+              <div class="vid-card-customer">PGA TOUR · Launch</div>
+              <div class="vid-card-watch">Watch ↗</div>
+            </a>
+            <a href="https://www.quintar.ai/pga-tour-vision-the-players-championship" target="_blank" rel="noopener" class="vid-card">
+              <div class="vid-card-title">PGA Tour Vision — The Players Championship</div>
+              <div class="vid-card-customer">PGA TOUR · The Players</div>
+              <div class="vid-card-watch">Watch ↗</div>
+            </a>
+            <a href="https://www.quintar.ai/wwdc2024-pga-tour-vision-app" target="_blank" rel="noopener" class="vid-card">
+              <div class="vid-card-title">WWDC 2024 — PGA Tour Vision App</div>
+              <div class="vid-card-customer">PGA TOUR · Featured at WWDC</div>
+              <div class="vid-card-watch">Watch ↗</div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+</body>
+</html>
