@@ -10,14 +10,16 @@
       {
         "text": "As a proven developer, I have successfully shipped over 20 products using C++, with additional projects in C#, Unity 3D, and Java, encompassing areas such as embedded systems, IoT, and cloud computing. My technical proficiency is complemented by a strong patent portfolio that includes more than 20 patents in consumer device technology, natural interaction, and complex 3D game engine architecture, underscoring my capability to deliver pioneering and strategic solutions in technology development.",
         "tags": [
-          "engineering"
+          "engineering",
+          "zero-to-one"
         ]
       },
       {
         "text": "My development background is extensive, with a deep understanding of algorithms, design patterns, and multiple programming languages. I have focused for 25+ years on C++ and have significant experience in Python, Swift, & C#. I have pioneered 9 version-1 devices and numerous non-device products, achieving substantial market adoption. My work in AI and machine learning has spanned estimation, prediction, and advanced neural network applications, including DNNs, CNNs, DCGANs, and time-series analysis with LSTMs.",
         "tags": [
           "engineering",
-          "ai"
+          "ai",
+          "zero-to-one"
         ]
       },
       {
@@ -43,14 +45,16 @@
         "text": "As a proven developer and engineering leader, I have successfully shipped over 20 innovative products spanning areas such as spatial computing, embedded systems, IoT, and cloud computing. My expertise in gesture interfaces for Kinect Xbox, spatial audio, and audio synthesis highlights my ability to enhance user interactions through cutting-edge technology. I have a strong track record in developing pioneering and strategic solutions in technology development.",
         "tags": [
           "engineering",
-          "spatial"
+          "spatial",
+          "zero-to-one"
         ]
       },
       {
         "text": "My development background is extensive, with a deep understanding of algorithms, design patterns, and system architecture. I have led the creation of 9 version-1 devices and numerous non-device products, achieving substantial market adoption. I have specialized in the applied use of AI and machine learning for tracking, segmentation, and depth, with hands-on study and implementation of DNNs, CNNs, DCGANs, and time-series analysis with LSTMs using C++ and Python across various ML tool chains.",
         "tags": [
           "engineering",
-          "ai"
+          "ai",
+          "zero-to-one"
         ]
       },
       {
@@ -152,7 +156,8 @@
         "tags": [
           "engineering",
           "spatial",
-          "apple"
+          "apple",
+          "zero-to-one"
         ]
       },
       {
@@ -1599,8 +1604,121 @@
     "projects": {
       "sections": [
         {
+          "id": "products",
+          "title": "Products",
+          "items": [
+            {
+              "title": "Quintar – Spatial Sports Platform (visionOS)",
+              "startDate": "2022-09",
+              "endDate": null,
+              "current": true,
+              "description": "Award-winning spatial sports experience on Apple Vision Pro. Delivered to PGA Tour, NASCAR, MLB, and Apple — live AR overlays, MV-HEVC stereo video, 100fps 3D rendering, and SharePlay multiplayer."
+            },
+            {
+              "title": "Quintar – Spatial Sports Platform (iOS)",
+              "startDate": "2022-09",
+              "endDate": null,
+              "current": true,
+              "description": "AR-enhanced live sports experiences for PGA Tour, NBA Summer League, and NBA Atlanta Hawks on iOS."
+            },
+            {
+              "title": "Lightship ARDK",
+              "startDate": "2020-11",
+              "endDate": "2022-08",
+              "current": false,
+              "description": "Developer-facing augmented reality SDK that won Best-In-Show AR at AWE. Drove a 75% increase in customer developer adoption of AR experiences on the Niantic platform."
+            },
+            {
+              "title": "Magic Leap – First Generation Applications",
+              "startDate": "2017-11",
+              "endDate": "2020-11",
+              "current": false,
+              "description": "Built and shipped the first generation of Magic Leap applications: Avatars, Media player, and Mobile Companion app."
+            },
+            {
+              "title": "AR Billboard – Times Square",
+              "startDate": "2016-06",
+              "endDate": "2017-11",
+              "current": false,
+              "description": "Augmented reality billboard experience for Sony Pictures / The Emoji Movie, deployed in Times Square. Also delivered mobile VR language training for Deutsche Telekom."
+            },
+            {
+              "title": "DAQRI AR Smart Helmet",
+              "startDate": "2015-03",
+              "endDate": "2016-06",
+              "current": false,
+              "description": "Industrial AR wearable for factory-floor applications. Shared CES keynote stage with Intel CEO at launch."
+            },
+            {
+              "title": "Xbox One – Kinect User Interactions",
+              "startDate": "2013-10",
+              "endDate": "2015-03",
+              "current": false,
+              "description": "Developed interpretation of body movements into interactions with on-screen interfaces."
+            },
+            {
+              "title": "Kinect for Windows",
+              "startDate": "2011-05",
+              "endDate": "2015-03",
+              "current": false,
+              "description": "Developer-facing SDK and body-tracking framework shipped in Windows and Xbox. Designed latency-critical multithreaded architecture and API from researcher prototype."
+            },
+            {
+              "title": "Sams Windows Phone 7 Application Development",
+              "startDate": "2010-09",
+              "endDate": "2011-01",
+              "current": false,
+              "description": "Technical editor responsible for reviewing all content and samples for clarity and accuracy."
+            },
+            {
+              "title": "Kindle Developer API",
+              "startDate": "2007-02",
+              "endDate": "2008-04",
+              "current": false,
+              "description": "Designed application UI APIs enabling e-paper interactions for Kindle e-reader launch experiences."
+            }
+          ]
+        },
+        {
           "id": "experiments",
-          "title": "Experiments & Teaching",
+          "title": "Experiments",
+          "url": "https://richoncode.github.io/webartests/",
+          "categories": [
+            {
+              "title": "Experiments",
+              "items": [
+                {
+                  "title": "AR Cube Placer",
+                  "url": "https://richoncode.github.io/webartests/ar-cube-placer/",
+                  "summary": "Augmented reality app that places and customizes virtual cubes on flat surfaces detected by the device camera using WebXR."
+                },
+                {
+                  "title": "WebGL Shader",
+                  "url": "https://richoncode.github.io/webartests/webgl-shader/",
+                  "summary": "Real-time animated blob rendered using raymarching, signed distance functions, Phong shading, soft shadows, and ambient occlusion — all in a WebGL fragment shader."
+                },
+                {
+                  "title": "Slang Playground",
+                  "url": "https://richoncode.github.io/webartests/slang-playground/",
+                  "summary": "Interactive browser environment for writing and running Slang GPU shaders with live compilation and output."
+                },
+                {
+                  "title": "Laser Experiments",
+                  "url": "https://richoncode.github.io/webartests/laser-experiments/",
+                  "summary": "Tools for preparing images for laser cutting — raster-to-vector conversion and AI prompt testing for laser suitability assessment."
+                },
+                {
+                  "title": "Geo Tests",
+                  "url": "https://richoncode.github.io/webartests/geo-tests/",
+                  "summary": "Browser geolocation API test suite for building location-aware outdoor experiences, covering GPS, mapping, device orientation, and motion sensing on mobile."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "teaching",
+          "title": "Teaching",
           "url": "https://richoncode.github.io/webartests/",
           "categories": [
             {
@@ -1909,112 +2027,6 @@
                   ]
                 }
               ]
-            },
-            {
-              "title": "Experiments",
-              "items": [
-                {
-                  "title": "AR Cube Placer",
-                  "url": "https://richoncode.github.io/webartests/ar-cube-placer/",
-                  "summary": "Augmented reality app that places and customizes virtual cubes on flat surfaces detected by the device camera using WebXR."
-                },
-                {
-                  "title": "WebGL Shader",
-                  "url": "https://richoncode.github.io/webartests/webgl-shader/",
-                  "summary": "Real-time animated blob rendered using raymarching, signed distance functions, Phong shading, soft shadows, and ambient occlusion — all in a WebGL fragment shader."
-                },
-                {
-                  "title": "Slang Playground",
-                  "url": "https://richoncode.github.io/webartests/slang-playground/",
-                  "summary": "Interactive browser environment for writing and running Slang GPU shaders with live compilation and output."
-                },
-                {
-                  "title": "Laser Experiments",
-                  "url": "https://richoncode.github.io/webartests/laser-experiments/",
-                  "summary": "Tools for preparing images for laser cutting — raster-to-vector conversion and AI prompt testing for laser suitability assessment."
-                },
-                {
-                  "title": "Geo Tests",
-                  "url": "https://richoncode.github.io/webartests/geo-tests/",
-                  "summary": "Browser geolocation API test suite for building location-aware outdoor experiences, covering GPS, mapping, device orientation, and motion sensing on mobile."
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "products",
-          "title": "Products",
-          "items": [
-            {
-              "title": "Quintar – Spatial Sports Platform (visionOS)",
-              "startDate": "2022-09",
-              "endDate": null,
-              "current": true,
-              "description": "Award-winning spatial sports experience on Apple Vision Pro. Delivered to PGA Tour, NASCAR, MLB, and Apple — live AR overlays, MV-HEVC stereo video, 100fps 3D rendering, and SharePlay multiplayer."
-            },
-            {
-              "title": "Quintar – Spatial Sports Platform (iOS)",
-              "startDate": "2022-09",
-              "endDate": null,
-              "current": true,
-              "description": "AR-enhanced live sports experiences for PGA Tour, NBA Summer League, and NBA Atlanta Hawks on iOS."
-            },
-            {
-              "title": "Lightship ARDK",
-              "startDate": "2020-11",
-              "endDate": "2022-08",
-              "current": false,
-              "description": "Developer-facing augmented reality SDK that won Best-In-Show AR at AWE. Drove a 75% increase in customer developer adoption of AR experiences on the Niantic platform."
-            },
-            {
-              "title": "Magic Leap – First Generation Applications",
-              "startDate": "2017-11",
-              "endDate": "2020-11",
-              "current": false,
-              "description": "Built and shipped the first generation of Magic Leap applications: Avatars, Media player, and Mobile Companion app."
-            },
-            {
-              "title": "AR Billboard – Times Square",
-              "startDate": "2016-06",
-              "endDate": "2017-11",
-              "current": false,
-              "description": "Augmented reality billboard experience for Sony Pictures / The Emoji Movie, deployed in Times Square. Also delivered mobile VR language training for Deutsche Telekom."
-            },
-            {
-              "title": "DAQRI AR Smart Helmet",
-              "startDate": "2015-03",
-              "endDate": "2016-06",
-              "current": false,
-              "description": "Industrial AR wearable for factory-floor applications. Shared CES keynote stage with Intel CEO at launch."
-            },
-            {
-              "title": "Xbox One – Kinect User Interactions",
-              "startDate": "2013-10",
-              "endDate": "2015-03",
-              "current": false,
-              "description": "Developed interpretation of body movements into interactions with on-screen interfaces."
-            },
-            {
-              "title": "Kinect for Windows",
-              "startDate": "2011-05",
-              "endDate": "2015-03",
-              "current": false,
-              "description": "Developer-facing SDK and body-tracking framework shipped in Windows and Xbox. Designed latency-critical multithreaded architecture and API from researcher prototype."
-            },
-            {
-              "title": "Sams Windows Phone 7 Application Development",
-              "startDate": "2010-09",
-              "endDate": "2011-01",
-              "current": false,
-              "description": "Technical editor responsible for reviewing all content and samples for clarity and accuracy."
-            },
-            {
-              "title": "Kindle Developer API",
-              "startDate": "2007-02",
-              "endDate": "2008-04",
-              "current": false,
-              "description": "Designed application UI APIs enabling e-paper interactions for Kindle e-reader launch experiences."
             }
           ]
         }

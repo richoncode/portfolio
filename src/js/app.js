@@ -103,6 +103,7 @@ function renderProfile() {
 // ─── Intro ────────────────────────────────────────────────────────────────────
 
 const INTRO_FILTERS = [
+  { id: 'zero-to-one',  label: '0-to-1' },
   { id: 'engineering',  label: 'Engineering' },
   { id: 'management',   label: 'Management' },
   { id: 'ai',           label: 'AI' },
@@ -606,7 +607,7 @@ function renderProjects() {
   document.getElementById('projects-content').innerHTML = sections.map((section, i) => {
     const borderStyle = i === 0 ? 'border-top:none; padding-top:32px' : '';
 
-    if (section.id === 'experiments') {
+    if (section.categories) {
       const titleHtml = section.url
         ? `<a href="${section.url}" target="_blank" rel="noopener" class="proj-section-link">${escapeHtml(section.title)} ↗</a>`
         : escapeHtml(section.title);
