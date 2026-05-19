@@ -124,6 +124,7 @@ function renderIntro() {
 
   const roles = [
     { id: 'spatial-ai', label: 'Spatial AI' },
+    { id: 'ai-builder', label: 'AI Builder' },
     { id: 'ai-arch',    label: '[AI Systems Architect]' },
     { id: 'eng-dir',    label: '[Engineering Director]' },
     { id: 'prod-tech',  label: '[Product Technologist]' },
@@ -136,9 +137,20 @@ function renderIntro() {
 
   let letterHtml = '';
   if (currentIntroRole === 'spatial-ai') {
+    const launchesList = "Xbox, Forza Motorsport, Kinect, Xbox One, Daqri AR Smart Helmet, Sony Picture Times Square AR Billboard, Magic Leap AR Headset, Niantic Lightship AR SDK, Quintar Spatial AI Platform (PGATour, Nascar, UFC, NBA, FIFA)";
     letterHtml = `
       <div class="intro-letter">
-        <p>I've spent over 25 years building systems that sense and interact with the world. From Kinect's gesture interfaces to modern spatial audio, I specialize in taking complex AI research and hardening it into shipping products. I thrive where computer vision meets real-time systems, ensuring that 'magic' features are also reliable, performant, and ready for millions of users. If you're looking for someone to lead the technical charge in Spatial AI, let's talk.</p>
+        <p><strong>[Goal: Establish immediate credibility through high-stakes experience and the rarity of zero-to-one hardware success.]</strong></p>
+        <p>I have pioneered <span class="hover-tip" data-summary="${escapeHtml(launchesList)}">8 zero-to-one spatial AI launches</span>. From Kinect for Xbox to next-generation audio platforms, I specialize in the volatile early stages where abstract concepts must be forced into the constraints of physical hardware and real-time performance.</p>
+
+        <p><strong>[Goal: Define the unique value proposition: the ability to translate academic AI research into production-grade systems.]</strong></p>
+        <p>My value to a Spatial AI product is bridging the "research gap." I take sophisticated machine learning models—tracking, depth, and spatial understanding—and harden them into robust systems. I ensure that the 'magic' of the AI survives the transition from a research lab to a shipping device used by millions.</p>
+
+        <p><strong>[Goal: Emphasize technical rigor and the focus on user-centric reliability.]</strong></p>
+        <p>I focus on making spatial interactions feel invisible and inevitable. This requires a deep obsession with latency, power efficiency, and edge-case reliability. If your product depends on sensing the world accurately and responding instantly, I provide the engineering leadership to make that happen consistently.</p>
+
+        <p><strong>[Goal: Direct and professional invitation for high-level technical partnership.]</strong></p>
+        <p>If you are building the future of spatial computing and need a leader who has repeatedly crossed the finish line from prototype to product, let's talk.</p>
       </div>
     `;
   } else {
