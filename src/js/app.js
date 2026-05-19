@@ -141,7 +141,7 @@ function renderIntro() {
     letterHtml = `
       <div class="intro-letter">
         <p><strong>[Goal: Establish immediate credibility through high-stakes experience and the rarity of zero-to-one hardware success.]</strong></p>
-        <p>I have pioneered <span class="hover-tip" data-summary="${escapeHtml(launchesList)}">8 zero-to-one spatial AI launches</span>. From Kinect for Xbox to next-generation audio platforms, I specialize in the volatile early stages where abstract concepts must be forced into the constraints of physical hardware and real-time performance.</p>
+        <p>I have shipped <span class="hover-tip" data-summary="${escapeHtml(launchesList)}">8 zero-to-one spatial AI launches</span>. From Kinect for Xbox to next-generation audio platforms, I work to deeply understand experience goals and translate that into architecture and code that considers the brutal constraints of processors, memory, battery, network, and heat. My zero-to-one methodology is built on the ability to debug and optimize the entire system, from cloud infrastructure down to the firmware.</p>
 
         <p><strong>[Goal: Define the unique value proposition: the ability to translate academic AI research into production-grade systems.]</strong></p>
         <p>My value to a Spatial AI product is bridging the "research gap." I take sophisticated machine learning models—tracking, depth, and spatial understanding—and harden them into robust systems. I ensure that the 'magic' of the AI survives the transition from a research lab to a shipping device used by millions.</p>
