@@ -893,10 +893,6 @@ mark {
 }
 
 .intro-letter {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 32px;
   line-height: 1.8;
   color: var(--text);
   font-size: 1.05rem;
