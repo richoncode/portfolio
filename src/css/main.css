@@ -902,6 +902,24 @@ mark {
   margin-bottom: 20px;
 }
 
+/* Temporary highlight for draft notes */
+.intro-letter strong {
+  display: block;
+  background: rgba(230, 192, 0, 0.15);
+  color: #e6c000;
+  padding: 8px 12px;
+  border-left: 3px solid #e6c000;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  font-family: var(--mono);
+  font-size: 0.85rem;
+}
+
+.hover-tip {
+  text-decoration: underline dotted var(--accent);
+  cursor: help;
+}
+
 .intro-letter p:last-child {
   margin-bottom: 0;
 }
