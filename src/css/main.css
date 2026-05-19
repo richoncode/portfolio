@@ -886,8 +886,6 @@ mark {
   color: var(--text);
   line-height: 1.6;
   margin-bottom: 32px;
-  border-left: 4px solid var(--accent);
-  padding-left: 20px;
 }
 
 .intro-role-selector {

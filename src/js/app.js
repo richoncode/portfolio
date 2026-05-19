@@ -138,9 +138,7 @@ function renderIntro() {
   if (currentIntroRole === 'spatial-ai') {
     letterHtml = `
       <div class="intro-letter">
-        <p>Hi there,</p>
         <p>I've spent over 25 years building systems that sense and interact with the world. From Kinect's gesture interfaces to modern spatial audio, I specialize in taking complex AI research and hardening it into shipping products. I thrive where computer vision meets real-time systems, ensuring that 'magic' features are also reliable, performant, and ready for millions of users. If you're looking for someone to lead the technical charge in Spatial AI, let's talk.</p>
-        <p>Best,<br>Richard</p>
       </div>
     `;
   } else {
