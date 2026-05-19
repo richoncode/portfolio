@@ -879,6 +879,39 @@ mark {
   margin-bottom: 0;
 }
 
+/* ─── New Intro Styles ────────────────────── */
+.intro-expertise-summary {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.6;
+  margin-bottom: 32px;
+  border-left: 4px solid var(--accent);
+  padding-left: 20px;
+}
+
+.intro-role-selector {
+  margin-bottom: 32px;
+}
+
+.intro-letter {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px;
+  line-height: 1.8;
+  color: var(--text);
+  font-size: 1.05rem;
+}
+
+.intro-letter p {
+  margin-bottom: 20px;
+}
+
+.intro-letter p:last-child {
+  margin-bottom: 0;
+}
+
 /* ─── Learning ────────────────────────────── */
 .learn-section {
   padding: 28px 0 8px;

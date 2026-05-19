@@ -62,6 +62,7 @@ async function init() {
     resumeData = await resp.json();
     renderProfile();
     renderIntro();
+    renderOldIntro();
     renderFilters();
     renderTimeline();
     initTabs();
@@ -113,10 +114,61 @@ const INTRO_FILTERS = [
 ];
 
 let introActiveFilters = new Set();
+let currentIntroRole = 'spatial-ai';
 
 function renderIntro() {
-  const paras = resumeData.profile.intro || [];
   const container = document.getElementById('intro-content');
+  if (!container) return;
+
+  const expertiseSummary = "Proven leader shipping 20+ products, bridging AI research with robust systems engineering across spatial computing, IoT, and cloud infrastructure.";
+
+  const roles = [
+    { id: 'spatial-ai', label: 'Spatial AI' },
+    { id: 'ai-arch',    label: '[AI Systems Architect]' },
+    { id: 'eng-dir',    label: '[Engineering Director]' },
+    { id: 'prod-tech',  label: '[Product Technologist]' },
+  ];
+
+  const roleButtons = roles.map(r => `
+    <button class="learn-filter-chip intro-role-chip${currentIntroRole === r.id ? ' learn-filter-chip--active' : ''}"
+            data-role="${r.id}">${escapeHtml(r.label)}</button>
+  `).join('');
+
+  let letterHtml = '';
+  if (currentIntroRole === 'spatial-ai') {
+    letterHtml = `
+      <div class="intro-letter">
+        <p>Hi there,</p>
+        <p>I've spent over 25 years building systems that sense and interact with the world. From Kinect's gesture interfaces to modern spatial audio, I specialize in taking complex AI research and hardening it into shipping products. I thrive where computer vision meets real-time systems, ensuring that 'magic' features are also reliable, performant, and ready for millions of users. If you're looking for someone to lead the technical charge in Spatial AI, let's talk.</p>
+        <p>Best,<br>Richard</p>
+      </div>
+    `;
+  } else {
+    const roleLabel = roles.find(r => r.id === currentIntroRole).label;
+    letterHtml = `<div class="intro-letter"><p>Content for ${escapeHtml(roleLabel)} coming soon...</p></div>`;
+  }
+
+  container.innerHTML = `
+    <div class="intro-expertise-summary">
+      <p>${escapeHtml(expertiseSummary)}</p>
+    </div>
+    <div class="intro-role-selector">
+      <div class="learn-filter-bar">${roleButtons}</div>
+    </div>
+    ${letterHtml}
+  `;
+
+  container.querySelectorAll('.intro-role-chip').forEach(btn => {
+    btn.addEventListener('click', () => {
+      currentIntroRole = btn.dataset.role;
+      renderIntro();
+    });
+  });
+}
+
+function renderOldIntro() {
+  const paras = resumeData.profile.intro || [];
+  const container = document.getElementById('old-intro-content');
 
   // Attach delegated listener once
   if (!container._introListenerAttached) {
@@ -481,7 +533,7 @@ function initTabs() {
   );
 }
 
-const VALID_TABS = new Set(['intro','experience','timeline','projects','patents','learning','skills']);
+const VALID_TABS = new Set(['intro','old-intro','experience','timeline','projects','patents','learning','skills']);
 
 function switchTab(name, pushState = true) {
   if (!VALID_TABS.has(name)) name = 'intro';
@@ -490,6 +542,10 @@ function switchTab(name, pushState = true) {
   document.querySelectorAll('.tab-pane')
     .forEach(p => p.classList.toggle('tab-pane--active', p.id === `pane-${name}`));
   if (pushState) history.pushState(null, '', `#${name}`);
+  if (name === 'intro' && !document.getElementById('intro-content').innerHTML)
+    renderIntro();
+  if (name === 'old-intro' && !document.getElementById('old-intro-content').innerHTML)
+    renderOldIntro();
   if (name === 'timeline' && !document.getElementById('career-timeline').innerHTML)
     renderCareerTimeline();
   if (name === 'projects' && !document.getElementById('projects-content').innerHTML)
