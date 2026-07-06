@@ -32,6 +32,7 @@ const EXPERIENCE_LABELS = {
   'mobile':            'Mobile',
   'desktop':           'Desktop',
   'embedded':          'Embedded',
+  'hardware-software-codesign': 'Hardware/Software Codesign',
   'developer-tools':   'Dev Tools',
   'sports-tech':       'Sports Tech',
 };
@@ -43,6 +44,7 @@ const state = {
   activeExperiences: new Set(),
   searchQuery:   '',
   metricsOnly:   false,
+  showProjectTags: true,
 };
 
 let resumeData = null;
@@ -73,6 +75,7 @@ async function init() {
       switchTab(tab || 'intro', false);
     });
     initFilterToggle();
+    initProjectTagsToggle();
     initAdmin();
     initAdminPopout();
     initTooltip();
@@ -137,7 +140,7 @@ function renderIntro() {
 
   let letterHtml = '';
   if (currentIntroRole === 'spatial-ai') {
-    const launchesList = "Xbox, Forza Motorsport, Kinect, Xbox One, Daqri AR Smart Helmet, Sony Picture Times Square AR Billboard, Magic Leap AR Headset, Niantic Lightship AR SDK, Quintar Spatial AI Platform (PGATour, Nascar, UFC, NBA, FIFA)";
+    const launchesList = "Xbox, XBox Forza Motorsports (Turn10 Studios), Kinect, Xbox One, Home Consumer Digital Banking Screen Phone, Daqri XR Smart Helmet, Sony Pictures AR Billboard – Times Square, Magic Leap XR Spatial Applications, Niantic Lightship ARDK (iOS/Android; Unity), Quintar – Spatial Sports Platform (visionOS XR & VR)";
     letterHtml = `
       <div class="intro-letter">
         <p><strong>[Goal: Establish immediate credibility through high-stakes experience and the rarity of zero-to-one hardware success.]</strong></p>
@@ -494,6 +497,17 @@ function initFilterToggle() {
   });
 }
 
+function initProjectTagsToggle() {
+  const container = document.getElementById('projects-content');
+  if (!container) return;
+  container.addEventListener('change', e => {
+    if (e.target.id === 'project-tags-toggle') {
+      state.showProjectTags = e.target.checked;
+      renderProjects();
+    }
+  });
+}
+
 function updateFilterCount() {
   const n = state.activeTypes.size + state.activeExperiences.size
     + (state.metricsOnly ? 1 : 0) + (state.searchQuery ? 1 : 0);
@@ -670,7 +684,10 @@ function renderCareerTimeline() {
 
 function renderProjects() {
   const { sections } = resumeData.learning.projects;
-  document.getElementById('projects-content').innerHTML = sections.map((section, i) => {
+  const container = document.getElementById('projects-content');
+  if (!container) return;
+
+  container.innerHTML = sections.map((section, i) => {
     const borderStyle = i === 0 ? 'border-top:none; padding-top:32px' : '';
 
     if (section.categories) {
@@ -679,7 +696,9 @@ function renderProjects() {
         : escapeHtml(section.title);
       return `
         <div class="learn-section" style="${borderStyle}">
-          <div class="proj-section-title">${titleHtml}</div>
+          <div class="proj-section-header">
+            <div class="proj-section-title">${titleHtml}</div>
+          </div>
           <div class="proj-outline">
             ${section.categories.map(cat => renderProjCategory(cat)).join('')}
           </div>
@@ -688,6 +707,13 @@ function renderProjects() {
 
     const itemsHtml = section.items.map(p => {
       const dateStr = formatDate(p.startDate) + ' – ' + (p.current ? 'Present' : formatDate(p.endDate));
+      
+      const tagHtml = (state.showProjectTags && p.tags) 
+        ? `<div class="tags-container" style="margin-top: 0.5rem; display: flex; flex-wrap: wrap; gap: 0.4rem;">
+             ${p.tags.map(t => `<span class="badge badge--tech" style="font-size: 0.7rem; padding: 0.1rem 0.4rem;">${escapeHtml(t)}</span>`).join('')}
+           </div>`
+        : '';
+
       return `
         <div class="learn-card">
           <div class="learn-card-header">
@@ -695,11 +721,22 @@ function renderProjects() {
             <span class="learn-date">${dateStr}</span>
           </div>
           ${p.description ? `<p class="learn-card-desc">${escapeHtml(p.description)}</p>` : ''}
+          ${tagHtml}
         </div>`;
     }).join('');
+
+    const toggleHtml = section.id === 'products' ? `
+      <label class="toggle-label" style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer; font-size: 0.8rem; color: #888; font-weight: normal; text-transform: none; letter-spacing: normal;">
+        <input type="checkbox" id="project-tags-toggle" ${state.showProjectTags ? 'checked' : ''} style="cursor: pointer;">
+        <span>Show Technical Tags</span>
+      </label>` : '';
+
     return `
       <div class="learn-section" style="${borderStyle}">
-        <div class="proj-section-title">${escapeHtml(section.title)}</div>
+        <div class="proj-section-header">
+          <div class="proj-section-title">${escapeHtml(section.title)}</div>
+          ${toggleHtml}
+        </div>
         ${itemsHtml}
       </div>`;
   }).join('');

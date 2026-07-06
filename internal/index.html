@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Internal Dashboard</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #0d0d0d;
+            color: #e0e0e0;
+            line-height: 1.6;
+            padding: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        h1 { border-bottom: 1px solid #2a2a2a; padding-bottom: 0.5rem; }
+        .hub-links { display: flex; gap: 1rem; margin-top: 2rem; }
+        .hub-card {
+            background: #1a1a1a;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #2a2a2a;
+            flex: 1;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        .hub-card:hover {
+            transform: translateY(-4px);
+            border-color: #5b9bd5;
+        }
+        .hub-card h2 { margin-top: 0; color: #5b9bd5; }
+    </style>
+</head>
+<body>
+    <h1>Portfolio Internal Hub</h1>
+    <div class="hub-links">
+        <a href="tasks.html" class="hub-card">
+            <h2>Tasks & Journal</h2>
+            <p>Track project progress, design decisions, and upcoming work.</p>
+        </a>
+        <a href="jobengine.html" class="hub-card">
+            <h2>Job Engine</h2>
+            <p>Track and score potential career opportunities.</p>
+        </a>
+    </div>
+</body>
+</html>

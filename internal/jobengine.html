@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Engine - Portfolio Internal</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #0d0d0d;
+            color: #e0e0e0;
+            line-height: 1.6;
+            padding: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        h1 { border-bottom: 1px solid #2a2a2a; padding-bottom: 0.5rem; }
+        .tabs { 
+            display: flex; 
+            gap: 1rem; 
+            border-bottom: 1px solid #2a2a2a; 
+            margin-bottom: 2rem; 
+            position: sticky;
+            top: 0;
+            background-color: #0d0d0d;
+            padding-top: 1rem;
+            z-index: 100;
+        }
+        .tab {
+            padding: 0.5rem 1.5rem;
+            cursor: pointer;
+            border: none;
+            background: none;
+            color: #888;
+            font-size: 1rem;
+            transition: color 0.2s;
+        }
+        .tab.active { color: #5b9bd5; border-bottom: 2px solid #5b9bd5; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        
+        .job-card {
+            background: #1a1a1a;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #2a2a2a;
+            margin-bottom: 1.5rem;
+        }
+        .job-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem; }
+        .job-title { color: #5b9bd5; font-size: 1.25rem; font-weight: bold; }
+        .company { color: #888; font-size: 0.9rem; }
+        .score-pill {
+            background: #5b9bd5;
+            color: #fff;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        
+        .score-row { display: flex; gap: 2rem; margin-top: 1rem; }
+        .score-factor { flex: 1; }
+        .factor-label { font-size: 0.8rem; color: #888; text-transform: uppercase; }
+        .factor-value { font-size: 1.1rem; font-weight: bold; color: #5b9bd5; }
+        
+        .link-list a { color: #5b9bd5; text-decoration: none; word-break: break-all; }
+        .link-list a:hover { text-decoration: underline; }
+        
+        .metadata { color: #888; font-size: 0.85rem; margin-top: 0.5rem; }
+        .metadata span { margin-right: 1.5rem; }
+
+        .selling-points { background: #2a2a2a; padding: 1rem; border-radius: 6px; margin-top: 1rem; }
+        .selling-points h4 { margin-top: 0; color: #10b981; }
+
+        .tags-container { margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        
+        /* Normalized Tag Styles */
+        .tag {
+            font-size: 0.75rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            cursor: help;
+            font-weight: 600;
+            border: 1px solid #444;
+            display: inline-block;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .tag:hover { background: #444; border-color: #666; }
+        .tag--job { background: #4d4400; color: #ffeb3b; border-color: #ffd600; } /* Yellow: Job only */
+        .tag--history { background: #002b4d; color: #4fc3f7; border-color: #03a9f4; } /* Blue: Experience only */
+        .tag--both { background: #0a3d1d; color: #81c784; border-color: #4caf50; } /* Green: Both */
+
+        /* Descriptor Styles (Leaf Nodes) */
+        .descriptor {
+            font-size: 0.7rem;
+            color: #888;
+            background: #111;
+            padding: 0.1rem 0.4rem;
+            border-radius: 3px;
+            border: 1px solid #333;
+            display: inline-block;
+        }
+
+        /* Legend */
+        .tag-legend { display: flex; gap: 1rem; margin-bottom: 2rem; background: #1a1a1a; padding: 1rem; border-radius: 8px; font-size: 0.8rem; border: 1px solid #2a2a2a; }
+        .legend-item { display: flex; align-items: center; gap: 0.5rem; }
+
+        /* Tooltip Styles */
+        .tag-tooltip {
+            position: absolute;
+            background: #252525;
+            color: #fff;
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid #5b9bd5;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            z-index: 1000;
+            max-width: 250px;
+            pointer-events: none;
+            display: none;
+            font-size: 0.85rem;
+        }
+        .tag-tooltip h5 { margin: 0 0 0.5rem 0; color: #5b9bd5; font-size: 0.9rem; border-bottom: 1px solid #333; padding-bottom: 0.3rem; }
+        .tag-tooltip .relation-label { color: #888; font-size: 0.7rem; text-transform: uppercase; margin-top: 0.5rem; display: block; }
+        .tag-tooltip .relation-item { 
+            display: inline-block; 
+            background: #333; 
+            padding: 0.1rem 0.4rem; 
+            border-radius: 3px; 
+            font-size: 0.75rem; 
+            margin-right: 0.3rem; 
+            margin-top: 0.2rem;
+            border: 1px solid #444;
+        }
+
+        /* Tag Audit Styles */
+        .tag-audit-group { margin-bottom: 2rem; }
+        .tag-audit-header { 
+            font-weight: bold; 
+            color: #5b9bd5; 
+            border-bottom: 1px solid #333; 
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        .tag-relation { display: flex; align-items: center; margin-bottom: 0.5rem; }
+        .tag-parent { min-width: 150px; font-family: monospace; }
+        .tag-arrow { margin: 0 1rem; color: #666; }
+        .tag-children { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    </style>
+</head>
+<body>
+    <h1>Job Engine</h1>
+
+    <div class="tag-legend">
+        <div class="legend-item"><span class="tag tag--history">Experience</span></div>
+        <div class="legend-item"><span class="tag tag--job">Job Requirement</span></div>
+        <div class="legend-item"><span class="tag tag--both">Direct Match</span></div>
+        <div class="legend-item"><span class="descriptor">Detailed Spec</span></div>
+    </div>
+
+    <div class="tabs">
+        <button class="tab active" onclick="showTab('scores')">Scoring & Analysis</button>
+        <button class="tab" onclick="showTab('links')">Jobs & Links</button>
+        <button class="tab" onclick="showTab('tags')">Tag Audit</button>
+    </div>
+
+    <div id="tab-scores" class="tab-content active">
+        <div id="scores-container"></div>
+    </div>
+
+    <div id="tab-links" class="tab-content">
+        <div id="links-container"></div>
+    </div>
+
+    <div id="tab-tags" class="tab-content">
+        <div id="tags-container-audit"></div>
+    </div>
+
+    <div id="tag-tooltip" class="tag-tooltip"></div>
+
+    <script>
+        // Set of tags found in resume.json
+        const userExpertise = new Set([
+            "C++", "Python", "Swift", "C#", "Java", "MFC", "Unity", "Unreal", "Embedded Systems", 
+            "IoT", "Cloud Computing", "Distributed Systems", "Natural Interaction", "3D Graphics", 
+            "Spatial Computing", "Apple Vision Pro", "visionOS", "Meta Quest", "RealityKit", "Metal", "SwiftUI", "Kinect", 
+            "XAML", "Automotive HMI", "Multi-Paxos", "GPU Optimization", "ARM Assembly", 
+            "Zero-To-One", "Team Scaling (30+ People)", "Strategic R&D", "Video Conference", 
+            "Telecommunications", "Image Processing", "CAV Laser Disc", "GPS", "Fintech", 
+            "Ubiquitous Computing", "Mentoring", "System Scaling (Billion+ Users)", "Android", "AOSP",
+            "Spatial UX", "Applied AI", "Computer Vision", "Skeletal Tracking", "Gesture Recognition",
+            "XR Hardware", "Location Based Experience", "Performance", "3D Streaming", "Content Tools",
+            "Pen/Stylus UI", "Radio RF Tools", "Consumer Electronics", "Network Tools", "World Model",
+            "Augmented Video", "Interactive Video", "Industrial", "Education", "Developer Tools", "SDK Design"
+        ]);
+
+        const tagDefinitions = {
+            "Performance": {
+                "children": ["UI Performance", "GPU Optimization", "ARM/Edge Performance", "System Scaling (Billion+ Users)", "Distributed Systems Performance", "Performance Engineering"],
+                "description": "High-signal core competency focused on latency, throughput, and reliability."
+            },
+            "UI Performance": {
+                "children": ["SwiftUI Performance", "Compose Performance", "XAML Performance"],
+                "description": "Platform-agnostic UI rendering optimization."
+            },
+            "Spatial AI": {
+                "children": ["3D Reconstruction", "World Model", "Scene Understanding", "Inference Optimization", "Applied AI", "Computer Vision", "Skeletal Tracking", "Gesture Recognition"],
+                "description": "Intersection of Computer Vision and Generative AI for 3D understanding."
+            },
+            "Spatial Computing": {
+                "children": ["Apple Vision Pro", "Meta Quest", "Unity", "Metal", "Spatial UX", "XR Hardware", "Location Based Experience"],
+                "description": "Hardware and engine stack for immersive experiences."
+            },
+            "World Model": {
+                "children": ["Simulation", "JEPA Implementation", "Self-Supervised Learning"],
+                "description": "AI and Simulation systems that predict environment dynamics."
+            },
+            "Tools": {
+                "children": ["Developer Tools", "SDK Design", "Content Tools", "Radio RF Tools", "Network Tools", "Creator Tools"],
+                "description": "Frameworks, SDKs, and authoring environments."
+            },
+            "UX": {
+                "children": ["Spatial UX", "Mobile UX", "Pen/Stylus UI", "Product Design", "Human Factors"],
+                "description": "User experience and human-centric design."
+            },
+            "Leadership": {
+                "children": ["Zero-To-One", "Team Scaling (30+ People)", "Strategic R&D"],
+                "description": "Executive and principal-level engineering management."
+            },
+            "Apple Vision Pro": {
+                "children": ["visionOS"],
+                "description": "Apple's spatial computing hardware platform."
+            },
+            "visionOS": { 
+                "children": ["RealityKit", "SwiftUI Performance"],
+                "description": "Operating system for Apple Vision Pro."
+            },
+            "RealityKit": {
+                "description": "High-level spatial rendering framework for Apple platforms.",
+                "details": ["Entity-Component System", "RealityView", "Spatial Persona", "Stereoscopic Media"]
+            },
+            "Team Scaling (30+ People)": { 
+                "description": "Hiring, mentoring, and leading large international engineering organizations.",
+                "details": ["International Team Management", "Hiring & Staffing Strategy", "Technical Mentorship", "Process Improvement"]
+            },
+            "System Scaling (Billion+ Users)": { 
+                "description": "Architecting global-scale infrastructure capable of supporting a massive user base.",
+                "details": ["Multi-Paxos/Consensus", "Distributed File Systems", "High-Throughput Streaming", "Global Reliability"]
+            },
+            "SwiftUI Performance": { 
+                "description": "Low-level optimization of Swift data flow and RealityKit attachments.",
+                "details": ["Swift Concurrency/Actors", "RealityKit Attachments", "View Lifecycle Optimization", "State Management"]
+            },
+            "GPU Optimization": { 
+                "description": "Shaders, Metal/Vulkan/WebGPU, and heterogeneous coprocessor utilization.",
+                "details": ["Compute Kernels", "Shader Graph Optimization", "Memory Bottleneck Analysis", "Heterogeneous Scheduling"]
+            },
+            "ARM/Edge Performance": { 
+                "description": "Low-level ARM-ASM and NDK optimization for power-constrained devices.",
+                "details": ["ARM Assembly", "NDK/C++ Optimization", "Thermal Throttling Mitigation", "Sensor Fusion Latency"]
+            },
+            "Zero-To-One": { 
+                "description": "Building and shipping a product from initial prototype to version 1.0.",
+                "details": ["Rapid Prototyping", "MVP Definition", "Version 1.0 Delivery", "Hardware/Software Co-design"]
+            },
+            "Distributed Systems Performance": { 
+                "description": "Paxos/Consensus algorithms and high-scale reliable infrastructure.",
+                "details": ["Latency-Critical RPC", "Network Jitter Mitigation", "Shared State Sync", "Scalable Infrastructure"]
+            },
+            "Spatial UX": { "description": "Designing interactions for 3D environments.", "details": ["Gesture Systems", "Spatial UI Anchoring", "Multi-modal Sync", "Eye/Hand Tracking"] },
+            "XR Hardware": { "description": "Immersive display and sensor hardware.", "details": ["HMD Optical Calibration", "Thermal Architecture", "Sensor Fusion", "Embedded Control"] },
+            "Location Based Experience": { "description": "XR tied to specific physical locations.", "details": ["VPS Localization", "Wayfinding", "High-Stakes Live Events", "Persistence"] },
+            "Augmented Video": { "description": "Early AR using video backgrounds and graphic overlays.", "details": ["CAV Laser Disc Sync", "Chroma Keying", "Real-time Overlay", "Interactive Playback"] }
+        };
+
+        const jobData = [
+            {
+                title: "VP of Immersive AI Systems",
+                company: "Dolby Laboratories",
+                url: "https://www.linkedin.com/jobs/view/4211149502/",
+                postedAt: "2026-06-08",
+                stage: "Public",
+                score: 97,
+                breakdown: { seniority: 98, lowLevel: 95, domain: 99, zeroToOne: 96 },
+                tags: ["Strategic R&D", "Immersive Media", "Spatial AI", "Team Scaling (30+ People)"],
+                sellingPoints: [
+                    "Unmatched pedigree in immersive media (Vision Pro launch, Spatial Audio patents).",
+                    "VP-level leadership of large international engineering teams (30+).",
+                    "Direct expertise in building 'Immersive AI' architectures (Quintar Spatial Platform)."
+                ],
+                mission: "Revolutionize how people create, deliver, and enjoy entertainment worldwide by leading next-gen AI systems."
+            },
+            {
+                title: "VP of Engineering",
+                company: "MeshyAI",
+                url: "https://www.linkedin.com/jobs/view/4206587391/",
+                postedAt: "2026-06-05",
+                stage: "Early/Growth Startup",
+                score: 96,
+                breakdown: { seniority: 99, lowLevel: 92, domain: 98, zeroToOne: 95 },
+                tags: ["Zero-To-One", "3D Generative AI", "C++", "GPU Optimization"],
+                sellingPoints: [
+                    "CEO-reporting leadership background for high-stakes 3D AI startups.",
+                    "Direct expertise in 3D content creation pipelines and GenAI automation.",
+                    "Proved 'Zero-To-One' capability across 9 device launches."
+                ],
+                mission: "Unleash 3D Creativity by transforming content creation pipelines using generative AI."
+            },
+            {
+                title: "Director of Engineering - AI for Roblox Studio",
+                company: "Roblox",
+                url: "https://www.linkedin.com/jobs/view/4198394852/",
+                postedAt: "2026-05-26",
+                stage: "Public",
+                score: 95,
+                breakdown: { seniority: 95, lowLevel: 98, domain: 96, zeroToOne: 91 },
+                tags: ["3D Engines", "Creator Tools", "C++", "Agentic AI", "UI Performance"],
+                sellingPoints: [
+                    "25+ years of 3D Engine and Creator Tool architecture (Xbox, VS XAML Tool).",
+                    "Proven lead of large-scale (30+) high-fidelity engineering teams.",
+                    "Expert in low-latency optimization for immersive consumer hardware."
+                ],
+                mission: "Build AI-powered tools that empower millions of creators to bring 3D experiences to life."
+            },
+            {
+                title: "Director, Engineering, Gemini on Devices",
+                company: "Google DeepMind",
+                url: "https://www.linkedin.com/jobs/view/4206394511/",
+                postedAt: "2026-06-05",
+                stage: "Public Subsidiary",
+                score: 94,
+                breakdown: { seniority: 92, lowLevel: 99, domain: 95, zeroToOne: 90 },
+                tags: ["ARM/Edge Performance", "On-device ML", "Android", "Inference Optimization"],
+                sellingPoints: [
+                    "Deep mastery of ARM-ASM and Mobile/Edge performance optimization.",
+                    "History of shipping on-device intelligence (Kinect, XR Smart Helmet).",
+                    "Ability to bridge SOTA model performance with hardware constraints."
+                ],
+                mission: "Bringing Gemini's powerful AI capabilities directly to consumer hardware devices."
+            },
+            {
+                title: "Director, Engineering, Create",
+                company: "Deepmind",
+                url: "https://www.linkedin.com/jobs/view/4200431250/",
+                postedAt: "2026-06-02",
+                stage: "Public Subsidiary",
+                score: 94,
+                breakdown: { seniority: 95, lowLevel: 90, domain: 96, zeroToOne: 92 },
+                tags: ["Generative Media", "Team Scaling (30+ People)", "Product Innovation", "Spatial AI"],
+                sellingPoints: [
+                    "Expertise in scaling engineering for next-gen creative AI applications.",
+                    "Proven track record of product innovation at scale (Kindle, Xbox).",
+                    "Unique leadership position at the intersection of AI research and creative tools."
+                ],
+                mission: "Scaling engineering leadership for the next generation of creative AI applications."
+            },
+            {
+                title: "Technical Director, GenAI - Games",
+                company: "Netflix",
+                url: "https://www.linkedin.com/jobs/view/4198115629/",
+                postedAt: "2026-05-26",
+                stage: "Public",
+                score: 93,
+                breakdown: { seniority: 90, lowLevel: 96, domain: 97, zeroToOne: 90 },
+                tags: ["Game Engines", "Unity", "Unreal", "Shaders", "GPU Optimization"],
+                sellingPoints: [
+                    "Foundational engine and spatial audio architect for Forza Motorsports v1.",
+                    "Expert in C++ and Shader optimization for real-time game systems.",
+                    "Unique ability to fuse high-tech creative experimentation with production rigor."
+                ],
+                mission: "Harnessing GenAI to revolutionize game creation and player immersion."
+            },
+            {
+                title: "Director of Engineering — Studio Systems",
+                company: "Roblox",
+                url: "https://www.linkedin.com/jobs/view/4202158490/",
+                postedAt: "2026-06-08",
+                stage: "Public",
+                score: 93,
+                breakdown: { seniority: 94, lowLevel: 95, domain: 94, zeroToOne: 89 },
+                tags: ["Systems Architecture", "API Design", "C++", "Creator Tools"],
+                sellingPoints: [
+                    "Expert in platform capabilities and creator tool scalability.",
+                    "History of shipping foundational developer frameworks (Niantic, Kinect).",
+                    "Deep understanding of 3D immersive digital experiences."
+                ],
+                mission: "Build the tools and platform capabilities that empower the global creator community."
+            },
+            {
+                title: "Principal AI Inference Systems Engineer",
+                company: "AMD",
+                url: "https://www.linkedin.com/jobs/view/4208472813/",
+                postedAt: "2026-06-07",
+                stage: "Public",
+                score: 92,
+                breakdown: { seniority: 88, lowLevel: 100, domain: 94, zeroToOne: 85 },
+                tags: ["GPU Optimization", "Inference Optimization", "C++", "Performance"],
+                sellingPoints: [
+                    "Extreme performance expert in GPU-accelerated computing and C++.",
+                    "30 years of heterogeneous optimization across Intel, ARM, and parallel chips.",
+                    "Proven track record of high-throughput streaming rendering frameworks."
+                ],
+                mission: "Build products that accelerate next-gen computing from AI/Data Centers to Gaming."
+            },
+            {
+                title: "Head of Technology - Ink",
+                company: "Netflix",
+                url: "https://www.linkedin.com/jobs/view/4203649512/",
+                postedAt: "2026-06-08",
+                stage: "Public",
+                score: 92,
+                breakdown: { seniority: 90, techStack: 94, domain: 95, influence: 89 },
+                tags: ["Creative Experimentation", "Immersive Media", "API Design", "Zero-To-One"],
+                sellingPoints: [
+                    "Deep history in innovative storytelling tech and creative experimentation.",
+                    "Architect of multi-modal interaction systems for immersive media.",
+                    "Proven leader of 'Innovation Lab' style environments (Margrave, Microsoft ATG)."
+                ],
+                mission: "Bridging technical innovation with imaginative storytelling through creative lab tools."
+            },
+            {
+                title: "Principal Software Engineer — Agentic AI",
+                company: "NVIDIA AI",
+                url: "https://www.linkedin.com/jobs/view/4211158490/",
+                postedAt: "2026-06-08",
+                stage: "Public",
+                score: 91,
+                breakdown: { seniority: 85, lowLevel: 98, domain: 92, zeroToOne: 88 },
+                tags: ["Agentic AI", "LLM Infrastructure", "Distributed Systems Performance", "Python"],
+                sellingPoints: [
+                    "Experience reproducing SOTA world models and agentic workflows (JEPA Lab).",
+                    "Decades of experience in distributed systems and performance tuning.",
+                    "Direct expertise in building high-reliability foundations for complex AI suites."
+                ],
+                mission: "Build foundations and applications for Agentic AI to improve reliability/perf."
+            },
+            {
+                title: "Distinguished Engineer, Consumer Apps",
+                company: "Roblox",
+                url: "https://www.linkedin.com/jobs/view/4198392941/",
+                postedAt: "2026-05-26",
+                stage: "Public",
+                score: 90,
+                breakdown: { seniority: 95, lowLevel: 90, domain: 90, zeroToOne: 85 },
+                tags: ["System Scaling (Billion+ Users)", "Cross-Platform", "3D Graphics", "UI Performance"],
+                sellingPoints: [
+                    "Senior architect of global-scale consumer platforms (Kindle SITB, Azure Storage).",
+                    "Expert in mobile/desktop systems architecture and 3D graphics.",
+                    "Proven leader of multi-application shared spatial context experiences."
+                ],
+                mission: "Reimagining high-performance consumer applications for a billion users."
+            },
+            {
+                title: "Senior Staff Software Engineer, AI Innovation",
+                company: "Google",
+                url: "https://www.linkedin.com/jobs/view/4200425712/",
+                postedAt: "2026-06-02",
+                stage: "Public",
+                score: 89,
+                breakdown: { seniority: 85, lowLevel: 98, domain: 88, zeroToOne: 85 },
+                tags: ["AI Infrastructure", "TPU Co-Design", "C++", "Distributed Systems Performance"],
+                sellingPoints: [
+                    "25+ years of C++ mastery and TPU hardware/software co-design potential.",
+                    "Architect of planetary-scale distributed systems (Azure Storage).",
+                    "Leader of breakthrough AI infrastructure initiatives."
+                ],
+                mission: "Redefining AI infrastructure with breakthrough capabilities at unparalleled scale."
+            },
+            {
+                title: "Software Engineer, Computer Vision",
+                company: "Rivet Industries",
+                url: "https://www.linkedin.com/jobs/view/4168224719/",
+                postedAt: "2026-05-09",
+                stage: "Mid-stage Startup",
+                score: 88,
+                breakdown: { seniority: 75, lowLevel: 98, domain: 95, zeroToOne: 85 },
+                tags: ["Computer Vision", "Hardware-Software Fusion", "ARM/Edge Performance", "SLAM/VIO"],
+                sellingPoints: [
+                    "Direct experience with industrial XR wearables (DAQRI XR Helmet).",
+                    "Expert in low-latency sensor processing and edge optimization (Kinect).",
+                    "Master of hardware-software fusion for high-stakes defense/industrial tasks."
+                ],
+                mission: "Building integrated task systems that fuse hardware/software for defense."
+            }
+        ];
+
+        function getTagClass(tagName, jobTags = []) {
+            const inExperience = userExpertise.has(tagName);
+            const inJob = jobTags.includes(tagName);
+            
+            if (inExperience && inJob) return 'tag--both'; // Green
+            if (inExperience) return 'tag--history'; // Blue
+            if (inJob) return 'tag--job'; // Yellow
+            return ''; 
+        }
+
+        function getRelativeTime(isoString) {
+            const posted = new Date(isoString);
+            const now = new Date();
+            const diffDays = Math.floor((now - posted) / (1000 * 60 * 60 * 24));
+            if (diffDays === 0) return "Today";
+            if (diffDays === 1) return "1d ago";
+            if (diffDays < 7) return `${diffDays}d ago`;
+            if (diffDays < 30) { const weeks = Math.floor(diffDays / 7); return `${weeks}w ago`; }
+            return `${Math.floor(diffDays / 30)}mo ago`;
+        }
+
+        function renderJobs() {
+            const scoresContainer = document.getElementById('scores-container');
+            const linksContainer = document.getElementById('links-container');
+            scoresContainer.innerHTML = '';
+            linksContainer.innerHTML = '';
+
+            jobData.sort((a, b) => b.score - a.score).forEach(job => {
+                const scoreCard = document.createElement('div');
+                scoreCard.className = 'job-card';
+                scoreCard.innerHTML = `
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">${job.title}</div>
+                            <div class="company">${job.company}</div>
+                            <div class="metadata">
+                                <span>📅 ${getRelativeTime(job.postedAt)}</span>
+                                <span>🏢 ${job.stage}</span>
+                            </div>
+                        </div>
+                        <div class="score-pill">Fit: ${job.score}%</div>
+                    </div>
+                    <p><em>${job.mission}</em></p>
+                    <div class="tags-container">
+                        ${job.tags.map(t => `<span class="tag ${getTagClass(t, job.tags)}" onmouseenter="showTooltip(event, '${t}')" onmouseleave="hideTooltip()">${t}</span>`).join('')}
+                    </div>
+                    <div class="score-row">
+                        <div class="score-factor"><div class="factor-label">Seniority</div><div class="factor-value">${job.breakdown.seniority || job.breakdown.influence}%</div></div>
+                        <div class="score-factor"><div class="factor-label">Low-Level</div><div class="factor-value">${job.breakdown.lowLevel || job.breakdown.techStack}%</div></div>
+                        <div class="score-factor"><div class="factor-label">Domain</div><div class="factor-value">${job.breakdown.domain}%</div></div>
+                        <div class="score-factor"><div class="factor-label">Zero-to-One</div><div class="factor-value">${job.breakdown.zeroToOne || 85}%</div></div>
+                    </div>
+                    <div class="selling-points">
+                        <h4>Key Selling Points</h4>
+                        <ul>${job.sellingPoints.map(p => `<li>${p}</li>`).join('')}</ul>
+                    </div>
+                `;
+                scoresContainer.appendChild(scoreCard);
+
+                const linkCard = document.createElement('div');
+                linkCard.className = 'job-card';
+                linkCard.innerHTML = `
+                    <div class="job-title">${job.title}</div>
+                    <div class="company">${job.company}</div>
+                    <div class="link-list" style="margin-top: 1rem;">
+                        <a href="${job.url}" target="_blank">${job.url}</a>
+                    </div>
+                `;
+                linksContainer.appendChild(linkCard);
+            });
+        }
+
+        function renderTags() {
+            const container = document.getElementById('tags-container-audit');
+            container.innerHTML = '';
+
+            // Helper to see if a tag is used in any job (to support Yellow/Green in audit)
+            const allJobTags = Array.from(new Set(jobData.flatMap(j => j.tags)));
+
+            Object.keys(tagDefinitions).forEach(cat => {
+                if (!tagDefinitions[cat].children) return; 
+
+                const group = document.createElement('div');
+                group.className = 'tag-audit-group';
+                group.innerHTML = `
+                    <div class="tag-audit-header">${cat}</div>
+                    <p><small>${tagDefinitions[cat].description}</small></p>
+                    ${tagDefinitions[cat].children.map(child => {
+                        const childData = tagDefinitions[child] || {};
+                        
+                        const subContent = childData.children 
+                            ? childData.children.map(grand => `<span class="tag ${getTagClass(grand, allJobTags)}" onmouseenter="showTooltip(event, '${grand}')" onmouseleave="hideTooltip()">${grand}</span>`).join('')
+                            : (childData.details ? childData.details.map(d => `<span class="descriptor">${d}</span>`).join('') : '<span class="descriptor">Implementation Detail</span>');
+
+                        return `
+                        <div class="tag-relation">
+                            <div class="tag tag-parent ${getTagClass(child, allJobTags)}" onmouseenter="showTooltip(event, '${child}')" onmouseleave="hideTooltip()">${child}</div>
+                            <div class="tag-arrow">→</div>
+                            <div class="tag-children">
+                                ${subContent}
+                            </div>
+                        </div>
+                        `;
+                    }).join('')}
+                `;
+                container.appendChild(group);
+            });
+        }
+
+        function showTooltip(event, tagName) {
+            const tooltip = document.getElementById('tag-tooltip');
+            const tagData = tagDefinitions[tagName];
+            let content = `<h5>${tagName}</h5>`;
+            
+            // Explicit Category/Parent Finder
+            const findAllCategories = (name) => {
+                const parents = Object.keys(tagDefinitions).filter(k => tagDefinitions[k].children && tagDefinitions[k].children.includes(name));
+                return parents.length > 0 ? parents : null;
+            };
+
+            const categories = findAllCategories(tagName);
+            if (categories) {
+                content += `<span class="relation-label">Categories:</span>${categories.map(c => `<span class="relation-item">${c}</span>`).join('')}`;
+            }
+
+            const inExperience = userExpertise.has(tagName);
+            const status = inExperience ? "Matched to Experience" : "Job Requirement (Gap)";
+            content += `<span class="relation-label">Status:</span><span class="relation-item">${status}</span>`;
+
+            if (tagData) {
+                content += `<p>${tagData.description || 'Specialized expertise in this technical domain.'}</p>`;
+                if (tagData.children) {
+                    content += `<span class="relation-label">Sub-Specializations:</span>`;
+                    tagData.children.forEach(c => { content += `<span class="relation-item">${c}</span>`; });
+                } else if (tagData.details) {
+                    content += `<span class="relation-label">Includes:</span>`;
+                    tagData.details.forEach(d => { content += `<span class="relation-item">${d}</span>`; });
+                }
+            } else {
+                content += `<p>Core technical detail.</p>`;
+            }
+
+            tooltip.innerHTML = content;
+            tooltip.style.display = 'block';
+            const rect = event.target.getBoundingClientRect();
+            tooltip.style.left = `${rect.left + window.scrollX}px`;
+            tooltip.style.top = `${rect.bottom + window.scrollY + 10}px`;
+        }
+
+        function hideTooltip() { document.getElementById('tag-tooltip').style.display = 'none'; }
+
+        window.showTab = function(tabId) {
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            const tabs = document.querySelectorAll('.tab');
+            if (tabId === 'scores') tabs[0].classList.add('active');
+            else if (tabId === 'links') tabs[1].classList.add('active');
+            else tabs[2].classList.add('active');
+            document.getElementById(`tab-${tabId}`).classList.add('active');
+            if (tabId === 'tags') renderTags();
+        }
+
+        renderJobs();
+    </script>
+</body>
+</html>
