@@ -45,15 +45,193 @@ const state = {
   searchQuery:   '',
   metricsOnly:   false,
   showProjectTags: true,
+  searchScores:  null
 };
 
 let resumeData = null;
+
+// ─── Hybrid Search Engine State ───────────────────────────────────────────────
+let searchVectorsMeta = null;
+let searchVectorsBin = null;
+let searchPipeline = null;
+let searchState = 'idle'; // 'idle', 'loading', 'thinking', 'ready', 'error'
+let fuseSearch = null;
+let isSearchLoadingStarted = false;
 
 // ─── Admin Edit State ─────────────────────────────────────────────────────────
 
 const adminEdits = {};                         // { id: { years, months } }
 let   currentAdminPrompt = '';
 let   popState = { id: null, years: 0, months: 0 };
+
+// ─── Hybrid Search Implementation ─────────────────────────────────────────────
+
+function setSemanticStatus(dataState) {
+  const pill = document.getElementById('search-semantic-status');
+  if (!pill) return;
+  pill.dataset.state = dataState;
+  if (dataState) {
+    pill.style.display = 'inline-flex';
+  } else {
+    pill.style.display = 'none';
+  }
+  
+  const label = pill.querySelector('.status-label');
+  if (label) {
+    if (dataState === 'loading') label.textContent = 'loading model...';
+    else if (dataState === 'thinking') label.textContent = 'thinking...';
+    else if (dataState === 'ready') label.textContent = 'vector search';
+  }
+}
+
+async function startLoadingSearchEngine() {
+  if (isSearchLoadingStarted) return;
+  isSearchLoadingStarted = true;
+  
+  setSemanticStatus('loading');
+  try {
+    const [metaResp, binResp, transformersModule] = await Promise.all([
+      fetch('./src/data/search-vectors-meta.json'),
+      fetch('./src/data/search-vectors.bin'),
+      import('https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.3.3')
+    ]);
+    
+    if (!metaResp.ok || !binResp.ok) {
+      throw new Error('Failed to load search indexes.');
+    }
+    
+    searchVectorsMeta = await metaResp.json();
+    const binBuffer = await binResp.arrayBuffer();
+    searchVectorsBin = new Float32Array(binBuffer);
+    
+    const { pipeline, env } = transformersModule;
+    env.allowLocalModels = false;
+    
+    // Disable multi-threading/SharedArrayBuffer & proxy workers to bypass 
+    // cross-origin isolation blocks on standard static web hosts (GitHub Pages)
+    env.backends.onnx.wasm.numThreads = 1;
+    env.backends.onnx.wasm.proxy = false;
+    
+    searchPipeline = await pipeline('feature-extraction', searchVectorsMeta.model);
+    searchState = 'ready';
+    setSemanticStatus('ready');
+    
+    buildFuseIndex();
+    
+    if (state.searchQuery) {
+      runHybridSearch();
+    }
+  } catch (err) {
+    console.error('Failed to initialize hybrid search:', err);
+    searchState = 'error';
+    setSemanticStatus('');
+  }
+}
+
+function buildFuseIndex() {
+  const corpus = [];
+  resumeData.experiences.forEach(exp => {
+    exp.roles.forEach(role => {
+      role.achievements.forEach(a => {
+        corpus.push({
+          id: a.id,
+          text: a.text,
+          technologies: a.tags.technologies || [],
+          customers: a.tags.customers || [],
+          type: a.tags.type || [],
+          domain: a.tags.domain || []
+        });
+      });
+    });
+  });
+  
+  fuseSearch = new Fuse(corpus, {
+    keys: [
+      { name: 'text', weight: 0.5 },
+      { name: 'technologies', weight: 0.2 },
+      { name: 'customers', weight: 0.1 },
+      { name: 'domain', weight: 0.1 },
+      { name: 'type', weight: 0.1 }
+    ],
+    threshold: 0.35
+  });
+}
+
+let currentQueryId = 0;
+
+async function runHybridSearch() {
+  if (!searchPipeline || !searchVectorsBin) return;
+  
+  const query = state.searchQuery;
+  if (!query) {
+    state.searchScores = null;
+    renderTimeline();
+    return;
+  }
+  
+  const queryId = ++currentQueryId;
+  setSemanticStatus('thinking');
+  
+  try {
+    const out = await searchPipeline(['query: ' + query], { pooling: 'mean', normalize: true });
+    
+    if (queryId !== currentQueryId) return;
+    
+    const queryVector = out.data;
+    
+    const similarities = {};
+    const scoreList = [];
+    
+    searchVectorsMeta.achievements.forEach(ach => {
+      const start = ach.index * 384;
+      const docVector = searchVectorsBin.subarray(start, start + 384);
+      
+      let dot = 0;
+      for (let i = 0; i < 384; i++) {
+        dot += queryVector[i] * docVector[i];
+      }
+      
+      similarities[ach.id] = dot;
+      scoreList.push({ id: ach.id, score: dot });
+    });
+    
+    scoreList.sort((a, b) => b.score - a.score);
+    const vectorRanks = {};
+    scoreList.forEach((item, idx) => {
+      vectorRanks[item.id] = idx + 1;
+    });
+    
+    const fuseResults = fuseSearch.search(query);
+    const fuseRanks = {};
+    fuseResults.forEach((result, idx) => {
+      fuseRanks[result.item.id] = idx + 1;
+    });
+    
+    const rrfScores = {};
+    const k = 60;
+    
+    searchVectorsMeta.achievements.forEach(ach => {
+      const rankV = vectorRanks[ach.id] || 9999;
+      const rankF = fuseRanks[ach.id] || 9999;
+      
+      const scoreV = rankV !== 9999 ? 1 / (k + rankV) : 0;
+      const scoreF = rankF !== 9999 ? 1 / (k + rankF) : 0;
+      
+      rrfScores[ach.id] = scoreV + scoreF;
+    });
+    
+    state.searchScores = {
+      similarities,
+      rrfScores
+    };
+    
+    setSemanticStatus('ready');
+    renderTimeline();
+  } catch (err) {
+    console.error('Failed executing semantic search:', err);
+    setSemanticStatus('ready');
+  }
+}
 
 // ─── Init ─────────────────────────────────────────────────────────────────────
 
@@ -232,9 +410,27 @@ function renderFilters() {
   buildChips(document.getElementById('type-filters'),       roles,       'role',       ROLE_LABELS);
   buildChips(document.getElementById('experience-filters'), experiences, 'experience', EXPERIENCE_LABELS);
 
-  document.getElementById('search-input').addEventListener('input', e => {
-    state.searchQuery = e.target.value.toLowerCase().trim();
-    renderTimeline();
+  const searchInput = document.getElementById('search-input');
+  searchInput.addEventListener('focus', startLoadingSearchEngine);
+  searchInput.addEventListener('click', startLoadingSearchEngine);
+  searchInput.addEventListener('keydown', startLoadingSearchEngine);
+
+  let debounceTimeout = null;
+  searchInput.addEventListener('input', e => {
+    state.searchQuery = e.target.value.trim();
+
+    if (debounceTimeout) clearTimeout(debounceTimeout);
+
+    if (searchPipeline && state.searchQuery) {
+      debounceTimeout = setTimeout(() => {
+        runHybridSearch();
+      }, 250);
+    } else {
+      if (!state.searchQuery) {
+        state.searchScores = null;
+      }
+      renderTimeline();
+    }
   });
 
   document.getElementById('metrics-toggle').addEventListener('change', e => {
@@ -273,6 +469,7 @@ function clearFilters() {
   state.activeExperiences.clear();
   state.searchQuery   = '';
   state.metricsOnly   = false;
+  state.searchScores  = null;
   document.getElementById('search-input').value      = '';
   document.getElementById('metrics-toggle').checked  = false;
   document.querySelectorAll('.chip--active').forEach(c => c.classList.remove('chip--active'));
@@ -290,6 +487,7 @@ function achievementMatches(a) {
   if (state.activeExperiences.size > 0 && !domain?.some(d => state.activeExperiences.has(d))) return false;
 
   if (state.searchQuery) {
+    const qLower = state.searchQuery.toLowerCase();
     const haystack = [
       a.text,
       ...(technologies || []),
@@ -300,7 +498,10 @@ function achievementMatches(a) {
       impact?.value  || '',
     ].join(' ').toLowerCase();
 
-    if (!haystack.includes(state.searchQuery)) return false;
+    const isSubmatch = haystack.includes(qLower);
+    const isSemanticMatch = state.searchScores && state.searchScores.similarities && state.searchScores.similarities[a.id] >= 0.75;
+
+    if (!isSubmatch && !isSemanticMatch) return false;
   }
 
   return true;
@@ -336,12 +537,30 @@ function renderTimeline() {
 
     exp.roles.forEach(role => {
       const visible = role.achievements.filter(achievementMatches);
+      
+      // Sort visible achievements by combined RRF search score if search is active
+      if (state.searchScores && state.searchScores.rrfScores) {
+        visible.sort((x, y) => {
+          const scoreX = state.searchScores.rrfScores[x.id] || 0;
+          const scoreY = state.searchScores.rrfScores[y.id] || 0;
+          return scoreY - scoreX;
+        });
+      }
+      
       if (!visible.length) return;
 
       expVisible   = true;
       totalVisible += visible.length;
 
       const achHtml = visible.map(a => {
+        const sim = state.searchScores && state.searchScores.similarities ? state.searchScores.similarities[a.id] : null;
+        let matchBadge = '';
+        if (sim && sim >= 0.75) {
+          const displayPercent = Math.round(50 + ((sim - 0.75) / (0.85 - 0.75)) * 50);
+          const humanScore = Math.max(50, Math.min(100, displayPercent));
+          matchBadge = `<span class="badge badge--match">✦ ${humanScore}% match</span>`;
+        }
+
         const techBadges = (a.tags.technologies || [])
           .slice(0, 6)
           .map(t => `<span class="badge badge--tech">${escapeHtml(t)}</span>`)
@@ -373,7 +592,7 @@ function renderTimeline() {
           <li class="achievement">
             ${adminAch}
             ${adminDurBtn}
-            <p class="achievement-text">${highlight(a.text)}</p>
+            <p class="achievement-text">${highlight(a.text)}${matchBadge}</p>
             ${metricHtml}
             ${hasFooter ? `
             <div class="achievement-footer">

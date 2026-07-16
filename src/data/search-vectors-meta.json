@@ -1,0 +1,246 @@
+{
+  "model": "Xenova/e5-small-v2",
+  "dimension": 384,
+  "achievements": [
+    {
+      "id": "zenith-a1",
+      "index": 0
+    },
+    {
+      "id": "hughes-a1",
+      "index": 1
+    },
+    {
+      "id": "nr-a1",
+      "index": 2
+    },
+    {
+      "id": "nr-a2",
+      "index": 3
+    },
+    {
+      "id": "or-a1",
+      "index": 4
+    },
+    {
+      "id": "ace-a1",
+      "index": 5
+    },
+    {
+      "id": "lcc-a1",
+      "index": 6
+    },
+    {
+      "id": "ifusion-a1",
+      "index": 7
+    },
+    {
+      "id": "spc-a1",
+      "index": 8
+    },
+    {
+      "id": "nada-a1",
+      "index": 9
+    },
+    {
+      "id": "ms1-auto-a1",
+      "index": 10
+    },
+    {
+      "id": "ms1-auto-a2",
+      "index": 11
+    },
+    {
+      "id": "ms1-forza-a1",
+      "index": 12
+    },
+    {
+      "id": "ms1-forza-a2",
+      "index": 13
+    },
+    {
+      "id": "ms1-forza-a3",
+      "index": 14
+    },
+    {
+      "id": "ms1-forza-a4",
+      "index": 15
+    },
+    {
+      "id": "ms1-xaml-a1",
+      "index": 16
+    },
+    {
+      "id": "ms1-xaml-a2",
+      "index": 17
+    },
+    {
+      "id": "amz-a1",
+      "index": 18
+    },
+    {
+      "id": "amz-a2",
+      "index": 19
+    },
+    {
+      "id": "amz-a3",
+      "index": 20
+    },
+    {
+      "id": "ms2-auto-a1",
+      "index": 21
+    },
+    {
+      "id": "ms2-auto-a2",
+      "index": 22
+    },
+    {
+      "id": "ms2-auto-a3",
+      "index": 23
+    },
+    {
+      "id": "ms2-auto-a4",
+      "index": 24
+    },
+    {
+      "id": "ms2-auto-a5",
+      "index": 25
+    },
+    {
+      "id": "ms2-az-a1",
+      "index": 26
+    },
+    {
+      "id": "ms2-az-a2",
+      "index": 27
+    },
+    {
+      "id": "ms2-wp-a1",
+      "index": 28
+    },
+    {
+      "id": "ms2-wp-a2",
+      "index": 29
+    },
+    {
+      "id": "ms2-wp-a3",
+      "index": 30
+    },
+    {
+      "id": "ms2-kinect-a1",
+      "index": 31
+    },
+    {
+      "id": "ms2-kinect-a2",
+      "index": 32
+    },
+    {
+      "id": "ms2-kinect-a3",
+      "index": 33
+    },
+    {
+      "id": "ms2-kinect-a4",
+      "index": 34
+    },
+    {
+      "id": "daqri-a1",
+      "index": 35
+    },
+    {
+      "id": "daqri-a2",
+      "index": 36
+    },
+    {
+      "id": "daqri-a3",
+      "index": 37
+    },
+    {
+      "id": "daqri-a4",
+      "index": 38
+    },
+    {
+      "id": "daqri-arch-a1",
+      "index": 39
+    },
+    {
+      "id": "daqri-arch-a2",
+      "index": 40
+    },
+    {
+      "id": "margrave-a1",
+      "index": 41
+    },
+    {
+      "id": "margrave-a2",
+      "index": 42
+    },
+    {
+      "id": "margrave-a5",
+      "index": 43
+    },
+    {
+      "id": "margrave-a3",
+      "index": 44
+    },
+    {
+      "id": "margrave-a4",
+      "index": 45
+    },
+    {
+      "id": "ml-leadership",
+      "index": 46
+    },
+    {
+      "id": "ml-vision",
+      "index": 47
+    },
+    {
+      "id": "ml-architecture",
+      "index": 48
+    },
+    {
+      "id": "ml-ecosystem",
+      "index": 49
+    },
+    {
+      "id": "ml-optimization",
+      "index": 50
+    },
+    {
+      "id": "niantic-leadership",
+      "index": 51
+    },
+    {
+      "id": "niantic-adoption",
+      "index": 52
+    },
+    {
+      "id": "niantic-process",
+      "index": 53
+    },
+    {
+      "id": "niantic-oversight",
+      "index": 54
+    },
+    {
+      "id": "quintar-leadership",
+      "index": 55
+    },
+    {
+      "id": "quintar-platform",
+      "index": 56
+    },
+    {
+      "id": "quintar-engineering",
+      "index": 57
+    },
+    {
+      "id": "quintar-ai",
+      "index": 58
+    },
+    {
+      "id": "quintar-reliability",
+      "index": 59
+    }
+  ]
+}

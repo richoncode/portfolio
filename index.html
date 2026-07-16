@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Richard Bailey – Portfolio</title>
-  <link rel="stylesheet" href="src/css/main.css?v=33">
+  <link rel="stylesheet" href="src/css/main.css?v=34">
 </head>
 <body>
 
@@ -58,6 +58,10 @@
         <div class="filter-body" id="filter-body">
           <div class="search-row">
             <input type="text" id="search-input" placeholder="Search achievements, technologies, customers…" autocomplete="off">
+            <div id="search-semantic-status" class="search-semantic-status" data-state="">
+              <span class="search-spark">✦</span>
+              <span class="status-label">vector search</span>
+            </div>
           </div>
           <div class="filter-group">
             <span class="filter-label">Role</span>
@@ -127,6 +131,7 @@
 
   <div id="admin-popout" class="admin-popout"></div>
 
-  <script src="src/js/app.js?v=34"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/7.0.0/fuse.min.js"></script>
+  <script src="src/js/app.js?v=37"></script>
 </body>
 </html>
