@@ -632,7 +632,7 @@ function renderTimeline() {
 
     html += `
       <div class="experience-card">
-        <div class="experience-header">
+        <div class="experience-header"${exp.summary ? ` data-summary="${escapeHtml(exp.summary)}"` : ''}>
           <div>
             <h2 class="company-name">${escapeHtml(exp.company)}</h2>
             ${location}
