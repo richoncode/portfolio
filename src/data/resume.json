@@ -2290,7 +2290,8 @@
             }
           ]
         }
-      ]
+      ],
+      "summary": "Led development of hardware-accelerated **image processing** tools and libraries on TI processors — **engineering leadership** plus hands-on **imaging pipeline** delivery for high-stakes customers."
     },
     {
       "id": "hughes",
@@ -2325,7 +2326,8 @@
             }
           ]
         }
-      ]
+      ],
+      "summary": "High-fidelity **real-time training simulations** — firefighter and airbase attack preparedness with dynamic fire and bombing sequences."
     },
     {
       "id": "new-resolutions",
@@ -2381,7 +2383,8 @@
             }
           ]
         }
-      ]
+      ],
+      "summary": "Embedded control systems for advanced **prosthetic limbs** using sub-10mW **analogue neural interfaces**, plus laser-disc **interactive training simulations** — deep **embedded systems** and **human-machine interface** work."
     },
     {
       "id": "online-resources",
@@ -2418,7 +2421,8 @@
             }
           ]
         }
-      ]
+      ],
+      "summary": "Pioneering consumer **digital banking screen phone** for the home — **zero-to-one consumer hardware** with embedded screen, modem, and secure automated transactions."
     },
     {
       "id": "ace",
@@ -2457,7 +2461,8 @@
             }
           ]
         }
-      ]
+      ],
+      "summary": "Architect and development lead for video-conference scheduling/control and **DCME/SONET/ATM telecom** operations software — **systems architecture** with **engineering management**."
     },
     {
       "id": "lcc",
@@ -2498,7 +2503,8 @@
             }
           ]
         }
-      ]
+      ],
+      "summary": "Technical lead for pen-enabled tablet GUI data collection and analysis for **cellular network optimization** — **architecture** and **mentoring** on a consulting engagement."
     },
     {
       "id": "ifusion",
@@ -2536,7 +2542,8 @@
             }
           ]
         }
-      ]
+      ],
+      "summary": "Engineering manager for a **push-media internet service** — content authoring tools plus **web crawling, extraction, and indexing** pipelines."
     },
     {
       "id": "spc",
@@ -2575,7 +2582,8 @@
             }
           ]
         }
-      ]
+      ],
+      "summary": "Multi-threaded **distributed web-scraping spider** with networked work queues consumed by multiple machines — early **distributed systems** engineering."
     },
     {
       "id": "nada",
@@ -2613,7 +2621,8 @@
             }
           ]
         }
-      ]
+      ],
+      "summary": "Designed and built a 3-tier **car valuation** application for subscription customers — secure 'blue book' database and **full-stack architecture**."
     },
     {
       "id": "ms1",
@@ -2821,7 +2830,8 @@
             }
           ]
         }
-      ]
+      ],
+      "summary": "Shipped **Xbox / Forza Motorsport** spatial audio, **physics-based simulation**, haptics, and rendering; **automotive infotainment UI frameworks** (C++/ARM); and **Visual Studio XAML designer** tooling — deep **developer-platform** and **real-time systems** engineering."
     },
     {
       "id": "amazon",
@@ -2906,7 +2916,8 @@
             }
           ]
         }
-      ]
+      ],
+      "summary": "**Petabyte-scale, low-latency cloud services** — 900K book-page image delivery 3× faster, 80TB migration to **Amazon S3**, and **Kindle developer API** architecture for launch."
     },
     {
       "id": "microsoft-2nd",
@@ -3263,7 +3274,8 @@
             }
           ]
         }
-      ]
+      ],
+      "summary": "Managed a **15-engineer international team** on the **automotive UI/HMI platform**; **Windows Azure Storage** distributed systems (**Multi-Paxos**, 500M compute nodes); **Windows Phone XAML frameworks**; and **Kinect body-tracking** spatial interaction APIs shipped in Windows and Xbox — migrating heuristics to **machine learning**."
     },
     {
       "id": "daqri",
@@ -3425,7 +3437,8 @@
             }
           ]
         }
-      ]
+      ],
+      "summary": "**Director of Engineering** for the industrial **XR Smart Helmet** — 45-engineer org shipping 15+ customer apps and core **spatial frameworks**; **Unity/C# spatial AR APIs**; launched on the **CES keynote** stage with Intel's CEO. As **Chief Software Architect**, grew the team from 3 to 30."
     },
     {
       "id": "margrave",
@@ -3559,7 +3572,8 @@
             }
           ]
         }
-      ]
+      ],
+      "summary": "**Founder / CEO** of an **AR/VR developer-tools** startup — shipped the **Sony Pictures AR Billboard** in Times Square (**facial tracking** with XR animated overlays) and a Deutsche Telekom **mobile VR** language-training app."
     },
     {
       "id": "magic-leap",
@@ -3691,7 +3705,8 @@
             }
           ]
         }
-      ]
+      ],
+      "summary": "**Senior Director** leading a 30-engineer international team through the **Magic Leap 1 and 2** launches — flagship **Spatial AR Meetings** shipped within a year of prototype, a **1000× application performance improvement**, and multi-application shared **spatial computing**."
     },
     {
       "id": "niantic",
@@ -3797,7 +3812,8 @@
             }
           ]
         }
-      ]
+      ],
+      "summary": "**Senior Director of Lightship ARDK** — on-time launch at AWE winning **Best-in-Show AR**, +75% developer engagement, and 70% faster builds — **AR developer-platform** leadership at scale (iOS/Android/Unity)."
     },
     {
       "id": "quintar",
@@ -3951,7 +3967,8 @@
             }
           ]
         }
-      ]
+      ],
+      "summary": "**VP of Engineering** and Principal Engineer — 30-engineer USA/India org building a unified **Spatial AI platform** proven on live sports; award-winning **PGA Tour Vision on Apple Vision Pro**; **100fps multithreaded 3D streaming renderer** and stereo render pipeline."
     }
   ],
   "skills": [

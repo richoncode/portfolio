@@ -247,7 +247,8 @@ async function runHybridSearch() {
 
 async function init() {
   try {
-    const resp = await fetch('./src/data/resume.json');
+    // no-cache: always revalidate so data edits show without a hard refresh
+    const resp = await fetch('./src/data/resume.json', { cache: 'no-cache' });
     if (!resp.ok) throw new Error(resp.statusText);
     resumeData = await resp.json();
     renderProfile();
@@ -767,7 +768,8 @@ function initTooltip() {
   document.addEventListener('mouseover', e => {
     const el = e.target.closest('[data-summary]');
     if (!el) return;
-    tip.textContent = el.dataset.summary;
+    // **term** marks emphasis — render as <strong> after escaping
+    tip.innerHTML = escapeHtml(el.dataset.summary).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
     active = true;
     tip.classList.add('proj-tooltip--visible');
     position(e);
@@ -935,7 +937,7 @@ function renderCareerTimeline() {
         <div class="tl-marker">
           <div class="${dotClass}"></div>
         </div>
-        <div class="tl-card">
+        <div class="tl-card"${exp.summary ? ` data-summary="${escapeHtml(exp.summary)}"` : ''}>
           <div class="tl-header">
             <div>
               <div class="tl-company">${escapeHtml(exp.company)}</div>

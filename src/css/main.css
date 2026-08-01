@@ -67,6 +67,9 @@ a:hover { text-decoration: underline; }
 .tab:hover { color: var(--text); }
 .tab--active { border-bottom-color: var(--accent); color: var(--text); font-weight: 600; }
 
+/* Emphasized recruiting terms inside hover tooltips */
+.proj-tooltip strong { color: var(--accent-2); font-weight: 600; }
+
 /* Research header — sticks below the site header while scrolling the list */
 .research-header {
   position: sticky;

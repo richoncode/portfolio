@@ -117,7 +117,9 @@ profile.intro[]          {text, tags[]}
 profile.name/title/…     string
 learning.certifications[]{id, title, issuer, completedDate, url, duration, author, tags[]}
 learning.volunteering[]  {id, organization, role, startDate?, endDate?, date?, current?, description?}
-experiences[]            {company, roles[{title, roleTypes[], startDate, endDate, achievements[]}]}
+experiences[]            {company, summary, roles[{title, roleTypes[], startDate, endDate, achievements[]}]}
+                         — summary shows as a hover tooltip on Timeline cards;
+                         **term** marks recruiting keywords rendered as <strong>
 skills[]                 {category, items[]}
 patents[]                {group, inventions[{id, title, numbers[], url, summary}]}
 research[]               {id, title, url, date, subject, summary, tags, parent?, hidden?}
