@@ -67,6 +67,29 @@ a:hover { text-decoration: underline; }
 .tab:hover { color: var(--text); }
 .tab--active { border-bottom-color: var(--accent); color: var(--text); font-weight: 600; }
 
+/* Research header — sticks below the site header while scrolling the list */
+.research-header {
+  position: sticky;
+  top: var(--sticky-top, 0px);
+  z-index: 100;
+  background: rgba(13, 17, 23, 0.97);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 12px 0 0;
+  margin-bottom: 12px;
+}
+.research-header .research-meta { padding: 0 0 12px; }
+
+/* Sort-order indicator — only on the active, time-ordered tab */
+.tab-sort {
+  display: none;
+  margin-left: 6px;
+  color: var(--accent);
+  font-size: 0.8rem;
+}
+.tab--active .tab-sort { display: inline; }
+
 /* ─── Tab Panes ───────────────────────────── */
 .tab-pane         { display: none; }
 .tab-pane--active { display: block; }

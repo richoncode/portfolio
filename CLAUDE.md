@@ -116,10 +116,16 @@ consistency. Validate new components against it after implementation.
 profile.intro[]          {text, tags[]}
 profile.name/title/…     string
 learning.certifications[]{id, title, issuer, completedDate, url, duration, author, tags[]}
-learning.volunteering[]  {org, role, startDate, endDate, current, description}
+learning.volunteering[]  {id, organization, role, startDate?, endDate?, date?, current?, description?}
 experiences[]            {company, roles[{title, roleTypes[], startDate, endDate, achievements[]}]}
 skills[]                 {category, items[]}
 patents[]                {group, inventions[{id, title, numbers[], url, summary}]}
+research[]               {id, title, url, date, subject, summary, tags, parent?, hidden?}
+                         — flat index of ../webartests pages (excludes bryto reports/, scratch/);
+                         sub-pages are their own entries with parent:<id> and a
+                         "Parent · Sub" title; url is relative (../webartests/...);
+                         tags is a ' · '-joined string; hidden:true keeps a
+                         not-yet-public item out of the rendered list
 publications[]           {title, venue, date, url}
 filterTaxonomy           {roles[], experiences[]}
 ```

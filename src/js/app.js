@@ -48,6 +48,16 @@ const state = {
   searchScores:  null
 };
 
+// Tabs whose content is chronological; each defaults to newest → oldest
+const TIME_ORDERED_TABS = new Set(['experience', 'timeline', 'projects', 'research', 'learning']);
+const tabSortNewestFirst = {
+  experience: true,
+  timeline:   true,
+  projects:   true,
+  research:   true,
+  learning:   true,
+};
+
 let resumeData = null;
 
 // ─── Hybrid Search Engine State ───────────────────────────────────────────────
@@ -531,7 +541,7 @@ function renderTimeline() {
   let html = '';
   let totalVisible = 0;
 
-  resumeData.experiences.forEach(exp => {
+  sortByDate(resumeData.experiences, e => e.startDate, tabSortNewestFirst.experience).forEach(exp => {
     let rolesHtml  = '';
     let expVisible = false;
 
@@ -700,6 +710,17 @@ function fmtDur(months) {
   return `${y}y ${m}m`;
 }
 
+function sortByDate(arr, getDate, newestFirst) {
+  return [...arr].sort((a, b) => {
+    const da = getDate(a) || '';
+    const db = getDate(b) || '';
+    if (!da && !db) return 0;
+    if (!da) return 1;   // undated items always sink to the bottom
+    if (!db) return -1;
+    return newestFirst ? db.localeCompare(da) : da.localeCompare(db);
+  });
+}
+
 function formatDate(dateStr) {
   if (!dateStr) return '';
   const [year, month] = dateStr.split('-');
@@ -758,7 +779,8 @@ function initTooltip() {
 
   document.addEventListener('mouseout', e => {
     const el = e.target.closest('[data-summary]');
-    if (el) { active = false; tip.classList.remove('proj-tooltip--visible'); }
+    // only hide when truly leaving the element, not when moving between its children
+    if (el && !el.contains(e.relatedTarget)) { active = false; tip.classList.remove('proj-tooltip--visible'); }
   });
 
   function position(e) {
@@ -771,12 +793,45 @@ function initTooltip() {
 }
 
 function initTabs() {
-  document.querySelectorAll('.tab').forEach(tab =>
-    tab.addEventListener('click', () => switchTab(tab.dataset.tab))
-  );
+  document.querySelectorAll('.tab').forEach(tab => {
+    const name = tab.dataset.tab;
+    if (TIME_ORDERED_TABS.has(name)) {
+      const ind = document.createElement('span');
+      ind.className = 'tab-sort';
+      tab.appendChild(ind);
+    }
+    tab.addEventListener('click', () => {
+      if (TIME_ORDERED_TABS.has(name) && tab.classList.contains('tab--active')) {
+        toggleTabSort(name);
+      } else {
+        switchTab(name);
+      }
+    });
+  });
+  updateSortIndicators();
 }
 
-const VALID_TABS = new Set(['intro','old-intro','experience','timeline','projects','patents','learning','skills']);
+function toggleTabSort(name) {
+  tabSortNewestFirst[name] = !tabSortNewestFirst[name];
+  updateSortIndicators();
+  if (name === 'experience') renderTimeline();
+  if (name === 'timeline')   renderCareerTimeline();
+  if (name === 'projects')   renderProjects();
+  if (name === 'research')   renderResearch();
+  if (name === 'learning')   renderLearning();
+}
+
+function updateSortIndicators() {
+  document.querySelectorAll('.tab .tab-sort').forEach(ind => {
+    const newest = tabSortNewestFirst[ind.parentElement.dataset.tab];
+    ind.textContent = newest ? '↓' : '↑';
+    ind.title = newest
+      ? 'Sorted newest → oldest — click to reverse'
+      : 'Sorted oldest → newest — click to reverse';
+  });
+}
+
+const VALID_TABS = new Set(['intro','old-intro','experience','timeline','projects','patents','research','learning','skills']);
 
 function switchTab(name, pushState = true) {
   if (!VALID_TABS.has(name)) name = 'intro';
@@ -799,6 +854,8 @@ function switchTab(name, pushState = true) {
     renderSkills();
   if (name === 'patents' && !document.getElementById('patents-content').innerHTML)
     renderPatents();
+  if (name === 'research' && !document.getElementById('research-content').innerHTML)
+    renderResearch();
 }
 
 // ─── Career Timeline ──────────────────────────────────────────────────────────
@@ -806,7 +863,7 @@ function switchTab(name, pushState = true) {
 function renderCareerTimeline() {
   const container = document.getElementById('career-timeline');
 
-  const html = resumeData.experiences.map((exp, i) => {
+  const html = sortByDate(resumeData.experiences, e => e.startDate, tabSortNewestFirst.timeline).map(exp => {
     const allAchievements = exp.roles.flatMap(r => r.achievements);
 
     // Top tech chips
@@ -924,7 +981,7 @@ function renderProjects() {
         </div>`;
     }
 
-    const itemsHtml = section.items.map(p => {
+    const itemsHtml = sortByDate(section.items, p => p.startDate || p.date, tabSortNewestFirst.projects).map(p => {
       const dateStr = formatDate(p.startDate) + ' – ' + (p.current ? 'Present' : formatDate(p.endDate));
       
       const tagHtml = (state.showProjectTags && p.tags) 
@@ -1028,7 +1085,7 @@ function renderLearning() {
     ? certifications
     : certifications.filter(c => c.tags && c.tags.some(t => learnActiveFilters.has(t)));
 
-  const certsHtml = filtered.map(c => {
+  const certsHtml = sortByDate(filtered, c => c.completedDate || c.date, tabSortNewestFirst.learning).map(c => {
     const titleEl = c.url
       ? `<a class="learn-cert-title" href="${c.url}" target="_blank" rel="noopener">${escapeHtml(c.title)}</a>`
       : `<span class="learn-cert-title">${escapeHtml(c.title)}</span>`;
@@ -1050,12 +1107,15 @@ function renderLearning() {
   const countLabel = learnActiveFilters.size > 0
     ? `<span class="learn-cert-count">${filtered.length} of ${certifications.length}</span>` : '';
 
-  const volHtml = volunteering.map(v => {
-    const dateStr = formatDate(v.startDate) + ' – ' + (v.current ? 'Present' : formatDate(v.endDate));
+  const volHtml = sortByDate(volunteering, v => v.startDate || v.date, tabSortNewestFirst.learning).map(v => {
+    const end = v.current ? 'Present' : formatDate(v.endDate);
+    const dateStr = v.startDate
+      ? (end ? `${formatDate(v.startDate)} – ${end}` : formatDate(v.startDate))
+      : formatDate(v.date);
     return `
       <div class="learn-card">
         <div class="learn-card-header">
-          <span class="learn-card-title">${escapeHtml(v.org)}</span>
+          <span class="learn-card-title">${escapeHtml(v.organization || v.org || '')}</span>
           <span class="learn-date">${dateStr}</span>
         </div>
         <div class="learn-card-role">${escapeHtml(v.role)}</div>
@@ -1142,6 +1202,95 @@ function renderPatents() {
       expandAll.textContent = allExpanded ? 'Collapse all summaries' : 'Expand all summaries';
     }
   });
+}
+
+// ─── Research ─────────────────────────────────────────────────────────────────
+
+let researchGroupBySubject = false;
+let researchAllExpanded = false;
+
+function renderResearch() {
+  const container = document.getElementById('research-content');
+  const items = (resumeData.research || []).filter(r => !r.hidden);
+  const sorted = sortByDate(items, r => r.date, tabSortNewestFirst.research);
+  researchAllExpanded = false;
+
+  const card = r => {
+    const tagPills = r.tags
+      ? r.tags.split(' · ').map(t => `<span class="patent-num">${escapeHtml(t)}</span>`).join('')
+      : '';
+    return `
+      <div class="patent-card" data-id="${escapeHtml(r.id)}" data-summary="${escapeHtml(r.summary)}">
+        <div class="patent-header">
+          <div class="patent-title-row">
+            <a class="patent-title" href="${r.url}" target="_blank" rel="noopener">${escapeHtml(r.title)}</a>
+            <button class="patent-toggle" data-id="${escapeHtml(r.id)}" aria-expanded="false">Summary ▸</button>
+          </div>
+          <div class="patent-nums"><span class="learn-date">${formatDate(r.date)}</span>${tagPills}</div>
+        </div>
+        <div class="patent-summary" id="rsummary-${escapeHtml(r.id)}" hidden>${escapeHtml(r.summary)}</div>
+      </div>`;
+  };
+
+  let listHtml;
+  if (researchGroupBySubject) {
+    const groups = {};
+    sorted.forEach(r => (groups[r.subject] = groups[r.subject] || []).push(r));
+    listHtml = Object.keys(groups).sort().map(s => `
+      <div class="patent-group">
+        <h2 class="patent-group-title">${escapeHtml(s)}</h2>
+        ${groups[s].map(card).join('')}
+      </div>`).join('');
+  } else {
+    listHtml = `<div class="patent-group">${sorted.map(card).join('')}</div>`;
+  }
+
+  const subjectCount = new Set(items.map(r => r.subject)).size;
+
+  container.innerHTML = `
+    <div class="research-header">
+      <div class="learn-filter-bar research-mode-bar">
+        <button class="learn-filter-chip${!researchGroupBySubject ? ' learn-filter-chip--active' : ''}" data-mode="date">By Date</button>
+        <button class="learn-filter-chip${researchGroupBySubject ? ' learn-filter-chip--active' : ''}" data-mode="subject">By Subject</button>
+      </div>
+      <div class="patent-meta research-meta">
+        <span class="patent-total">${items.length} research pages across ${subjectCount} subjects</span>
+        <button class="patent-expand-all" id="research-expand-all">Expand all summaries</button>
+      </div>
+    </div>
+    ${listHtml}`;
+
+  if (!container._researchListenerAttached) {
+    container._researchListenerAttached = true;
+    container.addEventListener('click', e => {
+      const modeBtn = e.target.closest('[data-mode]');
+      if (modeBtn) {
+        researchGroupBySubject = modeBtn.dataset.mode === 'subject';
+        renderResearch();
+        return;
+      }
+
+      const toggleBtn = e.target.closest('.patent-toggle');
+      if (toggleBtn) {
+        const summary = document.getElementById(`rsummary-${toggleBtn.dataset.id}`);
+        const open = summary.hidden;
+        summary.hidden = !open;
+        toggleBtn.textContent = open ? 'Summary ▾' : 'Summary ▸';
+        toggleBtn.setAttribute('aria-expanded', String(open));
+      }
+
+      const expandAll = e.target.closest('#research-expand-all');
+      if (expandAll) {
+        researchAllExpanded = !researchAllExpanded;
+        container.querySelectorAll('.patent-summary').forEach(s => { s.hidden = !researchAllExpanded; });
+        container.querySelectorAll('.patent-toggle').forEach(b => {
+          b.textContent = researchAllExpanded ? 'Summary ▾' : 'Summary ▸';
+          b.setAttribute('aria-expanded', String(researchAllExpanded));
+        });
+        expandAll.textContent = researchAllExpanded ? 'Collapse all summaries' : 'Expand all summaries';
+      }
+    });
+  }
 }
 
 // ─── Skills & Publications ────────────────────────────────────────────────────
@@ -1288,6 +1437,7 @@ function commitPopout() {
 function syncStickyTop() {
   const h = document.querySelector('.site-header').offsetHeight;
   document.querySelector('.filter-panel').style.top = h + 'px';
+  document.documentElement.style.setProperty('--sticky-top', h + 'px');
 }
 
 function updateAdminPrompt() {

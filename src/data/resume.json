@@ -4519,5 +4519,2032 @@
         }
       ]
     }
+  ],
+  "research": [
+    {
+      "id": "subsurface-explorer",
+      "title": "DeepScan Voxel Explorer — GPU-Raymarched Subsurface Tomography",
+      "url": "../webartests/subsurface-explorer/",
+      "date": "2026-04",
+      "subject": "3D Graphics & Rendering",
+      "summary": "GPU raymarched 3D/4D subsurface density tomography. Toggle between a synthetic voxel field and a Bingham Canyon site-informed model with real Sentinel-2 imagery and OSM pit boundaries.",
+      "tags": "Three.js · GLSL3 · Data3DTexture · WebGL2 · Volume Rendering · Geospatial"
+    },
+    {
+      "id": "aviation-spatialai",
+      "title": "Aviation SpatialAI — Live ML Flight Prediction over Photorealistic 3D Tiles",
+      "url": "../webartests/experiments/aviation-spatialai/dist/",
+      "date": "2026-04",
+      "subject": "Spatial Computing & XR",
+      "summary": "Live ADS-B aircraft over Google Photorealistic 3D Tiles, with a TF.js linear-regression flight-prediction agent projecting each plane's 4D trajectory 5 minutes ahead as a glowing blue route curtain. WebVR fly-along on controller trigger.",
+      "tags": "R3F · Cesium Ion · TF.js · WebXR · React · Machine Learning · Geospatial"
+    },
+    {
+      "id": "aviation-spatialai--source",
+      "parent": "aviation-spatialai",
+      "title": "Aviation SpatialAI · Source",
+      "url": "../webartests/experiments/aviation-spatialai/",
+      "date": "2026-04",
+      "subject": "Spatial Computing & XR",
+      "summary": "Aviation SpatialAI · Live ADS-B over Photoreal Terrain",
+      "tags": "R3F · Cesium Ion · TF.js · WebXR · React · Machine Learning · Geospatial"
+    },
+    {
+      "id": "spatial-genai-games",
+      "title": "Spatial GenAI Games — WebXR Multi-Game Arcade for Quest 3",
+      "url": "../webartests/iwsdk-app-a/dist/",
+      "date": "2026-04",
+      "subject": "Spatial Computing & XR",
+      "summary": "WebXR multi-game arcade — Connect-N variants, Cornhole, Model Railroad, NBA stream viewer, and a tabletop putt lab. Built on Meta's Immersive Web SDK with custom ECS systems and 3D button zones.",
+      "tags": "WebXR · IWSDK · Quest 3 · Three.js · ECS · GenAI"
+    },
+    {
+      "id": "webxr-experiments",
+      "title": "WebXR Experiments — Stereo Rendering & Device API Tests",
+      "url": "../webartests/experiments/webxr/",
+      "date": "2026-03",
+      "subject": "Spatial Computing & XR",
+      "summary": "Stereo rendering, A-Frame integration, custom GLSL shaders, and VR mode via the WebXR Device API.",
+      "tags": "WebXR · Three.js · A-Frame · Stereo · GLSL · Spatial Audio"
+    },
+    {
+      "id": "webxr-experiments--compatibility-tests",
+      "parent": "webxr-experiments",
+      "title": "WebXR Experiments · Compatibility Tests",
+      "url": "../webartests/experiments/webxr/compatibility-tests/",
+      "date": "2026-03",
+      "subject": "Spatial Computing & XR",
+      "summary": "Stereo Image on Three.js Plane",
+      "tags": "WebXR · Three.js · A-Frame · Stereo · GLSL · Spatial Audio"
+    },
+    {
+      "id": "webxr-experiments--tennis-rally-spatial-audio",
+      "parent": "webxr-experiments",
+      "title": "WebXR Experiments · Tennis Rally (Spatial Audio)",
+      "url": "../webartests/experiments/webxr/spatial-audio-experiments/tennis-rally/dist/",
+      "date": "2026-07",
+      "subject": "Spatial Computing & XR",
+      "summary": "Tennis Rally — WebXR Spatial Audio Experiment",
+      "tags": "WebXR · Three.js · A-Frame · Stereo · GLSL · Spatial Audio"
+    },
+    {
+      "id": "webxr-experiments--compat-three-js-only-stereoscope",
+      "parent": "webxr-experiments",
+      "title": "WebXR Experiments · Compat: Three.js-Only Stereoscope",
+      "url": "../webartests/experiments/webxr/compatibility-tests/3jsonlystereoscope.html",
+      "date": "2026-03",
+      "subject": "Spatial Computing & XR",
+      "summary": "Part of WebXR Experiments.",
+      "tags": "WebXR · Three.js · A-Frame · Stereo · GLSL · Spatial Audio"
+    },
+    {
+      "id": "webxr-experiments--compat-shader-debugging-in-a-frame",
+      "parent": "webxr-experiments",
+      "title": "WebXR Experiments · Compat: Shader Debugging in A-Frame",
+      "url": "../webartests/experiments/webxr/compatibility-tests/aframeshaderbroken.html",
+      "date": "2026-03",
+      "subject": "Spatial Computing & XR",
+      "summary": "Shader Debugging in A-Frame",
+      "tags": "WebXR · Three.js · A-Frame · Stereo · GLSL · Spatial Audio"
+    },
+    {
+      "id": "webxr-experiments--compat-stereo-image-on-plane-a-frame",
+      "parent": "webxr-experiments",
+      "title": "WebXR Experiments · Compat: Stereo Image on Plane (A-Frame)",
+      "url": "../webartests/experiments/webxr/compatibility-tests/aframestereoshaderbroken.html",
+      "date": "2026-03",
+      "subject": "Spatial Computing & XR",
+      "summary": "Stereo Image on Plane",
+      "tags": "WebXR · Three.js · A-Frame · Stereo · GLSL · Spatial Audio"
+    },
+    {
+      "id": "webxr-experiments--compat-three-js-cube-in-a-frame",
+      "parent": "webxr-experiments",
+      "title": "WebXR Experiments · Compat: Three.js Cube in A-Frame",
+      "url": "../webartests/experiments/webxr/compatibility-tests/aframewiththreejsshader.html",
+      "date": "2026-03",
+      "subject": "Spatial Computing & XR",
+      "summary": "Three.js Cube in A-Frame",
+      "tags": "WebXR · Three.js · A-Frame · Stereo · GLSL · Spatial Audio"
+    },
+    {
+      "id": "webxr-experiments--compat-sbs-stereo-image-webxr",
+      "parent": "webxr-experiments",
+      "title": "WebXR Experiments · Compat: SBS Stereo Image — WebXR",
+      "url": "../webartests/experiments/webxr/compatibility-tests/sbs-stereo-webxr.html",
+      "date": "2026-03",
+      "subject": "Spatial Computing & XR",
+      "summary": "SBS Stereo Image — WebXR",
+      "tags": "WebXR · Three.js · A-Frame · Stereo · GLSL · Spatial Audio"
+    },
+    {
+      "id": "webxr-experiments--compat-three-js-shader-gradient",
+      "parent": "webxr-experiments",
+      "title": "WebXR Experiments · Compat: Three.js Shader Gradient",
+      "url": "../webartests/experiments/webxr/compatibility-tests/threejscubeshader.html",
+      "date": "2026-03",
+      "subject": "Spatial Computing & XR",
+      "summary": "Three.js Shader Gradient",
+      "tags": "WebXR · Three.js · A-Frame · Stereo · GLSL · Spatial Audio"
+    },
+    {
+      "id": "webxr-experiments--compat-stereo-shared-uniforms-three-js",
+      "parent": "webxr-experiments",
+      "title": "WebXR Experiments · Compat: Stereo Shared Uniforms (Three.js)",
+      "url": "../webartests/experiments/webxr/compatibility-tests/threestereoshareduniformsbroken.html",
+      "date": "2026-03",
+      "subject": "Spatial Computing & XR",
+      "summary": "Stereo Image on Three.js Plane",
+      "tags": "WebXR · Three.js · A-Frame · Stereo · GLSL · Spatial Audio"
+    },
+    {
+      "id": "webxr-experiments--tennis-rally-porting-notes",
+      "parent": "webxr-experiments",
+      "title": "WebXR Experiments · Tennis Rally — Porting Notes",
+      "url": "../webartests/experiments/webxr/spatial-audio-experiments/tennis-rally/dist/porting.html",
+      "date": "2026-03",
+      "subject": "Spatial Computing & XR",
+      "summary": "This simulation's spatial audio — clip banks, force→volume mapping, distance falloff, reverb, and racket-position Doppler — was built directly against the Web Audio API. This guide maps each piece onto other real-time engines, starting with Unity + AR Foundation.",
+      "tags": "WebXR · Three.js · A-Frame · Stereo · GLSL · Spatial Audio"
+    },
+    {
+      "id": "webxr-experiments--tennis-rally-audio-physics",
+      "parent": "webxr-experiments",
+      "title": "WebXR Experiments · Tennis Rally — Audio Physics",
+      "url": "../webartests/experiments/webxr/spatial-audio-experiments/tennis-rally/dist/tennis-audio-physics.html",
+      "date": "2026-03",
+      "subject": "Spatial Computing & XR",
+      "summary": "The theory and math behind every sound decision this simulation makes — why force maps to volume the way it does, why distance and Doppler use the formulas they do, what convolution reverb actually computes, and, honestly, what real acoustic phenomena this simulation still doesn't model.",
+      "tags": "WebXR · Three.js · A-Frame · Stereo · GLSL · Spatial Audio"
+    },
+    {
+      "id": "spatial-media",
+      "title": "Lumina Spatial Gallery — Immersive Spatial Media with AI Depth Estimation",
+      "url": "../webartests/experiments/spatial-media/",
+      "date": "2026-04",
+      "subject": "Spatial Computing & XR",
+      "summary": "High-fidelity spatial media renderer for immersive 3D photography. Featuring depth-estimation, glassmorphic UI, and WebXR integration.",
+      "tags": "WebXR · Three.js · Spatial UI · Depth Estimation · Computer Vision"
+    },
+    {
+      "id": "spatial-media--ai-builder-orchestration-report",
+      "parent": "spatial-media",
+      "title": "Lumina Spatial Gallery · AI Builder Orchestration Report",
+      "url": "../webartests/experiments/spatial-media/aibuilder.html",
+      "date": "2026-04",
+      "subject": "Spatial Computing & XR",
+      "summary": "AI Builder Orchestration Report | Lumina Spatial Gallery",
+      "tags": "WebXR · Three.js · Spatial UI · Depth Estimation · Computer Vision"
+    },
+    {
+      "id": "vps-segmentation-caching",
+      "title": "VPS Segmentation & Caching — Stadium-Scale Point-Cloud Delivery",
+      "url": "../webartests/experiments/spatial-ai/vps-segmentation-and-caching/",
+      "date": "2026-05",
+      "subject": "Computer Vision",
+      "summary": "Stadium POV analysis exploring viewport-based sector segmentation and LRU caching for high-density spatial point clouds.",
+      "tags": "VPS · Caching · POV Analytics · Spatial AI · Point Clouds"
+    },
+    {
+      "id": "spatial-ai-case-studies",
+      "title": "Spatial AI Case Studies — Interactive Analysis of Leading Platforms",
+      "url": "../webartests/spatial-ai-case-studies/",
+      "date": "2026-03",
+      "subject": "AI & Agents",
+      "summary": "Interactive analysis of the leading spatial intelligence platforms — from Large World Models to neuromorphic vision and precision SLAM.",
+      "tags": "Spatial AI · Case Studies · Perception · SLAM · World Models · Neuromorphic Vision"
+    },
+    {
+      "id": "spatial-ai-case-studies--world-labs",
+      "parent": "spatial-ai-case-studies",
+      "title": "Spatial AI Case Studies · World Labs",
+      "url": "../webartests/spatial-ai-case-studies/world-labs/",
+      "date": "2026-03",
+      "subject": "AI & Agents",
+      "summary": "This section illustrates the pioneering architectural flow utilized by World Labs to bridge the gap between generative AI and physical robotics. It traces the journey from semantic intent to robotic policy training. Click on the stages below to explore the data inputs, outputs, and underlying proces",
+      "tags": "Spatial AI · Case Studies · Perception · SLAM · World Models · Neuromorphic Vision"
+    },
+    {
+      "id": "spatial-ai-case-studies--nvidia-omniverse",
+      "parent": "spatial-ai-case-studies",
+      "title": "Spatial AI Case Studies · NVIDIA Omniverse",
+      "url": "../webartests/spatial-ai-case-studies/nvidia-omniverse/",
+      "date": "2026-03",
+      "subject": "AI & Agents",
+      "summary": "Omniverse is built on OpenUSD and the Nucleus database. Nucleus manages delta-synchronization between disparate creator tools, enabling a unified, real-time simulation environment.",
+      "tags": "Spatial AI · Case Studies · Perception · SLAM · World Models · Neuromorphic Vision"
+    },
+    {
+      "id": "spatial-ai-case-studies--magic-leap-2",
+      "parent": "spatial-ai-case-studies",
+      "title": "Spatial AI Case Studies · Magic Leap 2",
+      "url": "../webartests/spatial-ai-case-studies/magic-leap/",
+      "date": "2026-03",
+      "subject": "AI & Agents",
+      "summary": "Offloading high-frequency perception tasks allows the main application processor to focus on heavy rendering and business logic.",
+      "tags": "Spatial AI · Case Studies · Perception · SLAM · World Models · Neuromorphic Vision"
+    },
+    {
+      "id": "spatial-ai-case-studies--prophesee",
+      "parent": "spatial-ai-case-studies",
+      "title": "Spatial AI Case Studies · Prophesee",
+      "url": "../webartests/spatial-ai-case-studies/prophesee/",
+      "date": "2026-03",
+      "subject": "AI & Agents",
+      "summary": "Traditional cameras capture redundant frames. Prophesee's Metavision sensor architecture captures only *changes* in light at the pixel level, creating a sparse, high-speed temporal event stream. Click to explore the asynchronous flow.",
+      "tags": "Spatial AI · Case Studies · Perception · SLAM · World Models · Neuromorphic Vision"
+    },
+    {
+      "id": "spatial-ai-case-studies--viam",
+      "parent": "spatial-ai-case-studies",
+      "title": "Spatial AI Case Studies · Viam",
+      "url": "../webartests/spatial-ai-case-studies/viam/",
+      "date": "2026-03",
+      "subject": "AI & Agents",
+      "summary": "Viam focuses on the \"capture-to-cloud-to-inference\" loop, enabling rapid ML deployment on heterogeneous hardware.",
+      "tags": "Spatial AI · Case Studies · Perception · SLAM · World Models · Neuromorphic Vision"
+    },
+    {
+      "id": "spatial-ai-case-studies--autonomy",
+      "parent": "spatial-ai-case-studies",
+      "title": "Spatial AI Case Studies · Autonomy",
+      "url": "../webartests/spatial-ai-case-studies/autonomy/",
+      "date": "2026-07",
+      "subject": "AI & Agents",
+      "summary": "No candidate clears every column at once, but the full-spec math is more encouraging than the bare-frame numbers suggested: both the ArduCopter micro-whoop and the Pavo Pico II/INAV builds pencil out under Neo 2's 151–160g once battery, camera, and sensors are added. The ArduCopter path is still the",
+      "tags": "Spatial AI · Case Studies · Perception · SLAM · World Models · Neuromorphic Vision"
+    },
+    {
+      "id": "spatial-ai-case-studies--matterport",
+      "parent": "spatial-ai-case-studies",
+      "title": "Spatial AI Case Studies · Matterport",
+      "url": "../webartests/spatial-ai-case-studies/matterport/",
+      "date": "2026-03",
+      "subject": "AI & Agents",
+      "summary": "Comparing the fidelity and resource usage of Cortex-driven neural reconstruction vs. traditional LiDAR point clouds.",
+      "tags": "Spatial AI · Case Studies · Perception · SLAM · World Models · Neuromorphic Vision"
+    },
+    {
+      "id": "spatial-ai-case-studies--navvis",
+      "parent": "spatial-ai-case-studies",
+      "title": "Spatial AI Case Studies · NavVis",
+      "url": "../webartests/spatial-ai-case-studies/navvis/",
+      "date": "2026-03",
+      "subject": "AI & Agents",
+      "summary": "Scaling large-scale indoor mapping through the VLX wearable system and survey-grade Precision SLAM algorithms.",
+      "tags": "Spatial AI · Case Studies · Perception · SLAM · World Models · Neuromorphic Vision"
+    },
+    {
+      "id": "spatial-ai-case-studies--envisics",
+      "parent": "spatial-ai-case-studies",
+      "title": "Spatial AI Case Studies · Envisics",
+      "url": "../webartests/spatial-ai-case-studies/envisics/",
+      "date": "2026-03",
+      "subject": "AI & Agents",
+      "summary": "Envisics bypasses traditional 2D displays by computing light interference patterns that reconstruct a 3D wavefront. This enables multi-plane depth registration without the bulk of traditional optics. Click on the stages below to explore the holographic stack.",
+      "tags": "Spatial AI · Case Studies · Perception · SLAM · World Models · Neuromorphic Vision"
+    },
+    {
+      "id": "spatial-ai-case-studies--scandit",
+      "parent": "spatial-ai-case-studies",
+      "title": "Spatial AI Case Studies · Scandit",
+      "url": "../webartests/spatial-ai-case-studies/scandit/",
+      "date": "2026-03",
+      "subject": "AI & Agents",
+      "summary": "Scandit's architecture transforms a standard mobile camera into a professional-grade spatial sensor. The MatrixScan engine enables simultaneous localization, tracking, and decoding of hundreds of items in real-time. Click on the stages below to explore the data flow.",
+      "tags": "Spatial AI · Case Studies · Perception · SLAM · World Models · Neuromorphic Vision"
+    },
+    {
+      "id": "spatial-ai-case-studies--ami-labs",
+      "parent": "spatial-ai-case-studies",
+      "title": "Spatial AI Case Studies · AMI Labs",
+      "url": "../webartests/spatial-ai-case-studies/ami-labs/",
+      "date": "2026-03",
+      "subject": "AI & Agents",
+      "summary": "In AMI's architecture, 3D Gaussians or Meshes are treated as Auxiliary Decoders. The core policy network does not need to render high-fidelity pixels to know what action to take, significantly reducing latency.",
+      "tags": "Spatial AI · Case Studies · Perception · SLAM · World Models · Neuromorphic Vision"
+    },
+    {
+      "id": "spatial-ai-case-studies--helsing",
+      "parent": "spatial-ai-case-studies",
+      "title": "Spatial AI Case Studies · Helsing",
+      "url": "../webartests/spatial-ai-case-studies/helsing/",
+      "date": "2026-03",
+      "subject": "AI & Agents",
+      "summary": "Defense AI must balance extreme RF bandwidth with high-resolution vision tasks within combat platforms.",
+      "tags": "Spatial AI · Case Studies · Perception · SLAM · World Models · Neuromorphic Vision"
+    },
+    {
+      "id": "spatial-ai-case-studies--niantic-spatial",
+      "parent": "spatial-ai-case-studies",
+      "title": "Spatial AI Case Studies · Niantic Spatial",
+      "url": "../webartests/spatial-ai-case-studies/niantic-spatial/",
+      "date": "2026-03",
+      "subject": "AI & Agents",
+      "summary": "Comparing resource requirements for local interaction vs. global spatial mapping.",
+      "tags": "Spatial AI · Case Studies · Perception · SLAM · World Models · Neuromorphic Vision"
+    },
+    {
+      "id": "spatial-ai-case-studies--standard-ai",
+      "parent": "spatial-ai-case-studies",
+      "title": "Spatial AI Case Studies · Standard AI",
+      "url": "../webartests/spatial-ai-case-studies/standard-ai/",
+      "date": "2026-03",
+      "subject": "AI & Agents",
+      "summary": "Standard AI's Vision OS retrofits existing retail spaces with a distributed vision layer. Unlike sensor-heavy \"smart shelves,\" it relies on ceiling cameras and edge processing to map customer behavior to virtual carts. Select a stage to explore the data flow.",
+      "tags": "Spatial AI · Case Studies · Perception · SLAM · World Models · Neuromorphic Vision"
+    },
+    {
+      "id": "slang-playground",
+      "title": "Slang Playground — In-Browser WebGPU Shader Compiler & Editor",
+      "url": "../webartests/slang-playground/",
+      "date": "2026-02",
+      "subject": "3D Graphics & Rendering",
+      "summary": "Interactive shader editor powered by the Slang shading language compiler. Write, compile, and run shaders in the browser.",
+      "tags": "Slang · WASM · WebGPU · Shaders · Compilers"
+    },
+    {
+      "id": "webgl-shader",
+      "title": "WebGL Shader Studies — Real-Time Raymarched SDFs & Liquid Glass",
+      "url": "../webartests/webgl-shader/",
+      "date": "2026-02",
+      "subject": "3D Graphics & Rendering",
+      "summary": "High-fidelity interactive shaders rendered entirely in GLSL — from raymarched blobs to advanced metaball glass refraction.",
+      "tags": "WebGL · GLSL · Raymarching · SDF · Real-Time Rendering"
+    },
+    {
+      "id": "webgl-shader--raymarched-blob",
+      "parent": "webgl-shader",
+      "title": "WebGL Shader Studies · Raymarched Blob",
+      "url": "../webartests/webgl-shader/raymarched-blob.html",
+      "date": "2026-06",
+      "subject": "3D Graphics & Rendering",
+      "summary": "WebGL Shader",
+      "tags": "WebGL · GLSL · Raymarching · SDF · Real-Time Rendering"
+    },
+    {
+      "id": "webgl-shader--liquid-glass-studio",
+      "parent": "webgl-shader",
+      "title": "WebGL Shader Studies · Liquid Glass Studio",
+      "url": "../webartests/webgl-shader/liquid-glass.html",
+      "date": "2026-06",
+      "subject": "3D Graphics & Rendering",
+      "summary": "Unlike standard SVG filters (like feGaussianBlur) which run on the single-threaded CPU, WebGL compiles code that executes in parallel across thousands of shader cores.",
+      "tags": "WebGL · GLSL · Raymarching · SDF · Real-Time Rendering"
+    },
+    {
+      "id": "learning-jepa",
+      "title": "Learning Physical Intelligence — JEPA & World Models Course",
+      "url": "../webartests/learning-jepa/",
+      "date": "2026-04",
+      "subject": "AI & Agents",
+      "summary": "Interactive modules exploring JEPA, world models, embodied perception, physical common sense, and stable planning rollouts.",
+      "tags": "Physical Intelligence · JEPA · World Models · AI · Embodied Perception · Self-Supervised Learning"
+    },
+    {
+      "id": "learning-jepa--stable-world-demo",
+      "parent": "learning-jepa",
+      "title": "Learning Physical Intelligence · Stable AI World-Model Demo",
+      "url": "../webartests/learning-jepa/stable-world.html",
+      "date": "2026-06",
+      "subject": "AI & Agents",
+      "summary": "Stable World Model Demo — webartests",
+      "tags": "Physical Intelligence · JEPA · World Models · AI · Embodied Perception · Self-Supervised Learning"
+    },
+    {
+      "id": "learning-jepa--ai-paradigms",
+      "parent": "learning-jepa",
+      "title": "Learning Physical Intelligence · AI Paradigms",
+      "url": "../webartests/learning-jepa/15-ai-paradigms/",
+      "date": "2026-07",
+      "subject": "AI & Agents",
+      "summary": "In this masterclass of technical critique, Yann LeCun (Chief AI Scientist, Meta FAIR & Founder of AMI Labs) presents his definitive timeline of AI architecture. Discover why he argues that generative LLMs and pixel-predicting VLAs are a dead-end for reaching human-level, physical intelligence, and e",
+      "tags": "Physical Intelligence · JEPA · World Models · AI · Embodied Perception · Self-Supervised Learning"
+    },
+    {
+      "id": "learning-jepa--generative-bottleneck",
+      "parent": "learning-jepa",
+      "title": "Learning Physical Intelligence · Generative Bottleneck",
+      "url": "../webartests/learning-jepa/01-generative-bottleneck/",
+      "date": "2026-04",
+      "subject": "AI & Agents",
+      "summary": "JEPA models are \"Observers\"—they ignore the noise and focus on predicting high-level semantic meaning.",
+      "tags": "Physical Intelligence · JEPA · World Models · AI · Embodied Perception · Self-Supervised Learning"
+    },
+    {
+      "id": "learning-jepa--energy-based-models",
+      "parent": "learning-jepa",
+      "title": "Learning Physical Intelligence · Energy-Based Models",
+      "url": "../webartests/learning-jepa/02-energy-based-models/",
+      "date": "2026-04",
+      "subject": "AI & Agents",
+      "summary": "JEPA is an Energy-Based Model. Instead of probabilities, it calculates compatibility.",
+      "tags": "Physical Intelligence · JEPA · World Models · AI · Embodied Perception · Self-Supervised Learning"
+    },
+    {
+      "id": "learning-jepa--h-jepa",
+      "parent": "learning-jepa",
+      "title": "Learning Physical Intelligence · H-JEPA",
+      "url": "../webartests/learning-jepa/03-h-jepa/",
+      "date": "2026-04",
+      "subject": "AI & Agents",
+      "summary": "Managing complexity through structural and temporal hierarchy: predicting both abstract concepts and granular details.",
+      "tags": "Physical Intelligence · JEPA · World Models · AI · Embodied Perception · Self-Supervised Learning"
+    },
+    {
+      "id": "learning-jepa--i-jepa",
+      "parent": "learning-jepa",
+      "title": "Learning Physical Intelligence · I-JEPA",
+      "url": "../webartests/learning-jepa/04-i-jepa/",
+      "date": "2026-04",
+      "subject": "AI & Agents",
+      "summary": "I-JEPA learns the semantic \"Meaning Space\" that enables downstream tasks like object detection and XR scene understanding.",
+      "tags": "Physical Intelligence · JEPA · World Models · AI · Embodied Perception · Self-Supervised Learning"
+    },
+    {
+      "id": "learning-jepa--v-jepa",
+      "parent": "learning-jepa",
+      "title": "Learning Physical Intelligence · V-JEPA",
+      "url": "../webartests/learning-jepa/05-v-jepa/",
+      "date": "2026-04",
+      "subject": "AI & Agents",
+      "summary": "Moving from Space to Time: Forcing models to learn persistence and dynamics by preventing \"Temporal Cheating.\"",
+      "tags": "Physical Intelligence · JEPA · World Models · AI · Embodied Perception · Self-Supervised Learning"
+    },
+    {
+      "id": "learning-jepa--vl-jepa",
+      "parent": "learning-jepa",
+      "title": "Learning Physical Intelligence · VL-JEPA",
+      "url": "../webartests/learning-jepa/06-vl-jepa/",
+      "date": "2026-04",
+      "subject": "AI & Agents",
+      "summary": "Thinking in Meaning Space, Not Token Space.",
+      "tags": "Physical Intelligence · JEPA · World Models · AI · Embodied Perception · Self-Supervised Learning"
+    },
+    {
+      "id": "learning-jepa--sensory-jepa",
+      "parent": "learning-jepa",
+      "title": "Learning Physical Intelligence · Sensory JEPA",
+      "url": "../webartests/learning-jepa/07-sensory-jepa/",
+      "date": "2026-04",
+      "subject": "AI & Agents",
+      "summary": "Multi-Modal Expansion: Applying predictive architectures to sensory data beyond pixels and text.",
+      "tags": "Physical Intelligence · JEPA · World Models · AI · Embodied Perception · Self-Supervised Learning"
+    },
+    {
+      "id": "learning-jepa--agentic-ai",
+      "parent": "learning-jepa",
+      "title": "Learning Physical Intelligence · Agentic AI",
+      "url": "../webartests/learning-jepa/08-agentic-ai/",
+      "date": "2026-04",
+      "subject": "AI & Agents",
+      "summary": "Planning and Model-Predictive Control (MPC) using JEPA.",
+      "tags": "Physical Intelligence · JEPA · World Models · AI · Embodied Perception · Self-Supervised Learning"
+    },
+    {
+      "id": "learning-jepa--act-jepa",
+      "parent": "learning-jepa",
+      "title": "Learning Physical Intelligence · ACT-JEPA",
+      "url": "../webartests/learning-jepa/09-act-jepa/",
+      "date": "2026-04",
+      "subject": "AI & Agents",
+      "summary": "From Passive Observation to Active Interaction: Learning the causal effects of agency while maximizing compute efficiency.",
+      "tags": "Physical Intelligence · JEPA · World Models · AI · Embodied Perception · Self-Supervised Learning"
+    },
+    {
+      "id": "learning-jepa--causal-jepa",
+      "parent": "learning-jepa",
+      "title": "Learning Physical Intelligence · Causal JEPA",
+      "url": "../webartests/learning-jepa/10-causal-jepa/",
+      "date": "2026-04",
+      "subject": "AI & Agents",
+      "summary": "Stability and Reasoning: Transitioning from correlative patterns to causal understanding.",
+      "tags": "Physical Intelligence · JEPA · World Models · AI · Embodied Perception · Self-Supervised Learning"
+    },
+    {
+      "id": "learning-jepa--stochastic-futures",
+      "parent": "learning-jepa",
+      "title": "Learning Physical Intelligence · Stochastic Futures",
+      "url": "../webartests/learning-jepa/11-stochastic-futures/",
+      "date": "2026-04",
+      "subject": "AI & Agents",
+      "summary": "Handling uncertainty: How JEPA predicts multiple valid outcomes without producing \"blurry\" averages.",
+      "tags": "Physical Intelligence · JEPA · World Models · AI · Embodied Perception · Self-Supervised Learning"
+    },
+    {
+      "id": "learning-jepa--think-jepa",
+      "parent": "learning-jepa",
+      "title": "Learning Physical Intelligence · Think-JEPA",
+      "url": "../webartests/learning-jepa/12-think-jepa/",
+      "date": "2026-04",
+      "subject": "AI & Agents",
+      "summary": "Sophisticated Reasoning: Combining world modeling with a semantic thinking pathway for complex sequence optimization.",
+      "tags": "Physical Intelligence · JEPA · World Models · AI · Embodied Perception · Self-Supervised Learning"
+    },
+    {
+      "id": "learning-jepa--sigreg",
+      "parent": "learning-jepa",
+      "title": "Learning Physical Intelligence · SigReg",
+      "url": "../webartests/learning-jepa/13-sigreg/",
+      "date": "2026-04",
+      "subject": "AI & Agents",
+      "summary": "Information Maximization: Simplifying objective functions with Gaussian Regularization for robust World Model training.",
+      "tags": "Physical Intelligence · JEPA · World Models · AI · Embodied Perception · Self-Supervised Learning"
+    },
+    {
+      "id": "learning-jepa--leworldmodel",
+      "parent": "learning-jepa",
+      "title": "Learning Physical Intelligence · LeWorldModel",
+      "url": "../webartests/learning-jepa/14-leworldmodel/",
+      "date": "2026-04",
+      "subject": "AI & Agents",
+      "summary": "Actionable Intelligence: Transforming the predictor into a recurrent mental simulator for zero-shot planning.",
+      "tags": "Physical Intelligence · JEPA · World Models · AI · Embodied Perception · Self-Supervised Learning"
+    },
+    {
+      "id": "learning-jepa--pusht-world-demo",
+      "parent": "learning-jepa",
+      "title": "Learning Physical Intelligence · PushT AI World-Model Demo",
+      "url": "../webartests/learning-jepa/pusht-world.html",
+      "date": "2026-06",
+      "subject": "AI & Agents",
+      "summary": "Push-T Physics Demo — webartests",
+      "tags": "Physical Intelligence · JEPA · World Models · AI · Embodied Perception · Self-Supervised Learning"
+    },
+    {
+      "id": "learning-jepa--rocket-landing-demo",
+      "parent": "learning-jepa",
+      "title": "Learning Physical Intelligence · Rocket Landing — AI World-Model Planning Demo",
+      "url": "../webartests/learning-jepa/rocket-landing.html",
+      "date": "2026-06",
+      "subject": "AI & Agents",
+      "summary": "Part of Learning Physical Intelligence.",
+      "tags": "Physical Intelligence · JEPA · World Models · AI · Embodied Perception · Self-Supervised Learning"
+    },
+    {
+      "id": "learning-jepa--point-maze-demo",
+      "parent": "learning-jepa",
+      "title": "Learning Physical Intelligence · Point Maze — AI World-Model Planning Demo",
+      "url": "../webartests/learning-jepa/point-maze.html",
+      "date": "2026-06",
+      "subject": "AI & Agents",
+      "summary": "Point Maze Planning — webartests",
+      "tags": "Physical Intelligence · JEPA · World Models · AI · Embodied Perception · Self-Supervised Learning"
+    },
+    {
+      "id": "learning-jepa--noise-invariance-demo",
+      "parent": "learning-jepa",
+      "title": "Learning Physical Intelligence · Noise-Invariant Representation Learning Demo",
+      "url": "../webartests/learning-jepa/noise-invariance.html",
+      "date": "2026-06",
+      "subject": "AI & Agents",
+      "summary": "Observation Noise Invariance — webartests",
+      "tags": "Physical Intelligence · JEPA · World Models · AI · Embodied Perception · Self-Supervised Learning"
+    },
+    {
+      "id": "artemis",
+      "title": "Artemis II Lunar Flyby — Mission Imagery Gallery",
+      "url": "../webartests/artemis/",
+      "date": "2026-04",
+      "subject": "Simulation",
+      "summary": "High-fidelity imagery from NASA's Artemis II mission. Experience the lunar surface and Earthset in stunning resolution.",
+      "tags": "NASA · Space · Gallery · Visualization"
+    },
+    {
+      "id": "browser-geo-tests",
+      "title": "Browser Geo Tests — GPS, Compass & Motion API Suite",
+      "url": "../webartests/browser-geo-tests/",
+      "date": "2026-04",
+      "subject": "Spatial Computing & XR",
+      "summary": "Browser API test suite for location-aware outdoor experiences — GPS accuracy, tile maps, compass, proximity zones, and motion sensing.",
+      "tags": "GPS · Maps · DeviceOrientation · Geolocation · Sensor Fusion"
+    },
+    {
+      "id": "browser-geo-tests--geolocation",
+      "parent": "browser-geo-tests",
+      "title": "Browser Geo Tests · Geolocation",
+      "url": "../webartests/browser-geo-tests/geolocation/",
+      "date": "2026-04",
+      "subject": "Spatial Computing & XR",
+      "summary": "Live GPS position readout — accuracy, altitude, speed, heading, and update rate. Logs a position trail to reveal drift over time.",
+      "tags": "GPS · Maps · DeviceOrientation · Geolocation · Sensor Fusion"
+    },
+    {
+      "id": "browser-geo-tests--compass",
+      "parent": "browser-geo-tests",
+      "title": "Browser Geo Tests · Compass",
+      "url": "../webartests/browser-geo-tests/compass/",
+      "date": "2026-04",
+      "subject": "Spatial Computing & XR",
+      "summary": "DeviceOrientationEvent — compass heading, tilt, and rotation. iOS 13+ requires an explicit permission request; Android fires events automatically.",
+      "tags": "GPS · Maps · DeviceOrientation · Geolocation · Sensor Fusion"
+    },
+    {
+      "id": "browser-geo-tests--motion-detection",
+      "parent": "browser-geo-tests",
+      "title": "Browser Geo Tests · Motion Detection",
+      "url": "../webartests/browser-geo-tests/motion-detection/",
+      "date": "2026-04",
+      "subject": "Spatial Computing & XR",
+      "summary": "DeviceMotion API — raw acceleration, magnitude envelope, step detection from vertical-axis peaks, and movement state classification.",
+      "tags": "GPS · Maps · DeviceOrientation · Geolocation · Sensor Fusion"
+    },
+    {
+      "id": "browser-geo-tests--map-viewport",
+      "parent": "browser-geo-tests",
+      "title": "Browser Geo Tests · Map Viewport",
+      "url": "../webartests/browser-geo-tests/map-viewport/",
+      "date": "2026-04",
+      "subject": "Spatial Computing & XR",
+      "summary": "Tile-based slippy map centred on the device's GPS position, rendered with Leaflet and OpenStreetMap tiles.",
+      "tags": "GPS · Maps · DeviceOrientation · Geolocation · Sensor Fusion"
+    },
+    {
+      "id": "browser-geo-tests--proximity-zones",
+      "parent": "browser-geo-tests",
+      "title": "Browser Geo Tests · Proximity Zones",
+      "url": "../webartests/browser-geo-tests/proximity-zones/",
+      "date": "2026-04",
+      "subject": "Spatial Computing & XR",
+      "summary": "Place test points of interest, compute live Haversine distances, and trigger enter/exit events when the device crosses a radius boundary.",
+      "tags": "GPS · Maps · DeviceOrientation · Geolocation · Sensor Fusion"
+    },
+    {
+      "id": "browser-geo-tests--coordinate-math",
+      "parent": "browser-geo-tests",
+      "title": "Browser Geo Tests · Coordinate Math",
+      "url": "../webartests/browser-geo-tests/coordinate-math/",
+      "date": "2026-04",
+      "subject": "Spatial Computing & XR",
+      "summary": "Interactive calculators for the formulas underpinning location-aware applications — Haversine distance, bearing, destination point, tile addressing, and viewport projection.",
+      "tags": "GPS · Maps · DeviceOrientation · Geolocation · Sensor Fusion"
+    },
+    {
+      "id": "browser-geo-tests--ar-overlay",
+      "parent": "browser-geo-tests",
+      "title": "Browser Geo Tests · AR Overlay",
+      "url": "../webartests/browser-geo-tests/ar-overlay/",
+      "date": "2026-04",
+      "subject": "Spatial Computing & XR",
+      "summary": "Live camera feed with canvas markers pinned to compass bearings. Tests the viability of placing world-anchored elements on a camera view using only the browser's orientation API.",
+      "tags": "GPS · Maps · DeviceOrientation · Geolocation · Sensor Fusion"
+    },
+    {
+      "id": "ar-cube-placer",
+      "title": "AR Cube Placer — Marker-Tracked WebAR Placement Demo",
+      "url": "../webartests/ar-cube-placer/",
+      "date": "2026-02",
+      "subject": "Spatial Computing & XR",
+      "summary": "Place 3D cubes in augmented reality using your camera. Supports Hiro marker tracking with camera-forward fallback.",
+      "tags": "WebAR · A-Frame · AR.js · Three.js · Marker Tracking"
+    },
+    {
+      "id": "laser-experiments",
+      "title": "Laser Experiments — Vectorization, Thermal & Engraving Tools",
+      "url": "../webartests/laser-experiments/",
+      "date": "2026-03",
+      "subject": "Lasers & Fabrication",
+      "summary": "Tools for laser cutting and engraving: image vectorization, contour tracing, and AI prompt testing.",
+      "tags": "Laser · SVG · Vectorize · Computer Vision · LLM Prompting"
+    },
+    {
+      "id": "laser-experiments--thermal-strategy-lab",
+      "parent": "laser-experiments",
+      "title": "Laser Experiments · Thermal Strategy Lab",
+      "url": "../webartests/laser-experiments/heat-wall-test/",
+      "date": "2026-03",
+      "subject": "Lasers & Fabrication",
+      "summary": "Simulate thermal accumulation strategies for laser etching to minimize peak material stress.",
+      "tags": "Laser · SVG · Vectorize · Computer Vision · LLM Prompting"
+    },
+    {
+      "id": "laser-experiments--vectorizing-tests",
+      "parent": "laser-experiments",
+      "title": "Laser Experiments · Vectorizing Tests",
+      "url": "../webartests/laser-experiments/vectorizing-tests/",
+      "date": "2026-03",
+      "subject": "Lasers & Fabrication",
+      "summary": "Experiments converting bitmap images to SVG — different approaches for laser cutting, color layer separation, and xTool Studio compatibility.",
+      "tags": "Laser · SVG · Vectorize · Computer Vision · LLM Prompting"
+    },
+    {
+      "id": "laser-experiments--llm-prompt-tests",
+      "parent": "laser-experiments",
+      "title": "Laser Experiments · LLM Prompt Tests",
+      "url": "../webartests/laser-experiments/llm-prompt-test/",
+      "date": "2026-03",
+      "subject": "Lasers & Fabrication",
+      "summary": "Image generation prompts tested for laser-cutting suitability — clean outlines, flat fills, high contrast, minimal gradients.",
+      "tags": "Laser · SVG · Vectorize · Computer Vision · LLM Prompting"
+    },
+    {
+      "id": "laser-experiments--ss304-color-predictor",
+      "parent": "laser-experiments",
+      "title": "Laser Experiments · SS304 Color Predictor",
+      "url": "../webartests/laser-experiments/ss304-color-predictor/",
+      "date": "2026-03",
+      "subject": "Lasers & Fabrication",
+      "summary": "SS304 Laser Color Predictor",
+      "tags": "Laser · SVG · Vectorize · Computer Vision · LLM Prompting"
+    },
+    {
+      "id": "laser-experiments--ss304-speed-focus-power-colour-model",
+      "parent": "laser-experiments",
+      "title": "Laser Experiments · SS304 Speed/Focus/Power Colour Model",
+      "url": "../webartests/laser-experiments/color-ss304-speed-focus-power.html",
+      "date": "2026-06",
+      "subject": "Lasers & Fabrication",
+      "summary": "Explore how scan speed, focus offset, power, and line density may change sustained heat, accumulated oxide thickness, and the resulting stainless colour family. The reference profiles are tuned around the attached 15-59% power proofs at 500, 600, 700, and 50 mm/s.",
+      "tags": "Laser · SVG · Vectorize · Computer Vision · LLM Prompting"
+    },
+    {
+      "id": "laser-experiments--colour-stability-paper",
+      "parent": "laser-experiments",
+      "title": "Laser Experiments · Colour Stability Paper",
+      "url": "../webartests/laser-experiments/color-stability-paper/",
+      "date": "2026-03",
+      "subject": "Lasers & Fabrication",
+      "summary": "Laser Color Stability Simulator",
+      "tags": "Laser · SVG · Vectorize · Computer Vision · LLM Prompting"
+    },
+    {
+      "id": "laser-experiments--colour-test-qr",
+      "parent": "laser-experiments",
+      "title": "Laser Experiments · Colour Test QR",
+      "url": "../webartests/laser-experiments/color-test-qr/",
+      "date": "2026-04",
+      "subject": "Lasers & Fabrication",
+      "summary": "Precision Metrology Scanner | Sub-Pixel Detection",
+      "tags": "Laser · SVG · Vectorize · Computer Vision · LLM Prompting"
+    },
+    {
+      "id": "laser-experiments--halftone-cmyk",
+      "parent": "laser-experiments",
+      "title": "Laser Experiments · Halftone CMYK",
+      "url": "../webartests/laser-experiments/halftone-cmyk/",
+      "date": "2026-04",
+      "subject": "Lasers & Fabrication",
+      "summary": "A step-by-step progression towards full-color laser engraving on stainless steel using specialized oxide growth and stochastic/ordered dithering.",
+      "tags": "Laser · SVG · Vectorize · Computer Vision · LLM Prompting"
+    },
+    {
+      "id": "laser-experiments--laser-fill-generator",
+      "parent": "laser-experiments",
+      "title": "Laser Experiments · Laser Fill Generator",
+      "url": "../webartests/laser-experiments/laser-fill-generator/",
+      "date": "2026-07",
+      "subject": "Lasers & Fabrication",
+      "summary": "Laser Fill Generator",
+      "tags": "Laser · SVG · Vectorize · Computer Vision · LLM Prompting"
+    },
+    {
+      "id": "laser-experiments--parameter-converter",
+      "parent": "laser-experiments",
+      "title": "Laser Experiments · Parameter Converter",
+      "url": "../webartests/laser-experiments/param-converter/",
+      "date": "2026-03",
+      "subject": "Lasers & Fabrication",
+      "summary": "Convert between continuous scanning (LPCM) and pulsed dithering (DPI) to maintain consistent energy density.",
+      "tags": "Laser · SVG · Vectorize · Computer Vision · LLM Prompting"
+    },
+    {
+      "id": "laser-experiments--pattern-tool",
+      "parent": "laser-experiments",
+      "title": "Laser Experiments · Pattern Tool — Parametric XCS Pattern Generator",
+      "url": "../webartests/laser-experiments/pattern-tool/",
+      "date": "2026-03",
+      "subject": "Lasers & Fabrication",
+      "summary": "Laser pattern design tool that opens XCS (xTool Creative Space) files and generates parameterized engraving patterns — power, speed, density, repeats, text with font styles, palettes, and cell positioning — with save/load of RNR project files.",
+      "tags": "Laser · XCS · xTool · SVG · Pattern Generation"
+    },
+    {
+      "id": "laser-experiments--single-dot-colour",
+      "parent": "laser-experiments",
+      "title": "Laser Experiments · Single-Dot Colour",
+      "url": "../webartests/laser-experiments/single-dot-color/",
+      "date": "2026-03",
+      "subject": "Lasers & Fabrication",
+      "summary": "Single Dot Color Refraction (Physics Model)",
+      "tags": "Laser · SVG · Vectorize · Computer Vision · LLM Prompting"
+    },
+    {
+      "id": "laser-experiments--laser-templates",
+      "parent": "laser-experiments",
+      "title": "Laser Experiments · Laser Templates",
+      "url": "../webartests/laser-experiments/templates/",
+      "date": "2026-05",
+      "subject": "Lasers & Fabrication",
+      "summary": "Calibration boxes (1\" and 1cm) are included in the top-left to verify scale after import into your laser software (XCS, LightBurn, etc).",
+      "tags": "Laser · SVG · Vectorize · Computer Vision · LLM Prompting"
+    },
+    {
+      "id": "laser-experiments--xcs-module",
+      "parent": "laser-experiments",
+      "title": "Laser Experiments · XCS Module",
+      "url": "../webartests/laser-experiments/xcs-module/",
+      "date": "2026-04",
+      "subject": "Lasers & Fabrication",
+      "summary": "XCS Module - Unit & Functional Tests",
+      "tags": "Laser · SVG · Vectorize · Computer Vision · LLM Prompting"
+    },
+    {
+      "id": "web-video-super-scaling",
+      "title": "Video Neural Super Scaling — WebGPU Stereo Super-Resolution",
+      "url": "../webartests/experiments/web-video-super-scaling/",
+      "date": "2026-03",
+      "subject": "Computer Vision",
+      "summary": "WebGPU-based neural rendering and spatial/temporal super-resolution on high-bitrate stereo video streams.",
+      "tags": "WebGPU · Slang · AI · Neural Rendering · AI Upscaling · Video"
+    },
+    {
+      "id": "web-video-super-scaling--architectural-plan",
+      "parent": "web-video-super-scaling",
+      "title": "Video Neural Super Scaling · Architectural Plan",
+      "url": "../webartests/experiments/web-video-super-scaling/plan.html",
+      "date": "2026-03",
+      "subject": "Computer Vision",
+      "summary": "Web-Based Neural Rendering Architecture",
+      "tags": "WebGPU · Slang · AI · Neural Rendering · AI Upscaling · Video"
+    },
+    {
+      "id": "web-video-super-scaling--slang-engine",
+      "parent": "web-video-super-scaling",
+      "title": "Video Neural Super Scaling · Slang Engine",
+      "url": "../webartests/experiments/web-video-super-scaling/slang-video-test.html",
+      "date": "2026-03",
+      "subject": "Computer Vision",
+      "summary": "Slang Video Shading Test - Video Super Scaling",
+      "tags": "WebGPU · Slang · AI · Neural Rendering · AI Upscaling · Video"
+    },
+    {
+      "id": "web-video-super-scaling--slang-cnn-upscale",
+      "parent": "web-video-super-scaling",
+      "title": "Video Neural Super Scaling · Slang CNN Upscale",
+      "url": "../webartests/experiments/web-video-super-scaling/slang-cnn-upscale.html",
+      "date": "2026-03",
+      "subject": "Computer Vision",
+      "summary": "CNN Y-Channel Upscaling - Video Super Scaling",
+      "tags": "WebGPU · Slang · AI · Neural Rendering · AI Upscaling · Video"
+    },
+    {
+      "id": "web-video-super-scaling--slang-optical-flow-poc",
+      "parent": "web-video-super-scaling",
+      "title": "Video Neural Super Scaling · Slang Optical Flow PoC",
+      "url": "../webartests/experiments/web-video-super-scaling/slang-optical-flow-poc.html",
+      "date": "2026-03",
+      "subject": "Computer Vision",
+      "summary": "Optical Flow & Motion Vectors - Video Super Scaling",
+      "tags": "WebGPU · Slang · AI · Neural Rendering · AI Upscaling · Video"
+    },
+    {
+      "id": "web-video-super-scaling--slang-stereo-depth",
+      "parent": "web-video-super-scaling",
+      "title": "Video Neural Super Scaling · Slang Stereo Depth",
+      "url": "../webartests/experiments/web-video-super-scaling/slang-stereo-depth.html",
+      "date": "2026-03",
+      "subject": "Computer Vision",
+      "summary": "Stereo Depth Extraction - Video Super Scaling",
+      "tags": "WebGPU · Slang · AI · Neural Rendering · AI Upscaling · Video"
+    },
+    {
+      "id": "web-video-super-scaling--slang-temporal-accumulation",
+      "parent": "web-video-super-scaling",
+      "title": "Video Neural Super Scaling · Slang Temporal Accumulation",
+      "url": "../webartests/experiments/web-video-super-scaling/slang-temporal-accumulation.html",
+      "date": "2026-03",
+      "subject": "Computer Vision",
+      "summary": "Temporal Accumulation - Video Super Scaling",
+      "tags": "WebGPU · Slang · AI · Neural Rendering · AI Upscaling · Video"
+    },
+    {
+      "id": "web-video-super-scaling--slang-homography-poc",
+      "parent": "web-video-super-scaling",
+      "title": "Video Neural Super Scaling · Slang Homography PoC",
+      "url": "../webartests/experiments/web-video-super-scaling/slang-homography-poc.html",
+      "date": "2026-03",
+      "subject": "Computer Vision",
+      "summary": "Planar Homography Warping - Video Super Scaling",
+      "tags": "WebGPU · Slang · AI · Neural Rendering · AI Upscaling · Video"
+    },
+    {
+      "id": "web-video-super-scaling--slang-background-poc",
+      "parent": "web-video-super-scaling",
+      "title": "Video Neural Super Scaling · Slang Background PoC",
+      "url": "../webartests/experiments/web-video-super-scaling/slang-background-poc.html",
+      "date": "2026-03",
+      "subject": "Computer Vision",
+      "summary": "EMA Background Prior - Video Super Scaling",
+      "tags": "WebGPU · Slang · AI · Neural Rendering · AI Upscaling · Video"
+    },
+    {
+      "id": "web-video-super-scaling--slang-reference-sr",
+      "parent": "web-video-super-scaling",
+      "title": "Video Neural Super Scaling · Slang Reference SR",
+      "url": "../webartests/experiments/web-video-super-scaling/slang-ref-sr.html",
+      "date": "2026-03",
+      "subject": "Computer Vision",
+      "summary": "RefSR: Reference-Based Super-Resolution - Video Super Scaling",
+      "tags": "WebGPU · Slang · AI · Neural Rendering · AI Upscaling · Video"
+    },
+    {
+      "id": "web-video-super-scaling--slang-yuv-poc",
+      "parent": "web-video-super-scaling",
+      "title": "Video Neural Super Scaling · Slang YUV PoC",
+      "url": "../webartests/experiments/web-video-super-scaling/slang-yuv-poc.html",
+      "date": "2026-03",
+      "subject": "Computer Vision",
+      "summary": "YUV Chroma Interpolation - Video Super Scaling",
+      "tags": "WebGPU · Slang · AI · Neural Rendering · AI Upscaling · Video"
+    },
+    {
+      "id": "web-video-super-scaling--slang-wasm-test",
+      "parent": "web-video-super-scaling",
+      "title": "Video Neural Super Scaling · Slang WASM Test",
+      "url": "../webartests/experiments/web-video-super-scaling/slang-wasm-test.html",
+      "date": "2026-03",
+      "subject": "Computer Vision",
+      "summary": "Slang-WASM Test - Video Super Scaling",
+      "tags": "WebGPU · Slang · AI · Neural Rendering · AI Upscaling · Video"
+    },
+    {
+      "id": "web-video-super-scaling--streams-test",
+      "parent": "web-video-super-scaling",
+      "title": "Video Neural Super Scaling · Streams Test",
+      "url": "../webartests/experiments/web-video-super-scaling/streams-test.html",
+      "date": "2026-03",
+      "subject": "Computer Vision",
+      "summary": "Source: Dual 4K Top-Bottom (3840x4320). Use toggles to switch between the raw stack or a mono crop of the primary eye.",
+      "tags": "WebGPU · Slang · AI · Neural Rendering · AI Upscaling · Video"
+    },
+    {
+      "id": "web-video-super-scaling--webgpu-render-test",
+      "parent": "web-video-super-scaling",
+      "title": "Video Neural Super Scaling · WebGPU Render Test",
+      "url": "../webartests/experiments/web-video-super-scaling/webgpu-render-test.html",
+      "date": "2026-03",
+      "subject": "Computer Vision",
+      "summary": "WebGPU High-Perf Render Test",
+      "tags": "WebGPU · Slang · AI · Neural Rendering · AI Upscaling · Video"
+    },
+    {
+      "id": "mermaid-diagrams-in-git",
+      "title": "Mermaid Diagrams in Git — Live-Edit Diagram Gallery",
+      "url": "../webartests/experiments/mermaid-diagrams-in-git/",
+      "date": "2026-03",
+      "subject": "Developer Tools",
+      "summary": "Interactive Mermaid.js gallery with live editing and image/code copying for Git-based documentation.",
+      "tags": "Mermaid.js · Diagrams · Markdown · Developer Docs"
+    },
+    {
+      "id": "hmm-trader",
+      "title": "HMM Trader — Hidden Markov Model Market-Regime Detection",
+      "url": "../webartests/experiments/hmm-trader/",
+      "date": "2026-04",
+      "subject": "Finance & Trading",
+      "summary": "Hidden Markov Models for market regime detection. Build a complete Python trading system from first principles — probability, HMMs, technical indicators, backtesting, and a live dashboard.",
+      "tags": "HMM · Python · Backtesting · Streamlit · Machine Learning · Quant"
+    },
+    {
+      "id": "hmm-trader--01-returns",
+      "parent": "hmm-trader",
+      "title": "HMM Trader · 01 · Returns",
+      "url": "../webartests/experiments/hmm-trader/01-returns/",
+      "date": "2026-04",
+      "subject": "Finance & Trading",
+      "summary": "Financial models don't operate on raw prices — they operate on returns. Understanding why, and the difference between arithmetic and log returns, is the first step in quantitative finance.",
+      "tags": "HMM · Python · Backtesting · Streamlit · Machine Learning · Quant"
+    },
+    {
+      "id": "hmm-trader--04-hmm-foundations",
+      "parent": "hmm-trader",
+      "title": "HMM Trader · 04 · HMM Foundations",
+      "url": "../webartests/experiments/hmm-trader/04-hmm-foundations/",
+      "date": "2026-04",
+      "subject": "Finance & Trading",
+      "summary": "A Hidden Markov Model has three components: initial probabilities, a transition matrix, and emission distributions. Together they define a complete probability model of how hidden market regimes generate observable returns.",
+      "tags": "HMM · Python · Backtesting · Streamlit · Machine Learning · Quant"
+    },
+    {
+      "id": "hmm-trader--08-full-system",
+      "parent": "hmm-trader",
+      "title": "HMM Trader · 08 · Full Trading System",
+      "url": "../webartests/experiments/hmm-trader/08-full-system/",
+      "date": "2026-04",
+      "subject": "Finance & Trading",
+      "summary": "Everything from the previous seven lessons assembled into a running Python application. Three modular files: a data loader, a backtesting engine, and a Streamlit dashboard.",
+      "tags": "HMM · Python · Backtesting · Streamlit · Machine Learning · Quant"
+    },
+    {
+      "id": "hmm-trader--02-regimes",
+      "parent": "hmm-trader",
+      "title": "HMM Trader · 02 · Market Regimes",
+      "url": "../webartests/experiments/hmm-trader/02-regimes/",
+      "date": "2026-04",
+      "subject": "Finance & Trading",
+      "summary": "Markets are not stationary — they cycle between fundamentally different states. A strategy built for a bull market will destroy capital in a bear. Regime awareness is the foundation of adaptive trading.",
+      "tags": "HMM · Python · Backtesting · Streamlit · Machine Learning · Quant"
+    },
+    {
+      "id": "hmm-trader--03-gaussian",
+      "parent": "hmm-trader",
+      "title": "HMM Trader · 03 · Gaussian Distributions",
+      "url": "../webartests/experiments/hmm-trader/03-gaussian/",
+      "date": "2026-04",
+      "subject": "Finance & Trading",
+      "summary": "Each HMM state emits observations drawn from a Gaussian distribution with its own mean and variance. Understanding these parameters is understanding what the model has learned about each regime.",
+      "tags": "HMM · Python · Backtesting · Streamlit · Machine Learning · Quant"
+    },
+    {
+      "id": "hmm-trader--05-viterbi",
+      "parent": "hmm-trader",
+      "title": "HMM Trader · 05 · Viterbi Decoding",
+      "url": "../webartests/experiments/hmm-trader/05-viterbi/",
+      "date": "2026-04",
+      "subject": "Finance & Trading",
+      "summary": "Given a trained HMM and a sequence of observations, the Viterbi algorithm finds the single most likely hidden state sequence. This is how we decode which regime was active at each bar.",
+      "tags": "HMM · Python · Backtesting · Streamlit · Machine Learning · Quant"
+    },
+    {
+      "id": "hmm-trader--06-features",
+      "parent": "hmm-trader",
+      "title": "HMM Trader · 06 · Feature Engineering",
+      "url": "../webartests/experiments/hmm-trader/06-features/",
+      "date": "2026-04",
+      "subject": "Finance & Trading",
+      "summary": "Raw OHLCV data cannot be fed directly to an HMM. We compute three features that capture the distinct statistical signature of each market regime: direction, volatility, and participation.",
+      "tags": "HMM · Python · Backtesting · Streamlit · Machine Learning · Quant"
+    },
+    {
+      "id": "hmm-trader--07-indicators",
+      "parent": "hmm-trader",
+      "title": "HMM Trader · 07 · Indicators & Signal Logic",
+      "url": "../webartests/experiments/hmm-trader/07-indicators/",
+      "date": "2026-04",
+      "subject": "Finance & Trading",
+      "summary": "The HMM regime is a necessary but not sufficient condition for entry. Eight technical confirmations act as a second filter — requiring that the micro-structure also supports a long trade before committing capital.",
+      "tags": "HMM · Python · Backtesting · Streamlit · Machine Learning · Quant"
+    },
+    {
+      "id": "range-trader",
+      "title": "Range Trading Model — Swing-Channel Simulator & Position Sizer",
+      "url": "../webartests/learning-fintech-ai/range-trader/",
+      "date": "2026-06",
+      "subject": "Finance & Trading",
+      "summary": "Simulate and stress-test high-frequency swing channels with position sizing calculators and dynamic 3-month backtesting timeline scenarios.",
+      "tags": "React · Backtesting · Sizing · Simulation · Quant"
+    },
+    {
+      "id": "ecommerce-experiments",
+      "title": "Ecommerce Experiments — Agentic Shopping & Design Tools",
+      "url": "../webartests/ecommerce-experiments/",
+      "date": "2026-06",
+      "subject": "AI & Agents",
+      "summary": "Interactive simulations focused on retail logistics, product design tools, and dynamic inventory visualization.",
+      "tags": "React · Logistics · Design · AI Agents · Agentic Commerce"
+    },
+    {
+      "id": "ecommerce-experiments--shade-sail-designer",
+      "parent": "ecommerce-experiments",
+      "title": "Ecommerce Experiments · Shade Sail Designer",
+      "url": "../webartests/ecommerce-experiments/shade-sail-designer.html",
+      "date": "2026-06",
+      "subject": "AI & Agents",
+      "summary": "Triangle Shade Sail Designer — webartests",
+      "tags": "React · Logistics · Design · AI Agents · Agentic Commerce"
+    },
+    {
+      "id": "ecommerce-experiments--agent-based-search",
+      "parent": "ecommerce-experiments",
+      "title": "Ecommerce Experiments · AI Agent-Based Search",
+      "url": "../webartests/ecommerce-experiments/agent-based-search.html",
+      "date": "2026-07",
+      "subject": "AI & Agents",
+      "summary": "Marketplace filters trust the spec table. An agent doesn't — it reads the spec table, then goes and checks whether the spec table is lying. This experiment runs one real, deliberately hard shopping request end to end and shows the difference.",
+      "tags": "React · Logistics · Design · AI Agents · Agentic Commerce"
+    },
+    {
+      "id": "ecommerce-experiments--agentic-shopping-methodology",
+      "parent": "ecommerce-experiments",
+      "title": "Ecommerce Experiments · Agentic Shopping — Methodology",
+      "url": "../webartests/ecommerce-experiments/agentic-shopping.html",
+      "date": "2026-07",
+      "subject": "AI & Agents",
+      "summary": "Marketplace filter search answers \"what's listed as matching?\" An agentic shopping search answers \"what actually matches, and how do I know?\" — treating every retailer spec field as a claim to verify, not a fact to filter on. This page documents the methodology, the patterns and antipatterns that em",
+      "tags": "React · Logistics · Design · AI Agents · Agentic Commerce"
+    },
+    {
+      "id": "jepa-repro",
+      "title": "JEPA Reproduction Lab — World-Model Baseline Benchmarks",
+      "url": "../webartests/experiments/jepa-repro/",
+      "date": "2026-06",
+      "subject": "AI & Agents",
+      "summary": "Empirical results and reproduction reports from state-of-the-art World Model architectures — from official baselines to local hardware benchmarks.",
+      "tags": "JEPA · LeWM · Reproduction · World Models · ML Research · Benchmarks"
+    },
+    {
+      "id": "jepa-repro--pusht-baseline",
+      "parent": "jepa-repro",
+      "title": "JEPA Reproduction Lab · PushT World-Model Baseline",
+      "url": "../webartests/experiments/jepa-repro/pusht-baseline.html",
+      "date": "2026-06",
+      "subject": "AI & Agents",
+      "summary": "LeWorldModel · PushT Baseline Reproduction Report",
+      "tags": "JEPA · LeWM · Reproduction · World Models · ML Research · Benchmarks"
+    },
+    {
+      "id": "jepa-repro--two-room-baseline",
+      "parent": "jepa-repro",
+      "title": "JEPA Reproduction Lab · Two-Room World-Model Baseline",
+      "url": "../webartests/experiments/jepa-repro/tworoom-baseline.html",
+      "date": "2026-06",
+      "subject": "AI & Agents",
+      "summary": "LeWorldModel · Two-Room Baseline Reproduction Report",
+      "tags": "JEPA · LeWM · Reproduction · World Models · ML Research · Benchmarks"
+    },
+    {
+      "id": "jepa-repro--cube-baseline",
+      "parent": "jepa-repro",
+      "title": "JEPA Reproduction Lab · Cube World-Model Baseline",
+      "url": "../webartests/experiments/jepa-repro/cube-baseline.html",
+      "date": "2026-06",
+      "subject": "AI & Agents",
+      "summary": "LeWorldModel · OGBench-Cube Baseline Reproduction Report",
+      "tags": "JEPA · LeWM · Reproduction · World Models · ML Research · Benchmarks"
+    },
+    {
+      "id": "jepa-repro--reacher-baseline",
+      "parent": "jepa-repro",
+      "title": "JEPA Reproduction Lab · Reacher World-Model Baseline",
+      "url": "../webartests/experiments/jepa-repro/reacher-baseline.html",
+      "date": "2026-06",
+      "subject": "AI & Agents",
+      "summary": "LeWorldModel · Reacher Baseline Reproduction Report",
+      "tags": "JEPA · LeWM · Reproduction · World Models · ML Research · Benchmarks"
+    },
+    {
+      "id": "marp-presentations-in-git",
+      "title": "Marp Presentations in Git — Markdown Slide Publishing",
+      "url": "../webartests/experiments/marp-presentations-in-git/",
+      "date": "2026-04",
+      "subject": "Developer Tools",
+      "summary": "High-fidelity Markdown presentations with custom styling, auto-scaling, and PDF/HTML export capabilities.",
+      "tags": "Marp · Presentations · Markdown · Developer Docs"
+    },
+    {
+      "id": "marp-presentations-in-git--presentation-viewer",
+      "parent": "marp-presentations-in-git",
+      "title": "Marp Presentations in Git · Presentation Viewer",
+      "url": "../webartests/experiments/marp-presentations-in-git/view.html",
+      "date": "2026-04",
+      "subject": "Developer Tools",
+      "summary": "<!-- fit --> Marp Presentations in Git",
+      "tags": "Marp · Presentations · Markdown · Developer Docs"
+    },
+    {
+      "id": "hyper-stereo",
+      "title": "Hyper-Stereo Vision — Extended-Baseline Depth Perception Guide",
+      "url": "../webartests/hyper-stereo/",
+      "date": "2026-07",
+      "subject": "Computer Vision",
+      "summary": "Interactive guide to Hyper-Stereo Vision (extended baseline stereo), exploring depth perception scaling, optical math, and alignment constraints for long-range 3D sensing.",
+      "tags": "Stereopsis · Optics · Baseline · 3D · Depth Perception · Stereo Matching"
+    },
+    {
+      "id": "hyper-stereo--motorized-camera-rail-engineering-design",
+      "parent": "hyper-stereo",
+      "title": "Hyper-Stereo Vision · Motorized Camera Rail — Engineering Design",
+      "url": "../webartests/hyper-stereo/hyperstereo_camera_rail_design.html",
+      "date": "2026-07",
+      "subject": "Computer Vision",
+      "summary": "A 40 x 80 mm T-slot extrusion acts as the common optical and structural datum. Two camera carriages translate along the beam, and each carries a geared yaw stage. Two independent support saddles slide anywhere along the beam. Either saddle may connect directly to a stand or through an adjustable out",
+      "tags": "Stereopsis · Optics · Baseline · 3D · Depth Perception · Stereo Matching"
+    },
+    {
+      "id": "agent-experiments",
+      "title": "AI Agent Experiments — Multi-Agent Protocols & A2A Delegation",
+      "url": "../webartests/agent-experiments/",
+      "date": "2026-07",
+      "subject": "AI & Agents",
+      "summary": "Interactive walkthroughs of multi-agent protocols — A2A delegation, memory/state handoff, and stateless vs. stateful agent behavior.",
+      "tags": "A2A · Multi-Agent · Stateless · AI Agents · Agent Protocols"
+    },
+    {
+      "id": "agent-experiments--a2a-preference-delegation",
+      "parent": "agent-experiments",
+      "title": "AI Agent Experiments · Agent-to-Agent (A2A) Preference Delegation",
+      "url": "../webartests/agent-experiments/user-agent-preferences-store.html",
+      "date": "2026-07",
+      "subject": "AI & Agents",
+      "summary": "The narration script behind the video above.",
+      "tags": "A2A · Multi-Agent · Stateless · AI Agents · Agent Protocols"
+    },
+    {
+      "id": "hyper-stereo-sim",
+      "title": "Hyper-Stereo VR Planner — Venue Camera-Placement Simulator",
+      "url": "../webartests/hyper-stereo-sim/dist/",
+      "date": "2026-07",
+      "subject": "Simulation",
+      "summary": "WebGL & WebXR planner for hyperstereo camera placement at venues, featuring regulation tennis court geometry, Cartesian/spherical coordinates, real-time disparity diagnostics, comfort warnings, and custom preset storage.",
+      "tags": "WebXR · Three.js · React · Stereo Planning · Simulation",
+      "hidden": true
+    },
+    {
+      "id": "magic-map",
+      "title": "Magic Map — Location-Based Walking Games on Live Street Maps",
+      "url": "../webartests/magic-map/",
+      "date": "2026-06",
+      "subject": "Spatial Computing & XR",
+      "summary": "Location-based walking games on a stylized live street map — fog of war, road-aware spawns, streaks, and a collection to fill. First game: Squirrel Scouts.",
+      "tags": "Leaflet · Geolocation · Overpass · Fog of War"
+    },
+    {
+      "id": "magic-map--map-theme-design-review",
+      "parent": "magic-map",
+      "title": "Magic Map · Map Theme Design Review",
+      "url": "../webartests/magic-map/design-review.html",
+      "date": "2026-06",
+      "subject": "Spatial Computing & XR",
+      "summary": "Interactive metrology and styling tool to design high-contrast tile filters for outdoor daylight visibility.",
+      "tags": "Leaflet · Geolocation · Overpass · Fog of War"
+    },
+    {
+      "id": "magic-map--spawning-rules",
+      "parent": "magic-map",
+      "title": "Magic Map · Spawning Rules",
+      "url": "../webartests/magic-map/spawning.html",
+      "date": "2026-06",
+      "subject": "Spatial Computing & XR",
+      "summary": "Magic Map should feel like a guided wander, not a random scatter. Squirrels appear along plausible walking routes, avoid private driveways, and while you are moving they only appear ahead of your direction of travel.",
+      "tags": "Leaflet · Geolocation · Overpass · Fog of War"
+    },
+    {
+      "id": "learning-llm",
+      "title": "Learning LLMs — Attention, Transformers & Diffusion Language Models",
+      "url": "../webartests/learning-llm/",
+      "date": "2026-03",
+      "subject": "AI & Agents",
+      "summary": "From the attention mechanism through autoregressive transformers to the limits of serial generation and diffusion LLMs.",
+      "tags": "LLM · Attention · Transformers · Diffusion · GenAI"
+    },
+    {
+      "id": "learning-llm--before-attention",
+      "parent": "learning-llm",
+      "title": "Learning LLMs · Before Attention — RNNs, LSTMs & Seq2Seq",
+      "url": "../webartests/learning-llm/00-precursors/",
+      "date": "2026-03",
+      "subject": "AI & Agents",
+      "summary": "Every architecture choice in the transformer was a response to a concrete failure mode in what came before. Understanding the bottlenecks of RNNs and LSTMs makes the design of attention feel inevitable.",
+      "tags": "LLM · Attention · Transformers · Diffusion · GenAI"
+    },
+    {
+      "id": "learning-llm--tokenization",
+      "parent": "learning-llm",
+      "title": "Learning LLMs · Tokenization",
+      "url": "../webartests/learning-llm/tokenization/",
+      "date": "2026-03",
+      "subject": "AI & Agents",
+      "summary": "Text can't be fed directly into a neural network. Tokenization converts raw text into a sequence of integers that index into a learned embedding table — defining the vocabulary the model operates on.",
+      "tags": "LLM · Attention · Transformers · Diffusion · GenAI"
+    },
+    {
+      "id": "learning-llm--attention-mechanism",
+      "parent": "learning-llm",
+      "title": "Learning LLMs · Attention Mechanism",
+      "url": "../webartests/learning-llm/01-attention/",
+      "date": "2026-03",
+      "subject": "AI & Agents",
+      "summary": "The key innovation of the transformer. Instead of compressing a sequence into a fixed vector, attention lets every token directly query every other — weighted by relevance.",
+      "tags": "LLM · Attention · Transformers · Diffusion · GenAI"
+    },
+    {
+      "id": "learning-llm--the-transformer",
+      "parent": "learning-llm",
+      "title": "Learning LLMs · The Transformer",
+      "url": "../webartests/learning-llm/02-transformer/",
+      "date": "2026-03",
+      "subject": "AI & Agents",
+      "summary": "Stack attention and feed-forward layers with residual connections and layer normalisation. The transformer block is the building block of every modern language model.",
+      "tags": "LLM · Attention · Transformers · Diffusion · GenAI"
+    },
+    {
+      "id": "learning-llm--autoregressive-generation",
+      "parent": "learning-llm",
+      "title": "Learning LLMs · Autoregressive Generation",
+      "url": "../webartests/learning-llm/03-autoregressive/",
+      "date": "2026-03",
+      "subject": "AI & Agents",
+      "summary": "A language model factors the probability of a sequence into a chain of next-token predictions. At inference time this becomes a loop: predict, sample, append, repeat.",
+      "tags": "LLM · Attention · Transformers · Diffusion · GenAI"
+    },
+    {
+      "id": "learning-llm--serial-decoding-limits",
+      "parent": "learning-llm",
+      "title": "Learning LLMs · Serial Decoding Limits",
+      "url": "../webartests/learning-llm/04-serial-limits/",
+      "date": "2026-03",
+      "subject": "AI & Agents",
+      "summary": "Autoregressive generation is fundamentally sequential — each token depends on all previous outputs. This seriality bottlenecks modern hardware that was built for parallel computation.",
+      "tags": "LLM · Attention · Transformers · Diffusion · GenAI"
+    },
+    {
+      "id": "learning-llm--diffusion-llms",
+      "parent": "learning-llm",
+      "title": "Learning LLMs · Diffusion LLMs",
+      "url": "../webartests/learning-llm/05-diffusion/",
+      "date": "2026-03",
+      "subject": "AI & Agents",
+      "summary": "Generate all tokens in parallel by learning to denoise masked sequences. Diffusion LLMs trade autoregressive guarantees for throughput — a natural fit for GPU hardware.",
+      "tags": "LLM · Attention · Transformers · Diffusion · GenAI"
+    },
+    {
+      "id": "learning-fintech-ai",
+      "title": "Learning Fintech-AI — Algorithmic Trading Courses",
+      "url": "../webartests/learning-fintech-ai/",
+      "date": "2026-03",
+      "subject": "Finance & Trading",
+      "summary": "Interactive courses on algorithmic trading and quantitative finance — from first principles to running Python code.",
+      "tags": "DQN · ARIMA · Sizing · Python · Reinforcement Learning"
+    },
+    {
+      "id": "learning-fintech-ai--rl-markets",
+      "parent": "learning-fintech-ai",
+      "title": "Learning Fintech-AI · Reinforcement Learning for Markets",
+      "url": "../webartests/learning-fintech-ai/rl-markets/",
+      "date": "2026-03",
+      "subject": "Finance & Trading",
+      "summary": "Train a deep reinforcement learning agent to trade. Starting from the Markov decision process and building up to a complete DQN system that learns to buy, hold, and sell from raw price data.",
+      "tags": "DQN · ARIMA · Sizing · Python · Reinforcement Learning"
+    },
+    {
+      "id": "learning-fintech-ai--time-series-forecasting",
+      "parent": "learning-fintech-ai",
+      "title": "Learning Fintech-AI · Time Series Forecasting",
+      "url": "../webartests/learning-fintech-ai/ts-forecasting/",
+      "date": "2026-03",
+      "subject": "Finance & Trading",
+      "summary": "Master the mathematical models behind financial prediction. From stationarity and ARIMA through volatility clustering and GARCH to attention-based transformers.",
+      "tags": "DQN · ARIMA · Sizing · Python · Reinforcement Learning"
+    },
+    {
+      "id": "learning-fintech-ai--range-trading",
+      "parent": "learning-fintech-ai",
+      "title": "Learning Fintech-AI · Range Trading",
+      "url": "../webartests/learning-fintech-ai/range-trader/",
+      "date": "2026-06",
+      "subject": "Finance & Trading",
+      "summary": "Cycle & Channel Frequency Analyzer — Learning Fintech-AI",
+      "tags": "DQN · ARIMA · Sizing · Python · Reinforcement Learning"
+    },
+    {
+      "id": "learning-fintech-ai--spacex-evolution-space-infrastructure-valuation-timeline",
+      "parent": "learning-fintech-ai",
+      "title": "Learning Fintech-AI · SpaceX Evolution — Space Infrastructure & Valuation Timeline",
+      "url": "../webartests/learning-fintech-ai/spacex-evolution.html",
+      "date": "2026-07",
+      "subject": "Finance & Trading",
+      "summary": "Interactive timeline mapping SpaceX's path — Starship fleet scaling, orbital tanker/refueling campaigns, NASA HLS milestones, and production ramps — against valuation checkpoints for the space-infrastructure economy.",
+      "tags": "SpaceX · Space Economy · Valuation · React Flow · Timeline"
+    },
+    {
+      "id": "learning-gaussian-splatting",
+      "title": "Learning Gaussian Splatting — 3D Gaussian Splatting (3DGS) from the Ground Up",
+      "url": "../webartests/learning-gaussian-splatting/",
+      "date": "2026-02",
+      "subject": "3D Graphics & Rendering",
+      "summary": "A ground-up interactive journey through the math and algorithms behind 3D Gaussian Splatting.",
+      "tags": "Gaussian Splatting · 3DGS · GPU · Differentiable Rendering"
+    },
+    {
+      "id": "learning-gaussian-splatting--sat-collision",
+      "parent": "learning-gaussian-splatting",
+      "title": "Learning Gaussian Splatting · SAT Collision",
+      "url": "../webartests/learning-gaussian-splatting/sat-collision/",
+      "date": "2026-02",
+      "subject": "3D Graphics & Rendering",
+      "summary": "An interactive walkthrough of the Separating Axis Theorem and collision response — based on the dyn4j tutorial and N game physics guide.",
+      "tags": "Gaussian Splatting · 3DGS · GPU · Differentiable Rendering"
+    },
+    {
+      "id": "learning-gaussian-splatting--oriented-bounding-boxes",
+      "parent": "learning-gaussian-splatting",
+      "title": "Learning Gaussian Splatting · Oriented Bounding Boxes",
+      "url": "../webartests/learning-gaussian-splatting/obb/",
+      "date": "2026-02",
+      "subject": "3D Graphics & Rendering",
+      "summary": "How OBBs represent anisotropic Gaussian blobs, and how the Separating Axis Theorem checks their intersection — walking through a real Slang shader implementation.",
+      "tags": "Gaussian Splatting · 3DGS · GPU · Differentiable Rendering"
+    },
+    {
+      "id": "learning-gaussian-splatting--smoothstep",
+      "parent": "learning-gaussian-splatting",
+      "title": "Learning Gaussian Splatting · smoothStep",
+      "url": "../webartests/learning-gaussian-splatting/smooth-step/",
+      "date": "2026-02",
+      "subject": "3D Graphics & Rendering",
+      "summary": "A smooth Hermite interpolation that keeps optimisable parameters in valid ranges — and how the [Differentiable] attribute enables automatic differentiation in Slang.",
+      "tags": "Gaussian Splatting · 3DGS · GPU · Differentiable Rendering"
+    },
+    {
+      "id": "learning-gaussian-splatting--alpha-blending",
+      "parent": "learning-gaussian-splatting",
+      "title": "Learning Gaussian Splatting · Alpha Blending",
+      "url": "../webartests/learning-gaussian-splatting/alpha-blending/",
+      "date": "2026-02",
+      "subject": "3D Graphics & Rendering",
+      "summary": "How Gaussian Splatting composites sorted blobs into a final pixel — and how the backward pass undoes each blend step to propagate gradients.",
+      "tags": "Gaussian Splatting · 3DGS · GPU · Differentiable Rendering"
+    },
+    {
+      "id": "learning-gaussian-splatting--2d-gaussian",
+      "parent": "learning-gaussian-splatting",
+      "title": "Learning Gaussian Splatting · 2D Gaussian",
+      "url": "../webartests/learning-gaussian-splatting/gaussian-2d/",
+      "date": "2026-02",
+      "subject": "3D Graphics & Rendering",
+      "summary": "How a 2D Gaussian blob is parameterised by a covariance matrix, how it's evaluated at a UV coordinate, and how its oriented bounding box is extracted via eigendecomposition.",
+      "tags": "Gaussian Splatting · 3DGS · GPU · Differentiable Rendering"
+    },
+    {
+      "id": "learning-gaussian-splatting--gpu-parallel-algorithms",
+      "parent": "learning-gaussian-splatting",
+      "title": "Learning Gaussian Splatting · GPU Parallel Algorithms",
+      "url": "../webartests/learning-gaussian-splatting/gpu-parallel/",
+      "date": "2026-02",
+      "subject": "3D Graphics & Rendering",
+      "summary": "Three workgroup-level algorithms used in Gaussian Splatting: binary reduction for gradient accumulation, compare-and-swap for floating-point atomics, and bitonic sort for ordering blobs by depth.",
+      "tags": "Gaussian Splatting · 3DGS · GPU · Differentiable Rendering"
+    },
+    {
+      "id": "learning-gaussian-splatting--tile-rasterization",
+      "parent": "learning-gaussian-splatting",
+      "title": "Learning Gaussian Splatting · Tile Rasterization",
+      "url": "../webartests/learning-gaussian-splatting/tile-rasterization/",
+      "date": "2026-02",
+      "subject": "3D Graphics & Rendering",
+      "summary": "Before computing any pixel colour, the GPU must determine which Gaussians are even relevant to each pixel. This is done efficiently by dividing the image into tiles and having each workgroup build a short-list for its tile.",
+      "tags": "Gaussian Splatting · 3DGS · GPU · Differentiable Rendering"
+    },
+    {
+      "id": "learning-gaussian-splatting--render-pipeline",
+      "parent": "learning-gaussian-splatting",
+      "title": "Learning Gaussian Splatting · Render Pipeline",
+      "url": "../webartests/learning-gaussian-splatting/render-pipeline/",
+      "date": "2026-02",
+      "subject": "3D Graphics & Rendering",
+      "summary": "splatBlobs() orchestrates four stages from raw scene data to a final pixel colour. Understanding how those stages chain together — and why only one of them is differentiable — is the key to understanding the whole system.",
+      "tags": "Gaussian Splatting · 3DGS · GPU · Differentiable Rendering"
+    },
+    {
+      "id": "learning-gaussian-splatting--differentiable-rendering",
+      "parent": "learning-gaussian-splatting",
+      "title": "Learning Gaussian Splatting · Differentiable Rendering",
+      "url": "../webartests/learning-gaussian-splatting/differentiable-rendering/",
+      "date": "2026-02",
+      "subject": "3D Graphics & Rendering",
+      "summary": "Slang's auto-diff system can differentiate most functions automatically — but the blending loop in fineRasterize needs special treatment. Understanding why reveals something fundamental about how reverse-mode auto-diff works.",
+      "tags": "Gaussian Splatting · 3DGS · GPU · Differentiable Rendering"
+    },
+    {
+      "id": "learning-vectorization",
+      "title": "Learning Vectorization — Raster-to-Vector Algorithm Guides",
+      "url": "../webartests/learning-vectorization/",
+      "date": "2026-03",
+      "subject": "Computer Vision",
+      "summary": "Interactive guides to the algorithms behind raster-to-vector conversion.",
+      "tags": "Algorithms · SVG · Edge Detection · Computer Vision"
+    },
+    {
+      "id": "learning-vectorization--ramer-douglas-peucker",
+      "parent": "learning-vectorization",
+      "title": "Learning Vectorization · Ramer–Douglas–Peucker",
+      "url": "../webartests/learning-vectorization/rdp/",
+      "date": "2026-03",
+      "subject": "Computer Vision",
+      "summary": "A recursive algorithm that simplifies a polyline by removing points that lie within a tolerance distance of the line connecting their neighbours.",
+      "tags": "Algorithms · SVG · Edge Detection · Computer Vision"
+    },
+    {
+      "id": "learning-vectorization--marching-squares",
+      "parent": "learning-vectorization",
+      "title": "Learning Vectorization · Marching Squares",
+      "url": "../webartests/learning-vectorization/marching-squares/",
+      "date": "2026-03",
+      "subject": "Computer Vision",
+      "summary": "A contour-tracing algorithm that extracts iso-lines from a 2D scalar field by classifying each grid cell into one of 16 cases and looking up the corresponding edge segments.",
+      "tags": "Algorithms · SVG · Edge Detection · Computer Vision"
+    },
+    {
+      "id": "learning-vectorization--visvalingam-whyatt",
+      "parent": "learning-vectorization",
+      "title": "Learning Vectorization · Visvalingam–Whyatt",
+      "url": "../webartests/learning-vectorization/visvalingam-whyatt/",
+      "date": "2026-03",
+      "subject": "Computer Vision",
+      "summary": "A polyline simplification algorithm that removes the point forming the triangle of smallest area with its two neighbours — iterating until all remaining triangles exceed a threshold.",
+      "tags": "Algorithms · SVG · Edge Detection · Computer Vision"
+    },
+    {
+      "id": "learning-vectorization--b-zier-fitting",
+      "parent": "learning-vectorization",
+      "title": "Learning Vectorization · Bézier Fitting",
+      "url": "../webartests/learning-vectorization/bezier-curve-fitting/",
+      "date": "2026-03",
+      "subject": "Computer Vision",
+      "summary": "Least-squares fitting of cubic Bézier segments to a point sequence. Used by Potrace and Inkscape to convert traced outlines into smooth curves.",
+      "tags": "Algorithms · SVG · Edge Detection · Computer Vision"
+    },
+    {
+      "id": "learning-vectorization--canny-edge-detection",
+      "parent": "learning-vectorization",
+      "title": "Learning Vectorization · Canny Edge Detection",
+      "url": "../webartests/learning-vectorization/canny-edge-detection/",
+      "date": "2026-03",
+      "subject": "Computer Vision",
+      "summary": "Multi-stage filter: Gaussian blur → gradient magnitude → non-maximum suppression → hysteresis thresholding. The standard preprocessing step before contour tracing.",
+      "tags": "Algorithms · SVG · Edge Detection · Computer Vision"
+    },
+    {
+      "id": "learning-vectorization--freeman-chain-code",
+      "parent": "learning-vectorization",
+      "title": "Learning Vectorization · Freeman Chain Code",
+      "url": "../webartests/learning-vectorization/freeman-chain-code/",
+      "date": "2026-03",
+      "subject": "Computer Vision",
+      "summary": "Encodes a boundary as a sequence of 8-directional steps. A compact representation used as input to higher-level shape analysis and simplification.",
+      "tags": "Algorithms · SVG · Edge Detection · Computer Vision"
+    },
+    {
+      "id": "learning-lasers",
+      "title": "Learning Lasers — Fibre-Laser Physics from First Principles",
+      "url": "../webartests/learning-lasers/",
+      "date": "2026-03",
+      "subject": "Lasers & Fabrication",
+      "summary": "The physics and techniques behind hobbyist fibre lasers — galvo optics, beam divergence, energy density, and material interaction from first principles.",
+      "tags": "Galvo · Optics · XTool F2 · IR Laser · Photonics"
+    },
+    {
+      "id": "learning-lasers--beam-optics",
+      "parent": "learning-lasers",
+      "title": "Learning Lasers · Beam Optics",
+      "url": "../webartests/learning-lasers/beam-optics/",
+      "date": "2026-03",
+      "subject": "Lasers & Fabrication",
+      "summary": "How the F2's galvanometric mirrors steer the beam at high speed, what beam divergence really means for your working area, and why the focused spot forms an hourglass that affects cut quality in thick materials.",
+      "tags": "Galvo · Optics · XTool F2 · IR Laser · Photonics"
+    },
+    {
+      "id": "learning-lasers--power-speed",
+      "parent": "learning-lasers",
+      "title": "Learning Lasers · Power & Speed",
+      "url": "../webartests/learning-lasers/power-speed/",
+      "date": "2026-03",
+      "subject": "Lasers & Fabrication",
+      "summary": "The two primary \"knobs\" on a laser system. While they seem independent, they combine into a single physical reality: Energy Density.",
+      "tags": "Galvo · Optics · XTool F2 · IR Laser · Photonics"
+    },
+    {
+      "id": "learning-lasers--focus-dof",
+      "parent": "learning-lasers",
+      "title": "Learning Lasers · Focus & DoF",
+      "url": "../webartests/learning-lasers/focus-dof/",
+      "date": "2026-03",
+      "subject": "Lasers & Fabrication",
+      "summary": "A laser isn't a straight cylinder of light; it's an hourglass. Understanding the \"Rayleigh Range\" determines whether you engrave with surgical precision or vibrant color.",
+      "tags": "Galvo · Optics · XTool F2 · IR Laser · Photonics"
+    },
+    {
+      "id": "learning-lasers--engraving-modes",
+      "parent": "learning-lasers",
+      "title": "Learning Lasers · Engraving Modes",
+      "url": "../webartests/learning-lasers/engraving-modes/",
+      "date": "2026-03",
+      "subject": "Lasers & Fabrication",
+      "summary": "It's not just about how hard you hit the metal, but the path you take. Fill strategies determine heat accumulation and surface finish.",
+      "tags": "Galvo · Optics · XTool F2 · IR Laser · Photonics"
+    },
+    {
+      "id": "learning-lasers--materials",
+      "parent": "learning-lasers",
+      "title": "Learning Lasers · Materials",
+      "url": "../webartests/learning-lasers/materials/",
+      "date": "2026-03",
+      "subject": "Lasers & Fabrication",
+      "summary": "Not all surfaces are created equal. The 1064nm Infrared laser interacts with the atomic structure of materials in ways that the 455nm Blue laser cannot.",
+      "tags": "Galvo · Optics · XTool F2 · IR Laser · Photonics"
+    },
+    {
+      "id": "learning-lasers--safety",
+      "parent": "learning-lasers",
+      "title": "Learning Lasers · Safety",
+      "url": "../webartests/learning-lasers/safety/",
+      "date": "2026-03",
+      "subject": "Lasers & Fabrication",
+      "summary": "The xTool F2 is a Class 4 laser. This means even the reflection of the beam is enough to cause permanent blindness or start a fire.",
+      "tags": "Galvo · Optics · XTool F2 · IR Laser · Photonics"
+    },
+    {
+      "id": "learning-lasers--colour-stainless-cleaning",
+      "parent": "learning-lasers",
+      "title": "Learning Lasers · Colour Stainless Cleaning",
+      "url": "../webartests/learning-lasers/color-stainless-cleaning/",
+      "date": "2026-03",
+      "subject": "Lasers & Fabrication",
+      "summary": "Removing soot, oils, and residue without damaging the nanometre-thin oxide layer that produces structural colour on SS304.",
+      "tags": "Galvo · Optics · XTool F2 · IR Laser · Photonics"
+    },
+    {
+      "id": "learning-lasers--heat-transfer",
+      "parent": "learning-lasers",
+      "title": "Learning Lasers · Heat Transfer",
+      "url": "../webartests/learning-lasers/heat-transfer/",
+      "date": "2026-03",
+      "subject": "Lasers & Fabrication",
+      "summary": "SS304 color etching is the ultimate test of thermal management. A few degrees of Peak Stress determines whether you get a vibrant blue or a burnt grey.",
+      "tags": "Galvo · Optics · XTool F2 · IR Laser · Photonics"
+    },
+    {
+      "id": "learning-lasers--lpcm-dpi",
+      "parent": "learning-lasers",
+      "title": "Learning Lasers · LPCM DPI",
+      "url": "../webartests/learning-lasers/lpcm-dpi/",
+      "date": "2026-03",
+      "subject": "Lasers & Fabrication",
+      "summary": "Density determines how many times the laser hits the same physical area. It is a linear \"additive\" variable: double the density, and you double the energy dose.",
+      "tags": "Galvo · Optics · XTool F2 · IR Laser · Photonics"
+    },
+    {
+      "id": "learning-lasers--oxide-edge",
+      "parent": "learning-lasers",
+      "title": "Learning Lasers · Oxide Edge",
+      "url": "../webartests/learning-lasers/oxide-edge/",
+      "date": "2026-04",
+      "subject": "Lasers & Fabrication",
+      "summary": "The Oxide Edge - Learning Lasers",
+      "tags": "Galvo · Optics · XTool F2 · IR Laser · Photonics"
+    },
+    {
+      "id": "learning-lasers--power-beam-heat",
+      "parent": "learning-lasers",
+      "title": "Learning Lasers · Power · Beam · Heat",
+      "url": "../webartests/learning-lasers/power-beam-heat/",
+      "date": "2026-03",
+      "subject": "Lasers & Fabrication",
+      "summary": "A step-by-step physics breakdown exploring how wavelength and beam geometry fundamentally change the energy delivered to SS304.",
+      "tags": "Galvo · Optics · XTool F2 · IR Laser · Photonics"
+    },
+    {
+      "id": "learning-lasers--rich-frosted-burnt",
+      "parent": "learning-lasers",
+      "title": "Learning Lasers · Rich / Frosted / Burnt",
+      "url": "../webartests/learning-lasers/rich-frosted-burnt/",
+      "date": "2026-03",
+      "subject": "Lasers & Fabrication",
+      "summary": "The transition from vibrant metallic blue to pastel frosted pink isn't just a change in temperature—it's a physical change in surface morphology.",
+      "tags": "Galvo · Optics · XTool F2 · IR Laser · Photonics"
+    },
+    {
+      "id": "learning-lasers--speed-curve",
+      "parent": "learning-lasers",
+      "title": "Learning Lasers · Speed Curve",
+      "url": "../webartests/learning-lasers/speed-curve/",
+      "date": "2026-03",
+      "subject": "Lasers & Fabrication",
+      "summary": "Power and Density are linear fine-tuning knobs. Speed is a non-linear \"turbo\" knob. Understanding the $1/x$ relationship is the key to mastering high-order colors.",
+      "tags": "Galvo · Optics · XTool F2 · IR Laser · Photonics"
+    },
+    {
+      "id": "learning-lasers--ss304-colours",
+      "parent": "learning-lasers",
+      "title": "Learning Lasers · SS304 Colours",
+      "url": "../webartests/learning-lasers/ss304-colours/",
+      "date": "2026-03",
+      "subject": "Lasers & Fabrication",
+      "summary": "The colours laser-engraved into stainless steel aren't pigment — they're nanometre-thin oxide films that split white light by interference. This chapter traces the physics from photon to colour.",
+      "tags": "Galvo · Optics · XTool F2 · IR Laser · Photonics"
+    },
+    {
+      "id": "learning-lasers--titanium-colours",
+      "parent": "learning-lasers",
+      "title": "Learning Lasers · Titanium Colours",
+      "url": "../webartests/learning-lasers/titanium-colours/",
+      "date": "2026-07",
+      "subject": "Lasers & Fabrication",
+      "summary": "Anodizing volts and laser power both grow the same nanometre-thin TiO₂ film on titanium — they just take completely different physical routes to get there. This page compares them side by side, then lets you drive both with a shared simulator.",
+      "tags": "Galvo · Optics · XTool F2 · IR Laser · Photonics"
+    },
+    {
+      "id": "learning-lasers--protecting-titanium",
+      "parent": "learning-lasers",
+      "title": "Learning Lasers · Protecting Titanium",
+      "url": "../webartests/learning-lasers/protecting-titanium.html",
+      "date": "2026-07",
+      "subject": "Lasers & Fabrication",
+      "summary": "A real observation kicked this off: wiping laser-coloured titanium with isopropyl alcohol left it permanently duller — not shifted to a different hue. That single, specific detail rules some explanations out and points straight at others. This page works through the physics, six competing theories f",
+      "tags": "Galvo · Optics · XTool F2 · IR Laser · Photonics"
+    },
+    {
+      "id": "spatial-audio",
+      "title": "3D Spatial Audio — How We Hear in Three Dimensions",
+      "url": "../webartests/spatial-audio/",
+      "date": "2026-03",
+      "subject": "Audio",
+      "summary": "How the brain locates sound in three-dimensional space — from the two-ear geometry through HRTFs, room acoustics, and Doppler to binaural rendering and ambisonics.",
+      "tags": "ITD · HRTF · Ambisonics · Binaural · Psychoacoustics"
+    },
+    {
+      "id": "spatial-audio--two-ears-itd-ild",
+      "parent": "spatial-audio",
+      "title": "3D Spatial Audio · Two Ears — ITD & ILD",
+      "url": "../webartests/spatial-audio/two-ears/",
+      "date": "2026-03",
+      "subject": "Audio",
+      "summary": "Two ears pointing in opposite directions give the brain two independent measurements of every sound. The difference in arrival time and in level is enough to pinpoint any source in the horizontal plane.",
+      "tags": "ITD · HRTF · Ambisonics · Binaural · Psychoacoustics"
+    },
+    {
+      "id": "sound-synthesis",
+      "title": "Sound Synthesis — Physical Modelling from First Principles",
+      "url": "../webartests/sound-synthesis/",
+      "date": "2026-03",
+      "subject": "Audio",
+      "summary": "Generate realistic sounds from physical first principles — vibrating strings, modal resonance, coupled systems, and more.",
+      "tags": "Physical Modelling · Modal Synthesis · Procedural Audio · DSP"
+    },
+    {
+      "id": "sound-synthesis--vibrating-string",
+      "parent": "sound-synthesis",
+      "title": "Sound Synthesis · Vibrating String",
+      "url": "../webartests/sound-synthesis/vibrating-string/",
+      "date": "2026-03",
+      "subject": "Audio",
+      "summary": "A plucked string is a wave bouncing back and forth between two fixed endpoints. This simple physical model reproduces pitch, timbre, and decay from just three parameters.",
+      "tags": "Physical Modelling · Modal Synthesis · Procedural Audio · DSP"
+    },
+    {
+      "id": "sound-synthesis--string-simulation",
+      "parent": "sound-synthesis",
+      "title": "Sound Synthesis · String Simulation",
+      "url": "../webartests/sound-synthesis/string-simulation/",
+      "date": "2026-03",
+      "subject": "Audio",
+      "summary": "The wave equation tells you exactly how a plucked string moves. Turning that equation into code takes one key step: replace infinitely small differences with finite-sized ones. Everything else follows automatically.",
+      "tags": "Physical Modelling · Modal Synthesis · Procedural Audio · DSP"
+    },
+    {
+      "id": "sound-synthesis--modal-synthesis",
+      "parent": "sound-synthesis",
+      "title": "Sound Synthesis · Modal Synthesis",
+      "url": "../webartests/sound-synthesis/modal-synthesis/",
+      "date": "2026-03",
+      "subject": "Audio",
+      "summary": "A struck object vibrates at a set of characteristic frequencies — its modes. The same mathematical model produces wood, metal, glass, and ceramic sounds just by changing the mode frequencies and decay rates.",
+      "tags": "Physical Modelling · Modal Synthesis · Procedural Audio · DSP"
+    },
+    {
+      "id": "sound-synthesis--excitation-models",
+      "parent": "sound-synthesis",
+      "title": "Sound Synthesis · Excitation Models",
+      "url": "../webartests/sound-synthesis/excitation/",
+      "date": "2026-03",
+      "subject": "Audio",
+      "summary": "The same resonating object sounds completely different depending on how energy is put into it. A hammer strike, a soft mallet, a bow, and a scrape each create a distinct signature that the resonator then amplifies and colours.",
+      "tags": "Physical Modelling · Modal Synthesis · Procedural Audio · DSP"
+    },
+    {
+      "id": "sound-synthesis--coupled-systems",
+      "parent": "sound-synthesis",
+      "title": "Sound Synthesis · Coupled Systems",
+      "url": "../webartests/sound-synthesis/coupled-systems/",
+      "date": "2026-03",
+      "subject": "Audio",
+      "summary": "Real instruments are chains of coupled vibrating bodies. A plucked string transfers energy into a soundboard. A clarinet reed drives an air column. Each coupling changes the sound in ways neither component could produce alone.",
+      "tags": "Physical Modelling · Modal Synthesis · Procedural Audio · DSP"
+    },
+    {
+      "id": "sound-synthesis--nonlinear-interactions",
+      "parent": "sound-synthesis",
+      "title": "Sound Synthesis · Nonlinear Interactions",
+      "url": "../webartests/sound-synthesis/nonlinear/",
+      "date": "2026-03",
+      "subject": "Audio",
+      "summary": "Friction between a bow and string creates a self-sustaining oscillation — the string repeatedly sticks to the bow, builds tension, then slips. This nonlinear cycle produces a continuous tone from a constant bow motion.",
+      "tags": "Physical Modelling · Modal Synthesis · Procedural Audio · DSP"
+    },
+    {
+      "id": "sound-synthesis--environmental-sounds",
+      "parent": "sound-synthesis",
+      "title": "Sound Synthesis · Environmental Sounds",
+      "url": "../webartests/sound-synthesis/environmental/",
+      "date": "2026-03",
+      "subject": "Audio",
+      "summary": "Everyday sounds — footsteps, scrapes, collisions — can be synthesised using the same Excitation × Vibration model. Physical parameters like surface material and contact force map directly to acoustic parameters.",
+      "tags": "Physical Modelling · Modal Synthesis · Procedural Audio · DSP"
+    },
+    {
+      "id": "web-audio",
+      "title": "Dynamic Audio on the Web — Web Audio API from Scratch",
+      "url": "../webartests/web-audio/",
+      "date": "2026-03",
+      "subject": "Audio",
+      "summary": "Build audio from scratch in the browser using the Web Audio API — oscillators, filters, effects, and a 16-step sequencer.",
+      "tags": "Web Audio API · Synthesis · Scheduling · DSP"
+    },
+    {
+      "id": "web-audio--oscillators-waveforms",
+      "parent": "web-audio",
+      "title": "Dynamic Audio on the Web · Oscillators & Waveforms",
+      "url": "../webartests/web-audio/oscillators/",
+      "date": "2026-03",
+      "subject": "Audio",
+      "summary": "An OscillatorNode generates a periodic waveform at a given frequency. The waveform shape determines the harmonic content — and therefore the timbre you hear.",
+      "tags": "Web Audio API · Synthesis · Scheduling · DSP"
+    },
+    {
+      "id": "web-audio--envelopes-adsr",
+      "parent": "web-audio",
+      "title": "Dynamic Audio on the Web · Envelopes (ADSR)",
+      "url": "../webartests/web-audio/envelopes/",
+      "date": "2026-03",
+      "subject": "Audio",
+      "summary": "An envelope shapes a sound's volume over time. The four stages — Attack, Decay, Sustain, Release — turn a constant oscillator into something that feels played.",
+      "tags": "Web Audio API · Synthesis · Scheduling · DSP"
+    },
+    {
+      "id": "web-audio--filters",
+      "parent": "web-audio",
+      "title": "Dynamic Audio on the Web · Filters",
+      "url": "../webartests/web-audio/filters/",
+      "date": "2026-03",
+      "subject": "Audio",
+      "summary": "BiquadFilterNode shapes the frequency content of any audio signal. Change the type, cutoff frequency, and resonance to sculpt tone from a flat noise source.",
+      "tags": "Web Audio API · Synthesis · Scheduling · DSP"
+    },
+    {
+      "id": "web-audio--noise-percussion",
+      "parent": "web-audio",
+      "title": "Dynamic Audio on the Web · Noise & Percussion",
+      "url": "../webartests/web-audio/noise-percussion/",
+      "date": "2026-03",
+      "subject": "Audio",
+      "summary": "Kick, snare, and hi-hat synthesised from scratch using oscillators, white noise, and fast ADSR envelopes — no samples, no files.",
+      "tags": "Web Audio API · Synthesis · Scheduling · DSP"
+    },
+    {
+      "id": "web-audio--sequencer",
+      "parent": "web-audio",
+      "title": "Dynamic Audio on the Web · Sequencer",
+      "url": "../webartests/web-audio/sequencer/",
+      "date": "2026-03",
+      "subject": "Audio",
+      "summary": "A 16-step drum sequencer built with lookahead scheduling — the technique used in every professional web audio app to achieve rock-solid timing.",
+      "tags": "Web Audio API · Synthesis · Scheduling · DSP"
+    },
+    {
+      "id": "web-audio--effects",
+      "parent": "web-audio",
+      "title": "Dynamic Audio on the Web · Effects",
+      "url": "../webartests/web-audio/effects/",
+      "date": "2026-03",
+      "subject": "Audio",
+      "summary": "Delay, distortion, and reverb — the three fundamental effect categories. Each demonstrates a different signal routing pattern in the Web Audio node graph.",
+      "tags": "Web Audio API · Synthesis · Scheduling · DSP"
+    },
+    {
+      "id": "web-audio--analyser-visualiser",
+      "parent": "web-audio",
+      "title": "Dynamic Audio on the Web · Analyser & Visualiser",
+      "url": "../webartests/web-audio/analyser/",
+      "date": "2026-03",
+      "subject": "Audio",
+      "summary": "AnalyserNode taps into the audio graph without modifying the signal. It exposes raw FFT frequency data and time-domain waveform data via typed arrays — the foundation for any audio visualiser.",
+      "tags": "Web Audio API · Synthesis · Scheduling · DSP"
+    },
+    {
+      "id": "learning-neural-rendering",
+      "title": "Learning Neural Rendering — Ray Marching to NeRF",
+      "url": "../webartests/learning-neural-rendering/",
+      "date": "2026-03",
+      "subject": "3D Graphics & Rendering",
+      "summary": "From ray marching through volume integration to neural radiance fields and differentiable rendering.",
+      "tags": "NeRF · Autodiff · Raymarching · Neural Rendering"
+    },
+    {
+      "id": "learning-neural-rendering--ray-marching",
+      "parent": "learning-neural-rendering",
+      "title": "Learning Neural Rendering · Ray Marching",
+      "url": "../webartests/learning-neural-rendering/modules/01-ray-marching.html",
+      "date": "2026-03",
+      "subject": "3D Graphics & Rendering",
+      "summary": "Ray Marching & SDFs - Learning Neural Rendering",
+      "tags": "NeRF · Autodiff · Raymarching · Neural Rendering"
+    },
+    {
+      "id": "learning-neural-rendering--volume-integration",
+      "parent": "learning-neural-rendering",
+      "title": "Learning Neural Rendering · Volume Integration",
+      "url": "../webartests/learning-neural-rendering/modules/02-volume-integration.html",
+      "date": "2026-03",
+      "subject": "3D Graphics & Rendering",
+      "summary": "Volume Integration - Learning Neural Rendering",
+      "tags": "NeRF · Autodiff · Raymarching · Neural Rendering"
+    },
+    {
+      "id": "learning-neural-rendering--neural-fields",
+      "parent": "learning-neural-rendering",
+      "title": "Learning Neural Rendering · Neural Fields",
+      "url": "../webartests/learning-neural-rendering/modules/03-neural-fields.html",
+      "date": "2026-03",
+      "subject": "3D Graphics & Rendering",
+      "summary": "Neural Radiance Fields - Learning Neural Rendering",
+      "tags": "NeRF · Autodiff · Raymarching · Neural Rendering"
+    },
+    {
+      "id": "learning-neural-rendering--gradient-descent",
+      "parent": "learning-neural-rendering",
+      "title": "Learning Neural Rendering · Gradient Descent",
+      "url": "../webartests/learning-neural-rendering/modules/03a-gradient-descent.html",
+      "date": "2026-03",
+      "subject": "3D Graphics & Rendering",
+      "summary": "Gradient Descent - Learning Neural Rendering",
+      "tags": "NeRF · Autodiff · Raymarching · Neural Rendering"
+    },
+    {
+      "id": "learning-neural-rendering--autodiff-optimization",
+      "parent": "learning-neural-rendering",
+      "title": "Learning Neural Rendering · Autodiff Optimization",
+      "url": "../webartests/learning-neural-rendering/modules/04-autodiff-optimization.html",
+      "date": "2026-03",
+      "subject": "3D Graphics & Rendering",
+      "summary": "Differentiable Rendering - Learning Neural Rendering",
+      "tags": "NeRF · Autodiff · Raymarching · Neural Rendering"
+    },
+    {
+      "id": "learning-neural-rendering--gaussian-splatting",
+      "parent": "learning-neural-rendering",
+      "title": "Learning Neural Rendering · Gaussian Splatting",
+      "url": "../webartests/learning-neural-rendering/modules/05-gaussian-splatting.html",
+      "date": "2026-03",
+      "subject": "3D Graphics & Rendering",
+      "summary": "3D Gaussian Splatting - Learning Neural Rendering",
+      "tags": "NeRF · Autodiff · Raymarching · Neural Rendering"
+    },
+    {
+      "id": "learning-vps",
+      "title": "Learning VPS — Visual Positioning Systems Deep Dive",
+      "url": "../webartests/learning-vps/",
+      "date": "2026-03",
+      "subject": "Computer Vision",
+      "summary": "Mastering Visual Perception Systems — from geometric computer vision to ad-hoc peer networks and spatial survey synchronization.",
+      "tags": "RANSAC · TF.js · Calibration · Sensor Sync · SLAM · Spatial AI"
+    },
+    {
+      "id": "learning-vps--16-point-ransac",
+      "parent": "learning-vps",
+      "title": "Learning VPS · 16-Point RANSAC",
+      "url": "../webartests/learning-vps/learning-ransac/",
+      "date": "2026-03",
+      "subject": "Computer Vision",
+      "summary": "A comprehensive curriculum on robust homography estimation in non-central vision systems.",
+      "tags": "RANSAC · TF.js · Calibration · Sensor Sync · SLAM · Spatial AI"
+    },
+    {
+      "id": "learning-vps--deep-homography",
+      "parent": "learning-vps",
+      "title": "Learning VPS · Deep Homography — CNN Estimation",
+      "url": "../webartests/learning-vps/learning-deep-homography/",
+      "date": "2026-03",
+      "subject": "Computer Vision",
+      "summary": "Replacing CV heuristics with neural regression for precision colorimetry.",
+      "tags": "RANSAC · TF.js · Calibration · Sensor Sync · SLAM · Spatial AI"
+    },
+    {
+      "id": "learning-vps--multi-sensor-calibration",
+      "parent": "learning-vps",
+      "title": "Learning VPS · Multi-Sensor Calibration (LiDAR–Camera)",
+      "url": "../webartests/learning-vps/learning-sensor-calibration/",
+      "date": "2026-03",
+      "subject": "Computer Vision",
+      "summary": "Curriculum 03: Mastering extrinsic alignment, hand-eye transformations, and cross-sensor temporal synchronization.",
+      "tags": "RANSAC · TF.js · Calibration · Sensor Sync · SLAM · Spatial AI"
+    },
+    {
+      "id": "learning-vps--spatial-survey-wizard",
+      "parent": "learning-vps",
+      "title": "Learning VPS · Spatial Survey Wizard",
+      "url": "../webartests/learning-vps/learning-survey-wizard/",
+      "date": "2026-07",
+      "subject": "Computer Vision",
+      "summary": "Learn why standard, consumer-focused photo and video pipelines completely corrupt high-precision 3D reconstruction and Visual Positioning datasets.",
+      "tags": "RANSAC · TF.js · Calibration · Sensor Sync · SLAM · Spatial AI"
+    },
+    {
+      "id": "volatility-harvesting-model",
+      "title": "Volatility Harvesting Model — Learned Reversal-Trigger Backtest",
+      "url": "../webartests/volatility-harvesting-model.html",
+      "date": "2026-06",
+      "subject": "Finance & Trading",
+      "summary": "Train a reversal trigger on recent swings, freeze that learned number, then test whether it harvests later volatility profitably.",
+      "tags": "Quant · Backtesting · Simulation"
+    }
   ]
 }
