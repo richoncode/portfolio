@@ -4336,7 +4336,8 @@
           "id": "pat-multi-registration",
           "title": "Multiple VPS Synchronization for Live Spatial Event Viewing",
           "numbers": [
-            "US 12,159,359 (2024)"
+            "US 12,159,359 (2024)",
+            "WO 2024/137620 (2024)"
           ],
           "url": "https://patents.google.com/patent/US12159359",
           "summary": "An AR system that combines multiple spatial registrations or coordinate systems to accurately place virtual overlays during live events. By blending different tracking sources—camera tracking, venue models, broadcast feeds—the system improves stability and alignment of AR graphics displayed to viewers."
@@ -4424,9 +4425,10 @@
           "id": "pat-locate-friends",
           "title": "Locating Friends Within Venue in an Augmented Reality System",
           "numbers": [
-            "US 19/020,735 (2025)"
+            "US 2025/0239028 (2025)",
+            "US 19/020,735 (filed 2025)"
           ],
-          "url": "https://patents.google.com/patent/US20250126573",
+          "url": "https://patents.google.com/patent/US20250239028A1",
           "summary": "A system that enables real-time spatial discovery of friends inside large venues using AR overlays. The platform tracks user locations and renders directional indicators or avatars within an augmented reality view, allowing users to locate each other inside environments such as stadiums or events without needing traditional maps."
         }
       ]
