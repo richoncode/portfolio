@@ -4333,6 +4333,17 @@
           "summary": "A cursor system designed specifically for mixed-reality environments where virtual content is layered over the real world. The system dynamically adjusts cursor appearance and interaction behavior depending on depth, occlusion, and visual context. The \"eclipse\" metaphor allows the cursor to partially mask or highlight objects so users can accurately target virtual elements without losing situational awareness of the real environment."
         },
         {
+          "id": "pat-ar-scrollbar",
+          "title": "Augmented Reality Scrollbar for Virtual Content Navigation",
+          "numbers": [
+            "US 11,157,159 (2021)",
+            "US 11,520,477 (2022)",
+            "WO 2019/236344"
+          ],
+          "url": "https://patents.google.com/patent/US11157159B2",
+          "summary": "Systems and methods for scrolling groups of virtual objects in a virtual, augmented, or mixed reality environment. A virtual control panel indicates objects upcoming in the scroll, letting users navigate large collections of spatial content efficiently within a headset field of view."
+        },
+        {
           "id": "pat-multi-registration",
           "title": "Multiple VPS Synchronization for Live Spatial Event Viewing",
           "numbers": [
@@ -4397,6 +4408,17 @@
           ],
           "url": "https://patents.google.com/patent/US11475644",
           "summary": "A session management framework for shared AR/XR experiences. It coordinates device connections, shared state synchronization, participant roles, and spatial anchors across multiple users. The system ensures consistency of virtual objects and collaborative interactions across devices in a distributed mixed-reality session."
+        },
+        {
+          "id": "pat-presence-transitions",
+          "title": "Audiovisual Presence Transitions in Collaborative Mixed Reality",
+          "numbers": [
+            "US 12,014,455 (2024)",
+            "US 12,354,204 (2025)",
+            "US 2026/0057593 (pending)"
+          ],
+          "url": "https://patents.google.com/patent/US12014455B2",
+          "summary": "Techniques for audiovisual presence transitions of virtual avatars in shared mixed reality collaboration — coordinated appearance, disappearance, and hand-off effects so remote participants join and leave a spatial session in a socially legible way."
         },
         {
           "id": "pat-tool-bridge",
