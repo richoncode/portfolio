@@ -1059,6 +1059,12 @@ function renderProjects() {
            </div>`
         : '';
 
+      const videoHtml = p.video
+        ? `<video class="learn-card-video" controls playsinline preload="metadata"${p.poster ? ` poster="${escapeHtml(p.poster)}"` : ''}>
+            <source src="${escapeHtml(p.video)}" type="video/mp4">
+          </video>`
+        : '';
+
       return `
         <div class="learn-card">
           <div class="learn-card-header">
@@ -1066,6 +1072,7 @@ function renderProjects() {
             <span class="learn-date">${dateStr}</span>
           </div>
           ${p.description ? `<p class="learn-card-desc">${escapeHtml(p.description)}</p>` : ''}
+          ${videoHtml}
           ${tagHtml}
         </div>`;
     }).join('');

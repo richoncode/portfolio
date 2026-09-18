@@ -1173,6 +1173,16 @@ a.learn-issuer-badge:hover {
   margin-top: 4px;
 }
 
+.learn-card-video {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin-top: 12px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--bg);
+}
+
 /* ─── Career Timeline ─────────────────────── */
 .career-timeline {
   position: relative;

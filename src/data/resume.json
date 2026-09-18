@@ -2135,6 +2135,16 @@
                 "VPS",
                 "SharePlay"
               ]
+            },
+            {
+              "title": "ESP32 E-Paper Morning Hub",
+              "startDate": "2026-01",
+              "endDate": null,
+              "current": true,
+              "description": "Personal low-power morning dashboard on color e-paper driven by an ESP32. Pulls Open-Meteo weather, air quality, and The Space Devs launch data; shows a 5-day forecast, household reminders, and a daily quote. Wakes only twice a day so the panel can run for months on a charge.",
+              "tags": ["ESP32", "E-Paper", "Embedded", "IoT", "Low Power", "Open-Meteo", "Air Quality", "C++"],
+              "video": "assets/projects/esp32-epaper-morning-hub/demo.mp4",
+              "poster": "assets/projects/esp32-epaper-morning-hub/poster.jpg"
             }
           ]
         },
@@ -4317,6 +4327,14 @@
       "endDate": null,
       "current": true,
       "description": "Award-winning spatial sports experience on Apple Vision Pro featuring live AR overlays with VPS and Occlusion, MV-HEVC stereoscopic spatial video, and 100fps 3D streaming rendering. Achieved through deep perf optimization for low-latency SharePlay multiplayer."
+    },
+    {
+      "id": "proj-esp32-e-paper-morning-hub",
+      "title": "ESP32 E-Paper Morning Hub",
+      "startDate": "2026-01",
+      "endDate": null,
+      "current": true,
+      "description": "Personal low-power morning dashboard on color e-paper driven by an ESP32. Pulls Open-Meteo weather, air quality, and The Space Devs launch data; shows a 5-day forecast, household reminders, and a daily quote. Wakes only twice a day so the panel can run for months on a charge."
     }
   ],
   "patents": [
