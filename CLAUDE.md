@@ -130,6 +130,10 @@ research[]               {id, title, url, date, subject, summary, tags, parent?,
                          not-yet-public item out of the rendered list
 publications[]           {title, venue, date, url}
 filterTaxonomy           {roles[], experiences[]}
+learning.projects.sections[] {id, title, items[{title, startDate, endDate, current?, description, tags[], video?, poster?}]}
+                         — optional video/poster are relative GitHub Pages paths;
+                         renderProjects() shows an inline player when video is set
+projects[]               {id, title, startDate, endDate, current?, description}
 ```
 
 Cert tags: `management` | `engineering` | `ai` | `performance` | `communication`
