@@ -63,9 +63,11 @@ a:hover { text-decoration: underline; }
   padding: 8px 20px;
   margin-bottom: -1px;
   transition: color 0.15s, border-color 0.15s;
+  text-decoration: none;
 }
-.tab:hover { color: var(--text); }
+.tab:hover { color: var(--text); text-decoration: none; }
 .tab--active { border-bottom-color: var(--accent); color: var(--text); font-weight: 600; }
+a.tab { display: inline-block; color: var(--text-2); }
 
 /* Emphasized recruiting terms inside hover tooltips */
 .proj-tooltip strong { color: var(--accent-2); font-weight: 600; }
