@@ -316,25 +316,6 @@ function versionArchive(tag, bodyHtml) {
     </details>`;
 }
 
-function archiveSpatialAiV0() {
-  const launchesList = "Xbox, XBox Forza Motorsports (Turn10 Studios), Kinect, Xbox One, Home Consumer Digital Banking Screen Phone, Daqri XR Smart Helmet, Sony Pictures AR Billboard – Times Square, Magic Leap XR Spatial Applications, Niantic Lightship ARDK (iOS/Android; Unity), Quintar – Spatial Sports Platform (visionOS XR & VR)";
-  return `
-      <div class="intro-letter">
-        <p><strong>[Goal: Establish immediate credibility through high-stakes experience and the rarity of zero-to-one hardware success.]</strong></p>
-        <p>I have shipped <span class="hover-tip" data-summary="${escapeHtml(launchesList)}">8 zero-to-one spatial AI launches</span>. I work to deeply understand experience goals and translate that into architecture and code that considers the brutal constraints of processors, memory, battery, network, and heat. My zero-to-one methodology is built on the ability to debug and optimize the entire system, from cloud infrastructure down to the firmware.</p>
-
-        <p><strong>[Goal: Define the unique value proposition: the ability to translate academic AI research into production-grade systems.]</strong></p>
-        <p>I accelerate Spatial AI projects by turning leading research into rapid demos, blending the first principles of core research with product objectives while optimizing features to adapt to hardware capabilities. I leverage deep experience with human biomechanics, auditory, and vision systems to guide spatial features and avoid common pitfalls of bias, fatigue, and confusion. By working across all staffing levels and roles, I level up and align knowledge and perceptions across the entire team.</p>
-
-        <p><strong>[Goal: Emphasize technical rigor and the focus on user-centric reliability.]</strong></p>
-        <p>Combining deep technical knowledge with a continuous curiosity about innovation, I dig in to understand exactly how implementations are working and how they can improve. My perseverance allows me to get to the root of a problem, understand the first principles affecting an outcome, and devise effective solutions. As a technical leader, I ensure the product ships by putting viable options on the table. Spatial AI often demands trade-offs between human needs and the limits of the current generation of technology; a rich product roadmap must account for these shifts as the tech evolves.</p>
-
-        <p><strong>[Goal: Direct and professional invitation for high-level technical partnership.]</strong></p>
-        <p>If you are building the future of spatial computing and need a leader who has repeatedly crossed the finish line from prototype to product, let's talk.</p>
-      </div>
-    `;
-}
-
 function renderIntro() {
   const container = document.getElementById('intro-content');
   if (!container) return;
@@ -392,43 +373,20 @@ function renderIntro() {
     `;
   }
 
-  const priorChipLabels = [
-    'Spatial AI',
-    'AI Builder',
-    '[AI Systems Architect]',
-    '[Engineering Director]',
-    '[Product Technologist]',
-  ];
-  const roleChipsArchive = versionArchive(
-    'portfolio-intro/role-chips@v0',
-    `<div class="learn-filter-bar">${priorChipLabels.map(label =>
-      `<span class="learn-filter-chip">${escapeHtml(label)}</span>`
-    ).join('')}</div>`
-  );
-
-  let letterArchive = '';
-  if (currentIntroRole === 'ai-builder') {
-    letterArchive = versionArchive(
-      'portfolio-intro/ai-builder@v0',
-      `<div class="intro-letter"><p>Content for AI Builder coming soon...</p></div>`
-    );
-  } else if (currentIntroRole === 'eng-leader') {
-    letterArchive = versionArchive(
-      'portfolio-intro/eng-leader@v0',
-      `<div class="intro-letter"><p>Content for [Engineering Director] coming soon...</p></div>`
-    );
-  } else {
-    letterArchive = versionArchive('portfolio-intro/spatial-ai@v0', archiveSpatialAiV0());
-  }
+  const letterArchive = currentIntroRole === 'ai-builder'
+    ? versionArchive(
+        'portfolio-intro/ai-builder@v0',
+        `<div class="intro-letter"><p>Content for AI Builder coming soon...</p></div>`
+      )
+    : '';
 
   container.innerHTML = `
     <div class="intro-expertise-summary">
       <p>${escapeHtml(expertiseSummary)}</p>
     </div>
-    <p class="intro-archive-hint">Expand Previous version blocks to compare; cite the code tag when asking to restore.</p>
+    <p class="intro-archive-hint">Expand the Previous version block under AI-Native Builder to compare; cite the code tag when asking to restore.</p>
     <div class="intro-role-selector">
       <div class="learn-filter-bar">${roleButtons}</div>
-      ${roleChipsArchive}
     </div>
     ${letterHtml}
     ${letterArchive}
