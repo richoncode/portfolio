@@ -308,29 +308,17 @@ const INTRO_FILTERS = [
 let introActiveFilters = new Set();
 let currentIntroRole = 'spatial-ai';
 
-function renderIntro() {
-  const container = document.getElementById('intro-content');
-  if (!container) return;
+function versionArchive(tag, bodyHtml) {
+  return `
+    <details class="version-archive">
+      <summary>Previous version — copy tag: <code>${escapeHtml(tag)}</code></summary>
+      <div class="version-archive-body">${bodyHtml}</div>
+    </details>`;
+}
 
-  const expertiseSummary = "Proven leader shipping 20+ products, bridging AI research with robust systems engineering across spatial computing, IoT, and cloud infrastructure.";
-
-  const roles = [
-    { id: 'spatial-ai', label: 'Spatial AI' },
-    { id: 'ai-builder', label: 'AI Builder' },
-    { id: 'ai-arch',    label: '[AI Systems Architect]' },
-    { id: 'eng-dir',    label: '[Engineering Director]' },
-    { id: 'prod-tech',  label: '[Product Technologist]' },
-  ];
-
-  const roleButtons = roles.map(r => `
-    <button class="learn-filter-chip intro-role-chip${currentIntroRole === r.id ? ' learn-filter-chip--active' : ''}"
-            data-role="${r.id}">${escapeHtml(r.label)}</button>
-  `).join('');
-
-  let letterHtml = '';
-  if (currentIntroRole === 'spatial-ai') {
-    const launchesList = "Xbox, XBox Forza Motorsports (Turn10 Studios), Kinect for Windows Spatial UI, Xbox One – Kinect User Interactions, Home Consumer Digital Banking Screen Phone, DAQRI XR Smart Helmet, Sony Pictures AR Billboard – Times Square, Magic Leap XR Spatial Applications, Niantic Lightship ARDK (iOS/Android; Unity), Quintar – Spatial Sports Platform (visionOS XR & VR)";
-    letterHtml = `
+function archiveSpatialAiV0() {
+  const launchesList = "Xbox, XBox Forza Motorsports (Turn10 Studios), Kinect, Xbox One, Home Consumer Digital Banking Screen Phone, Daqri XR Smart Helmet, Sony Pictures AR Billboard – Times Square, Magic Leap XR Spatial Applications, Niantic Lightship ARDK (iOS/Android; Unity), Quintar – Spatial Sports Platform (visionOS XR & VR)";
+  return `
       <div class="intro-letter">
         <p><strong>[Goal: Establish immediate credibility through high-stakes experience and the rarity of zero-to-one hardware success.]</strong></p>
         <p>I have shipped <span class="hover-tip" data-summary="${escapeHtml(launchesList)}">8 zero-to-one spatial AI launches</span>. I work to deeply understand experience goals and translate that into architecture and code that considers the brutal constraints of processors, memory, battery, network, and heat. My zero-to-one methodology is built on the ability to debug and optimize the entire system, from cloud infrastructure down to the firmware.</p>
@@ -345,27 +333,127 @@ function renderIntro() {
         <p>If you are building the future of spatial computing and need a leader who has repeatedly crossed the finish line from prototype to product, let's talk.</p>
       </div>
     `;
+}
+
+function renderIntro() {
+  const container = document.getElementById('intro-content');
+  if (!container) return;
+
+  const expertiseSummary = "Proven hands-on leader with deep Spatial AI & AR expertise, shipping 20+ products and building AI-native systems from research through production.";
+
+  const roles = [
+    { id: 'spatial-ai',  label: 'Spatial AI & AR' },
+    { id: 'ai-builder',  label: 'AI-Native Builder' },
+    { id: 'eng-leader',  label: 'Hands-on Eng Leader' },
+  ];
+
+  const roleButtons = roles.map(r => `
+    <button class="learn-filter-chip intro-role-chip${currentIntroRole === r.id ? ' learn-filter-chip--active' : ''}"
+            data-role="${r.id}">${escapeHtml(r.label)}</button>
+  `).join('');
+
+  let letterHtml = '';
+  if (currentIntroRole === 'ai-builder') {
+    letterHtml = `
+      <div class="intro-letter">
+        <p>I build AI-powered products and systems the same way I have shipped spatial platforms: I write the code, debug the pipeline, and stay close to the failure modes. I am not interested in slideware. I want working software that holds up under real constraints — latency, cost, reliability, and user trust.</p>
+        <p>My engineering practice is AI-native. I use AI-assisted coding and rapid prototyping to compress the path from idea to a testable demo, then apply the same systems rigor I used on perception and spatial stacks. Where it is honest and useful, I add evals to catch regressions and guardrails for model drift, preferring measurable behavior over vibes. I have spent years turning research prototypes into production APIs; that translation skill applies directly to agents, retrieval, and model-in-the-loop features.</p>
+        <p>I take full-stack ownership from zero-to-one through durable systems. That means architecture and implementation across client, runtime, and cloud — not a handoff after the prototype. I have shipped 20+ products and pioneered multiple version-1 devices; the pattern is the same whether the hard part is a sensor, a renderer, or a model: understand the first principles, put viable options on the table, and keep iterating until it ships.</p>
+        <p>If you are hiring for GenAI or AI product engineering and need someone who builds rather than briefs, let's talk.</p>
+      </div>
+    `;
+  } else if (currentIntroRole === 'eng-leader') {
+    letterHtml = `
+      <div class="intro-letter">
+        <p>I lead engineering by staying in the work. I manage teams and set direction, but I also architect, debug, and deliver — the same person who writes the staffing plan is still in the traces when the renderer, the network, or the model misbehaves. Titles that imply distance from the code are not how I operate.</p>
+        <p>I have held technical leadership across IC and management roles, including 30-engineer international orgs, while remaining a hands-on principal in the stack. I scale teams by setting architecture, coding, and testing standards, coaching engineers, and keeping a bottom-up culture pointed at shipping. I work with product, UX, and executive partners so the organization moves as one, not as a status machine.</p>
+        <p>I bring that same stance to AI-native team practice: adopting tooling that actually speeds delivery, setting standards so AI-assisted work is reviewable, and teaching teams to treat models as systems that need evals, observability, and fallbacks. The goal is a team that ships faster without losing engineering judgment.</p>
+        <p>If you need a hands-on engineering leader — someone who can own an org and still sit in architecture and delivery — let's talk.</p>
+      </div>
+    `;
   } else {
-    const roleLabel = roles.find(r => r.id === currentIntroRole).label;
-    letterHtml = `<div class="intro-letter"><p>Content for ${escapeHtml(roleLabel)} coming soon...</p></div>`;
+    const launchesList = [
+      'XBox Forza Motorsports (Turn10 Studios)',
+      'Kinect for Windows Spatial UI',
+      'Xbox One – Kinect User Interactions',
+      'DAQRI XR Smart Helmet',
+      'Sony Pictures AR Billboard – Times Square',
+      'Magic Leap XR Spatial Applications',
+      'Niantic Lightship ARDK (iOS/Android; Unity)',
+      'Quintar – Spatial Sports Platform (iOS, Android, Meta Quest); Quintar – Spatial Sports Platform (visionOS XR & VR)',
+    ].join(', ');
+    letterHtml = `
+      <div class="intro-letter">
+        <p>I have shipped <span class="hover-tip" data-summary="${escapeHtml(launchesList)}">8 zero-to-one spatial AI launches</span>. I work to deeply understand experience goals and translate that into architecture and code that considers the brutal constraints of processors, memory, battery, network, and heat. My zero-to-one methodology is built on the ability to debug and optimize the entire system, from cloud infrastructure down to the firmware.</p>
+        <p>I accelerate Spatial AI &amp; AR projects by turning leading research into rapid demos, blending the first principles of core research with product objectives while optimizing features to adapt to hardware capabilities. I leverage deep experience with human biomechanics, auditory, and vision systems to guide spatial features and avoid common pitfalls of bias, fatigue, and confusion. By working across all staffing levels and roles, I level up and align knowledge and perceptions across the entire team.</p>
+        <p>Combining deep technical knowledge with a continuous curiosity about innovation, I dig in to understand exactly how implementations are working and how they can improve. My perseverance allows me to get to the root of a problem, understand the first principles affecting an outcome, and devise effective solutions. As a technical leader, I ensure the product ships by putting viable options on the table. Spatial AI &amp; AR often demands trade-offs between human needs and the limits of the current generation of technology; a rich product roadmap must account for these shifts as the tech evolves.</p>
+        <p>If you are building the future of spatial computing and AR and need a leader who has repeatedly crossed the finish line from prototype to product, let's talk.</p>
+      </div>
+    `;
+  }
+
+  const priorChipLabels = [
+    'Spatial AI',
+    'AI Builder',
+    '[AI Systems Architect]',
+    '[Engineering Director]',
+    '[Product Technologist]',
+  ];
+  const roleChipsArchive = versionArchive(
+    'portfolio-intro/role-chips@v0',
+    `<div class="learn-filter-bar">${priorChipLabels.map(label =>
+      `<span class="learn-filter-chip">${escapeHtml(label)}</span>`
+    ).join('')}</div>`
+  );
+
+  let letterArchive = '';
+  if (currentIntroRole === 'ai-builder') {
+    letterArchive = versionArchive(
+      'portfolio-intro/ai-builder@v0',
+      `<div class="intro-letter"><p>Content for AI Builder coming soon...</p></div>`
+    );
+  } else if (currentIntroRole === 'eng-leader') {
+    letterArchive = versionArchive(
+      'portfolio-intro/eng-leader@v0',
+      `<div class="intro-letter"><p>Content for [Engineering Director] coming soon...</p></div>`
+    );
+  } else {
+    letterArchive = versionArchive('portfolio-intro/spatial-ai@v0', archiveSpatialAiV0());
   }
 
   container.innerHTML = `
     <div class="intro-expertise-summary">
       <p>${escapeHtml(expertiseSummary)}</p>
     </div>
+    <p class="intro-archive-hint">Expand Previous version blocks to compare; cite the code tag when asking to restore.</p>
     <div class="intro-role-selector">
       <div class="learn-filter-bar">${roleButtons}</div>
+      ${roleChipsArchive}
     </div>
     ${letterHtml}
+    ${letterArchive}
   `;
 
-  container.querySelectorAll('.intro-role-chip').forEach(btn => {
-    btn.addEventListener('click', () => {
+  if (!container._introRoleListenerAttached) {
+    container.addEventListener('click', e => {
+      const archiveTag = e.target.closest('.version-archive code');
+      if (archiveTag) {
+        const range = document.createRange();
+        range.selectNodeContents(archiveTag);
+        const sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(range);
+        e.preventDefault();
+        e.stopPropagation();
+        return;
+      }
+      const btn = e.target.closest('.intro-role-chip');
+      if (!btn) return;
       currentIntroRole = btn.dataset.role;
       renderIntro();
     });
-  });
+    container._introRoleListenerAttached = true;
+  }
 }
 
 function renderOldIntro() {

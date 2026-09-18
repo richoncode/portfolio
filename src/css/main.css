@@ -930,19 +930,6 @@ mark {
   margin-bottom: 20px;
 }
 
-/* Temporary highlight for draft notes */
-.intro-letter strong {
-  display: block;
-  background: rgba(230, 192, 0, 0.15);
-  color: #e6c000;
-  padding: 8px 12px;
-  border-left: 3px solid #e6c000;
-  border-radius: 4px;
-  margin-bottom: 8px;
-  font-family: var(--mono);
-  font-size: 0.85rem;
-}
-
 .hover-tip {
   text-decoration: underline dotted var(--accent);
   cursor: help;
@@ -950,6 +937,78 @@ mark {
 
 .intro-letter p:last-child {
   margin-bottom: 0;
+}
+
+.intro-archive-hint {
+  font-size: 0.72rem;
+  color: var(--text-2);
+  margin: -12px 0 16px;
+}
+
+.version-archive {
+  margin-top: 12px;
+}
+
+.version-archive summary {
+  color: var(--text-2);
+  font-size: 0.72rem;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.version-archive summary:hover {
+  color: var(--accent);
+}
+
+.version-archive summary code {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  user-select: all;
+  color: var(--text);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1px 6px;
+  white-space: nowrap;
+}
+
+.version-archive-body {
+  margin-top: 8px;
+  padding: 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.version-archive-body .intro-letter {
+  font-size: 0.95rem;
+  color: var(--text-2);
+}
+
+.version-archive-body .intro-letter p:last-child {
+  margin-bottom: 0;
+}
+
+.version-archive-body strong {
+  display: block;
+  background: var(--bg);
+  color: var(--orange);
+  padding: 8px 12px;
+  border-left: 3px solid var(--orange);
+  border-radius: var(--radius);
+  margin-bottom: 8px;
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+
+.version-archive-body .learn-filter-chip {
+  cursor: default;
+}
+
+.version-archive-body .learn-filter-chip:hover {
+  border-color: var(--border);
+  color: var(--text-2);
 }
 
 /* ─── Learning ────────────────────────────── */
