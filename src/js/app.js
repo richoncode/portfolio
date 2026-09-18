@@ -329,7 +329,7 @@ function renderIntro() {
 
   let letterHtml = '';
   if (currentIntroRole === 'spatial-ai') {
-    const launchesList = "Xbox, XBox Forza Motorsports (Turn10 Studios), Kinect, Xbox One, Home Consumer Digital Banking Screen Phone, Daqri XR Smart Helmet, Sony Pictures AR Billboard – Times Square, Magic Leap XR Spatial Applications, Niantic Lightship ARDK (iOS/Android; Unity), Quintar – Spatial Sports Platform (visionOS XR & VR)";
+    const launchesList = "Xbox, XBox Forza Motorsports (Turn10 Studios), Kinect for Windows Spatial UI, Xbox One – Kinect User Interactions, Home Consumer Digital Banking Screen Phone, DAQRI XR Smart Helmet, Sony Pictures AR Billboard – Times Square, Magic Leap XR Spatial Applications, Niantic Lightship ARDK (iOS/Android; Unity), Quintar – Spatial Sports Platform (visionOS XR & VR)";
     letterHtml = `
       <div class="intro-letter">
         <p><strong>[Goal: Establish immediate credibility through high-stakes experience and the rarity of zero-to-one hardware success.]</strong></p>
@@ -627,7 +627,7 @@ function renderTimeline() {
 
     if (!expVisible) return;
 
-    const dateStr = formatDate(exp.startDate) + ' – ' + (exp.current ? 'Present' : formatDate(exp.endDate));
+    const dateStr = formatDateSpan(exp);
     const location = exp.location ? `<span class="experience-meta">${escapeHtml(exp.location)}</span>` : '';
 
     html += `
@@ -636,7 +636,7 @@ function renderTimeline() {
           <div>
             <h2 class="company-name">${escapeHtml(exp.company)}</h2>
             ${location}
-            <div class="admin-field">id: ${escapeHtml(exp.id)} · ${escapeHtml(exp.startDate)} → ${escapeHtml(exp.endDate || 'present')}</div>
+            <div class="admin-field">id: ${escapeHtml(exp.id)} · ${escapeHtml(exp.startDate)} → ${escapeHtml(isCurrent(exp) ? 'present' : (exp.endDate || 'present'))}</div>
           </div>
           <span class="experience-dates">${dateStr}</span>
         </div>
@@ -699,7 +699,7 @@ function renderExperienceChart() {
 
 function expDurationMonths(exp) {
   const start = new Date(exp.startDate + '-01');
-  const end   = exp.current ? new Date() : new Date(exp.endDate + '-01');
+  const end   = isCurrent(exp) ? new Date() : new Date(exp.endDate + '-01');
   return Math.max(0, (end.getFullYear() - start.getFullYear()) * 12 + (end.getMonth() - start.getMonth()));
 }
 
@@ -726,7 +726,26 @@ function formatDate(dateStr) {
   if (!dateStr) return '';
   const [year, month] = dateStr.split('-');
   const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-  return `${months[parseInt(month, 10) - 1]} ${year}`;
+  const monthLabel = months[parseInt(month, 10) - 1];
+  if (!year || !monthLabel) return '';
+  return `${monthLabel} ${year}`;
+}
+
+function isCurrent(item) {
+  if (!item) return false;
+  if (item.current === true) return true;
+  // Quintar open-ended records (null end date) should read as Present/current
+  // even when a duplicate index omits the `current` flag.
+  const label = `${item.company || ''} ${item.title || ''}`;
+  return (item.endDate == null || item.endDate === '') && /quintar/i.test(label);
+}
+
+function formatDateSpan(item) {
+  const start = formatDate(item.startDate || item.date);
+  if (isCurrent(item)) return start ? `${start} – Present` : 'Present';
+  const end = formatDate(item.endDate);
+  if (start && end) return `${start} – ${end}`;
+  return start || end || '';
 }
 
 // ─── Filter Toggle ────────────────────────────────────────────────────────────
@@ -796,6 +815,8 @@ function initTooltip() {
 
 function initTabs() {
   document.querySelectorAll('.tab').forEach(tab => {
+    // Page links (e.g. Videos → video.html) are styled as tabs but navigate away
+    if (tab.tagName === 'A' || !tab.dataset.tab) return;
     const name = tab.dataset.tab;
     if (TIME_ORDERED_TABS.has(name)) {
       const ind = document.createElement('span');
@@ -904,7 +925,7 @@ function renderCareerTimeline() {
       .join('');
 
     // Dates
-    const dateStr = formatDate(exp.startDate) + ' – ' + (exp.current ? 'Present' : formatDate(exp.endDate));
+    const dateStr = formatDateSpan(exp);
 
     // Location
     const locationHtml = exp.location
@@ -930,7 +951,7 @@ function renderCareerTimeline() {
       ? `<div class="tl-tech">${topTech.map(t => `<span class="tl-tech-chip">${escapeHtml(t)}</span>`).join('')}</div>`
       : '';
 
-    const dotClass = exp.current ? 'tl-dot tl-dot--current' : 'tl-dot';
+    const dotClass = isCurrent(exp) ? 'tl-dot tl-dot--current' : 'tl-dot';
 
     return `
       <div class="tl-entry">
@@ -984,7 +1005,7 @@ function renderProjects() {
     }
 
     const itemsHtml = sortByDate(section.items, p => p.startDate || p.date, tabSortNewestFirst.projects).map(p => {
-      const dateStr = formatDate(p.startDate) + ' – ' + (p.current ? 'Present' : formatDate(p.endDate));
+      const dateStr = formatDateSpan(p);
       
       const tagHtml = (state.showProjectTags && p.tags) 
         ? `<div class="tags-container" style="margin-top: 0.5rem; display: flex; flex-wrap: wrap; gap: 0.4rem;">

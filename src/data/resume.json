@@ -4307,6 +4307,7 @@
       "title": "Quintar – Spatial Sports Platform (iOS, Android, Meta Quest)",
       "startDate": "2022-09",
       "endDate": null,
+      "current": true,
       "description": "AR-enhanced live sports experiences for PGA Tour, NBA, and Meta Quest. Utilizes VPS, Occlusion, and deep perf optimization to deliver real-time spatial overlays on mobile and standalone XR devices."
     },
     {
@@ -4314,6 +4315,7 @@
       "title": "Quintar – Spatial Sports Platform (visionOS XR & VR)",
       "startDate": "2022-09",
       "endDate": null,
+      "current": true,
       "description": "Award-winning spatial sports experience on Apple Vision Pro featuring live AR overlays with VPS and Occlusion, MV-HEVC stereoscopic spatial video, and 100fps 3D streaming rendering. Achieved through deep perf optimization for low-latency SharePlay multiplayer."
     }
   ],

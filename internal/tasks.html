@@ -32,8 +32,8 @@
         <div class="task-item">
             <strong>Job Engine Maintenance</strong>
             <ul>
-                <li>Update Job Engine with any remaining unique URLs using the hover-text strategy.</li>
-                <li>Add 'Job Posted Date' to the dashboard for prioritization.</li>
+                <li>Update Job Engine with any remaining unique URLs using the hover-text strategy. [NEEDS RICHARD]</li>
+                <li>Add 'Job Posted Date' to the dashboard for prioritization. [DONE]</li>
             </ul>
             <span class="tag">Data</span> <span class="tag">Automation</span>
         </div>
@@ -41,8 +41,8 @@
             <strong>Data Consistency Audit Fixes</strong>
             <ul>
                 <li>Sync <code>launchesList</code> in <code>app.js</code> with new project titles. [DONE]</li>
-                <li>Align <code>experiences</code> role titles with <code>projects</code> titles. [DONE]</li>
-                <li>Verify <code>TBD</code> dates for Hughes/New Resolutions.</li>
+                <li>Align <code>experiences</code> role titles with <code>projects</code> titles. [DONE — SPC / NADA / Margrave already matched; no further rename without Richard.]</li>
+                <li>Verify <code>TBD</code> dates for Hughes/New Resolutions. [NEEDS RICHARD]</li>
             </ul>
             <span class="tag">Bug</span> <span class="tag">Data</span>
         </div>
@@ -59,6 +59,20 @@
 
     <section class="journal">
         <h2>Journal</h2>
+        <div class="journal-entry">
+            <div class="date">2026-09-18</div>
+            <h3>Safe polish: posted dates, Videos nav, launch titles, Quintar Present</h3>
+            <p>Finished work that needed no personal date/history answers from Richard:</p>
+            <ul>
+                <li><strong>Job Engine:</strong> Added an editable <em>Job Posted Date</em> field on Scoring and Jobs &amp; Links lists. Defaults stay in the in-page <code>jobData</code> array; edits persist in <code>localStorage</code> under <code>portfolio-jobengine-posted-dates</code>. Sort by fit or posted date. Did not add jobs or URLs.</li>
+                <li><strong>launchesList:</strong> Synced hover titles in <code>app.js</code> with Projects names (<code>Kinect for Windows Spatial UI</code>, <code>Xbox One – Kinect User Interactions</code>, <code>DAQRI XR Smart Helmet</code>). Left the generic <code>Xbox</code> token as-is — no matching project title without inventing a mapping.</li>
+                <li><strong>Videos:</strong> Added a Videos nav link on <code>index.html</code> (existing <code>.tab</code> pattern) pointing at <code>video.html</code>, plus a back link on the videos page.</li>
+                <li><strong>Quintar dates:</strong> Open-ended Quintar end dates now display as <em>Present</em> (Experience, Timeline, Projects). Flat <code>projects[]</code> copies also got <code>current: true</code>.</li>
+                <li><strong>SPC / NADA / Margrave:</strong> Experience labels already matched the clearer Projects titles; no rename.</li>
+            </ul>
+            <p>Left for Richard or external URLs: remaining Job Engine unique URLs; Hughes/New Resolutions TBD dates; Online Resources placement; physical-common-sense filter; Research reindex; early-career years.</p>
+        </div>
+
         <div class="journal-entry">
             <div class="date">2026-06-09 04:00</div>
             <h3>Extraction Strategy: Hover-Link Optimization</h3>
@@ -550,31 +564,6 @@
             <div class="date">2026-06-08 14:00</div>
             <h3>Initiating Introduction Tab Design</h3>
             <p>User requested a multi-tab introduction to cater to different target job roles. We are starting a research phase to review past work and the <code>webartests</code> experiments to extract relevant highlights for each persona.</p>
-            <ul>
-                <li>Goal: Create specific "pitches" for different roles.</li>
-                <li>Method: Analyze <code>webartests</code> for high-impact demos.</li>
-                <li>Method: Analyze portfolio experience data.</li>
-            </ul>
-        </div>
-    </section>
-</body>
-</html>
-> experiments to extract relevant highlights for each persona.</p>
-            <ul>
-                <li>Goal: Create specific "pitches" for different roles.</li>
-                <li>Method: Analyze <code>webartests</code> for high-impact demos.</li>
-                <li>Method: Analyze portfolio experience data.</li>
-            </ul>
-        </div>
-    </section>
-</body>
-</html>
-l>
-        </div>
-    </section>
-</body>
-</html>
-> experiments to extract relevant highlights for each persona.</p>
             <ul>
                 <li>Goal: Create specific "pitches" for different roles.</li>
                 <li>Method: Analyze <code>webartests</code> for high-impact demos.</li>

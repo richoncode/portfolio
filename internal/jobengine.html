@@ -69,6 +69,57 @@
         .metadata { color: #888; font-size: 0.85rem; margin-top: 0.5rem; }
         .metadata span { margin-right: 1.5rem; }
 
+        .posted-field {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.6rem;
+            font-size: 0.85rem;
+            color: #888;
+        }
+        .posted-field label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: #888;
+        }
+        .posted-field input[type="date"] {
+            background: #111;
+            border: 1px solid #2a2a2a;
+            color: #e0e0e0;
+            padding: 0.2rem 0.45rem;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 0.85rem;
+        }
+        .posted-relative { color: #5b9bd5; font-size: 0.8rem; }
+
+        .sort-bar {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .sort-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: #888;
+            margin-right: 0.25rem;
+        }
+        .sort-btn {
+            padding: 0.25rem 0.8rem;
+            cursor: pointer;
+            border: 1px solid #2a2a2a;
+            background: #1a1a1a;
+            color: #888;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+        .sort-btn.active { color: #fff; background: #5b9bd5; border-color: #5b9bd5; }
+
         .selling-points { background: #2a2a2a; padding: 1rem; border-radius: 6px; margin-top: 1rem; }
         .selling-points h4 { margin-top: 0; color: #10b981; }
 
@@ -166,6 +217,11 @@
     </div>
 
     <div id="tab-scores" class="tab-content active">
+        <div class="sort-bar">
+            <span class="sort-label">Prioritize</span>
+            <button type="button" class="sort-btn active" data-sort="score">By fit</button>
+            <button type="button" class="sort-btn" data-sort="posted">By posted date</button>
+        </div>
         <div id="scores-container"></div>
     </div>
 
@@ -485,6 +541,61 @@
             }
         ];
 
+        const STORAGE_KEY = 'portfolio-jobengine-posted-dates';
+        let sortMode = 'score';
+
+        function jobKey(job) {
+            return job.url || `${job.company}|${job.title}`;
+        }
+
+        function loadPostedDates() {
+            try {
+                const stored = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+                jobData.forEach(job => {
+                    const saved = stored[jobKey(job)];
+                    if (saved) job.postedAt = saved;
+                });
+            } catch (e) { /* keep in-page jobData dates */ }
+        }
+
+        function persistPostedDates() {
+            const stored = {};
+            jobData.forEach(job => {
+                if (job.postedAt) stored[jobKey(job)] = job.postedAt;
+            });
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(stored));
+        }
+
+        function updatePostedDate(key, value) {
+            const job = jobData.find(j => jobKey(j) === key);
+            if (!job) return;
+            job.postedAt = value || '';
+            persistPostedDates();
+            renderJobs();
+        }
+
+        function sortedJobs() {
+            return [...jobData].sort((a, b) => {
+                if (sortMode === 'posted') {
+                    return (b.postedAt || '').localeCompare(a.postedAt || '');
+                }
+                if (b.score !== a.score) return b.score - a.score;
+                return (b.postedAt || '').localeCompare(a.postedAt || '');
+            });
+        }
+
+        function postedFieldHtml(job) {
+            const key = jobKey(job);
+            const relative = job.postedAt ? getRelativeTime(job.postedAt) : '';
+            return `
+                <div class="posted-field">
+                    <label>Job Posted Date</label>
+                    <input type="date" data-job-key="${key}" value="${job.postedAt || ''}">
+                    ${relative ? `<span class="posted-relative">${relative}</span>` : ''}
+                </div>
+            `;
+        }
+
         function getTagClass(tagName, jobTags = []) {
             const inExperience = userExpertise.has(tagName);
             const inJob = jobTags.includes(tagName);
@@ -496,14 +607,25 @@
         }
 
         function getRelativeTime(isoString) {
-            const posted = new Date(isoString);
+            if (!isoString) return '';
+            const posted = new Date(isoString + 'T00:00:00');
+            if (Number.isNaN(posted.getTime())) return '';
             const now = new Date();
             const diffDays = Math.floor((now - posted) / (1000 * 60 * 60 * 24));
+            if (diffDays < 0) return 'Upcoming';
             if (diffDays === 0) return "Today";
             if (diffDays === 1) return "1d ago";
             if (diffDays < 7) return `${diffDays}d ago`;
             if (diffDays < 30) { const weeks = Math.floor(diffDays / 7); return `${weeks}w ago`; }
             return `${Math.floor(diffDays / 30)}mo ago`;
+        }
+
+        function bindPostedDateInputs(root) {
+            root.querySelectorAll('input[type="date"][data-job-key]').forEach(input => {
+                input.addEventListener('change', () => {
+                    updatePostedDate(input.dataset.jobKey, input.value);
+                });
+            });
         }
 
         function renderJobs() {
@@ -512,7 +634,7 @@
             scoresContainer.innerHTML = '';
             linksContainer.innerHTML = '';
 
-            jobData.sort((a, b) => b.score - a.score).forEach(job => {
+            sortedJobs().forEach(job => {
                 const scoreCard = document.createElement('div');
                 scoreCard.className = 'job-card';
                 scoreCard.innerHTML = `
@@ -521,9 +643,9 @@
                             <div class="job-title">${job.title}</div>
                             <div class="company">${job.company}</div>
                             <div class="metadata">
-                                <span>📅 ${getRelativeTime(job.postedAt)}</span>
                                 <span>🏢 ${job.stage}</span>
                             </div>
+                            ${postedFieldHtml(job)}
                         </div>
                         <div class="score-pill">Fit: ${job.score}%</div>
                     </div>
@@ -549,12 +671,16 @@
                 linkCard.innerHTML = `
                     <div class="job-title">${job.title}</div>
                     <div class="company">${job.company}</div>
+                    ${postedFieldHtml(job)}
                     <div class="link-list" style="margin-top: 1rem;">
                         <a href="${job.url}" target="_blank">${job.url}</a>
                     </div>
                 `;
                 linksContainer.appendChild(linkCard);
             });
+
+            bindPostedDateInputs(scoresContainer);
+            bindPostedDateInputs(linksContainer);
         }
 
         function renderTags() {
@@ -647,6 +773,15 @@
             if (tabId === 'tags') renderTags();
         }
 
+        document.querySelectorAll('.sort-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                sortMode = btn.dataset.sort;
+                document.querySelectorAll('.sort-btn').forEach(b => b.classList.toggle('active', b === btn));
+                renderJobs();
+            });
+        });
+
+        loadPostedDates();
         renderJobs();
     </script>
 </body>
