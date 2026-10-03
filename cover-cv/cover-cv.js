@@ -1,4 +1,6 @@
 (function () {
+  var REDACT_URL = 'redact.json?v=1';
+
   function textOf(id) {
     var el = document.getElementById(id);
     if (!el) return '';
@@ -85,4 +87,189 @@
       window.print();
     });
   }
+
+  function escapeRegExp(value) {
+    return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  }
+
+  function aliasIsCaseSensitive(alias) {
+    return /[A-Z]/.test(alias) && !/[a-z]/.test(alias);
+  }
+
+  function aliasRegex(alias) {
+    var flags = aliasIsCaseSensitive(alias) ? '' : 'i';
+    return new RegExp('(?:^|[^A-Za-z0-9])' + escapeRegExp(alias) + '(?=[^A-Za-z0-9]|$)', flags);
+  }
+
+  function loadRedactList() {
+    return fetch(REDACT_URL, { cache: 'no-store' }).then(function (response) {
+      if (!response.ok) throw new Error('redact.json ' + response.status);
+      return response.json();
+    });
+  }
+
+  function cell(label, text) {
+    var td = document.createElement('td');
+    td.setAttribute('data-label', label);
+    td.textContent = text;
+    return td;
+  }
+
+  function renderRedactTable(entries, cleared) {
+    var table = document.createElement('table');
+    table.className = 'cv-table cv-table--wide';
+    var head = document.createElement('thead');
+    var headRow = document.createElement('tr');
+    ['Term', 'Also catches', 'Reason', 'Use instead', 'Added'].forEach(function (label) {
+      var th = document.createElement('th');
+      th.scope = 'col';
+      th.textContent = label;
+      headRow.appendChild(th);
+    });
+    head.appendChild(headRow);
+    table.appendChild(head);
+    var body = document.createElement('tbody');
+    entries.forEach(function (entry) {
+      var tr = document.createElement('tr');
+      if (cleared) tr.className = 'cv-row--cleared';
+      var also = (entry.aliases || []).filter(function (alias) {
+        return alias !== entry.term;
+      });
+      tr.appendChild(cell('Term', entry.term || ''));
+      tr.appendChild(cell('Also catches', also.length ? also.join(', ') : '—'));
+      tr.appendChild(cell('Reason', entry.reason || ''));
+      tr.appendChild(cell('Use instead', entry.use_instead || ''));
+      var added = cell('Added', entry.added || '');
+      added.className = 'cv-date';
+      tr.appendChild(added);
+      body.appendChild(tr);
+    });
+    table.appendChild(body);
+    var wrap = document.createElement('div');
+    wrap.className = 'cv-table-wrap';
+    wrap.appendChild(table);
+    return wrap;
+  }
+
+  function bootRedactList() {
+    var activeMount = document.getElementById('redact-active');
+    var clearedMount = document.getElementById('redact-cleared-body');
+    var clearedSummary = document.getElementById('redact-cleared-summary');
+    if (!activeMount) return;
+    loadRedactList().then(function (entries) {
+      if (!Array.isArray(entries)) throw new Error('redact.json must be an array');
+      var active = entries.filter(function (entry) { return entry.status === 'active'; });
+      var cleared = entries.filter(function (entry) { return entry.status === 'cleared'; });
+      activeMount.textContent = '';
+      if (active.length) {
+        activeMount.appendChild(renderRedactTable(active, false));
+      } else {
+        var empty = document.createElement('p');
+        empty.className = 'cv-note';
+        empty.textContent = 'No active names.';
+        activeMount.appendChild(empty);
+      }
+      if (clearedSummary) {
+        clearedSummary.textContent = cleared.length ? 'Cleared (' + cleared.length + ')' : 'Cleared';
+      }
+      if (clearedMount) {
+        clearedMount.textContent = '';
+        if (cleared.length) {
+          clearedMount.appendChild(renderRedactTable(cleared, true));
+        } else {
+          var none = document.createElement('p');
+          none.className = 'cv-note';
+          none.textContent = 'None yet. Set status to cleared and the name stays here.';
+          clearedMount.appendChild(none);
+        }
+      }
+    }).catch(function () {
+      activeMount.textContent = '';
+      var error = document.createElement('p');
+      error.className = 'cv-note cv-load-error';
+      error.textContent = 'Could not load redact.json.';
+      activeMount.appendChild(error);
+    });
+  }
+
+  function sectionText(id) {
+    var el = document.getElementById(id);
+    return el ? el.textContent : '';
+  }
+
+  function scanRedact(entries) {
+    var sources = [
+      { id: 'cv-text', label: 'CV text' },
+      { id: 'outreach-text', label: 'outreach note' },
+      { id: 'stories', label: 'interview stories' }
+    ];
+    var hits = [];
+    entries.forEach(function (entry) {
+      if (!entry || entry.status !== 'active') return;
+      var places = [];
+      sources.forEach(function (source) {
+        var text = sectionText(source.id);
+        var matched = [];
+        (entry.aliases || []).forEach(function (alias) {
+          if (!alias) return;
+          if (aliasRegex(alias).test(text) && matched.indexOf(alias) === -1) matched.push(alias);
+        });
+        if (matched.length) places.push({ label: source.label, aliases: matched });
+      });
+      if (places.length) hits.push({ entry: entry, places: places });
+    });
+    return hits;
+  }
+
+  function renderRedactCheck(banner, hits) {
+    banner.textContent = '';
+    banner.classList.remove('cv-redact-check--clear', 'cv-redact-check--hit');
+    if (!hits.length) {
+      banner.classList.add('cv-redact-check--clear');
+      banner.textContent = 'Redact check: clear';
+      return;
+    }
+    banner.classList.add('cv-redact-check--hit');
+    var title = document.createElement('strong');
+    title.textContent = 'Redact check: do not mention';
+    banner.appendChild(title);
+    var list = document.createElement('ul');
+    hits.forEach(function (hit) {
+      var item = document.createElement('li');
+      var where = hit.places.map(function (place) {
+        return place.label + ' (“' + place.aliases.join('”, “') + '”)';
+      }).join('; ');
+      item.textContent = hit.entry.term + ' — ' + where + '. Use instead: ' + (hit.entry.use_instead || '');
+      list.appendChild(item);
+    });
+    banner.appendChild(list);
+  }
+
+  function bootRedactCheck() {
+    var banner = document.getElementById('redact-check');
+    if (!banner) return;
+    var entries = [];
+    function run() {
+      renderRedactCheck(banner, scanRedact(entries));
+    }
+    loadRedactList().then(function (data) {
+      entries = Array.isArray(data) ? data : [];
+      run();
+    }).catch(function () {
+      banner.classList.remove('cv-redact-check--clear');
+      banner.classList.add('cv-redact-check--hit');
+      banner.textContent = 'Redact check: could not load redact.json.';
+    });
+    var timer = null;
+    document.addEventListener('input', function (event) {
+      var target = event.target;
+      if (!target || !target.closest) return;
+      if (!target.closest('#cv-text, #outreach-text, #stories')) return;
+      window.clearTimeout(timer);
+      timer = window.setTimeout(run, 60);
+    });
+  }
+
+  bootRedactList();
+  bootRedactCheck();
 })();
