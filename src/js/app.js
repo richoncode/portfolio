@@ -900,7 +900,7 @@ function updateSortIndicators() {
   });
 }
 
-const VALID_TABS = new Set(['intro','old-intro','experience','timeline','projects','patents','research','learning','skills']);
+const VALID_TABS = new Set(['intro','old-intro','experience','timeline','projects','patents','research','learning','reading','skills']);
 
 function switchTab(name, pushState = true) {
   if (!VALID_TABS.has(name)) name = 'intro';
@@ -919,6 +919,8 @@ function switchTab(name, pushState = true) {
     renderProjects();
   if (name === 'learning' && !document.getElementById('learning-content').innerHTML)
     renderLearning();
+  if (name === 'reading' && !document.getElementById('reading-content').innerHTML)
+    renderReading();
   if (name === 'skills' && !document.getElementById('skills-content').innerHTML)
     renderSkills();
   if (name === 'patents' && !document.getElementById('patents-content').innerHTML)
@@ -1211,6 +1213,135 @@ function renderLearning() {
       renderLearning();
     });
   });
+}
+
+// ─── Reading List ─────────────────────────────────────────────────────────────
+
+const READING_STATUS_ORDER = ['in-progress', 'queued', 'finished'];
+const READING_STATUS_LABELS = {
+  'in-progress': 'In progress',
+  'queued': 'Queued',
+  'finished': 'Finished',
+};
+
+function formatReadingDate(dateStr) {
+  if (!dateStr) return '';
+  const parts = String(dateStr).split('-');
+  if (parts.length >= 3 && parts[2]) {
+    const [year, month, day] = parts;
+    const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    const monthLabel = months[parseInt(month, 10) - 1];
+    const dayNum = parseInt(day, 10);
+    if (year && monthLabel && dayNum) return `${monthLabel} ${dayNum}, ${year}`;
+  }
+  return formatDate(dateStr);
+}
+
+function readingAuthors(item) {
+  if (Array.isArray(item.authors)) return item.authors.filter(Boolean).join(', ');
+  return item.author || item.authors || '';
+}
+
+function readingHref(url) {
+  if (!url || !/^https?:\/\//i.test(url)) return '';
+  return escapeHtml(url);
+}
+
+function renderReadingCard(item) {
+  const status = READING_STATUS_LABELS[item.status] ? item.status : 'queued';
+  const statusLabel = READING_STATUS_LABELS[item.status] || 'Queued';
+  const href = readingHref(item.url);
+  const title = escapeHtml(item.title || 'Untitled');
+  const titleEl = href
+    ? `<a class="read-title" href="${href}" target="_blank" rel="noopener">${title}</a>`
+    : `<span class="read-title">${title}</span>`;
+
+  const authors = readingAuthors(item);
+  const byline = authors ? `<div class="read-byline">${escapeHtml(authors)}</div>` : '';
+
+  const meta = [];
+  if (item.publication) {
+    const pub = escapeHtml(item.publication);
+    meta.push(href
+      ? `<a class="learn-issuer-badge" href="${href}" target="_blank" rel="noopener">${pub}</a>`
+      : `<span class="learn-issuer-badge">${pub}</span>`);
+  }
+  if (item.issue) meta.push(`<span class="learn-date">${escapeHtml(item.issue)}</span>`);
+  const published = formatReadingDate(item.datePublished);
+  if (published) meta.push(`<span class="learn-date">Published ${published}</span>`);
+  const updated = formatReadingDate(item.lastUpdated);
+  if (updated) meta.push(`<span class="learn-date">Updated ${updated}</span>`);
+  const started = formatReadingDate(item.dateStarted);
+  if (started) meta.push(`<span class="learn-date">Started ${started}</span>`);
+  const finished = formatReadingDate(item.dateFinished);
+  if (finished) meta.push(`<span class="learn-date">Finished ${finished}</span>`);
+
+  const note = item.note
+    ? `<p class="read-note">${escapeHtml(item.note)}</p>`
+    : '';
+  const tags = Array.isArray(item.tags) ? item.tags.filter(Boolean) : [];
+  const tagsHtml = tags.length
+    ? `<div class="skill-chips read-tags">${tags.map(t => `<span class="skill-chip">${escapeHtml(t)}</span>`).join('')}</div>`
+    : '';
+
+  return `
+    <article class="learn-card read-card">
+      <div class="read-card-top">
+        ${titleEl}
+        <span class="read-status read-status--${status}">${escapeHtml(statusLabel)}</span>
+      </div>
+      ${byline}
+      ${meta.length ? `<div class="read-meta">${meta.join('')}</div>` : ''}
+      ${note}
+      ${tagsHtml}
+    </article>`;
+}
+
+function renderReading() {
+  const container = document.getElementById('reading-content');
+  if (!container) return;
+  const items = Array.isArray(resumeData.reading) ? resumeData.reading : [];
+
+  if (!items.length) {
+    container.innerHTML = `
+      <div class="learn-section">
+        <h2 class="learn-section-title">Reading List</h2>
+        <p class="read-empty">Nothing on the reading list yet.</p>
+      </div>`;
+    return;
+  }
+
+  const groups = new Map();
+  items.forEach(item => {
+    const status = READING_STATUS_LABELS[item.status] ? item.status : 'queued';
+    if (!groups.has(status)) groups.set(status, []);
+    groups.get(status).push(item);
+  });
+
+  const order = [
+    ...READING_STATUS_ORDER.filter(id => groups.has(id)),
+    ...[...groups.keys()].filter(id => !READING_STATUS_ORDER.includes(id)),
+  ];
+
+  const groupsHtml = order.map(status => {
+    const label = READING_STATUS_LABELS[status] || status;
+    const sorted = sortByDate(groups.get(status), item => {
+      if (status === 'finished') return item.dateFinished || item.dateStarted || item.datePublished || '';
+      if (status === 'queued') return item.datePublished || item.dateStarted || '';
+      return item.dateStarted || item.datePublished || '';
+    }, true);
+    return `
+      <section class="read-group">
+        <h3 class="read-group-title">${escapeHtml(label)} <span class="learn-cert-count">${sorted.length}</span></h3>
+        ${sorted.map(renderReadingCard).join('')}
+      </section>`;
+  }).join('');
+
+  container.innerHTML = `
+    <div class="learn-section">
+      <h2 class="learn-section-title">Reading List</h2>
+      ${groupsHtml}
+    </div>`;
 }
 
 // ─── Patents ──────────────────────────────────────────────────────────────────

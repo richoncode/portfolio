@@ -4067,6 +4067,22 @@
     }
   ],
   "publications": [],
+  "reading": [
+    {
+      "title": "Fine Tuning Large Language Models, Part 1",
+      "authors": ["Wei-Meng Lee"],
+      "publication": "CODE Magazine",
+      "issue": "2026 - September/October",
+      "url": "https://www.codemag.com/Article/2610031/Fine-Tuning-Large-Language-Models-Part-1",
+      "datePublished": "",
+      "lastUpdated": "2026-08-22",
+      "status": "in-progress",
+      "dateStarted": "2026-10-03",
+      "dateFinished": "",
+      "note": "",
+      "tags": ["LLMs", "fine-tuning"]
+    }
+  ],
   "volunteering": [
     {
       "id": "vol-5",
