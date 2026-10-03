@@ -7,7 +7,7 @@
   <title>Cover CVs — Internal</title>
   <!-- Keep main.css ?v= in sync with index.html -->
   <link rel="stylesheet" href="../src/css/main.css?v=40">
-  <link rel="stylesheet" href="cover-cv.css?v=2">
+  <link rel="stylesheet" href="cover-cv.css?v=3">
 </head>
 <body>
   <header class="site-header cv-header cv-no-print">
@@ -32,6 +32,35 @@
         </details>
       </section>
 
+      <details class="cv-audit" id="redact-audit">
+        <summary>Audit redact list</summary>
+        <div class="cv-audit-body">
+          <h3>Raw source</h3>
+          <p class="cv-note">Pretty-printed <code>cover-cv/redact.json</code>. <a href="https://github.com/richoncode/portfolio/blob/main/cover-cv/redact.json" target="_blank" rel="noopener noreferrer">View the file on GitHub</a> · <a href="https://github.com/richoncode/portfolio/commits/main/cover-cv/redact.json" target="_blank" rel="noopener noreferrer">Commit history</a></p>
+          <div class="cv-actions">
+            <button type="button" class="filter-toggle-btn" id="copy-redact-source">Copy</button>
+            <span id="copy-redact-source-status" class="cv-copy-status" role="status"></span>
+          </div>
+          <pre id="redact-source" class="cv-pre">Loading redact.json…</pre>
+
+          <h3>Change log</h3>
+          <p class="cv-note">Append one object to <code>cover-cv/redact-history.json</code> when a name is added, an alias is added, a reason changes, or a name is cleared. <a href="https://github.com/richoncode/portfolio/blob/main/cover-cv/redact-history.json" target="_blank" rel="noopener noreferrer">View the file on GitHub</a> · <a href="https://github.com/richoncode/portfolio/commits/main/cover-cv/redact-history.json" target="_blank" rel="noopener noreferrer">Commit history</a></p>
+          <div id="redact-history"></div>
+
+          <h3>Coverage scan</h3>
+          <p class="cv-note">Every role page in the list below, checked when this page loads.</p>
+          <div id="redact-coverage"></div>
+
+          <h3>Matching rules</h3>
+          <ul>
+            <li>An alias written in all capitals matches case-sensitively. SPECS does not match the ordinary word specs.</li>
+            <li>Any other alias ignores case.</li>
+            <li>A match is a whole word or phrase. The name inside a longer word does not count.</li>
+            <li>Each role page is scanned in three blocks: the CV text, the outreach note, and the STAR stories.</li>
+          </ul>
+        </div>
+      </details>
+
       <section class="learn-section" aria-labelledby="role-cvs-title">
         <h2 id="role-cvs-title" class="learn-section-title">Role CVs</h2>
         <p class="cv-lead">Nothing is in progress yet. Copy <a href="template.html">template.html</a> to a new file in this folder (for example <code>acme-staff-engineer.html</code>), fill it in, and add a row here. Leave the new file unlinked from the public site.</p>
@@ -46,7 +75,7 @@
                 <th scope="col">Date</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody id="role-list">
               <!-- Status classes: cv-status--drafting, cv-status--applied, cv-status--contacted, cv-status--interviewing, cv-status--closed -->
               <tr>
                 <td data-label="Company">—</td>
@@ -147,6 +176,6 @@
 
     </div>
   </main>
-  <script src="cover-cv.js?v=2"></script>
+  <script src="cover-cv.js?v=3"></script>
 </body>
 </html>

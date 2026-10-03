@@ -1,5 +1,11 @@
 (function () {
   var REDACT_URL = 'redact.json?v=1';
+  var REDACT_HISTORY_URL = 'redact-history.json?v=1';
+  var SCAN_SOURCES = [
+    { id: 'cv-text', label: 'CV text' },
+    { id: 'outreach-text', label: 'outreach note' },
+    { id: 'stories', label: 'interview stories' }
+  ];
 
   function textOf(id) {
     var el = document.getElementById(id);
@@ -63,6 +69,7 @@
 
   bindCopy('copy-cv', 'cv-text', 'copy-cv-status');
   bindCopy('copy-outreach', 'outreach-text', 'copy-outreach-status');
+  bindCopy('copy-redact-source', 'redact-source', 'copy-redact-source-status');
 
   var download = document.getElementById('download-cv');
   if (download) {
@@ -197,18 +204,13 @@
     return el ? el.textContent : '';
   }
 
-  function scanRedact(entries) {
-    var sources = [
-      { id: 'cv-text', label: 'CV text' },
-      { id: 'outreach-text', label: 'outreach note' },
-      { id: 'stories', label: 'interview stories' }
-    ];
+  function scanTexts(entries, textsByLabel) {
     var hits = [];
     entries.forEach(function (entry) {
       if (!entry || entry.status !== 'active') return;
       var places = [];
-      sources.forEach(function (source) {
-        var text = sectionText(source.id);
+      SCAN_SOURCES.forEach(function (source) {
+        var text = textsByLabel[source.label] || '';
         var matched = [];
         (entry.aliases || []).forEach(function (alias) {
           if (!alias) return;
@@ -219,6 +221,169 @@
       if (places.length) hits.push({ entry: entry, places: places });
     });
     return hits;
+  }
+
+  function scanRedact(entries) {
+    var texts = {};
+    SCAN_SOURCES.forEach(function (source) {
+      texts[source.label] = sectionText(source.id);
+    });
+    return scanTexts(entries, texts);
+  }
+
+  function textsFromHtml(html) {
+    var doc = new DOMParser().parseFromString(html, 'text/html');
+    var texts = {};
+    var found = false;
+    SCAN_SOURCES.forEach(function (source) {
+      var el = doc.getElementById(source.id);
+      texts[source.label] = el ? el.textContent : '';
+      if (el) found = true;
+    });
+    return { texts: texts, found: found };
+  }
+
+  function formatChecked(date) {
+    return date.toISOString().slice(0, 16).replace('T', ' ') + ' UTC';
+  }
+
+  function simpleTable(headers, rows, rowClass) {
+    var table = document.createElement('table');
+    table.className = 'cv-table cv-table--wide';
+    var head = document.createElement('thead');
+    var headRow = document.createElement('tr');
+    headers.forEach(function (label) {
+      var th = document.createElement('th');
+      th.scope = 'col';
+      th.textContent = label;
+      headRow.appendChild(th);
+    });
+    head.appendChild(headRow);
+    table.appendChild(head);
+    var body = document.createElement('tbody');
+    rows.forEach(function (row) {
+      var tr = document.createElement('tr');
+      if (rowClass) tr.className = rowClass;
+      row.forEach(function (item) {
+        if (item.nodeType) tr.appendChild(item);
+        else tr.appendChild(item);
+      });
+      body.appendChild(tr);
+    });
+    table.appendChild(body);
+    var wrap = document.createElement('div');
+    wrap.className = 'cv-table-wrap';
+    wrap.appendChild(table);
+    return wrap;
+  }
+
+  function bootRedactAudit() {
+    var source = document.getElementById('redact-source');
+    var historyMount = document.getElementById('redact-history');
+    var coverageMount = document.getElementById('redact-coverage');
+    if (!source && !historyMount && !coverageMount) return;
+
+    loadRedactList().then(function (entries) {
+      if (source) source.textContent = JSON.stringify(entries, null, 2) + '\n';
+      return entries;
+    }).catch(function () {
+      if (source) source.textContent = 'Could not load redact.json.';
+      if (coverageMount) {
+        coverageMount.textContent = '';
+        var error = document.createElement('p');
+        error.className = 'cv-note cv-load-error';
+        error.textContent = 'Could not load redact.json, so role pages were not scanned.';
+        coverageMount.appendChild(error);
+      }
+      return null;
+    }).then(function (entries) {
+      if (!entries || !coverageMount) return;
+      var links = Array.prototype.slice.call(document.querySelectorAll('#role-list a[href]'));
+      var stamp = formatChecked(new Date());
+      if (!links.length) {
+        coverageMount.textContent = '';
+        var empty = document.createElement('p');
+        empty.className = 'cv-note';
+        empty.textContent = 'No role pages in the list.';
+        coverageMount.appendChild(empty);
+        return;
+      }
+      coverageMount.textContent = '';
+      var pending = document.createElement('p');
+      pending.className = 'cv-note';
+      pending.textContent = 'Checking role pages…';
+      coverageMount.appendChild(pending);
+      return Promise.all(links.map(function (link) {
+        var href = link.getAttribute('href');
+        return fetch(href, { cache: 'no-store' }).then(function (response) {
+          if (!response.ok) throw new Error(String(response.status));
+          return response.text();
+        }).then(function (html) {
+          var parsed = textsFromHtml(html);
+          if (!parsed.found) {
+            return { link: link, href: href, stamp: stamp, clear: false, text: 'No CV, outreach, or story block on this page.' };
+          }
+          var hits = scanTexts(entries, parsed.texts);
+          if (!hits.length) return { link: link, href: href, stamp: stamp, clear: true, text: 'clear' };
+          var text = hits.map(function (hit) {
+            var places = hit.places.map(function (place) { return place.label; }).join(', ');
+            return hit.entry.term + ' (' + places + ')';
+          }).join('; ');
+          return { link: link, href: href, stamp: stamp, clear: false, text: text };
+        }).catch(function () {
+          return { link: link, href: href, stamp: stamp, clear: false, text: 'Could not load this page.' };
+        });
+      })).then(function (results) {
+        var rows = results.map(function (result) {
+          var page = document.createElement('td');
+          page.setAttribute('data-label', 'Page');
+          var anchor = document.createElement('a');
+          anchor.href = result.href;
+          anchor.textContent = result.link.textContent.trim() || result.href;
+          page.appendChild(anchor);
+          var checked = cell('Last checked', result.stamp);
+          checked.className = 'cv-date';
+          var outcome = cell('Result', result.text);
+          outcome.className = result.clear ? 'cv-result--clear' : 'cv-result--hit';
+          return [page, checked, outcome];
+        });
+        coverageMount.textContent = '';
+        coverageMount.appendChild(simpleTable(['Page', 'Last checked', 'Result'], rows));
+      });
+    });
+
+    if (historyMount) {
+      fetch(REDACT_HISTORY_URL, { cache: 'no-store' }).then(function (response) {
+        if (!response.ok) throw new Error(String(response.status));
+        return response.json();
+      }).then(function (rows) {
+        historyMount.textContent = '';
+        if (!Array.isArray(rows) || !rows.length) {
+          var empty = document.createElement('p');
+          empty.className = 'cv-note';
+          empty.textContent = 'No change-log rows yet.';
+          historyMount.appendChild(empty);
+          return;
+        }
+        var rendered = rows.map(function (row) {
+          var date = cell('Date', row.date || '');
+          date.className = 'cv-date';
+          return [
+            date,
+            cell('Action', row.action || ''),
+            cell('Term', row.term || ''),
+            cell('Note', row.note || '')
+          ];
+        });
+        historyMount.appendChild(simpleTable(['Date', 'Action', 'Term', 'Note'], rendered));
+      }).catch(function () {
+        historyMount.textContent = '';
+        var error = document.createElement('p');
+        error.className = 'cv-note cv-load-error';
+        error.textContent = 'Could not load redact-history.json.';
+        historyMount.appendChild(error);
+      });
+    }
   }
 
   function renderRedactCheck(banner, hits) {
@@ -272,4 +437,5 @@
 
   bootRedactList();
   bootRedactCheck();
+  bootRedactAudit();
 })();
