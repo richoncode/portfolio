@@ -49,6 +49,9 @@ a:hover { text-decoration: underline; }
   display: flex;
   margin-top: 10px;
   border-bottom: 1px solid var(--border);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
 }
 
 .tab {
@@ -61,6 +64,8 @@ a:hover { text-decoration: underline; }
   font-size: 0.9rem;
   font-weight: 500;
   padding: 8px 20px;
+  flex: 0 0 auto;
+  white-space: nowrap;
   margin-bottom: -1px;
   transition: color 0.15s, border-color 0.15s;
   text-decoration: none;
@@ -1559,14 +1564,6 @@ a.read-title:hover { color: var(--accent); text-decoration: underline; }
 /* ─── Responsive ──────────────────────────── */
 @media (max-width: 640px) {
   .site-header h1    { font-size: 1.8rem; }
-  .tabs {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-  .tab {
-    flex: 0 0 auto;
-    white-space: nowrap;
-  }
   .experience-header { flex-direction: column; }
   .filter-group      { flex-direction: column; gap: 6px; }
   .filter-label      { min-width: auto; padding-top: 0; }

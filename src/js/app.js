@@ -927,6 +927,20 @@ function switchTab(name, pushState = true) {
     renderPatents();
   if (name === 'research' && !document.getElementById('research-content').innerHTML)
     renderResearch();
+  requestAnimationFrame(scrollActiveTabIntoView);
+}
+
+function scrollActiveTabIntoView() {
+  const active = document.querySelector('.tabs .tab.tab--active');
+  const tabs = active && active.closest('.tabs');
+  if (!active || !tabs) return;
+  const tabsRect = tabs.getBoundingClientRect();
+  const activeRect = active.getBoundingClientRect();
+  if (activeRect.left < tabsRect.left) {
+    tabs.scrollLeft -= tabsRect.left - activeRect.left;
+  } else if (activeRect.right > tabsRect.right) {
+    tabs.scrollLeft += activeRect.right - tabsRect.right;
+  }
 }
 
 // ─── Career Timeline ──────────────────────────────────────────────────────────
