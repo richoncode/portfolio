@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <title>CV template — Internal</title>
+  <!-- Keep main.css ?v= in sync with index.html -->
+  <link rel="stylesheet" href="../src/css/main.css?v=40">
+  <link rel="stylesheet" href="cover-cv.css?v=1">
+</head>
+<body>
+  <header class="site-header cv-header cv-no-print">
+    <div class="container">
+      <p class="cv-kicker">Internal · unlisted</p>
+      <h1>Per-role CV template</h1>
+      <p class="cv-purpose">Blank page for one job. Every bracketed line is a placeholder. Replace it with posting text or with a fact from <code>src/data/resume.json</code> or from Richard. Authoring rules live on the <a href="index.html#rules">cover CV index</a>.</p>
+    </div>
+  </header>
+
+  <main class="cv-main">
+    <div class="container">
+      <p class="cv-no-print"><a class="cv-back" href="index.html">Cover CVs</a></p>
+
+      <section class="learn-section cv-no-print" aria-labelledby="snapshot-title">
+        <h2 id="snapshot-title" class="learn-section-title">Role snapshot</h2>
+        <dl class="cv-facts">
+          <dt>Company</dt>
+          <dd class="ph">[PLACEHOLDER: company name]</dd>
+          <dt>Title</dt>
+          <dd class="ph">[PLACEHOLDER: job title from the posting]</dd>
+          <dt>Posting</dt>
+          <dd class="ph">[PLACEHOLDER: posting URL]</dd>
+          <dt>Location</dt>
+          <dd class="ph">[PLACEHOLDER: city, remote, or hybrid]</dd>
+          <dt>Pay</dt>
+          <dd class="ph">[PLACEHOLDER: posted range, or “not listed”]</dd>
+          <dt>Date posted</dt>
+          <dd class="cv-date ph">[PLACEHOLDER: Mon YYYY]</dd>
+          <dt>Status</dt>
+          <dd class="ph">[PLACEHOLDER: drafting, applied, contacted, interviewing, or closed]</dd>
+        </dl>
+      </section>
+
+      <section class="learn-section cv-no-print" aria-labelledby="fit-title">
+        <h2 id="fit-title" class="learn-section-title">Fit score</h2>
+        <p class="cv-score"><span class="cv-score-num">—</span><span class="cv-score-den">/ 10</span></p>
+        <p class="cv-verdict ph">[PLACEHOLDER: one-line verdict — apply, apply after a named confirmation, or pass]</p>
+      </section>
+
+      <section class="learn-section cv-no-print" aria-labelledby="fit-detail-title">
+        <h2 id="fit-detail-title" class="learn-section-title">Pros and cons</h2>
+        <div class="cv-split">
+          <div>
+            <h3>Pros</h3>
+            <ul>
+              <li class="ph">[PLACEHOLDER: a resume.json fact that matches a must-have]</li>
+              <li class="ph">[PLACEHOLDER: a second match, with the employer and result]</li>
+              <li class="ph">[PLACEHOLDER: a third match, or delete this line]</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Cons</h3>
+            <ul>
+              <li class="ph">[PLACEHOLDER: a real gap, missing keyword, or unconfirmed fact]</li>
+              <li class="ph">[PLACEHOLDER: a second gap, or delete this line]</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="learn-section cv-no-print" aria-labelledby="concerns-title">
+        <h2 id="concerns-title" class="learn-section-title">Possible hiring-manager concerns</h2>
+        <article class="learn-card cv-card">
+          <h3 class="learn-card-title ph">[PLACEHOLDER: concern this hiring manager is likely to raise]</h3>
+          <p><span class="cv-label">Mitigation</span> <span class="ph">[PLACEHOLDER: the CV line or outreach sentence that answers it]</span></p>
+        </article>
+        <article class="learn-card cv-card">
+          <h3 class="learn-card-title ph">[PLACEHOLDER: second concern, or delete this card]</h3>
+          <p><span class="cv-label">Mitigation</span> <span class="ph">[PLACEHOLDER: mitigation using a confirmed fact]</span></p>
+        </article>
+      </section>
+
+      <section class="learn-section cv-no-print" aria-labelledby="keywords-title">
+        <h2 id="keywords-title" class="learn-section-title">Keyword match</h2>
+        <p class="cv-note">One row per must-have or preferred keyword from the posting. Status is covered, partial, or missing.</p>
+        <div class="cv-table-wrap">
+          <table class="cv-table">
+            <thead>
+              <tr>
+                <th scope="col">JD keyword</th>
+                <th scope="col">Where the CV covers it</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="JD keyword" class="ph">[PLACEHOLDER: must-have keyword, exact posting wording]</td>
+                <td data-label="Where the CV covers it" class="ph">[PLACEHOLDER: summary, experience bullet, or skills line]</td>
+                <td data-label="Status" class="ph">[PLACEHOLDER: covered, partial, or missing]</td>
+              </tr>
+              <tr>
+                <td data-label="JD keyword" class="ph">[PLACEHOLDER: second keyword]</td>
+                <td data-label="Where the CV covers it" class="ph">[PLACEHOLDER: where it appears in the CV text]</td>
+                <td data-label="Status" class="ph">[PLACEHOLDER: covered, partial, or missing]</td>
+              </tr>
+              <tr>
+                <td data-label="JD keyword" class="ph">[PLACEHOLDER: preferred keyword]</td>
+                <td data-label="Where the CV covers it" class="ph">[PLACEHOLDER: where it appears, or why it was left out]</td>
+                <td data-label="Status" class="ph">[PLACEHOLDER: covered, partial, or missing]</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="learn-section" aria-labelledby="cv-title">
+        <div class="cv-no-print">
+          <h2 id="cv-title" class="learn-section-title">CV text</h2>
+          <p class="cv-note">Plain text only. Copy into a single-column .docx or text-based PDF. Print 1-page shows this block alone, black on white, US Letter. When you duplicate this file, set <code>data-filename</code> on the CV block to <code>Richard-Bailey-Company-Role.txt</code>.</p>
+          <div class="cv-actions">
+            <button type="button" class="filter-toggle-btn" id="copy-cv">Copy</button>
+            <button type="button" class="filter-toggle-btn" id="download-cv">Download .txt</button>
+            <button type="button" class="clear-btn" id="print-cv">Print 1-page</button>
+            <span id="copy-cv-status" class="cv-copy-status" role="status"></span>
+          </div>
+        </div>
+        <pre id="cv-text" class="cv-pre" data-filename="Richard-Bailey-CV-template.txt">[PLACEHOLDER: Full name]
+[PLACEHOLDER: City · email · phone if confirmed · LinkedIn · public portfolio URL]
+[PLACEHOLDER: Target title. Use the posting title only when it is accurate.]
+
+SUMMARY
+[PLACEHOLDER: 3–4 lines. Target title, real scope, the role’s top 3 requirements in the posting’s words, one proof point with a number from resume.json.]
+
+EXPERIENCE
+[PLACEHOLDER: Company] — [PLACEHOLDER: Title as recorded in resume.json]
+[PLACEHOLDER: Mon YYYY] – [PLACEHOLDER: Mon YYYY or Present]
+• [PLACEHOLDER: Outcome-first bullet. Result, then action, then scope. Metric only if it is in resume.json or confirmed in notes.]
+• [PLACEHOLDER: Second bullet for this role if it serves a top requirement.]
+
+[PLACEHOLDER: Older company] — [PLACEHOLDER: Title]
+[PLACEHOLDER: Mon YYYY] – [PLACEHOLDER: Mon YYYY]
+• [PLACEHOLDER: One condensed bullet, or delete this role to stay on one page.]
+
+SKILLS
+[PLACEHOLDER: Comma-separated skills that match must-haves and are listed in resume.json.]
+
+EDUCATION
+[PLACEHOLDER: Include only after Richard confirms school, degree, and year. resume.json has no education record.]
+
+PATENTS
+[PLACEHOLDER: Include only when relevant. Title, number, and year from resume.json patents.]</pre>
+      </section>
+
+      <section class="learn-section cv-no-print" aria-labelledby="outreach-title">
+        <h2 id="outreach-title" class="learn-section-title">Recruiter / hiring-manager outreach</h2>
+        <p class="cv-note">Under about 120 words. No claim that is not already in the CV text.</p>
+        <div class="cv-actions">
+          <button type="button" class="filter-toggle-btn" id="copy-outreach">Copy</button>
+          <span id="copy-outreach-status" class="cv-copy-status" role="status"></span>
+        </div>
+        <pre id="outreach-text" class="cv-pre">[PLACEHOLDER: Short note to the recruiter or hiring manager. Name the role, one confirmed proof point for the top requirement, and a request to talk. Stay under about 120 words. Do not mention /cover-cv/ or unapproved partner products.]</pre>
+      </section>
+
+      <section class="learn-section cv-stories cv-no-print" aria-labelledby="stories-title">
+        <h2 id="stories-title" class="learn-section-title">Interview stories</h2>
+        <p class="cv-note">Two or three STAR stories, each mapped to one of the role’s top requirements. Same facts as the CV.</p>
+
+        <article class="learn-card cv-story">
+          <h3 class="learn-card-title ph">[PLACEHOLDER: top requirement 1]</h3>
+          <p><span class="cv-label">Situation</span> <span class="ph">[PLACEHOLDER]</span></p>
+          <p><span class="cv-label">Task</span> <span class="ph">[PLACEHOLDER]</span></p>
+          <p><span class="cv-label">Action</span> <span class="ph">[PLACEHOLDER: what Richard did, from resume.json]</span></p>
+          <p><span class="cv-label">Result</span> <span class="ph">[PLACEHOLDER: outcome and metric already in the data, or confirmed in notes]</span></p>
+        </article>
+
+        <article class="learn-card cv-story">
+          <h3 class="learn-card-title ph">[PLACEHOLDER: top requirement 2]</h3>
+          <p><span class="cv-label">Situation</span> <span class="ph">[PLACEHOLDER]</span></p>
+          <p><span class="cv-label">Task</span> <span class="ph">[PLACEHOLDER]</span></p>
+          <p><span class="cv-label">Action</span> <span class="ph">[PLACEHOLDER]</span></p>
+          <p><span class="cv-label">Result</span> <span class="ph">[PLACEHOLDER]</span></p>
+        </article>
+
+        <article class="learn-card cv-story">
+          <h3 class="learn-card-title ph">[PLACEHOLDER: top requirement 3, or delete this story]</h3>
+          <p><span class="cv-label">Situation</span> <span class="ph">[PLACEHOLDER]</span></p>
+          <p><span class="cv-label">Task</span> <span class="ph">[PLACEHOLDER]</span></p>
+          <p><span class="cv-label">Action</span> <span class="ph">[PLACEHOLDER]</span></p>
+          <p><span class="cv-label">Result</span> <span class="ph">[PLACEHOLDER]</span></p>
+        </article>
+      </section>
+
+      <section class="learn-section cv-no-print" aria-labelledby="notes-title">
+        <h2 id="notes-title" class="learn-section-title">Notes / changelog</h2>
+        <ul class="cv-log">
+          <li><span class="cv-date">—</span> <span class="ph">[PLACEHOLDER: YYYY-MM-DD and what changed. This template has no role-specific facts yet. Record Richard’s confirmations here before they enter the CV.]</span></li>
+        </ul>
+      </section>
+    </div>
+  </main>
+  <script src="cover-cv.js?v=1"></script>
+</body>
+</html>
