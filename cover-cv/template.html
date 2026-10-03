@@ -7,7 +7,7 @@
   <title>CV template — Internal</title>
   <!-- Keep main.css ?v= in sync with index.html -->
   <link rel="stylesheet" href="../src/css/main.css?v=40">
-  <link rel="stylesheet" href="cover-cv.css?v=1">
+  <link rel="stylesheet" href="cover-cv.css?v=2">
 </head>
 <body>
   <header class="site-header cv-header cv-no-print">
@@ -21,6 +21,7 @@
   <main class="cv-main">
     <div class="container">
       <p class="cv-no-print"><a class="cv-back" href="index.html">Cover CVs</a></p>
+      <div id="redact-check" class="cv-redact-check cv-no-print" role="status" aria-live="polite">Redact check: …</div>
 
       <section class="learn-section cv-no-print" aria-labelledby="snapshot-title">
         <h2 id="snapshot-title" class="learn-section-title">Role snapshot</h2>
@@ -117,7 +118,7 @@
       <section class="learn-section" aria-labelledby="cv-title">
         <div class="cv-no-print">
           <h2 id="cv-title" class="learn-section-title">CV text</h2>
-          <p class="cv-note">Plain text only. Copy into a single-column .docx or text-based PDF. Print 1-page shows this block alone, black on white, US Letter. When you duplicate this file, set <code>data-filename</code> on the CV block to <code>Richard-Bailey-Company-Role.txt</code>.</p>
+          <p class="cv-note cv-editable-hint">Plain text only. Copy into a single-column .docx or text-based PDF. Print 1-page shows this block alone, black on white, US Letter. When you duplicate this file, set <code>data-filename</code> on the CV block to <code>Richard-Bailey-Company-Role.txt</code>. Edits in this page update the redact check and are not saved to the file.</p>
           <div class="cv-actions">
             <button type="button" class="filter-toggle-btn" id="copy-cv">Copy</button>
             <button type="button" class="filter-toggle-btn" id="download-cv">Download .txt</button>
@@ -125,7 +126,7 @@
             <span id="copy-cv-status" class="cv-copy-status" role="status"></span>
           </div>
         </div>
-        <pre id="cv-text" class="cv-pre" data-filename="Richard-Bailey-CV-template.txt">[PLACEHOLDER: Full name]
+        <pre id="cv-text" class="cv-pre" contenteditable="true" spellcheck="false" data-filename="Richard-Bailey-CV-template.txt">[PLACEHOLDER: Full name]
 [PLACEHOLDER: City · email · phone if confirmed · LinkedIn · public portfolio URL]
 [PLACEHOLDER: Target title. Use the posting title only when it is accurate.]
 
@@ -159,14 +160,14 @@ PATENTS
           <button type="button" class="filter-toggle-btn" id="copy-outreach">Copy</button>
           <span id="copy-outreach-status" class="cv-copy-status" role="status"></span>
         </div>
-        <pre id="outreach-text" class="cv-pre">[PLACEHOLDER: Short note to the recruiter or hiring manager. Name the role, one confirmed proof point for the top requirement, and a request to talk. Stay under about 120 words. Do not mention /cover-cv/ or unapproved partner products.]</pre>
+        <pre id="outreach-text" class="cv-pre" contenteditable="true" spellcheck="false">[PLACEHOLDER: Short note to the recruiter or hiring manager. Name the role, one confirmed proof point for the top requirement, and a request to talk. Stay under about 120 words. Do not mention /cover-cv/ or unapproved partner products.]</pre>
       </section>
 
-      <section class="learn-section cv-stories cv-no-print" aria-labelledby="stories-title">
+      <section class="learn-section cv-stories cv-no-print" id="stories" aria-labelledby="stories-title">
         <h2 id="stories-title" class="learn-section-title">Interview stories</h2>
         <p class="cv-note">Two or three STAR stories, each mapped to one of the role’s top requirements. Same facts as the CV.</p>
 
-        <article class="learn-card cv-story">
+        <article class="learn-card cv-story" contenteditable="true" spellcheck="false">
           <h3 class="learn-card-title ph">[PLACEHOLDER: top requirement 1]</h3>
           <p><span class="cv-label">Situation</span> <span class="ph">[PLACEHOLDER]</span></p>
           <p><span class="cv-label">Task</span> <span class="ph">[PLACEHOLDER]</span></p>
@@ -174,7 +175,7 @@ PATENTS
           <p><span class="cv-label">Result</span> <span class="ph">[PLACEHOLDER: outcome and metric already in the data, or confirmed in notes]</span></p>
         </article>
 
-        <article class="learn-card cv-story">
+        <article class="learn-card cv-story" contenteditable="true" spellcheck="false">
           <h3 class="learn-card-title ph">[PLACEHOLDER: top requirement 2]</h3>
           <p><span class="cv-label">Situation</span> <span class="ph">[PLACEHOLDER]</span></p>
           <p><span class="cv-label">Task</span> <span class="ph">[PLACEHOLDER]</span></p>
@@ -182,7 +183,7 @@ PATENTS
           <p><span class="cv-label">Result</span> <span class="ph">[PLACEHOLDER]</span></p>
         </article>
 
-        <article class="learn-card cv-story">
+        <article class="learn-card cv-story" contenteditable="true" spellcheck="false">
           <h3 class="learn-card-title ph">[PLACEHOLDER: top requirement 3, or delete this story]</h3>
           <p><span class="cv-label">Situation</span> <span class="ph">[PLACEHOLDER]</span></p>
           <p><span class="cv-label">Task</span> <span class="ph">[PLACEHOLDER]</span></p>
@@ -199,6 +200,6 @@ PATENTS
       </section>
     </div>
   </main>
-  <script src="cover-cv.js?v=1"></script>
+  <script src="cover-cv.js?v=2"></script>
 </body>
 </html>

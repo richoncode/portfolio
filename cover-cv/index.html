@@ -7,7 +7,7 @@
   <title>Cover CVs — Internal</title>
   <!-- Keep main.css ?v= in sync with index.html -->
   <link rel="stylesheet" href="../src/css/main.css?v=40">
-  <link rel="stylesheet" href="cover-cv.css?v=1">
+  <link rel="stylesheet" href="cover-cv.css?v=2">
 </head>
 <body>
   <header class="site-header cv-header cv-no-print">
@@ -20,6 +20,17 @@
 
   <main class="cv-main">
     <div class="container">
+
+      <section class="learn-section cv-redact" id="redact" aria-labelledby="redact-title">
+        <h2 id="redact-title" class="learn-section-title">Redact list: do not mention</h2>
+        <p class="cv-lead">Never name these in a CV, outreach note, or interview story until cleared. When cleared, set status to cleared (keeps history).</p>
+        <p class="cv-note">Add a name by appending one object to <code>cover-cv/redact.json</code>. An alias written in all capitals is matched case-sensitively, so SPECS does not match the ordinary word specs. Other aliases ignore case. A match is a whole word or phrase.</p>
+        <div id="redact-active"></div>
+        <details class="cv-cleared" id="redact-cleared">
+          <summary id="redact-cleared-summary">Cleared</summary>
+          <div id="redact-cleared-body"></div>
+        </details>
+      </section>
 
       <section class="learn-section" aria-labelledby="role-cvs-title">
         <h2 id="role-cvs-title" class="learn-section-title">Role CVs</h2>
@@ -102,7 +113,8 @@
         <p>In the keyword table, an iOS must-have can be covered or partial on the strength of that Apple-platform evidence. The CV still names visionOS, Vision Pro, or Swift. It does not retitle that work as an iOS role or swap a visionOS bullet into an iOS bullet. When the posting specifically requires UIKit App Store apps and the data only supports visionOS or Swift, mark the keyword partial and say so in the fit score.</p>
 
         <h3>10. Leave confidential and unapproved names out</h3>
-        <p>Do not name unapproved partner products. Snap SPECS is the standing example: it does not appear on a CV, in an outreach note, or in interview stories. Keep Quintar’s confidential detail out as well: unreleased customers, unannounced commercial terms, and internal architecture that is not already written in <code>resume.json</code>. Shipments already in the resume data may be used. Anything past that waits for Richard’s yes, recorded in the notes. The public portfolio URL may appear in the contact block. The <code>/cover-cv/</code> URL never appears on a CV or in outreach.</p>
+        <p>The <a href="#redact">redact list</a> at the top of this page is the set of company and brand names that cannot be mentioned yet. It lives in <code>cover-cv/redact.json</code>. An active term, and every alias on that row, stays out of the CV, the outreach note, and the interview stories. Use that row’s “use instead” wording. When a name is cleared, set <code>status</code> to <code>cleared</code> so the row remains as history and the role-page check stops flagging it. Each role page scans those three blocks on load and again as they are edited.</p>
+        <p>Keep Quintar’s confidential detail out as well: unreleased customers, unannounced commercial terms, and internal architecture that is not already written in <code>resume.json</code>. Shipments already in the resume data may be used. Anything past that waits for Richard’s yes, recorded in the notes. The public portfolio URL may appear in the contact block. The <code>/cover-cv/</code> URL never appears on a CV or in outreach.</p>
 
         <h3>11. Answer the hiring manager’s likely concerns on the page</h3>
         <p>Before drafting, write the objections this hiring manager is likely to have, each with the mitigation that will show up in the CV or the outreach note. Use a concern only when this posting invites it.</p>
@@ -123,7 +135,8 @@
           <li>Every must-have and preferred keyword is marked covered, partial, or missing.</li>
           <li>Every employer, title, date, and number traces to <code>resume.json</code> or to a confirmation in the notes.</li>
           <li>Apple-platform work counted toward iOS is still named as iOS, visionOS, Vision Pro, or Swift, whichever it was.</li>
-          <li>Snap SPECS and other unapproved partner products are absent. Quintar confidential detail is absent. The cover-cv URL is absent.</li>
+          <li>The role page shows “Redact check: clear”. No active name from the redact list is in the CV, the outreach note, or the interview stories.</li>
+          <li>Quintar confidential detail is absent. The cover-cv URL is absent.</li>
           <li>Each hiring-manager concern has a mitigation in the CV or in the outreach note.</li>
           <li>The outreach note is under about 120 words and adds no claim the CV does not already make.</li>
           <li>Two or three STAR stories on the role page map to the top requirements, using the same facts as the CV.</li>
@@ -134,5 +147,6 @@
 
     </div>
   </main>
+  <script src="cover-cv.js?v=2"></script>
 </body>
 </html>
