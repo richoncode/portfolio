@@ -270,6 +270,9 @@ async function init() {
     initTooltip();
     syncStickyTop();
     window.addEventListener('resize', syncStickyTop);
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(scrollActiveTabIntoView);
+    }
   } catch (err) {
     document.getElementById('timeline').innerHTML =
       `<div class="no-results">Failed to load resume data: ${err.message}</div>`;
@@ -927,6 +930,7 @@ function switchTab(name, pushState = true) {
     renderPatents();
   if (name === 'research' && !document.getElementById('research-content').innerHTML)
     renderResearch();
+  scrollActiveTabIntoView();
   requestAnimationFrame(scrollActiveTabIntoView);
 }
 
