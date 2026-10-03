@@ -938,12 +938,13 @@ function scrollActiveTabIntoView() {
   const active = document.querySelector('.tabs .tab.tab--active');
   const tabs = active && active.closest('.tabs');
   if (!active || !tabs) return;
+  const pad = 12;
   const tabsRect = tabs.getBoundingClientRect();
   const activeRect = active.getBoundingClientRect();
-  if (activeRect.left < tabsRect.left) {
-    tabs.scrollLeft -= tabsRect.left - activeRect.left;
-  } else if (activeRect.right > tabsRect.right) {
-    tabs.scrollLeft += activeRect.right - tabsRect.right;
+  if (activeRect.left < tabsRect.left + pad) {
+    tabs.scrollLeft -= (tabsRect.left + pad) - activeRect.left;
+  } else if (activeRect.right > tabsRect.right - pad) {
+    tabs.scrollLeft += activeRect.right - (tabsRect.right - pad);
   }
 }
 
