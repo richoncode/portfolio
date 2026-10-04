@@ -277,6 +277,28 @@
     return wrap;
   }
 
+  function roleLinksFromDocument(doc) {
+    return Array.prototype.map.call(doc.querySelectorAll('#role-list a[href]'), function (anchor) {
+      return {
+        href: anchor.getAttribute('href'),
+        text: (anchor.textContent || '').replace(/\s+/g, ' ').trim()
+      };
+    }).filter(function (link) {
+      return link.href && link.href.indexOf('://') === -1 && link.href.charAt(0) !== '#';
+    });
+  }
+
+  function loadRolePageLinks() {
+    var local = roleLinksFromDocument(document);
+    if (local.length) return Promise.resolve(local);
+    return fetch('index.html', { cache: 'no-store' }).then(function (response) {
+      if (!response.ok) throw new Error('index.html');
+      return response.text();
+    }).then(function (html) {
+      return roleLinksFromDocument(new DOMParser().parseFromString(html, 'text/html'));
+    });
+  }
+
   function bootRedactAudit() {
     var source = document.getElementById('redact-source');
     var historyMount = document.getElementById('redact-history');
@@ -298,8 +320,8 @@
       return null;
     }).then(function (entries) {
       if (!entries || !coverageMount) return;
-      var links = Array.prototype.slice.call(document.querySelectorAll('#role-list a[href]'));
       var stamp = formatChecked(new Date());
+      return loadRolePageLinks().then(function (links) {
       if (!links.length) {
         coverageMount.textContent = '';
         var empty = document.createElement('p');
@@ -314,7 +336,7 @@
       pending.textContent = 'Checking role pages…';
       coverageMount.appendChild(pending);
       return Promise.all(links.map(function (link) {
-        var href = link.getAttribute('href');
+        var href = link.href;
         return fetch(href, { cache: 'no-store' }).then(function (response) {
           if (!response.ok) throw new Error(String(response.status));
           return response.text();
@@ -339,7 +361,7 @@
           page.setAttribute('data-label', 'Page');
           var anchor = document.createElement('a');
           anchor.href = result.href;
-          anchor.textContent = result.link.textContent.trim() || result.href;
+          anchor.textContent = result.link.text || result.href;
           page.appendChild(anchor);
           var checked = cell('Last checked', result.stamp);
           checked.className = 'cv-date';
@@ -349,6 +371,13 @@
         });
         coverageMount.textContent = '';
         coverageMount.appendChild(simpleTable(['Page', 'Last checked', 'Result'], rows));
+      });
+      }).catch(function () {
+        coverageMount.textContent = '';
+        var error = document.createElement('p');
+        error.className = 'cv-note cv-load-error';
+        error.textContent = 'Could not read the CV list, so role pages were not scanned.';
+        coverageMount.appendChild(error);
       });
     });
 
