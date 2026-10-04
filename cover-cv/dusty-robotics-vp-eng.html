@@ -45,7 +45,7 @@
       <section class="learn-section cv-no-print" aria-labelledby="fit-title">
         <h2 id="fit-title" class="learn-section-title">Fit score</h2>
         <p class="cv-score"><span class="cv-score-num">8</span><span class="cv-score-den">/ 10</span></p>
-        <p class="cv-verdict">Apply. Managing managers and firmware-to-cloud ownership are in the record, with hardware-enabled products taken to launch. Industry judging at multiple Seattle AEC hackathons supports the construction conversation; it is not construction employment. Robotics as a product org, electrical and mechanical leadership, field-fleet reliability, and an org-wide AI adoption program stay off the CV.</p>
+        <p class="cv-verdict">Apply. Managing managers, firmware-to-cloud ownership, and field-fleet reliability are in the record. Industry judging at multiple Seattle AEC hackathons supports the construction conversation; it is not construction employment. Robotics as a product org, electrical and mechanical leadership, and an org-wide AI adoption program stay off the CV.</p>
       </section>
 
       <section class="learn-section cv-no-print" aria-labelledby="fit-detail-title">
@@ -58,13 +58,14 @@
               <li>Hardware-enabled products taken to commercial launch: DAQRI Smart Helmet, Magic Leap, and Kinect. At DAQRI he led the full software stack from camera and sensor firmware to the cloud, and advised on sensor-fusion firmware for globally synchronized timestamps. At Magic Leap he debugged the wireless controller firmware and driver stack.</li>
               <li>Cloud and AI-enabled systems: Azure Storage (Fast Multi-Paxos, failures across 500 million compute nodes), Amazon S3, the Quintar Python/ML stereo-video pipeline moved into production development, and Lightship APIs for visual positioning and segmentation.</li>
               <li>Industry judge at multiple Seattle AEC (architecture, engineering, and construction) hackathons, evaluating AR/VR solutions. Criteria were best overall, best mashup, and solving a real AEC problem. <a href="https://youtu.be/byLEVkgQTks">youtu.be/byLEVkgQTks</a>. Judging, not employment.</li>
+              <li>Field-fleet reliability: a DAQRI fleet management dashboard to reduce overall cost and improve reliability across the device fleet, and Quintar field support management tools that reduced cost and increased reliability of live field operations.</li>
             </ul>
           </div>
           <div>
             <h3>Cons</h3>
             <ul>
               <li>Construction employment is not in the resume. He has judged AR/VR solutions at multiple Seattle AEC hackathons. The CV states that judging and does not claim a construction job.</li>
-              <li>Robotics as a product organization, electrical and mechanical leadership, and field-fleet reliability are not in the file. Firmware work is. Those other three stay off the CV.</li>
+              <li>Robotics as a product organization, and electrical and mechanical leadership, are not in the file. Firmware work is. Field-fleet reliability is on the CV: a DAQRI fleet management dashboard, and Quintar field support management tools for live field operations.</li>
               <li>The posting asks him to drive how engineering adopts AI in design, review, test, and documentation. The file shows shipped ML features, not that program.</li>
             </ul>
           </div>
@@ -78,8 +79,8 @@
           <p><span class="cv-label">Mitigation</span> He has been an industry judge at multiple Seattle AEC (architecture, engineering, and construction) hackathons, evaluating AR/VR solutions. Criteria: best overall, best mashup, and solving a real AEC problem (<a href="https://youtu.be/byLEVkgQTks">youtu.be/byLEVkgQTks</a>). The CV states that judging and does not claim a construction job, a jobsite, or a general contractor. His point in the interview: augment existing workflows rather than replace them, and context is king — know where digital content belongs and how accurately you can place it. The summary still closes on registering digital models to the physical world.</p>
         </article>
         <article class="learn-card cv-card">
-          <h3 class="learn-card-title">Robotics, electrical and mechanical leadership, and field-fleet reliability are unconfirmed</h3>
-          <p><span class="cv-label">Mitigation</span> The CV shows hardware-enabled products at commercial launch and firmware-to-cloud ownership. It does not claim a robotics product org, EE or ME leadership, or a deployed field fleet.</p>
+          <h3 class="learn-card-title">Robotics as a product org, and electrical and mechanical leadership, are unconfirmed</h3>
+          <p><span class="cv-label">Mitigation</span> The CV shows hardware-enabled products at commercial launch, firmware-to-cloud ownership, and field-fleet reliability. It does not claim a robotics product organization or EE or ME leadership.</p>
         </article>
         <article class="learn-card cv-card">
           <h3 class="learn-card-title">An org-wide AI adoption program is not in the record</h3>
@@ -140,13 +141,32 @@
                 <td data-label="Status">partial</td>
               </tr>
               <tr>
-                <td data-label="JD keyword">Robotics org, electrical, mechanical, field fleet</td>
-                <td data-label="Where the CV covers it">Not claimed. Firmware is covered on its own row.</td>
+                <td data-label="JD keyword">Field fleet</td>
+                <td data-label="Where the CV covers it">DAQRI bullet: fleet management dashboard for cost and reliability across the device fleet. Quintar bullet: field support management tools for live field operations.</td>
+                <td data-label="Status">covered</td>
+              </tr>
+              <tr>
+                <td data-label="JD keyword">Robotics org, electrical, mechanical</td>
+                <td data-label="Where the CV covers it">Not claimed. Firmware and field fleet are covered on their own rows.</td>
                 <td data-label="Status">missing</td>
               </tr>
             </tbody>
           </table>
         </div>
+      </section>
+
+      <section class="learn-section cv-no-print" aria-labelledby="letter-title">
+        <h2 id="letter-title" class="learn-section-title">Cover letter</h2>
+        <p class="cv-note">Three short paragraphs, under about 250 words. Paste separately from the resume. Optional, and recommended for this VP role and for any form with a cover letter field.</p>
+        <div class="cv-actions">
+          <button type="button" class="filter-toggle-btn" id="copy-letter">Copy</button>
+          <span id="copy-letter-status" class="cv-copy-status" role="status"></span>
+        </div>
+        <pre id="letter-text" class="cv-pre" contenteditable="true" spellcheck="false">I am writing about the Vice President of Engineering role at Dusty Robotics. Dusty prints a digital model onto the construction floor. That is the problem I have spent years on: registering a digital model to the physical world, accurately enough to build from. I have also been an industry judge at multiple Seattle AEC hackathons (https://youtu.be/byLEVkgQTks). The standard I used was whether a team solved a real AEC problem, and the advice I gave was to augment construction workflows rather than replace them. Context is king: know where the digital content belongs and how accurately you can place it.
+
+I have managed managers, leads and architects, from Manager to VP, including a 70-person organization at DAQRI and a 30-engineer team at Quintar. At DAQRI I led the software stack from camera and sensor firmware to the cloud, took the Smart Helmet to commercial launch, and built a fleet management dashboard to reduce overall cost and improve reliability across the device fleet. At Quintar I led the work that created field support management tools, reducing cost and increasing reliability of live field operations. Hardware I have taken to launch also includes Magic Leap and Kinect.
+
+I have not held a construction role. I would welcome a conversation about how fleet reliability and precise placement apply to Dusty’s robots. I am in San Jose and can work from the Mountain View office.</pre>
       </section>
 
       <section class="learn-section" aria-labelledby="cv-title">
@@ -171,7 +191,8 @@ EXPERIENCE
 Quintar, Inc — Vice President of Engineering &amp; Principle Engineer — Sep 2022 – Present
 • Lead a 30-engineer international team across the USA and India; 100% retention over 2 years; set architecture, coding, and testing standards and defined staffing and training strategy ahead of Series B.
 • Built a Python and ML stereo-video prototype (tracking, depth, segmentation) and moved it into production development for digital-twin sports viewing.
-• Cut operations downtime 50% with operations monitoring; led OS, ARM and render-pipeline investigations that isolated memory corruption and threading hangs.
+• Cut operations downtime 50% with operations monitoring.
+• Led the work that created field support management tools, reducing cost and increasing reliability of live field operations.
 
 Niantic, Inc. — Senior Director, Lightship ARDK — Nov 2020 – Aug 2022
 • Led a 15-engineer team to the on-time launch of Lightship ARDK at AWE, winning Best-in-Show AR; developer adoption rose 75%.
@@ -182,11 +203,11 @@ Magic Leap — Senior Director Software, Spatial AR Platform &amp; Applications 
 • Debugged the wireless controller firmware and driver stack to identify design flaws behind intermittent behavior.
 
 Margrave Technologies — Founder – CEO – Principle Developer, Jun 2016 – Nov 2017. VR Social Sharing SDK.
-
 DAQRI — Director of Engineering and Chief Software Architect — Mar 2015 – Jun 2016
 • Led a 70-person org, with leads and architects as direct reports, and the full software stack from camera and sensor firmware to the cloud. Advised on sensor-fusion firmware to fix globally synchronized timestamps.
 • Launched the DAQRI Smart Helmet, an industrial AR hard hat with depth and thermal sensing, shown in Intel CEO Brian Krzanich's CES 2016 keynote; managed the 45-engineer team that delivered 15+ customer apps and 2 core spatial-framework releases in 9 months.
 • Owned staffing, recruiting oversight, budget, and executive communication; grew the software team from 3 to 30 and created the Unity/C# spatial framework API.
+• Built a fleet management dashboard to reduce cost and improve reliability across the device fleet.
 
 Microsoft — Manager &amp; Architect, Automotive; Senior SDE, Kinect; Azure Storage — Apr 2008 – Mar 2015
 • Managed a 15-engineer international automotive team, merging Redmond and Japan groups; delivered latency-critical HMI frameworks with hardware 2D/3D acceleration for ARM-based car systems to Ford, BMW, Toyota, and other automakers, including 3 CTP releases in 2009.
@@ -198,8 +219,7 @@ Engineering leadership, managing managers, staffing and recruiting, roadmap and 
 
 AEC COMMUNITY
 Industry judge at multiple Seattle AEC hackathons: best overall, best mashup, real AEC problem.
-
-PATENTS
+RELATED PATENTS
 37 US patents in spatial computing and interaction, including Multiple VPS Synchronization for Live Spatial Event Viewing (US 12,159,359) and Spatial 3D Object Multiuser Annotation (US 11,763,559).</pre>
       </section>
 
@@ -254,10 +274,10 @@ PATENTS
         <h2 id="notes-title" class="learn-section-title">Notes / changelog</h2>
         <ul class="cv-log">
           <li><span class="cv-date">2026-10-03</span> Draft from the saved posting and <code>resume.json</code>. Quintar title kept as stored: Principle Engineer.</li>
-          <li><span class="cv-date">2026-10-04</span> Richard confirmed leads and architects reported to him at DAQRI, Magic Leap, Niantic, and Quintar; DAQRI was a 70-person org and he led firmware through cloud, including sensor-fusion timestamps; Magic Leap wireless-controller firmware debug. Contact line is San Jose, CA. Robotics, EE/ME leadership, field-fleet reliability, and an org-wide AI adoption program stay off the CV.</li>
+          <li><span class="cv-date">2026-10-04</span> Richard confirmed leads and architects reported to him at DAQRI, Magic Leap, Niantic, and Quintar; DAQRI was a 70-person org and he led firmware through cloud, including sensor-fusion timestamps; Magic Leap wireless-controller firmware debug. Contact line is San Jose, CA. Robotics, EE/ME leadership, and an org-wide AI adoption program stay off the CV.</li>
           <li><span class="cv-date">2026-10-04</span> Richard confirmed he has judged at multiple Seattle AEC hackathons, as an industry judge for AR/VR solutions in architecture, engineering, and construction. Criteria: best overall, best mashup, and solving a real AEC problem. Interview: <a href="https://youtu.be/byLEVkgQTks">youtu.be/byLEVkgQTks</a>. The interview does not state the event year, so none was added. Margrave Technologies (Founder – CEO – Principle Developer, Jun 2016 – Nov 2017; Margrave VR Social Sharing SDK) closes the Jun 2016 – Nov 2017 gap. Construction employment is still unconfirmed.</li>
+          <li><span class="cv-date">2026-10-04</span> Richard confirmed two field-operations facts, with no metrics added. DAQRI: built a fleet management dashboard to reduce overall cost and improve reliability across the device fleet. Quintar: led the work that created field support management tools, reducing cost and increasing reliability of live field operations. The field-fleet confirm is closed. Robotics as a product org, EE/ME leadership, and an org-wide AI program stay open.</li>
           <li><span class="ph">Richard to confirm: electrical or mechanical organization leadership. Not in the file.</span></li>
-          <li><span class="ph">Richard to confirm: field-fleet reliability, deployed-robot operations, or jobsite hardware. Not in the file.</span></li>
           <li><span class="ph">Richard to confirm: robotics as a product organization, as distinct from hardware-enabled products already shipped.</span></li>
           <li><span class="ph">Richard to confirm: an org-wide program for AI in design, code review, test, and documentation. Shipped ML features are not that program.</span></li>
           <li><span class="ph">Richard to confirm: phone number, and whether “Principle Engineer” should read “Principal Engineer” externally.</span></li>
@@ -265,6 +285,6 @@ PATENTS
       </section>
     </div>
   </main>
-  <script src="cover-cv.js?v=4"></script>
+  <script src="cover-cv.js?v=5"></script>
 </body>
 </html>

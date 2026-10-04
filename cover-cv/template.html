@@ -115,6 +115,20 @@
         </div>
       </section>
 
+      <section class="learn-section cv-no-print" aria-labelledby="letter-title">
+        <h2 id="letter-title" class="learn-section-title">Cover letter</h2>
+        <p class="cv-note">Optional. Recommended for VP-level roles and for any application form with a cover letter field. Three short paragraphs, under about 250 words. Paste separately from the resume. Tailor it to this role. Do not put the letter inside the CV text.</p>
+        <div class="cv-actions">
+          <button type="button" class="filter-toggle-btn" id="copy-letter">Copy</button>
+          <span id="copy-letter-status" class="cv-copy-status" role="status"></span>
+        </div>
+        <pre id="letter-text" class="cv-pre" contenteditable="true" spellcheck="false">[PLACEHOLDER: Paragraph 1. Why this company and this role, in the posting’s words. Under about 250 words for all three paragraphs.]
+
+[PLACEHOLDER: Paragraph 2. Two or three proofs mapped to the role’s key points. Use only facts already in resume.json or confirmed on this page.]
+
+[PLACEHOLDER: Paragraph 3. A brief close and a request to talk. No claim the CV does not already make.]</pre>
+      </section>
+
       <section class="learn-section" aria-labelledby="cv-title">
         <div class="cv-no-print">
           <h2 id="cv-title" class="learn-section-title">CV text</h2>
@@ -149,8 +163,8 @@ SKILLS
 EDUCATION
 [PLACEHOLDER: Include only after Richard confirms school, degree, and year. resume.json has no education record.]
 
-PATENTS
-[PLACEHOLDER: Include only when relevant. Title, number, and year from resume.json patents.]</pre>
+RELATED PATENTS
+[PLACEHOLDER: A selection, not the full list. Keep a total if one is confirmed. Title, number, and year from resume.json patents.]</pre>
       </section>
 
       <section class="learn-section cv-no-print" aria-labelledby="outreach-title">
@@ -200,6 +214,6 @@ PATENTS
       </section>
     </div>
   </main>
-  <script src="cover-cv.js?v=4"></script>
+  <script src="cover-cv.js?v=5"></script>
 </body>
 </html>

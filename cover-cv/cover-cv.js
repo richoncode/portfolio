@@ -3,6 +3,7 @@
   var REDACT_HISTORY_URL = 'redact-history.json?v=1';
   var SCAN_SOURCES = [
     { id: 'cv-text', label: 'CV text' },
+    { id: 'letter-text', label: 'cover letter' },
     { id: 'outreach-text', label: 'outreach note' },
     { id: 'stories', label: 'interview stories' }
   ];
@@ -68,6 +69,7 @@
   }
 
   bindCopy('copy-cv', 'cv-text', 'copy-cv-status');
+  bindCopy('copy-letter', 'letter-text', 'copy-letter-status');
   bindCopy('copy-outreach', 'outreach-text', 'copy-outreach-status');
   bindCopy('copy-redact-source', 'redact-source', 'copy-redact-source-status');
 
@@ -343,7 +345,7 @@
         }).then(function (html) {
           var parsed = textsFromHtml(html);
           if (!parsed.found) {
-            return { link: link, href: href, stamp: stamp, clear: false, text: 'No CV, outreach, or story block on this page.' };
+            return { link: link, href: href, stamp: stamp, clear: false, text: 'No CV, cover letter, outreach, or story block on this page.' };
           }
           var hits = scanTexts(entries, parsed.texts);
           if (!hits.length) return { link: link, href: href, stamp: stamp, clear: true, text: 'clear' };
@@ -458,7 +460,7 @@
     document.addEventListener('input', function (event) {
       var target = event.target;
       if (!target || !target.closest) return;
-      if (!target.closest('#cv-text, #outreach-text, #stories')) return;
+      if (!target.closest('#cv-text, #letter-text, #outreach-text, #stories')) return;
       window.clearTimeout(timer);
       timer = window.setTimeout(run, 60);
     });
