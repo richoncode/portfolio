@@ -72,6 +72,7 @@ consistency. Validate new components against it after implementation.
 - **Skill chip**: `.skill-chip` — bg-card bordered pill
 - **Intro tag**: `.intro-tag-badge` — tiny uppercase category label
 - **Role badge**: `.badge--ic` (blue) / `.badge--technical-management` (purple)
+- **Reading status**: `.read-status--in-progress` (orange) / `.read-status--queued` / `.read-status--finished` (green)
 - **Active count**: `.filter-active-count` — accent dot badge
 
 ### Cards
@@ -129,6 +130,17 @@ research[]               {id, title, url, date, subject, summary, tags, parent?,
                          tags is a ' · '-joined string; hidden:true keeps a
                          not-yet-public item out of the rendered list
 publications[]           {title, venue, date, url}
+reading[]                {title, authors[], publication, url, datePublished,
+                          status, dateStarted, dateFinished, note?, tags[]?,
+                          issue?, lastUpdated?}
+                         — status: in-progress | queued | finished
+                         (In progress, then Queued, then Finished);
+                         datePublished is a calendar date (YYYY-MM-DD) when the
+                         page states one, otherwise "";
+                         issue is the publication issue line when that is all
+                         the page gives (e.g. "2026 - September/October");
+                         lastUpdated is the page's "Last updated" date when present.
+                         Add the next entry by appending one object to reading[].
 filterTaxonomy           {roles[], experiences[]}
 ```
 

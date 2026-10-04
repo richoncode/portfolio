@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Style Guide – Richard Bailey Portfolio</title>
-  <link rel="stylesheet" href="src/css/main.css?v=39">
+  <link rel="stylesheet" href="src/css/main.css?v=42">
   <style>
     .sg-page { padding: 40px 0 80px; }
     .sg-section { margin-bottom: 56px; }
@@ -204,6 +204,12 @@
           <span class="learn-cert-count">12 of 116</span>
           <div class="sg-label" style="width:100%">.filter-active-count (accent dot) · .learn-cert-count (mono dim)</div>
         </div>
+        <div class="sg-row" style="margin-top:12px;">
+          <span class="read-status read-status--in-progress">In progress</span>
+          <span class="read-status read-status--queued">Queued</span>
+          <span class="read-status read-status--finished">Finished</span>
+          <div class="sg-label" style="width:100%">.read-status--in-progress (orange) · .read-status--queued · .read-status--finished (green)</div>
+        </div>
       </div>
     </div>
 
@@ -222,6 +228,24 @@
           <p class="learn-card-desc">Published open-source samples and documentation for the Kinect SDK.</p>
         </div>
         <div class="sg-label" style="margin-bottom:20px;">.learn-card — bg-card border radius, hover border brightens</div>
+
+        <article class="learn-card read-card" style="margin-bottom:16px;">
+          <div class="read-card-top">
+            <a class="read-title" href="#">Fine Tuning Large Language Models, Part 1</a>
+            <span class="read-status read-status--in-progress">In progress</span>
+          </div>
+          <div class="read-byline">Wei-Meng Lee</div>
+          <div class="read-meta">
+            <span class="learn-issuer-badge">CODE Magazine</span>
+            <span class="learn-date">2026 - September/October</span>
+            <span class="learn-date">Started Oct 3, 2026</span>
+          </div>
+          <div class="skill-chips read-tags">
+            <span class="skill-chip">LLMs</span>
+            <span class="skill-chip">fine-tuning</span>
+          </div>
+        </article>
+        <div class="sg-label" style="margin-bottom:20px;">.read-card — reading list entry; title links out, status badge, tags</div>
 
         <!-- Patent card -->
         <div class="patent-card">

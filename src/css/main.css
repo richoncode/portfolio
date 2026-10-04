@@ -49,6 +49,9 @@ a:hover { text-decoration: underline; }
   display: flex;
   margin-top: 10px;
   border-bottom: 1px solid var(--border);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
 }
 
 .tab {
@@ -61,6 +64,8 @@ a:hover { text-decoration: underline; }
   font-size: 0.9rem;
   font-weight: 500;
   padding: 8px 20px;
+  flex: 0 0 auto;
+  white-space: nowrap;
   margin-bottom: -1px;
   transition: color 0.15s, border-color 0.15s;
   text-decoration: none;
@@ -1171,6 +1176,89 @@ a.learn-issuer-badge:hover {
   color: var(--text-2);
   line-height: 1.55;
   margin-top: 4px;
+}
+
+/* ─── Reading list ────────────────────────── */
+.read-group-title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-2);
+  margin: 16px 0 8px;
+}
+.read-group:first-child .read-group-title { margin-top: 0; }
+
+.read-card-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px 12px;
+}
+
+.read-title {
+  flex: 1 1 12rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text);
+  text-decoration: none;
+  line-height: 1.4;
+}
+a.read-title:hover { color: var(--accent); text-decoration: underline; }
+
+.read-status {
+  display: inline-block;
+  flex-shrink: 0;
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 10px;
+  white-space: nowrap;
+  line-height: 1.5;
+}
+.read-status--in-progress {
+  color: var(--orange);
+  background: color-mix(in srgb, var(--orange) 14%, transparent);
+  border: 1px solid color-mix(in srgb, var(--orange) 35%, transparent);
+}
+.read-status--queued {
+  color: var(--text-2);
+  background: transparent;
+  border: 1px solid var(--border);
+}
+.read-status--finished {
+  color: var(--green);
+  background: color-mix(in srgb, var(--green) 14%, transparent);
+  border: 1px solid color-mix(in srgb, var(--green) 35%, transparent);
+}
+
+.read-byline {
+  font-size: 0.8rem;
+  color: var(--accent-2);
+  margin-top: 4px;
+}
+
+.read-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.read-note {
+  font-size: 0.83rem;
+  color: var(--text-2);
+  line-height: 1.55;
+  margin-top: 8px;
+}
+
+.read-tags { margin-top: 8px; }
+
+.read-empty {
+  font-size: 0.85rem;
+  color: var(--text-2);
 }
 
 /* ─── Career Timeline ─────────────────────── */
