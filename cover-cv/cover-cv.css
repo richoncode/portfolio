@@ -333,6 +333,51 @@
   margin-bottom: 12px;
 }
 
+.cv-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  margin-top: 12px;
+  font-size: 0.85rem;
+}
+
+.cv-role-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cv-role-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.cv-role-company {
+  margin-bottom: 4px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-2);
+}
+
+.cv-role-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  margin-top: 8px;
+  color: var(--text-2);
+  font-size: 0.85rem;
+}
+
+.cv-role-card .cv-score {
+  margin: 0;
+  flex-shrink: 0;
+}
+
 .cv-audit {
   margin-top: 12px;
   border: 1px solid var(--border);
@@ -483,6 +528,10 @@
 @media (max-width: 640px) {
   .cv-header h1 {
     font-size: 1.6rem;
+  }
+
+  .cv-role-top {
+    flex-direction: column;
   }
 
   .cv-split,
