@@ -1202,10 +1202,14 @@ function renderLearning() {
     const dateStr = v.startDate
       ? (end ? `${formatDate(v.startDate)} – ${end}` : formatDate(v.startDate))
       : formatDate(v.date);
+    const org = escapeHtml(v.organization || v.org || '');
+    const orgEl = v.url
+      ? `<a class="learn-card-title" href="${escapeHtml(v.url)}" target="_blank" rel="noopener">${org}</a>`
+      : `<span class="learn-card-title">${org}</span>`;
     return `
       <div class="learn-card">
         <div class="learn-card-header">
-          <span class="learn-card-title">${escapeHtml(v.organization || v.org || '')}</span>
+          ${orgEl}
           <span class="learn-date">${dateStr}</span>
         </div>
         <div class="learn-card-role">${escapeHtml(v.role)}</div>

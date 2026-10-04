@@ -1164,6 +1164,11 @@ a.learn-issuer-badge:hover {
   font-weight: 600;
   color: var(--text);
 }
+a.learn-card-title {
+  color: var(--accent);
+  text-decoration: none;
+}
+a.learn-card-title:hover { text-decoration: underline; }
 
 .learn-card-role {
   font-size: 0.8rem;

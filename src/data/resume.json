@@ -2198,7 +2198,8 @@
         "role": "Judge",
         "startDate": "2017-03",
         "endDate": null,
-        "description": "Industry expert and judge for Seattle augmented reality and virtual reality hackathon."
+        "url": "https://youtu.be/byLEVkgQTks",
+        "description": "Industry judge at multiple Seattle AEC hackathons for AR/VR solutions in architecture, engineering, and construction. Criteria: best overall, best mashup, and solving a real AEC problem."
       },
       {
         "id": "vol-3",
@@ -4211,7 +4212,8 @@
       "role": "Judge",
       "startDate": "2017-03",
       "endDate": null,
-      "description": "Industry expert and judge for Seattle augmented reality and virtual reality hackathon."
+      "url": "https://youtu.be/byLEVkgQTks",
+      "description": "Industry judge at multiple Seattle AEC hackathons for AR/VR solutions in architecture, engineering, and construction. Criteria: best overall, best mashup, and solving a real AEC problem."
     },
     {
       "id": "vol-3",
