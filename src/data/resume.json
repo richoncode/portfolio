@@ -1972,7 +1972,7 @@
               "startDate": "2015-03",
               "endDate": "2016-06",
               "current": false,
-              "description": "Industrial AR wearable for factory-floor applications. Features VPS spatial mapping and real-time display of investigation and danger areas. Shared CES keynote stage with Intel CEO at launch.",
+              "description": "Industrial AR hard hat with depth and thermal sensing for factory-floor applications. Features VPS spatial mapping and real-time display of investigation and danger areas. Shown during Intel CEO Brian Krzanich's CES 2016 keynote.",
               "tags": [
                 "Zero-to-One",
                 "Spatial AI",
@@ -3316,7 +3316,7 @@
             },
             {
               "id": "daqri-a2",
-              "text": "Launched XR Smart Helmet for industrial applications. Launch shared CES Keynote stage with Intel CEO.",
+              "text": "Launched the XR Smart Helmet, an industrial AR hard hat with depth and thermal sensing. It was shown during Intel CEO Brian Krzanich's CES 2016 keynote.",
               "tags": {
                 "type": [
                   "technical-management"
@@ -3331,7 +3331,7 @@
                 "customers": [],
                 "impact": {
                   "metric": "industry recognition",
-                  "value": "CES Keynote with Intel CEO"
+                  "value": "shown during Intel CEO Brian Krzanich's CES 2016 keynote"
                 },
                 "hasMetric": false
               }
@@ -3369,6 +3369,46 @@
                   "industrial"
                 ],
                 "technologies": [],
+                "customers": [],
+                "hasMetric": false
+              }
+            },
+            {
+              "id": "daqri-org",
+              "text": "Led a 70-person org. Leads and architects reported to him. Led the full software stack, from the firmware for the cameras and sensors up to the cloud.",
+              "tags": {
+                "type": [
+                  "technical-management"
+                ],
+                "domain": [
+                  "ar",
+                  "industrial",
+                  "architecture",
+                  "hardware-software-codesign"
+                ],
+                "technologies": [
+                  "firmware"
+                ],
+                "customers": [],
+                "teamSize": 70,
+                "hasMetric": false
+              }
+            },
+            {
+              "id": "daqri-firmware",
+              "text": "Advised on the sensor-fusion firmware code to fix problems with globally synchronized timestamps.",
+              "tags": {
+                "type": [
+                  "ic"
+                ],
+                "domain": [
+                  "architecture",
+                  "hardware-software-codesign"
+                ],
+                "technologies": [
+                  "firmware",
+                  "sensor fusion"
+                ],
                 "customers": [],
                 "hasMetric": false
               }
@@ -3438,7 +3478,7 @@
           ]
         }
       ],
-      "summary": "**Director of Engineering** for the industrial **XR Smart Helmet** — 45-engineer org shipping 15+ customer apps and core **spatial frameworks**; **Unity/C# spatial AR APIs**; launched on the **CES keynote** stage with Intel's CEO. As **Chief Software Architect**, grew the team from 3 to 30."
+      "summary": "**Director of Engineering** for a **70-person** industrial **XR Smart Helmet** org. Led the full software stack from camera and sensor firmware to the cloud; leads and architects reported in. Advised on sensor-fusion firmware for globally synchronized timestamps. A **45-engineer** delivery shipped 15+ customer apps and 2 framework releases in 9 months. As **Chief Software Architect**, grew the software team from 3 to 30. The helmet, an industrial AR hard hat with depth and thermal sensing, was shown during Intel CEO Brian Krzanich's CES 2016 keynote."
     },
     {
       "id": "margrave",
@@ -3702,11 +3742,43 @@
                 "customers": [],
                 "hasMetric": false
               }
+            },
+            {
+              "id": "ml-reports",
+              "text": "Leads and architects reported to him.",
+              "tags": {
+                "type": [
+                  "technical-management"
+                ],
+                "domain": [
+                  "mentoring"
+                ],
+                "technologies": [],
+                "customers": [],
+                "hasMetric": false
+              }
+            },
+            {
+              "id": "ml-firmware",
+              "text": "Debugged the wireless controller firmware and driver stack and identified design flaws that caused intermittent behavior.",
+              "tags": {
+                "type": [
+                  "ic"
+                ],
+                "domain": [
+                  "hardware-software-codesign"
+                ],
+                "technologies": [
+                  "firmware"
+                ],
+                "customers": [],
+                "hasMetric": false
+              }
             }
           ]
         }
       ],
-      "summary": "**Senior Director** leading a 30-engineer international team through the **Magic Leap 1 and 2** launches — flagship **Spatial AR Meetings** shipped within a year of prototype, a **1000× application performance improvement**, and multi-application shared **spatial computing**."
+      "summary": "**Senior Director** leading a 30-engineer international team through the **Magic Leap 1 and 2** launches — flagship **Spatial AR Meetings** shipped within a year of prototype, a **1000× application performance improvement**, and multi-application shared **spatial computing**. Leads and architects reported to him. Debugged the wireless controller firmware and driver stack and identified design flaws that caused intermittent behavior."
     },
     {
       "id": "niantic",
@@ -3809,11 +3881,26 @@
                 "customers": [],
                 "hasMetric": false
               }
+            },
+            {
+              "id": "niantic-reports",
+              "text": "Leads and architects reported to him.",
+              "tags": {
+                "type": [
+                  "technical-management"
+                ],
+                "domain": [
+                  "mentoring"
+                ],
+                "technologies": [],
+                "customers": [],
+                "hasMetric": false
+              }
             }
           ]
         }
       ],
-      "summary": "**Senior Director of Lightship ARDK** — on-time launch at AWE winning **Best-in-Show AR**, +75% developer engagement, and 70% faster builds — **AR developer-platform** leadership at scale (iOS/Android/Unity)."
+      "summary": "**Senior Director of Lightship ARDK** — on-time launch at AWE winning **Best-in-Show AR**, +75% developer engagement, and 70% faster builds — **AR developer-platform** leadership at scale (iOS/Android/Unity). Leads and architects reported to him."
     },
     {
       "id": "quintar",
@@ -3964,11 +4051,26 @@
                 },
                 "hasMetric": true
               }
+            },
+            {
+              "id": "quintar-reports",
+              "text": "Leads and architects reported to him.",
+              "tags": {
+                "type": [
+                  "technical-management"
+                ],
+                "domain": [
+                  "mentoring"
+                ],
+                "technologies": [],
+                "customers": [],
+                "hasMetric": false
+              }
             }
           ]
         }
       ],
-      "summary": "**VP of Engineering** and Principal Engineer — 30-engineer USA/India org building a unified **Spatial AI platform** proven on live sports; award-winning **PGA Tour Vision on Apple Vision Pro**; **100fps multithreaded 3D streaming renderer** and stereo render pipeline."
+      "summary": "**VP of Engineering** and Principal Engineer — 30-engineer USA/India org building a unified **Spatial AI platform** proven on live sports; award-winning **PGA Tour Vision on Apple Vision Pro**; **100fps multithreaded 3D streaming renderer** and stereo render pipeline. Leads and architects reported to him."
     }
   ],
   "skills": [
@@ -4070,7 +4172,9 @@
   "reading": [
     {
       "title": "Fine Tuning Large Language Models, Part 1",
-      "authors": ["Wei-Meng Lee"],
+      "authors": [
+        "Wei-Meng Lee"
+      ],
       "publication": "CODE Magazine",
       "issue": "2026 - September/October",
       "url": "https://www.codemag.com/Article/2610031/Fine-Tuning-Large-Language-Models-Part-1",
@@ -4080,7 +4184,10 @@
       "dateStarted": "2026-10-03",
       "dateFinished": "",
       "note": "",
-      "tags": ["LLMs", "fine-tuning"]
+      "tags": [
+        "LLMs",
+        "fine-tuning"
+      ]
     }
   ],
   "volunteering": [
@@ -4281,7 +4388,7 @@
       "title": "DAQRI XR Smart Helmet",
       "startDate": "2015-03",
       "endDate": "2016-06",
-      "description": "Industrial AR wearable for factory-floor applications. Features VPS spatial mapping and real-time display of investigation and danger areas. Shared CES keynote stage with Intel CEO at launch."
+      "description": "Industrial AR hard hat with depth and thermal sensing for factory-floor applications. Features VPS spatial mapping and real-time display of investigation and danger areas. Shown during Intel CEO Brian Krzanich's CES 2016 keynote."
     },
     {
       "id": "proj-deutsche-telekom-immigrant-language-training-mobile-vr-",

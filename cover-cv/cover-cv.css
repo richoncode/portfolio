@@ -523,6 +523,10 @@
     line-height: 1.3;
     white-space: pre-wrap;
   }
+
+  #cv-text.cv-pre--spaced {
+    line-height: 1.12;
+  }
 }
 
 @media (max-width: 640px) {
