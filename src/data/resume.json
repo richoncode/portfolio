@@ -3413,6 +3413,23 @@
                 "customers": [],
                 "hasMetric": false
               }
+            },
+            {
+              "id": "daqri-fleet",
+              "text": "Built a fleet management dashboard to reduce overall cost and improve reliability across the device fleet.",
+              "tags": {
+                "type": [
+                  "ic",
+                  "technical-management"
+                ],
+                "domain": [
+                  "industrial",
+                  "hardware-software-codesign"
+                ],
+                "technologies": [],
+                "customers": [],
+                "hasMetric": false
+              }
             }
           ]
         },
@@ -3479,7 +3496,7 @@
           ]
         }
       ],
-      "summary": "**Director of Engineering** for a **70-person** industrial **XR Smart Helmet** org. Led the full software stack from camera and sensor firmware to the cloud; leads and architects reported in. Advised on sensor-fusion firmware for globally synchronized timestamps. A **45-engineer** delivery shipped 15+ customer apps and 2 framework releases in 9 months. As **Chief Software Architect**, grew the software team from 3 to 30. The helmet, an industrial AR hard hat with depth and thermal sensing, was shown during Intel CEO Brian Krzanich's CES 2016 keynote."
+      "summary": "**Director of Engineering** for a **70-person** industrial **XR Smart Helmet** org. Led the full software stack from camera and sensor firmware to the cloud; leads and architects reported in. Advised on sensor-fusion firmware for globally synchronized timestamps. Built a **fleet management dashboard** to reduce overall cost and improve reliability across the device fleet. A **45-engineer** delivery shipped 15+ customer apps and 2 framework releases in 9 months. As **Chief Software Architect**, grew the software team from 3 to 30. The helmet, an industrial AR hard hat with depth and thermal sensing, was shown during Intel CEO Brian Krzanich's CES 2016 keynote."
     },
     {
       "id": "margrave",
@@ -4054,6 +4071,21 @@
               }
             },
             {
+              "id": "quintar-field",
+              "text": "Led the work that created field support management tools, reducing cost and increasing reliability of live field operations.",
+              "tags": {
+                "type": [
+                  "technical-management"
+                ],
+                "domain": [
+                  "product"
+                ],
+                "technologies": [],
+                "customers": [],
+                "hasMetric": false
+              }
+            },
+            {
               "id": "quintar-reports",
               "text": "Leads and architects reported to him.",
               "tags": {
@@ -4071,7 +4103,7 @@
           ]
         }
       ],
-      "summary": "**VP of Engineering** and Principal Engineer — 30-engineer USA/India org building a unified **Spatial AI platform** proven on live sports; award-winning **PGA Tour Vision on Apple Vision Pro**; **100fps multithreaded 3D streaming renderer** and stereo render pipeline. Leads and architects reported to him."
+      "summary": "**VP of Engineering** and Principal Engineer — 30-engineer USA/India org building a unified **Spatial AI platform** proven on live sports; award-winning **PGA Tour Vision on Apple Vision Pro**; **100fps multithreaded 3D streaming renderer** and stereo render pipeline. Led the work that created **field support management tools**, reducing cost and increasing reliability of live field operations. Leads and architects reported to him."
     }
   ],
   "skills": [

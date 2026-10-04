@@ -57,7 +57,7 @@
             <li>An alias written in all capitals matches case-sensitively. SPECS does not match the ordinary word specs.</li>
             <li>Any other alias ignores case.</li>
             <li>A match is a whole word or phrase. The name inside a longer word does not count.</li>
-            <li>Each role page is scanned in three blocks: the CV text, the outreach note, and the STAR stories.</li>
+            <li>Each role page is scanned in four blocks: the CV text, the cover letter, the outreach note, and the STAR stories.</li>
           </ul>
         </div>
       </details>
@@ -69,12 +69,12 @@
 
         <h3>1. Exactly one page</h3>
         <p>US Letter, one page. Open the role page’s Print 1-page view and confirm a single page before sending anything. When it spills onto page two, cut in this order: the oldest roles, then preferred-only keywords, then extra bullets on roles that do not serve the posting’s top three requirements. The most recent relevant roles keep three to five bullets. Older roles shrink to a title line and one bullet, or leave the page.</p>
-        <p>Keep the type at about 10.5pt or larger and the margins at about 0.6 inches. Contact information counts toward the page. Patents, when they matter for this job, are a few lines on page one. A second page titled “additional patents” does not go out.</p>
+        <p>Keep the type at about 10.5pt or larger and the margins at about 0.6 inches. Contact information counts toward the page. When patents matter for this job, the heading is RELATED PATENTS, and the lines on page one are a selection. A total such as 37 US patents may stay in that selection. A second page titled “additional patents” does not go out.</p>
 
         <h3>2. Make it readable by an ATS</h3>
         <p>The file an employer receives is a single column of text. In that file, use ordinary paragraphs and plain bullets. Leave out tables, columns, text boxes, sidebars, images, icons, graphics, skill bars, and text inside shapes. This authoring page may use tables. The CV text may not.</p>
         <ul>
-          <li>Section headings, in this order, skipping a section only when it is empty or irrelevant to the posting: Summary, Experience, Skills, Education, Patents.</li>
+          <li>Section headings, in this order, skipping a section only when it is empty or irrelevant to the posting: Summary, Experience, Skills, Education, Related Patents.</li>
           <li>A standard face: Calibri, Arial, Cambria, or Times New Roman.</li>
           <li>Plain bullets, a hyphen or a round bullet. Dates written <code>Mon YYYY – Mon YYYY</code> with an en dash. A current role ends with <code>Present</code>.</li>
           <li>Contact information as the first lines of the document body: name, city, email, phone if Richard has confirmed one, LinkedIn, and the public portfolio URL. Word and PDF headers and footers are dropped by many parsers, so the contact block lives in the body.</li>
@@ -116,7 +116,7 @@
         <p>In the keyword table, an iOS must-have can be covered or partial on the strength of that Apple-platform evidence. The CV still names visionOS, Vision Pro, or Swift. It does not retitle that work as an iOS role or swap a visionOS bullet into an iOS bullet. When the posting specifically requires UIKit App Store apps and the data only supports visionOS or Swift, mark the keyword partial and say so in the fit score.</p>
 
         <h3>10. Leave confidential and unapproved names out</h3>
-        <p>The <a href="#redact">redact list</a> at the top of this page is the set of company and brand names that cannot be mentioned yet. It lives in <code>cover-cv/redact.json</code>. An active term, and every alias on that row, stays out of the CV, the outreach note, and the interview stories. Use that row’s “use instead” wording. When a name is cleared, set <code>status</code> to <code>cleared</code> so the row remains as history and the role-page check stops flagging it. Each role page scans those three blocks on load and again as they are edited.</p>
+        <p>The <a href="#redact">redact list</a> at the top of this page is the set of company and brand names that cannot be mentioned yet. It lives in <code>cover-cv/redact.json</code>. An active term, and every alias on that row, stays out of the CV, the cover letter, the outreach note, and the interview stories. Use that row’s “use instead” wording. When a name is cleared, set <code>status</code> to <code>cleared</code> so the row remains as history and the role-page check stops flagging it. Each role page scans those four blocks on load and again as they are edited.</p>
         <p>Keep Quintar’s confidential detail out as well: unreleased customers, unannounced commercial terms, and internal architecture that is not already written in <code>resume.json</code>. Shipments already in the resume data may be used. Anything past that waits for Richard’s yes, recorded in the notes. The public portfolio URL may appear in the contact block. The <code>/cover-cv/</code> URL never appears on a CV or in outreach.</p>
 
         <h3>11. Answer the hiring manager’s likely concerns on the page</h3>
@@ -128,28 +128,34 @@
         </ul>
         <p>If a concern cannot be answered with a confirmed fact, lower the fit score. A score of 8–10 means the must-haves are covered with real evidence. A score of 5–7 means one real gap with a mitigation. A score of 1–4 means pass, unless Richard explicitly overrides it in the notes.</p>
 
-        <h3>12. Checklist before applying</h3>
+        <h3>12. Cover letters are optional, and they are not the resume</h3>
+        <p>A cover letter is optional. It is recommended for VP-level roles and for any application form that has a cover letter field. Paste it separately from the resume. Tailor it to this role. Do not place it inside the CV text. The short outreach note stays a separate message.</p>
+        <p>Three short paragraphs, under about 250 words. The first says why this company and this role, in the posting’s words. The second gives two or three proofs mapped to the role’s key points, using only facts already in <code>resume.json</code> or on this role page. The third is a brief close. The role page keeps its own copy box for the letter, above the resume copy box. The redact list applies to the cover letter the same way it applies to the CV.</p>
+        <p>Mirror the target company’s own vocabulary from its website and the job posting. For Dusty, that includes rework, design intent, revisions that make it to the field, and field teams and trades. Do not add disclaimers about experience the posting does not require.</p>
+
+        <h3>13. Checklist before applying</h3>
         <ul class="cv-checklist">
           <li>Print preview is a single US Letter page, black text on white, and the text is selectable.</li>
           <li>Contact information is in the body, and the document has no header, footer, table, column, text box, image, or icon.</li>
-          <li>Headings are Summary, Experience, Skills, and, when they belong, Education and Patents.</li>
+          <li>Headings are Summary, Experience, Skills, and, when they belong, Education and Related Patents.</li>
           <li>Dates use <code>Mon YYYY – Mon YYYY</code>. The target title and the summary match the role in the first screen.</li>
           <li>The top three requirements appear in the top third, in the posting’s words.</li>
           <li>Every must-have and preferred keyword is marked covered, partial, or missing.</li>
           <li>Every employer, title, date, and number traces to <code>resume.json</code> or to a confirmation in the notes.</li>
           <li>Apple-platform work counted toward iOS is still named as iOS, visionOS, Vision Pro, or Swift, whichever it was.</li>
-          <li>The role page shows “Redact check: clear”. No active name from the redact list is in the CV, the outreach note, or the interview stories.</li>
+          <li>The role page shows “Redact check: clear”. No active name from the redact list is in the CV, the cover letter, the outreach note, or the interview stories.</li>
           <li>Quintar confidential detail is absent. The cover-cv URL is absent.</li>
           <li>Each hiring-manager concern has a mitigation in the CV or in the outreach note.</li>
           <li>The outreach note is under about 120 words and adds no claim the CV does not already make.</li>
           <li>Two or three STAR stories on the role page map to the top requirements, using the same facts as the CV.</li>
           <li>The file sent is <code>.docx</code> or a text-based PDF named <code>Richard-Bailey-Company-Role</code>.</li>
+          <li>If a cover letter goes out, it is pasted separately from the resume. It is three short paragraphs, under about 250 words, tailored to this role, and it adds no claim the CV does not already make. It uses the company’s own words from the website and the posting, and it does not disclaim experience the posting does not require.</li>
           <li>The CV list shows the company, title, location, fit score, status, and date added.</li>
         </ul>
       </section>
 
     </div>
   </main>
-  <script src="cover-cv.js?v=4"></script>
+  <script src="cover-cv.js?v=5"></script>
 </body>
 </html>
