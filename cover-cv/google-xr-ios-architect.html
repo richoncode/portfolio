@@ -56,7 +56,7 @@
             <ul>
               <li>Software development since 1986, well past the 8-year minimum. Architecture and launch work is the through-line: Kinect SDK, Magic Leap platform, Lightship ARDK, Quintar renderer.</li>
               <li>First-party spatial apps and the SDKs under them. Niantic Lightship on iOS and Android. Magic Leap meetings plus companion apps on iOS. Quintar sports products on iOS and on visionOS.</li>
-              <li>Hands-on Swift, SwiftUI, RealityKit, Metal, and Instruments in the current role, including a 100fps streaming renderer. Kinect body-tracking APIs and the ergonomic interaction-zone cursor patent cover spatial interaction. Magic Leap’s 1000x gain covers constrained-device performance.</li>
+              <li>Hands-on Swift, SwiftUI, RealityKit, Metal, and Instruments in the current role, including the 100fps streaming 3D renderer (time series presenter). Kinect body-tracking APIs and the ergonomic interaction-zone cursor patent cover spatial interaction. Magic Leap’s 1000x gain covers constrained-device performance.</li>
             </ul>
           </div>
           <div>
@@ -157,7 +157,7 @@
         </div>
         <pre id="letter-text" class="cv-pre" contenteditable="true" spellcheck="false">I am applying for Senior Staff Software Engineering Architect, XR iOS. The work I want is first-party XR on iOS and the SDKs underneath wearable devices: the spatial platform, the apps on it, and the performance those devices allow.
 
-At Quintar I am hands-on in Swift, SwiftUI, RealityKit, and Metal. I shipped PGA Tour Vision on Apple Vision Pro, and NASCAR, MLB, NBA, and FIFA on iOS, with a multithreaded 100fps 3D streaming renderer and a SharePlay sync API. I created an agentic fan agent: on-device speech handles immediate requests locally and routes others to edge or cloud AI, with MCP and A2A connectors feeding sports and venue data to the LLMs. Before that I launched Niantic’s Lightship ARDK on iOS and Android, and Magic Leap’s spatial meetings platform with companion apps on iOS, including a 1000x performance gain on the pre-V1 platform. Earlier, Kinect body-tracking APIs shipped in Windows and Xbox.
+At Quintar I am hands-on in Swift, SwiftUI, RealityKit, and Metal. I shipped PGA Tour Vision on Apple Vision Pro, and NASCAR, MLB, NBA, and FIFA on iOS, with Quintar’s streaming 3D renderer (time series presenter), created in 2023: multithreaded, 100fps, separating slow or choppy network data and data preparation from time-critical per-frame rendering, and a SharePlay sync API. It became a key part of Quintar’s product offering. I created an agentic fan agent: on-device speech handles immediate requests locally and routes others to edge or cloud AI, with MCP and A2A connectors feeding sports and venue data to the LLMs. Before that I launched Niantic’s Lightship ARDK on iOS and Android, and Magic Leap’s spatial meetings platform with companion apps on iOS, including a 1000x performance gain on the pre-V1 platform. Earlier, Kinect body-tracking APIs shipped in Windows and Xbox.
 
 I would like to talk about that architecture.</pre>
       </section>
@@ -184,7 +184,7 @@ EXPERIENCE
 Quintar, Inc — Vice President of Engineering &amp; Principle Engineer
 Sep 2022 – Present
 • Shipped PGA Tour Vision on Apple Vision Pro, and NASCAR, MLB, NBA, and FIFA on iOS, Android, and Meta Quest, on one spatial platform with MV-HEVC stereo video and live AR overlays.
-• Architected a multithreaded 100fps 3D streaming renderer and a SharePlay sync API using Swift Concurrency, actors, Metal, and RealityKit.
+• Created Quintar’s streaming 3D renderer (time series presenter) in 2023: multithreaded, 100fps, separating slow or choppy network data and data preparation from time-critical per-frame rendering, with a SharePlay sync API using Swift Concurrency, actors, Metal, and RealityKit. It became a key part of Quintar’s product offering.
 • Created an agentic fan agent for questions about the tournament, games, venue, and general sports topics. On-device speech handles immediate requests locally and routes others to edge or cloud AI. MCP and A2A connectors feed sports and venue data to the LLMs.
 • Led a 30-engineer team in the USA and India, with leads and architects reporting to me. Cut operations downtime 50% using Xcode Instruments and ARM-level render investigations.
 
@@ -216,7 +216,7 @@ Ergonomic Physical Interaction Zone Cursor Mapping, US 9,063,578 (2015). Eclipse
           <button type="button" class="filter-toggle-btn" id="copy-outreach">Copy</button>
           <span id="copy-outreach-status" class="cv-copy-status" role="status"></span>
         </div>
-        <pre id="outreach-text" class="cv-pre" contenteditable="true" spellcheck="false">I’m applying for Senior Staff Software Engineering Architect, XR iOS. I architect spatial platforms and the apps on them. At Quintar I work in Swift, SwiftUI, RealityKit, and Metal: PGA Tour Vision on Apple Vision Pro, and NASCAR, MLB, NBA, and FIFA on iOS, with a 100fps streaming renderer. Before that I launched Niantic’s Lightship ARDK on iOS and Android, and Magic Leap’s spatial meetings platform with companion apps on iOS. I would like to talk about first-party XR on iOS and the SDKs under wearable devices.</pre>
+        <pre id="outreach-text" class="cv-pre" contenteditable="true" spellcheck="false">I’m applying for Senior Staff Software Engineering Architect, XR iOS. I architect spatial platforms and the apps on them. At Quintar I work in Swift, SwiftUI, RealityKit, and Metal: PGA Tour Vision on Apple Vision Pro, and NASCAR, MLB, NBA, and FIFA on iOS, with a 100fps streaming 3D renderer (time series presenter). Before that I launched Niantic’s Lightship ARDK on iOS and Android, and Magic Leap’s spatial meetings platform with companion apps on iOS. I would like to talk about first-party XR on iOS and the SDKs under wearable devices.</pre>
       </section>
 
       <section class="learn-section cv-stories cv-no-print" id="stories" aria-labelledby="stories-title">
@@ -227,7 +227,7 @@ Ergonomic Physical Interaction Zone Cursor Mapping, US 9,063,578 (2015). Eclipse
           <h3 class="learn-card-title">iOS and visionOS architecture</h3>
           <p><span class="cv-label">Situation</span> Quintar needed one spatial sports platform on iOS and on Apple Vision Pro.</p>
           <p><span class="cv-label">Task</span> Richard owned the rendering architecture and was the hands-on engineer on the performance-critical path.</p>
-          <p><span class="cv-label">Action</span> He architected a multithreaded 3D streaming renderer and a SharePlay sync API with Swift Concurrency, actors, Metal, and RealityKit, and used Xcode Instruments on memory and threading failures.</p>
+          <p><span class="cv-label">Action</span> He created the streaming 3D renderer (time series presenter) in 2023, multithreaded at 100fps, separating slow or choppy network data and data preparation from time-critical per-frame rendering, with a SharePlay sync API in Swift Concurrency, actors, Metal, and RealityKit, and used Xcode Instruments on memory and threading failures.</p>
           <p><span class="cv-label">Result</span> 100fps streaming, PGA Tour Vision on Apple Vision Pro, and NASCAR, MLB, NBA, and FIFA on iOS. Operations downtime down 50%.</p>
         </article>
 

@@ -3995,7 +3995,7 @@
             },
             {
               "id": "quintar-engineering",
-              "text": "Architected a multithreaded 100fps 3D streaming renderer and a high-performance stereo 3D render pipeline for high-detail sport augmentations. Built a custom synchronization API for low-latency SharePlay experiences, balancing high-bandwidth data streams with real-time UI updates and spatial interactions using Swift Concurrency, actors, Metal, and RealityKit.",
+              "text": "In 2023, created Quintar's streaming 3D renderer (time series presenter): multithreaded, 100fps, separating slow or choppy network data and data preparation from time-critical per-frame rendering. It became a key part of Quintar's product offering. The same work is the high-performance stereo 3D render pipeline for high-detail sport augmentations, with a custom synchronization API for low-latency SharePlay experiences, balancing high-bandwidth data streams with real-time UI updates and spatial interactions using Swift Concurrency, actors, Metal, and RealityKit.",
               "tags": {
                 "type": [
                   "ic"
@@ -4010,7 +4010,9 @@
                   "Metal",
                   "RealityKit",
                   "Swift Concurrency",
-                  "SharePlay"
+                  "SharePlay",
+                  "real-time rendering",
+                  "time series presenter"
                 ],
                 "customers": [],
                 "impact": {
@@ -4033,25 +4035,6 @@
                 ],
                 "technologies": [
                   "AI"
-                ],
-                "customers": [],
-                "hasMetric": false
-              }
-            },
-            {
-              "id": "quintar-time-series-presenter",
-              "text": "In 2023, while optimizing performance of Quintar's spatial AI real-time rendering, created a time series presenter. It separates slow or choppy network data and data preparation from time-critical per-frame rendering. This became a key part of Quintar's product offering.",
-              "tags": {
-                "type": [
-                  "ic"
-                ],
-                "domain": [
-                  "architecture",
-                  "performance",
-                  "spatial-computing"
-                ],
-                "technologies": [
-                  "real-time rendering"
                 ],
                 "customers": [],
                 "hasMetric": false
@@ -4166,7 +4149,7 @@
           ]
         }
       ],
-      "summary": "**VP of Engineering** and Principal Engineer — 30-engineer USA/India org building a unified **Spatial AI platform** proven on live sports; award-winning **PGA Tour Vision on Apple Vision Pro**; **100fps multithreaded 3D streaming renderer** and stereo render pipeline. Led Quintar's **AI transformation to an AI-native approach**. Created a **time series presenter** that became a key part of the product offering, and an **agentic fan agent** with on-device speech plus MCP and A2A connectors. Led the work that created **field support management tools**, reducing cost and increasing reliability of live field operations. Leads and architects reported to him."
+      "summary": "**VP of Engineering** and Principal Engineer — 30-engineer USA/India org building a unified **Spatial AI platform** proven on live sports; award-winning **PGA Tour Vision on Apple Vision Pro**; **streaming 3D renderer (time series presenter)**, multithreaded at 100fps, created in 2023 and a key part of the product offering, including the stereo render pipeline and SharePlay sync API. Led Quintar's **AI transformation to an AI-native approach**. Created an **agentic fan agent** with on-device speech plus MCP and A2A connectors. Led the work that created **field support management tools**, reducing cost and increasing reliability of live field operations. Leads and architects reported to him."
     }
   ],
   "skills": [
