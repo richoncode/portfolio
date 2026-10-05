@@ -4021,6 +4021,65 @@
               }
             },
             {
+              "id": "quintar-ai-transformation",
+              "text": "Led Quintar's AI transformation to an AI-native approach.",
+              "tags": {
+                "type": [
+                  "technical-management"
+                ],
+                "domain": [
+                  "ml",
+                  "product"
+                ],
+                "technologies": [
+                  "AI"
+                ],
+                "customers": [],
+                "hasMetric": false
+              }
+            },
+            {
+              "id": "quintar-time-series-presenter",
+              "text": "About three years ago, while optimizing performance of Quintar's spatial AI real-time rendering, created a time series presenter. It separates slow or choppy network data and data preparation from time-critical per-frame rendering. This became a key part of Quintar's product offering.",
+              "tags": {
+                "type": [
+                  "ic"
+                ],
+                "domain": [
+                  "architecture",
+                  "performance",
+                  "spatial-computing"
+                ],
+                "technologies": [
+                  "real-time rendering"
+                ],
+                "customers": [],
+                "hasMetric": false
+              }
+            },
+            {
+              "id": "quintar-fan-agent",
+              "text": "Created an agentic fan agent that lets a sports fan ask questions about the tournament and games, the venue, and general sports topics. Interfaces to on-device speech handle immediate requests locally and route others to edge or cloud AI. Created MCP and A2A connectors to feed sports and venue data to the LLMs answering requests.",
+              "tags": {
+                "type": [
+                  "ic"
+                ],
+                "domain": [
+                  "ml",
+                  "api-design",
+                  "architecture"
+                ],
+                "technologies": [
+                  "agents",
+                  "MCP",
+                  "A2A",
+                  "on-device speech"
+                ],
+                "customers": [],
+                "hasMetric": false
+              }
+            },
+            {
               "id": "quintar-ai",
               "text": "Developed a Python and ML-based video pipeline prototype to transform stereo video into spatially enhanced experiences with tracking, depth, and segmentation. Transitioned this proof-of-concept into a production development effort, enabling digital-twin sports viewing at home.",
               "tags": {
@@ -4107,7 +4166,7 @@
           ]
         }
       ],
-      "summary": "**VP of Engineering** and Principal Engineer — 30-engineer USA/India org building a unified **Spatial AI platform** proven on live sports; award-winning **PGA Tour Vision on Apple Vision Pro**; **100fps multithreaded 3D streaming renderer** and stereo render pipeline. Led the work that created **field support management tools**, reducing cost and increasing reliability of live field operations. Leads and architects reported to him."
+      "summary": "**VP of Engineering** and Principal Engineer — 30-engineer USA/India org building a unified **Spatial AI platform** proven on live sports; award-winning **PGA Tour Vision on Apple Vision Pro**; **100fps multithreaded 3D streaming renderer** and stereo render pipeline. Led Quintar's **AI transformation to an AI-native approach**. Created a **time series presenter** that became a key part of the product offering, and an **agentic fan agent** with on-device speech plus MCP and A2A connectors. Led the work that created **field support management tools**, reducing cost and increasing reliability of live field operations. Leads and architects reported to him."
     }
   ],
   "skills": [
