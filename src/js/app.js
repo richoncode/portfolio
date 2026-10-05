@@ -1186,7 +1186,8 @@ function renderLearning() {
       ? `<a class="learn-issuer-badge" href="${c.url}" target="_blank" rel="noopener">${escapeHtml(c.issuer)}</a>`
       : `<span class="learn-issuer-badge">${escapeHtml(c.issuer)}</span>`;
     metaParts.push(issuerEl);
-    metaParts.push(`<span class="learn-date">${formatDate(c.completedDate || c.date)}</span>`);
+    const certDate = formatDate(c.completedDate || c.date);
+    if (certDate) metaParts.push(`<span class="learn-date">${certDate}</span>`);
     return `
       <div class="learn-cert-row">
         ${titleEl}
