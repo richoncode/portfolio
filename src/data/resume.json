@@ -4040,7 +4040,7 @@
             },
             {
               "id": "quintar-time-series-presenter",
-              "text": "About three years ago, while optimizing performance of Quintar's spatial AI real-time rendering, created a time series presenter. It separates slow or choppy network data and data preparation from time-critical per-frame rendering. This became a key part of Quintar's product offering.",
+              "text": "In 2023, while optimizing performance of Quintar's spatial AI real-time rendering, created a time series presenter. It separates slow or choppy network data and data preparation from time-critical per-frame rendering. This became a key part of Quintar's product offering.",
               "tags": {
                 "type": [
                   "ic"
