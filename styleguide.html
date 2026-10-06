@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Style Guide – Richard Bailey Portfolio</title>
-  <link rel="stylesheet" href="src/css/main.css?v=43">
+  <link rel="stylesheet" href="src/css/main.css?v=44">
   <style>
     .sg-page { padding: 40px 0 80px; }
     .sg-section { margin-bottom: 56px; }
@@ -228,6 +228,40 @@
           <p class="learn-card-desc">Published open-source samples and documentation for the Kinect SDK.</p>
         </div>
         <div class="sg-label" style="margin-bottom:20px;">.learn-card — bg-card border radius, hover border brightens. a.learn-card-title is an accent link, underline on hover, when the item has a url.</div>
+
+        <article class="device-card" style="margin-bottom:16px; max-width:420px;">
+          <div class="device-photo">
+            <svg viewBox="0 0 120 72" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <rect x="28" y="16" width="64" height="40" rx="6"></rect>
+              <path d="M40 28h40M46 36h28"></path>
+            </svg>
+            <div class="device-photo-caption">
+              <span class="device-photo-label">Photo needed</span>
+              <span class="device-photo-path">assets/devices/&lt;slug&gt;.jpg</span>
+            </div>
+          </div>
+          <div class="device-body">
+            <div class="device-heading">
+              <h2 class="device-name">Device name</h2>
+              <div class="device-meta">
+                <span class="device-company">Company</span>
+                <span class="device-years">2015–2016</span>
+              </div>
+              <div class="device-role">Role from the resume</div>
+            </div>
+            <div class="device-block">
+              <div class="device-block-label">Management</div>
+              <ul class="device-bullets">
+                <li>Org, launch, or fleet fact from the resume.</li>
+              </ul>
+            </div>
+            <div class="device-block device-block--confirm">
+              <div class="device-block-label">Hands-on technical</div>
+              <p class="device-confirm">Confirm with Richard</p>
+            </div>
+          </div>
+        </article>
+        <div class="sg-label" style="margin-bottom:20px;">.device-card — image or Photo needed placeholder on top; company and mono years; Management and Hands-on technical blocks. Thin sections use .device-block--confirm and “Confirm with Richard”.</div>
 
         <article class="learn-card read-card" style="margin-bottom:16px;">
           <div class="read-card-top">

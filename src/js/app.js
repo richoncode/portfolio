@@ -49,16 +49,18 @@ const state = {
 };
 
 // Tabs whose content is chronological; each defaults to newest → oldest
-const TIME_ORDERED_TABS = new Set(['experience', 'timeline', 'projects', 'research', 'learning']);
+const TIME_ORDERED_TABS = new Set(['experience', 'timeline', 'projects', 'devices', 'research', 'learning']);
 const tabSortNewestFirst = {
   experience: true,
   timeline:   true,
   projects:   true,
+  devices:    true,
   research:   true,
   learning:   true,
 };
 
 let resumeData = null;
+let devicesData = null;
 
 // ─── Hybrid Search Engine State ───────────────────────────────────────────────
 let searchVectorsMeta = null;
@@ -248,9 +250,17 @@ async function runHybridSearch() {
 async function init() {
   try {
     // no-cache: always revalidate so data edits show without a hard refresh
-    const resp = await fetch('./src/data/resume.json', { cache: 'no-cache' });
+    const [resp, devicesResp] = await Promise.all([
+      fetch('./src/data/resume.json', { cache: 'no-cache' }),
+      fetch('./src/data/devices.json', { cache: 'no-cache' }),
+    ]);
     if (!resp.ok) throw new Error(resp.statusText);
     resumeData = await resp.json();
+    if (devicesResp.ok) {
+      devicesData = await devicesResp.json();
+    } else {
+      devicesData = { devices: [], loadError: devicesResp.statusText || 'Failed to load devices' };
+    }
     renderProfile();
     renderIntro();
     renderOldIntro();
@@ -889,6 +899,7 @@ function toggleTabSort(name) {
   if (name === 'experience') renderTimeline();
   if (name === 'timeline')   renderCareerTimeline();
   if (name === 'projects')   renderProjects();
+  if (name === 'devices')    renderDevices();
   if (name === 'research')   renderResearch();
   if (name === 'learning')   renderLearning();
 }
@@ -903,7 +914,7 @@ function updateSortIndicators() {
   });
 }
 
-const VALID_TABS = new Set(['intro','old-intro','experience','timeline','projects','patents','research','learning','reading','skills']);
+const VALID_TABS = new Set(['intro','old-intro','experience','timeline','projects','devices','patents','research','learning','reading','skills']);
 
 function switchTab(name, pushState = true) {
   if (!VALID_TABS.has(name)) name = 'intro';
@@ -920,6 +931,8 @@ function switchTab(name, pushState = true) {
     renderCareerTimeline();
   if (name === 'projects' && !document.getElementById('projects-content').innerHTML)
     renderProjects();
+  if (name === 'devices' && !document.getElementById('devices-content').innerHTML)
+    renderDevices();
   if (name === 'learning' && !document.getElementById('learning-content').innerHTML)
     renderLearning();
   if (name === 'reading' && !document.getElementById('reading-content').innerHTML)
@@ -1044,6 +1057,113 @@ function renderCareerTimeline() {
   }).join('');
 
   container.innerHTML = `<div class="career-timeline">${html}</div>`;
+}
+
+// ─── Devices ──────────────────────────────────────────────────────────────────
+
+function sortDevices(list, newestFirst) {
+  return [...list].sort((a, b) => {
+    const byEnd = (a.endDate || '').localeCompare(b.endDate || '');
+    if (byEnd) return newestFirst ? -byEnd : byEnd;
+    const byStart = (a.startDate || '').localeCompare(b.startDate || '');
+    return newestFirst ? -byStart : byStart;
+  });
+}
+
+function deviceSilhouette(kind) {
+  const common = 'viewBox="0 0 120 72" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"';
+  const paths = {
+    headset: '<rect x="18" y="22" width="84" height="32" rx="16"/><path d="M34 22v-6a26 26 0 0 1 52 0v6"/><path d="M46 34h28"/>',
+    helmet: '<path d="M22 46c0-18 16-30 38-30s38 12 38 30"/><path d="M16 46h88"/><path d="M40 46V34h40v12"/>',
+    sensor: '<rect x="16" y="28" width="88" height="16" rx="8"/><circle cx="36" cy="36" r="4"/><circle cx="60" cy="36" r="4"/><circle cx="84" cy="36" r="4"/>',
+    dash: '<rect x="14" y="18" width="92" height="40" rx="4"/><rect x="22" y="26" width="36" height="18" rx="2"/><path d="M68 30h28M68 38h20"/>',
+    reader: '<rect x="34" y="10" width="52" height="52" rx="3"/><path d="M42 24h36M42 32h36M42 40h24"/>',
+    console: '<rect x="18" y="22" width="84" height="28" rx="4"/><path d="M28 36h24"/><circle cx="86" cy="36" r="5"/>',
+    phone: '<path d="M38 14h44a8 8 0 0 1 8 8v28a8 8 0 0 1-8 8H38a8 8 0 0 1-8-8V22a8 8 0 0 1 8-8z"/><rect x="44" y="22" width="32" height="14" rx="1"/><path d="M52 48h16"/>',
+    limb: '<path d="M46 12h16v18l10 30H36L46 30z"/><path d="M42 30h24"/>',
+  };
+  return `<svg ${common}>${paths[kind] || paths.reader}</svg>`;
+}
+
+function deviceBulletHtml(bullet) {
+  const text = typeof bullet === 'string' ? bullet : (bullet && bullet.text) || '';
+  const confirm = typeof bullet === 'object' && bullet && bullet.confirm;
+  return `<li${confirm ? ' class="device-bullet--confirm"' : ''}>${escapeHtml(text)}</li>`;
+}
+
+function deviceSectionHtml(label, section) {
+  const data = section || { confirm: true, bullets: [] };
+  const bullets = Array.isArray(data.bullets) ? data.bullets : [];
+  const list = bullets.length
+    ? `<ul class="device-bullets">${bullets.map(deviceBulletHtml).join('')}</ul>`
+    : '';
+  const confirm = data.confirm || bullets.length === 0
+    ? '<p class="device-confirm">Confirm with Richard</p>'
+    : '';
+  const thin = data.confirm || bullets.length === 0;
+  return `
+    <div class="device-block${thin ? ' device-block--confirm' : ''}">
+      <div class="device-block-label">${escapeHtml(label)}</div>
+      ${list}
+      ${confirm}
+    </div>`;
+}
+
+function devicePhotoHtml(device) {
+  if (device.image) {
+    return `<img src="${escapeHtml(device.image)}" alt="${escapeHtml(device.name)}">`;
+  }
+  const ref = device.reference || {};
+  const links = [
+    ref.url && ref.label
+      ? `<a class="device-photo-ref" href="${escapeHtml(ref.url)}" target="_blank" rel="noopener">${escapeHtml(ref.label)}</a>`
+      : '',
+    ref.drawingsUrl && ref.drawingsLabel
+      ? `<a class="device-photo-ref" href="${escapeHtml(ref.drawingsUrl)}" target="_blank" rel="noopener">${escapeHtml(ref.drawingsLabel)}</a>`
+      : '',
+  ].join('');
+  const note = ref.note ? `<span class="device-photo-note">${escapeHtml(ref.note)}</span>` : '';
+  return `
+    ${deviceSilhouette(device.silhouette)}
+    <div class="device-photo-caption">
+      <span class="device-photo-label">Photo needed</span>
+      <span class="device-photo-path">${escapeHtml(device.imagePath || '')}</span>
+      ${links}
+      ${note}
+    </div>`;
+}
+
+function renderDevices() {
+  const container = document.getElementById('devices-content');
+  if (!container) return;
+  if (!devicesData || devicesData.loadError) {
+    container.innerHTML = `<div class="no-results">Failed to load devices: ${escapeHtml((devicesData && devicesData.loadError) || 'missing data')}</div>`;
+    return;
+  }
+  const devices = sortDevices(devicesData.devices || [], tabSortNewestFirst.devices);
+  const cards = devices.map(device => `
+    <article class="device-card" id="device-${escapeHtml(device.id)}">
+      <div class="device-photo">
+        ${devicePhotoHtml(device)}
+      </div>
+      <div class="device-body">
+        <div class="device-heading">
+          <h2 class="device-name">${escapeHtml(device.name)}</h2>
+          <div class="device-meta">
+            <span class="device-company">${escapeHtml(device.company || '')}</span>
+            <span class="device-years">${escapeHtml(device.yearsLabel || '')}</span>
+          </div>
+          ${device.role ? `<div class="device-role">${escapeHtml(device.role)}</div>` : ''}
+        </div>
+        ${deviceSectionHtml('Management', device.management)}
+        ${deviceSectionHtml('Hands-on technical', device.handsOn)}
+      </div>
+    </article>`).join('');
+
+  container.innerHTML = `
+    <h2 class="learn-section-title">Devices shipped</h2>
+    ${devicesData.lede ? `<p class="device-lede">${escapeHtml(devicesData.lede)}</p>` : ''}
+    <div class="device-grid">${cards}</div>`;
 }
 
 // ─── Learning ─────────────────────────────────────────────────────────────────

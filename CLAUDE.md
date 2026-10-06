@@ -12,6 +12,7 @@ consistency. Validate new components against it after implementation.
 ## Stack
 - Static HTML + vanilla JS + CSS — no build step, no framework
 - Single data source: `src/data/resume.json`
+- Devices tab: `src/data/devices.json` (facts taken from the resume; do not invent)
 - Served via GitHub Pages at `https://richoncode.github.io/portfolio`
 - Cache-bust assets via `?v=N` query strings on CSS/JS in `index.html`
   — **bump version on every CSS or JS change**
@@ -77,6 +78,7 @@ consistency. Validate new components against it after implementation.
 
 ### Cards
 - **Content card**: `.learn-card` — bg-card, border, radius, hover border brightens
+- **Device card**: `.device-card` — photo or “Photo needed” placeholder on top; `.device-name`; company in `--accent-2`; years in `--mono`; then `.device-block` labels Management / Hands-on technical. Thin copy uses `.device-block--confirm` and the text “Confirm with Richard”
 - **Patent card**: `.patent-card` — minimal, hover bg, `.patent-summary` left-border accent
 - **Timeline card**: `.tl-card` — bg-card border radius
 
@@ -143,6 +145,18 @@ reading[]                {title, authors[], publication, url, datePublished,
                          Add the next entry by appending one object to reading[].
 filterTaxonomy           {roles[], experiences[]}
 ```
+
+### Devices tab (`src/data/devices.json`)
+
+```
+devices[]  {id, name, company, role, startDate, endDate, yearsLabel,
+            image, imagePath, silhouette,
+            management{confirm, bullets[]}, handsOn{confirm, bullets[]},
+            reference?{label, url, drawingsLabel, drawingsUrl, note}}
+```
+
+`image` is a repo path when a licensed photo exists; otherwise leave it empty and set `imagePath` to `assets/devices/<id>.jpg`. A bullet may be a string or `{text, confirm:true}`. `confirm:true` on a section with no bullets renders “Confirm with Richard”. Keep anything on the cover-letter redact list out of this file.
+
 
 Cert tags: `management` | `engineering` | `ai` | `performance` | `communication`
 Intro tags: `engineering` | `management` | `ai` | `spatial` | `apple` | `culture`
