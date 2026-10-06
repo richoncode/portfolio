@@ -10,8 +10,9 @@
       "startDate": "2017-11",
       "endDate": "2020-11",
       "yearsLabel": "2017–2020",
-      "image": "",
+      "image": "https://img.youtube.com/vi/n53gTPPeqcQ/mqdefault.jpg",
       "imagePath": "assets/devices/magic-leap.jpg",
+      "imageNote": "Same still as video.html: Test Driving Magic Leap's AR Goggles",
       "silhouette": "headset",
       "management": {
         "confirm": false,
@@ -40,8 +41,9 @@
       "startDate": "2015-03",
       "endDate": "2016-06",
       "yearsLabel": "2015–2016",
-      "image": "",
+      "image": "https://img.youtube.com/vi/47H6ul0W1-E/mqdefault.jpg",
       "imagePath": "assets/devices/daqri-xr-smart-helmet.jpg",
+      "imageNote": "Same still as video.html: DAQRI Smart Helmet — Hands On",
       "silhouette": "helmet",
       "management": {
         "confirm": false,
@@ -70,8 +72,15 @@
       "startDate": "2011-05",
       "endDate": "2015-03",
       "yearsLabel": "2011–2015",
-      "image": "",
+      "image": "https://img.youtube.com/vi/GZ3eYyBPv44/mqdefault.jpg",
       "imagePath": "assets/devices/kinect.jpg",
+      "imageNote": "Same still as video.html: Kinect for Windows v2 — Color, Depth, IR & Body Streams",
+      "links": [
+        {
+          "label": "PHIZ mockup",
+          "url": "https://richoncode.github.io/webartests/experiments/spatial-ai/body-cursor/"
+        }
+      ],
       "silhouette": "sensor",
       "management": {
         "confirm": true,
@@ -84,10 +93,7 @@
           "Created the developer-facing Kinect framework from researcher prototype code. Designed a latency-critical multithreaded architecture to launch Kinect on Windows in 64-bit mode, and skeletal tracking debugging tools for recording and playback of gestures.",
           "Created a spatial UI API for latency-critical UI controlled by hand motion. Delivered an NUI interaction described as more natural that let users complete tests in 80% less time.",
           "Xbox One Kinect user interactions: developed interpretation of body movements into interactions with on-screen interfaces.",
-          {
-            "text": "Portfolio patent from these years: Ergonomic Physical Interaction Zone Cursor Mapping (US 9,063,578, 2015) maps physical hand-movement zones to cursor motion for motion controllers or touchless sensors. The resume patent entry does not name Kinect. Confirm with Richard.",
-            "confirm": true
-          }
+          "Ergonomic Physical Interaction Zone Cursor Mapping (US 9,063,578, 2015) maps physical hand-movement zones to cursor motion for motion controllers or touchless sensors. The PHIZ mockup is linked below."
         ]
       }
     },
@@ -206,6 +212,11 @@
       "yearsLabel": "1991–1993",
       "image": "",
       "imagePath": "assets/devices/prosthetic-electronics.jpg",
+      "reference": {
+        "label": "LinkedIn post: prosthetic hand controllers",
+        "url": "https://www.linkedin.com/posts/richoncode_throwback-thursday-when-i-first-started-activity-7498975443878879233-_Hzf",
+        "note": "That post has the electronics photo. It is not already a file in this portfolio, so it is not copied onto the card."
+      },
       "silhouette": "limb",
       "management": {
         "confirm": true,
