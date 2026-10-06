@@ -1,0 +1,223 @@
+{
+  "note": "Draft cards for the Devices tab. Bullets are taken from resume.json. confirm:true means that section (or bullet) is thin and must stay marked Confirm with Richard. image is empty until a licensed photo is dropped at imagePath.",
+  "lede": "Physical devices from the resume. A section marked Confirm with Richard is thin in the file and is left for Richard to fill in.",
+  "devices": [
+    {
+      "id": "magic-leap",
+      "name": "Magic Leap 1 and 2",
+      "company": "Magic Leap",
+      "role": "Senior Director, Spatial AR Platform & Applications",
+      "startDate": "2017-11",
+      "endDate": "2020-11",
+      "yearsLabel": "2017–2020",
+      "image": "",
+      "imagePath": "assets/devices/magic-leap.jpg",
+      "silhouette": "headset",
+      "management": {
+        "confirm": false,
+        "bullets": [
+          "Senior Director managing a 30-engineer international team through the Magic Leap 1 and 2 launches. Leads and architects reported to him.",
+          "Staff grew 10% during a company-wide 50% reduction, with delivery continuing through that period.",
+          "Launched flagship Spatial AR Meetings (personas, collaboration, and laptop interop) within a year of prototyping."
+        ]
+      },
+      "handsOn": {
+        "confirm": false,
+        "bullets": [
+          "Shipped the first generation of Magic Leap applications: Avatars, Media player, and Mobile Companion app, including synchronized multidevice shared spatial interactions on a VPS map.",
+          "Designed and built foundational C++ frameworks and APIs for multi-headset collaboration, with real-time 3D graphics streaming from mobile and desktop companions.",
+          "Debugged the wireless controller firmware and driver stack and identified design flaws that caused intermittent behavior.",
+          "Engineered a 1000x performance improvement for applications on the pre-V1 Magic Leap AR platform, and designed multi-application shared spatial context and device-to-cloud-to-device sharing APIs.",
+          "Led performance investigations into Android (AOSP) native ports, including graphics, DASH video, and gesture interactions."
+        ]
+      }
+    },
+    {
+      "id": "daqri-xr-smart-helmet",
+      "name": "DAQRI XR Smart Helmet",
+      "company": "DAQRI",
+      "role": "Director of Engineering; Chief Software Architect & Lead",
+      "startDate": "2015-03",
+      "endDate": "2016-06",
+      "yearsLabel": "2015–2016",
+      "image": "",
+      "imagePath": "assets/devices/daqri-xr-smart-helmet.jpg",
+      "silhouette": "helmet",
+      "management": {
+        "confirm": false,
+        "bullets": [
+          "Director of Engineering for a 70-person org. Leads and architects reported to him. Led the full software stack, from the firmware for the cameras and sensors up to the cloud.",
+          "Launched the XR Smart Helmet, an industrial AR hard hat with depth and thermal sensing. It was shown during Intel CEO Brian Krzanich's CES 2016 keynote.",
+          "Managed a 45-engineer team to deliver 15+ customer apps and 2 releases of the core spatial frameworks in 9 months. Owned staffing, architecture, strategy planning, budgeting, recruiting oversight, and executive communication.",
+          "As Chief Software Architect, managed the software team as it grew from 3 to 30 engineers.",
+          "Built a fleet management dashboard to reduce overall cost and improve reliability across the device fleet."
+        ]
+      },
+      "handsOn": {
+        "confirm": false,
+        "bullets": [
+          "Advised on the sensor-fusion firmware code to fix problems with globally synchronized timestamps.",
+          "Created the Unity/C# spatial framework API for industrial and factory AR UI: latency-critical info panels, workflow data, and head-relative, body-relative, and world-placed panels, plus status panels, a camera with photo log, task checklists, digital gauges, barcode scanners, and proximity alerts.",
+          "Led architecture design for the XR helmet in industrial settings so spatial computing could support factory and field operations."
+        ]
+      }
+    },
+    {
+      "id": "kinect",
+      "name": "Kinect for Windows and Xbox One",
+      "company": "Microsoft",
+      "role": "Senior Software Development Engineer, Xbox One and Windows Kinect",
+      "startDate": "2011-05",
+      "endDate": "2015-03",
+      "yearsLabel": "2011–2015",
+      "image": "",
+      "imagePath": "assets/devices/kinect.jpg",
+      "silhouette": "sensor",
+      "management": {
+        "confirm": true,
+        "bullets": []
+      },
+      "handsOn": {
+        "confirm": false,
+        "bullets": [
+          "Developed body-tracking spatial interactions and an API in C++, shipped in Windows and Xbox. Designed a migration from heuristics to reinforcement learning.",
+          "Created the developer-facing Kinect framework from researcher prototype code. Designed a latency-critical multithreaded architecture to launch Kinect on Windows in 64-bit mode, and skeletal tracking debugging tools for recording and playback of gestures.",
+          "Created a spatial UI API for latency-critical UI controlled by hand motion. Delivered an NUI interaction described as more natural that let users complete tests in 80% less time.",
+          "Xbox One Kinect user interactions: developed interpretation of body movements into interactions with on-screen interfaces.",
+          {
+            "text": "Portfolio patent from these years: Ergonomic Physical Interaction Zone Cursor Mapping (US 9,063,578, 2015) maps physical hand-movement zones to cursor motion for motion controllers or touchless sensors. The resume patent entry does not name Kinect. Confirm with Richard.",
+            "confirm": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "windows-automotive",
+      "name": "Clarion AutoPC and Windows Automotive car stereos",
+      "company": "Microsoft",
+      "role": "AutoPC UI frameworks; later Engineering Manager & Architect, Automotive Platform",
+      "startDate": "1998-12",
+      "endDate": "2011-08",
+      "yearsLabel": "1998–2002 and 2008–2011",
+      "image": "",
+      "imagePath": "assets/devices/windows-automotive.jpg",
+      "silhouette": "dash",
+      "management": {
+        "confirm": false,
+        "bullets": [
+          "Later automotive platform: Engineering Manager and Architect. Managed a 15-engineer international team and merged the Redmond and Japan development groups into one team.",
+          "Deliveries of the developer-facing automotive UI/HMI APIs included Ford Sync, BMW, Citroën, DaimlerChrysler, Fiat, Honda, Hyundai, Kia, Nissan, Toyota, and Volvo. Shipped 3 CTP releases to customers in 2009 and guided technical negotiations with customers in Japan.",
+          {
+            "text": "Clarion AutoPC (1998–2002) is recorded as individual-contributor UI framework work. Org leadership for that product is not in the resume. Confirm with Richard.",
+            "confirm": true
+          }
+        ]
+      },
+      "handsOn": {
+        "confirm": false,
+        "bullets": [
+          "Clarion AutoPC: created the developer-facing UI frameworks API for automotive HMI (infotainment) in C++, MFC, and ARM. The framework had rich interaction controls, customizable themes, and multi-modal interactions including embedded speech-controlled devices. The resume ties this work to patents on skinnable UI, multi-modal interactions, and embedded speech-controlled devices.",
+          "Later Windows Automotive platform: led delivery of UI/HMI frameworks with a native C++ extension for XAML, including hardware 2D and 3D acceleration, aimed at ARM-based car stereos. The project record names global partners including BMW, Ford, and Toyota.",
+          "Evaluated WPF, Silverlight, and Media Center XAML for ARM-based car stereos, then created a Windows Automotive XAML solution from Silverlight's lightness with a C++ interface and 3D features, avoiding C# runtime overhead."
+        ]
+      }
+    },
+    {
+      "id": "kindle",
+      "name": "Amazon Kindle",
+      "company": "Amazon.com",
+      "role": "Senior Software Development Engineer",
+      "startDate": "2007-03",
+      "endDate": "2008-04",
+      "yearsLabel": "2007–2008",
+      "image": "",
+      "imagePath": "assets/devices/kindle.jpg",
+      "silhouette": "reader",
+      "management": {
+        "confirm": true,
+        "bullets": []
+      },
+      "handsOn": {
+        "confirm": false,
+        "bullets": [
+          "Kindle developer API architecture: defined application UI APIs enabling e-paper interactions for launch experiences on the Kindle e-reader.",
+          "Book page service alongside that launch work: proposed and created a petabyte-scale, low-latency web service for 900,000 book-page images, reducing delivery time by 30%. Served 220 million images (90+ terabytes) worldwide, with caching for Europe, Asia, and the Americas."
+        ]
+      }
+    },
+    {
+      "id": "xbox",
+      "name": "Xbox (original)",
+      "company": "Microsoft",
+      "role": "Advanced Technology Group",
+      "startDate": "2002-01",
+      "endDate": "2005-05",
+      "yearsLabel": "2002–2005",
+      "image": "",
+      "imagePath": "assets/devices/xbox.jpg",
+      "silhouette": "console",
+      "management": {
+        "confirm": true,
+        "bullets": []
+      },
+      "handsOn": {
+        "confirm": true,
+        "bullets": [
+          "Investigated developer challenges and built solutions for the Xbox Advanced Technology Group to streamline the developer experience. The project record tags that work as C++, SDK design, and low-level optimization."
+        ]
+      }
+    },
+    {
+      "id": "screen-phone",
+      "name": "Home Consumer Digital Banking Screen Phone",
+      "company": "Online Resources",
+      "role": "Software Engineer",
+      "startDate": "1992-04",
+      "endDate": "1993-04",
+      "yearsLabel": "1992–1993",
+      "image": "",
+      "imagePath": "assets/devices/screen-phone.jpg",
+      "silhouette": "phone",
+      "reference": {
+        "label": "Public reference: Online Resources ScreenPhone",
+        "url": "https://www.washingtontechnology.com/1994/12/online-banking-fight/327378/",
+        "drawingsLabel": "Company patent drawings: US 5,220,501",
+        "drawingsUrl": "https://patents.google.com/patent/US5220501A/en",
+        "note": "No licensed photo in the repo. The patent drawings show the company's remote terminal; the named inventors are not Richard."
+      },
+      "management": {
+        "confirm": true,
+        "bullets": []
+      },
+      "handsOn": {
+        "confirm": false,
+        "bullets": [
+          "Developed a pioneering consumer digital banking telephone for home use, with an embedded screen, modem, and secure automated payment scheduling system interfacing directly with banking systems (pre-internet). The resume calls this zero-to-one consumer hardware."
+        ]
+      }
+    },
+    {
+      "id": "prosthetic-electronics",
+      "name": "Prosthetic Electronic Technologies",
+      "company": "New Resolutions",
+      "role": "Principal Consultant",
+      "startDate": "1991-03",
+      "endDate": "1993-04",
+      "yearsLabel": "1991–1993",
+      "image": "",
+      "imagePath": "assets/devices/prosthetic-electronics.jpg",
+      "silhouette": "limb",
+      "management": {
+        "confirm": true,
+        "bullets": []
+      },
+      "handsOn": {
+        "confirm": false,
+        "bullets": [
+          "Designed and built embedded control systems for advanced artificial limbs using analogue neural interfaces (under 10 mW) and instrumentation amplifiers for myoelectric signal processing.",
+          "Invented a charge pump converter for single-battery prosthetic power."
+        ]
+      }
+    }
+  ]
+}
