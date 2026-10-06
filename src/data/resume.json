@@ -185,6 +185,14 @@
   "learning": {
     "certifications": [
       {
+        "id": "cert-wa3zti",
+        "title": "Licensed amateur radio operator (WA3ZTI)",
+        "issuer": "FCC",
+        "tags": [
+          "engineering"
+        ]
+      },
+      {
         "id": "cert-1",
         "title": "Introducing Functional Programming in C++",
         "issuer": "LinkedIn",
@@ -1897,7 +1905,7 @@
               "startDate": "2008-04",
               "endDate": "2010-09",
               "current": false,
-              "description": "Implemented Multi-Paxos distributed file system improvements. Tracked a memory corruption to cosmic bit flap after eliminating all possible routes for program or system related corruption; verified statistically the failure rate across 500 million machines matches the MTBF of a bit error.",
+              "description": "Implemented Multi-Paxos distributed file system improvements. Tracked a memory corruption to cosmic bit flap after eliminating all possible routes for program or system related corruption; verified statistically the failure rate across 500,000 machines matches the MTBF of a bit error.",
               "tags": [
                 "Multi-Device Synchronization",
                 "Cloud Infrastructure",
@@ -3080,7 +3088,7 @@
             },
             {
               "id": "ms2-az-a2",
-              "text": "Investigated crashes within global storage of 500 million compute nodes. Tracked a persistent memory corruption to cosmic bit flap after eliminating all possible routes for software or system-related corruption. Verified statistically that the failure rate matched the MTBF of a bit error.",
+              "text": "Investigated crashes within global storage of 500,000 compute nodes. Tracked a persistent memory corruption to cosmic bit flap after eliminating all possible routes for software or system-related corruption. Verified statistically that the failure rate matched the MTBF of a bit error.",
               "tags": {
                 "type": [
                   "ic"
@@ -3096,7 +3104,7 @@
                 "customers": [],
                 "impact": {
                   "metric": "scale",
-                  "value": "500 million compute nodes"
+                  "value": "500,000 compute nodes"
                 },
                 "hasMetric": true
               }
@@ -3276,7 +3284,7 @@
           ]
         }
       ],
-      "summary": "Managed a **15-engineer international team** on the **automotive UI/HMI platform**; **Windows Azure Storage** distributed systems (**Multi-Paxos**, 500M compute nodes); **Windows Phone XAML frameworks**; and **Kinect body-tracking** spatial interaction APIs shipped in Windows and Xbox — migrating heuristics to **machine learning**."
+      "summary": "Managed a **15-engineer international team** on the **automotive UI/HMI platform**; **Windows Azure Storage** distributed systems (**Multi-Paxos**, 500,000 compute nodes); **Windows Phone XAML frameworks**; and **Kinect body-tracking** spatial interaction APIs shipped in Windows and Xbox — migrating heuristics to **machine learning**."
     },
     {
       "id": "daqri",
@@ -3938,7 +3946,7 @@
           "achievements": [
             {
               "id": "quintar-leadership",
-              "text": "Vice President of Engineering leading a 30-engineer international team across the USA and India. Set core architecture, coding, and testing standards while maintaining a 100% retention rate over 2 years. Defined staffing and training strategies to optimize growth prior to Series B.",
+              "text": "Vice President of Engineering leading a 30-engineer international team across the USA and India. Set core architecture, coding, and testing standards. Defined staffing and training strategies to optimize growth prior to Series B.",
               "tags": {
                 "type": [
                   "technical-management"
@@ -3949,11 +3957,7 @@
                 "technologies": [],
                 "customers": [],
                 "teamSize": 30,
-                "impact": {
-                  "metric": "retention rate",
-                  "value": "100% over 2 years"
-                },
-                "hasMetric": true
+                "hasMetric": false
               }
             },
             {
@@ -3991,7 +3995,7 @@
             },
             {
               "id": "quintar-engineering",
-              "text": "Architected a multithreaded 100fps 3D streaming renderer and a high-performance stereo 3D render pipeline for high-detail sport augmentations. Built a custom synchronization API for low-latency SharePlay experiences, balancing high-bandwidth data streams with real-time UI updates and spatial interactions using Swift Concurrency, actors, Metal, and RealityKit.",
+              "text": "In 2023, created Quintar's streaming 3D renderer (time series presenter): multithreaded, 100fps, separating slow or choppy network data and data preparation from time-critical per-frame rendering. It became a key part of Quintar's product offering. The same work is the high-performance stereo 3D render pipeline for high-detail sport augmentations, with a custom synchronization API for low-latency SharePlay experiences, balancing high-bandwidth data streams with real-time UI updates and spatial interactions using Swift Concurrency, actors, Metal, and RealityKit.",
               "tags": {
                 "type": [
                   "ic"
@@ -4006,7 +4010,9 @@
                   "Metal",
                   "RealityKit",
                   "Swift Concurrency",
-                  "SharePlay"
+                  "SharePlay",
+                  "real-time rendering",
+                  "time series presenter"
                 ],
                 "customers": [],
                 "impact": {
@@ -4014,6 +4020,46 @@
                   "value": "100fps sustained"
                 },
                 "hasMetric": true
+              }
+            },
+            {
+              "id": "quintar-ai-transformation",
+              "text": "Led Quintar's AI transformation to an AI-native approach.",
+              "tags": {
+                "type": [
+                  "technical-management"
+                ],
+                "domain": [
+                  "ml",
+                  "product"
+                ],
+                "technologies": [
+                  "AI"
+                ],
+                "customers": [],
+                "hasMetric": false
+              }
+            },
+            {
+              "id": "quintar-fan-agent",
+              "text": "Created an agentic fan agent that lets a sports fan ask questions about the tournament and games, the venue, and general sports topics. Interfaces to on-device speech handle immediate requests locally and route others to edge or cloud AI. Created MCP and A2A connectors to feed sports and venue data to the LLMs answering requests.",
+              "tags": {
+                "type": [
+                  "ic"
+                ],
+                "domain": [
+                  "ml",
+                  "api-design",
+                  "architecture"
+                ],
+                "technologies": [
+                  "agents",
+                  "MCP",
+                  "A2A",
+                  "on-device speech"
+                ],
+                "customers": [],
+                "hasMetric": false
               }
             },
             {
@@ -4103,7 +4149,7 @@
           ]
         }
       ],
-      "summary": "**VP of Engineering** and Principal Engineer — 30-engineer USA/India org building a unified **Spatial AI platform** proven on live sports; award-winning **PGA Tour Vision on Apple Vision Pro**; **100fps multithreaded 3D streaming renderer** and stereo render pipeline. Led the work that created **field support management tools**, reducing cost and increasing reliability of live field operations. Leads and architects reported to him."
+      "summary": "**VP of Engineering** and Principal Engineer — 30-engineer USA/India org building a unified **Spatial AI platform** proven on live sports; award-winning **PGA Tour Vision on Apple Vision Pro**; **streaming 3D renderer (time series presenter)**, multithreaded at 100fps, created in 2023 and a key part of the product offering, including the stereo render pipeline and SharePlay sync API. Led Quintar's **AI transformation to an AI-native approach**. Created an **agentic fan agent** with on-device speech plus MCP and A2A connectors. Led the work that created **field support management tools**, reducing cost and increasing reliability of live field operations. Leads and architects reported to him."
     }
   ],
   "skills": [
@@ -4394,7 +4440,7 @@
       "title": "Windows Azure Storage",
       "startDate": "2008-04",
       "endDate": "2010-09",
-      "description": "Implemented Multi-Paxos distributed file system improvements. Tracked a memory corruption to cosmic bit flap after eliminating all possible routes for program or system related corruption; verified statistically the failure rate across 500 million machines matches the MTBF of a bit error."
+      "description": "Implemented Multi-Paxos distributed file system improvements. Tracked a memory corruption to cosmic bit flap after eliminating all possible routes for program or system related corruption; verified statistically the failure rate across 500,000 machines matches the MTBF of a bit error."
     },
     {
       "id": "proj-book-windows-phone-7-application-development-sams-publishing-",

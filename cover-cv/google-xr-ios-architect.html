@@ -56,7 +56,7 @@
             <ul>
               <li>Software development since 1986, well past the 8-year minimum. Architecture and launch work is the through-line: Kinect SDK, Magic Leap platform, Lightship ARDK, Quintar renderer.</li>
               <li>First-party spatial apps and the SDKs under them. Niantic Lightship on iOS and Android. Magic Leap meetings plus companion apps on iOS. Quintar sports products on iOS and on visionOS.</li>
-              <li>Hands-on Swift, SwiftUI, RealityKit, Metal, and Instruments in the current role, including a 100fps streaming renderer. Kinect body-tracking APIs and the ergonomic interaction-zone cursor patent cover spatial interaction. Magic Leap’s 1000x gain covers constrained-device performance.</li>
+              <li>Hands-on Swift, SwiftUI, RealityKit, Metal, and Instruments in the current role, including the 100fps streaming 3D renderer (time series presenter). Kinect body-tracking APIs and the ergonomic interaction-zone cursor patent cover spatial interaction. Magic Leap’s 1000x gain covers constrained-device performance.</li>
             </ul>
           </div>
           <div>
@@ -64,7 +64,7 @@
             <ul>
               <li>Seven years of iOS application development is a minimum qualification. The record supports about 5 years 10 months of employment that names iOS, visionOS, or Swift, and those years are not iOS-only. See the tally in notes.</li>
               <li>No education record in <code>resume.json</code>. The posting accepts a bachelor’s degree or equivalent practical experience. The degree itself is unconfirmed.</li>
-              <li>LLM integration is preferred. The file lists ML (GAN, LLM, RAG) as a skill and the portfolio has LLM study pages. No experience bullet describes a shipped LLM integration.</li>
+              <li>LLM integration is now in the record: an agentic fan agent with on-device speech, edge or cloud routing, and MCP and A2A connectors. Prompt engineering is still not stated. The 7-year iOS minimum is still the score.</li>
             </ul>
           </div>
         </div>
@@ -81,8 +81,8 @@
           <p><span class="cv-label">Mitigation</span> Education is omitted. The summary uses the equivalent the posting allows: software development since 1986 and shipped platforms. Richard to confirm before any degree is added.</p>
         </article>
         <article class="learn-card cv-card">
-          <h3 class="learn-card-title">Preferred LLM integration is study and a skill line, not a shipped product</h3>
-          <p><span class="cv-label">Mitigation</span> The CV does not claim LLM integration. It does claim the extensible APIs and SDKs in that same preferred line: Kinect, Lightship, and the Quintar SharePlay sync API. A production LLM story stays off the page until Richard confirms one.</p>
+          <h3 class="learn-card-title">Prompt engineering is not in the fan-agent confirmation</h3>
+          <p><span class="cv-label">Mitigation</span> The CV describes the agentic fan agent, on-device speech, edge or cloud routing, and the MCP and A2A connectors into the LLMs. It does not claim prompt engineering.</p>
         </article>
       </section>
 
@@ -135,7 +135,7 @@
               </tr>
               <tr>
                 <td data-label="JD keyword">LLM integration and prompt engineering</td>
-                <td data-label="Where the CV covers it">Not claimed. SDK half of the same preferred line is covered.</td>
+                <td data-label="Where the CV covers it">Quintar bullet: agentic fan agent, on-device speech, edge or cloud AI, MCP and A2A connectors to the LLMs. Prompt engineering is not stated.</td>
                 <td data-label="Status">partial</td>
               </tr>
               <tr>
@@ -157,7 +157,7 @@
         </div>
         <pre id="letter-text" class="cv-pre" contenteditable="true" spellcheck="false">I am applying for Senior Staff Software Engineering Architect, XR iOS. The work I want is first-party XR on iOS and the SDKs underneath wearable devices: the spatial platform, the apps on it, and the performance those devices allow.
 
-At Quintar I am hands-on in Swift, SwiftUI, RealityKit, and Metal. I shipped PGA Tour Vision on Apple Vision Pro, and NASCAR, MLB, NBA, and FIFA on iOS, with a multithreaded 100fps 3D streaming renderer and a SharePlay sync API. Before that I launched Niantic’s Lightship ARDK on iOS and Android, and Magic Leap’s spatial meetings platform with companion apps on iOS, including a 1000x performance gain on the pre-V1 platform. Earlier, Kinect body-tracking APIs shipped in Windows and Xbox.
+At Quintar I am hands-on in Swift, SwiftUI, RealityKit, and Metal. I shipped PGA Tour Vision on Apple Vision Pro, and NASCAR, MLB, NBA, and FIFA on iOS, with Quintar’s streaming 3D renderer (time series presenter), created in 2023: multithreaded, 100fps, separating slow or choppy network data and data preparation from time-critical per-frame rendering, and a SharePlay sync API. It became a key part of Quintar’s product offering. I created an agentic fan agent: on-device speech handles immediate requests locally and routes others to edge or cloud AI, with MCP and A2A connectors feeding sports and venue data to the LLMs. Before that I launched Niantic’s Lightship ARDK on iOS and Android, and Magic Leap’s spatial meetings platform with companion apps on iOS, including a 1000x performance gain on the pre-V1 platform. Earlier, Kinect body-tracking APIs shipped in Windows and Xbox.
 
 I would like to talk about that architecture.</pre>
       </section>
@@ -184,8 +184,9 @@ EXPERIENCE
 Quintar, Inc — Vice President of Engineering &amp; Principle Engineer
 Sep 2022 – Present
 • Shipped PGA Tour Vision on Apple Vision Pro, and NASCAR, MLB, NBA, and FIFA on iOS, Android, and Meta Quest, on one spatial platform with MV-HEVC stereo video and live AR overlays.
-• Architected a multithreaded 100fps 3D streaming renderer and a SharePlay sync API using Swift Concurrency, actors, Metal, and RealityKit.
-• Led a 30-engineer team in the USA and India, with leads and architects reporting to me and 100% retention over 2 years. Cut operations downtime 50% using Xcode Instruments and ARM-level render investigations.
+• Created Quintar’s streaming 3D renderer (time series presenter) in 2023: multithreaded, 100fps, separating slow or choppy network data and data preparation from time-critical per-frame rendering, with a SharePlay sync API using Swift Concurrency, actors, Metal, and RealityKit. It became a key part of Quintar’s product offering.
+• Created an agentic fan agent for questions about the tournament, games, venue, and general sports topics. On-device speech handles immediate requests locally and routes others to edge or cloud AI. MCP and A2A connectors feed sports and venue data to the LLMs.
+• Led a 30-engineer team in the USA and India, with leads and architects reporting to me. Cut operations downtime 50% using Xcode Instruments and ARM-level render investigations.
 
 Niantic, Inc. — Senior Director, Lightship ARDK
 Nov 2020 – Aug 2022
@@ -215,7 +216,7 @@ Ergonomic Physical Interaction Zone Cursor Mapping, US 9,063,578 (2015). Eclipse
           <button type="button" class="filter-toggle-btn" id="copy-outreach">Copy</button>
           <span id="copy-outreach-status" class="cv-copy-status" role="status"></span>
         </div>
-        <pre id="outreach-text" class="cv-pre" contenteditable="true" spellcheck="false">I’m applying for Senior Staff Software Engineering Architect, XR iOS. I architect spatial platforms and the apps on them. At Quintar I work in Swift, SwiftUI, RealityKit, and Metal: PGA Tour Vision on Apple Vision Pro, and NASCAR, MLB, NBA, and FIFA on iOS, with a 100fps streaming renderer. Before that I launched Niantic’s Lightship ARDK on iOS and Android, and Magic Leap’s spatial meetings platform with companion apps on iOS. I would like to talk about first-party XR on iOS and the SDKs under wearable devices.</pre>
+        <pre id="outreach-text" class="cv-pre" contenteditable="true" spellcheck="false">I’m applying for Senior Staff Software Engineering Architect, XR iOS. I architect spatial platforms and the apps on them. At Quintar I work in Swift, SwiftUI, RealityKit, and Metal: PGA Tour Vision on Apple Vision Pro, and NASCAR, MLB, NBA, and FIFA on iOS, with a 100fps streaming 3D renderer (time series presenter). Before that I launched Niantic’s Lightship ARDK on iOS and Android, and Magic Leap’s spatial meetings platform with companion apps on iOS. I would like to talk about first-party XR on iOS and the SDKs under wearable devices.</pre>
       </section>
 
       <section class="learn-section cv-stories cv-no-print" id="stories" aria-labelledby="stories-title">
@@ -226,7 +227,7 @@ Ergonomic Physical Interaction Zone Cursor Mapping, US 9,063,578 (2015). Eclipse
           <h3 class="learn-card-title">iOS and visionOS architecture</h3>
           <p><span class="cv-label">Situation</span> Quintar needed one spatial sports platform on iOS and on Apple Vision Pro.</p>
           <p><span class="cv-label">Task</span> Richard owned the rendering architecture and was the hands-on engineer on the performance-critical path.</p>
-          <p><span class="cv-label">Action</span> He architected a multithreaded 3D streaming renderer and a SharePlay sync API with Swift Concurrency, actors, Metal, and RealityKit, and used Xcode Instruments on memory and threading failures.</p>
+          <p><span class="cv-label">Action</span> He created the streaming 3D renderer (time series presenter) in 2023, multithreaded at 100fps, separating slow or choppy network data and data preparation from time-critical per-frame rendering, with a SharePlay sync API in Swift Concurrency, actors, Metal, and RealityKit, and used Xcode Instruments on memory and threading failures.</p>
           <p><span class="cv-label">Result</span> 100fps streaming, PGA Tour Vision on Apple Vision Pro, and NASCAR, MLB, NBA, and FIFA on iOS. Operations downtime down 50%.</p>
         </article>
 
@@ -261,11 +262,14 @@ Ergonomic Physical Interaction Zone Cursor Mapping, US 9,063,578 (2015). Eclipse
         <ul class="cv-log">
           <li><span class="cv-date">2026-10-03</span> Draft from the saved posting and <code>resume.json</code>. Quintar title kept as stored: Principle Engineer.</li>
           <li><span class="cv-date">2026-10-04</span> Contact line set to San Jose, CA. Microsoft heading uses the three recorded titles. Leads and architects reported to him at Quintar, Niantic, and Magic Leap.</li>
+          <li><span class="cv-date">2026-10-05</span> Contact line stays San Jose, CA. This letter and outreach note do not say where he lives. If they do, the wording is “south of San Jose.”</li>
           <li><span class="ph">Richard to confirm: any iOS application work before Nov 2020, including how much of the Magic Leap companion-app work was iOS, before a 7-year claim is even considered.</span></li>
           <li><span class="ph">Richard to confirm: school, degree, and year. Nothing in <code>resume.json</code> is an education record. The intro line “BS/MS in Computer Science.” is an old posting fragment, not a degree.</span></li>
           <li><span class="ph">Richard to confirm: a phone number for the contact block.</span></li>
           <li><span class="ph">Richard to confirm: whether “Principle Engineer” should read “Principal Engineer” on an external CV.</span></li>
-          <li><span class="ph">Richard to confirm: any shipped LLM integration or prompt-engineering work. The skill line “ML (GAN, LLM, RAG)” and the portfolio’s LLM study pages are not a product integration.</span></li>
+          <li><span class="cv-date">2026-10-05</span> Richard confirmed the agentic fan agent, on-device speech with local versus edge or cloud routing, and MCP and A2A connectors into the LLMs. Fit stays 6/10 because the 7-year iOS minimum is still not supported.</li>
+          <li><span class="ph">Richard to confirm: prompt engineering. The fan agent uses LLMs. It does not describe prompt work. Suggested wording, only if true: “I did the prompt engineering for the fan agent, including [what the prompts do].”</span></li>
+          <li><span class="ph">Richard to confirm: a product name for the fan agent, only if he wants one on the CV. Suggested wording: “The fan agent shipped in [product].”</span></li>
         </ul>
       </section>
     </div>
