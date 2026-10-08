@@ -1284,6 +1284,12 @@ a.learn-card-title:hover { text-decoration: underline; }
 }
 .device-photo-ref:hover { text-decoration: underline; }
 
+.device-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+}
+
 .device-photo-note {
   font-size: 0.72rem;
   color: var(--text-2);
