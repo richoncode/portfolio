@@ -125,12 +125,14 @@ experiences[]            {company, summary, roles[{title, roleTypes[], startDate
                          **term** marks recruiting keywords rendered as <strong>
 skills[]                 {category, items[]}
 patents[]                {group, inventions[{id, title, numbers[], url, summary}]}
-research[]               {id, title, url, date, subject, summary, tags, parent?, hidden?}
+research[]               {id, title, url, date, subject, summary, tags, parent?, hidden?, links?}
                          — flat index of ../webartests pages (excludes bryto reports/, scratch/);
                          sub-pages are their own entries with parent:<id> and a
                          "Parent · Sub" title; url is relative (../webartests/...);
                          tags is a ' · '-joined string; hidden:true keeps a
-                         not-yet-public item out of the rendered list
+                         not-yet-public item out of the rendered list;
+                         links is an optional [{label, url}] list of extra labelled
+                         links on the card (absolute https URLs open in a new tab)
 publications[]           {title, venue, date, url}
 reading[]                {title, authors[], publication, url, datePublished,
                           status, dateStarted, dateFinished, note?, tags[]?,
