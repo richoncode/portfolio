@@ -1553,6 +1553,26 @@ function renderPatents() {
 let researchGroupBySubject = false;
 let researchAllExpanded = false;
 
+function researchHref(url) {
+  if (typeof url !== 'string') return '';
+  const trimmed = url.trim();
+  if (!trimmed) return '';
+  if (/^https?:\/\//i.test(trimmed)) return escapeHtml(trimmed);
+  if (/^[a-z][a-z0-9+.-]*:/i.test(trimmed)) return '';
+  return escapeHtml(trimmed);
+}
+
+function researchLinksHtml(links) {
+  if (!Array.isArray(links)) return '';
+  const anchors = links.map(link => {
+    if (!link || typeof link.label !== 'string' || !link.label.trim()) return '';
+    const href = researchHref(link.url);
+    if (!href) return '';
+    return `<a class="research-link" href="${href}" target="_blank" rel="noopener">${escapeHtml(link.label)}</a>`;
+  }).filter(Boolean);
+  return anchors.length ? `<div class="research-links">${anchors.join('')}</div>` : '';
+}
+
 function renderResearch() {
   const container = document.getElementById('research-content');
   const items = (resumeData.research || []).filter(r => !r.hidden);
@@ -1563,13 +1583,18 @@ function renderResearch() {
     const tagPills = r.tags
       ? r.tags.split(' · ').map(t => `<span class="patent-num">${escapeHtml(t)}</span>`).join('')
       : '';
+    const titleHref = researchHref(r.url);
+    const titleEl = titleHref
+      ? `<a class="patent-title" href="${titleHref}" target="_blank" rel="noopener">${escapeHtml(r.title)}</a>`
+      : `<span class="patent-title">${escapeHtml(r.title)}</span>`;
     return `
       <div class="patent-card" data-id="${escapeHtml(r.id)}" data-summary="${escapeHtml(r.summary)}">
         <div class="patent-header">
           <div class="patent-title-row">
-            <a class="patent-title" href="${r.url}" target="_blank" rel="noopener">${escapeHtml(r.title)}</a>
+            ${titleEl}
             <button class="patent-toggle" data-id="${escapeHtml(r.id)}" aria-expanded="false">Summary ▸</button>
           </div>
+          ${researchLinksHtml(r.links)}
           <div class="patent-nums"><span class="learn-date">${formatDate(r.date)}</span>${tagPills}</div>
         </div>
         <div class="patent-summary" id="rsummary-${escapeHtml(r.id)}" hidden>${escapeHtml(r.summary)}</div>

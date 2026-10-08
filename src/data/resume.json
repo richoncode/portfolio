@@ -4768,6 +4768,31 @@
   ],
   "research": [
     {
+      "id": "firesim-audio",
+      "title": "FireSim Audio — Synthesized Fire from a Live WebGPU Campfire",
+      "url": "../webartests/experiments/firesimaudio/live/examples/playback/",
+      "date": "2026-10",
+      "subject": "Audio",
+      "summary": "A fun side experiment: synthesized fire sound driven by a live WebGPU campfire. Sparse probes read heat, speed, and swirl from Daniel Greenheck's Three.js Fire Pro, and that energy drives a Web Audio roar plus Poisson-timed crackles inspired by Perry Cook's physically informed synthesis.",
+      "tags": "WebGPU · Three.js · Procedural Audio · Physical Modelling · Web Audio",
+      "links": [
+        {
+          "label": "LinkedIn post",
+          "url": "https://www.linkedin.com/posts/richoncode_throwbackthursday-webgpu-threejs-activity-7513982778485448704-qLxd"
+        }
+      ]
+    },
+    {
+      "id": "firesim-audio--explainer",
+      "parent": "firesim-audio",
+      "title": "FireSim Audio · Explainer",
+      "url": "../webartests/experiments/firesimaudio/live/examples/explainer/",
+      "date": "2026-10",
+      "subject": "Audio",
+      "summary": "How the campfire gets its voice. The fire is Daniel Greenheck's Fire Pro; a separate Web Audio layer listens through a handful of probes and never writes back into the simulation.",
+      "tags": "WebGPU · Three.js · Procedural Audio · Physical Modelling · Web Audio"
+    },
+    {
       "id": "subsurface-explorer",
       "title": "DeepScan Voxel Explorer — GPU-Raymarched Subsurface Tomography",
       "url": "../webartests/subsurface-explorer/",

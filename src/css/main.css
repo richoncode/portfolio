@@ -590,6 +590,21 @@ main { padding: 28px 0 60px; }
 }
 .patent-title:hover { color: var(--accent); text-decoration: underline; }
 
+.research-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: baseline;
+}
+.research-link {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--accent);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.research-link:hover { text-decoration: underline; }
+
 .patent-toggle {
   font-size: 0.68rem;
   padding: 2px 8px;
