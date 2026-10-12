@@ -152,12 +152,13 @@ filterTaxonomy           {roles[], experiences[]}
 
 ```
 devices[]  {id, name, company, role, startDate, endDate, yearsLabel,
-            image, imagePath, silhouette,
+            image, imagePath, imageNote?, silhouette,
+            links?[{label, url}],
             management{confirm, bullets[]}, handsOn{confirm, bullets[]},
             reference?{label, url, drawingsLabel, drawingsUrl, note}}
 ```
 
-`image` is a repo path when a licensed photo exists; otherwise leave it empty and set `imagePath` to `assets/devices/<id>.jpg`. A bullet may be a string or `{text, confirm:true}`. `confirm:true` on a section with no bullets renders “Confirm with Richard”. Keep anything on the cover-letter redact list out of this file.
+`image` is a repo path, or a URL the site already shows (for example a Videos-tab thumbnail). Otherwise leave it empty and set `imagePath` to `assets/devices/<id>.jpg`. A bullet may be a string or `{text, confirm:true}`. `confirm:true` on a section with no bullets renders “Confirm with Richard”. Keep anything on the cover-letter redact list out of this file.
 
 
 Cert tags: `management` | `engineering` | `ai` | `performance` | `communication`

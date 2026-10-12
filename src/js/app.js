@@ -1109,6 +1109,14 @@ function deviceSectionHtml(label, section) {
     </div>`;
 }
 
+function deviceLinksHtml(device) {
+  const links = Array.isArray(device.links) ? device.links : [];
+  if (!links.length) return '';
+  return `<div class="device-links">${links.map(link =>
+    `<a class="device-photo-ref" href="${escapeHtml(link.url)}" target="_blank" rel="noopener">${escapeHtml(link.label)}</a>`
+  ).join('')}</div>`;
+}
+
 function devicePhotoHtml(device) {
   if (device.image) {
     return `<img src="${escapeHtml(device.image)}" alt="${escapeHtml(device.name)}">`;
@@ -1157,6 +1165,7 @@ function renderDevices() {
         </div>
         ${deviceSectionHtml('Management', device.management)}
         ${deviceSectionHtml('Hands-on technical', device.handsOn)}
+        ${deviceLinksHtml(device)}
       </div>
     </article>`).join('');
 
