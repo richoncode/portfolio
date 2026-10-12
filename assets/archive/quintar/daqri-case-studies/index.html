@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
+    <meta property="og:image" content="post-image.png">
     <title>DAQRI AR Case Studies & Engagements</title>
     <style>
         :root { --primary-bg: #0f172a; --card-bg: #1e293b; --text-main: #f8fafc; --text-muted: #cbd5e1; --accent: #38bdf8; --accent-hover: #0284c7; }
@@ -24,7 +25,50 @@
         .list-group li { background-color: var(--card-bg); margin-bottom: 1rem; padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--accent); }
         .list-group h4 { margin: 0 0 0.5rem 0; color: var(--text-main); font-size: 1.2rem; }
         .list-group p { margin: 0; color: var(--text-muted); }
-    </style>
+    
+.hero{margin:0 auto 3rem;max-width:1200px}
+.chipbar{position:relative;margin-bottom:1rem}
+.chips{display:flex;gap:.5rem;overflow-x:auto;scroll-snap-type:x proximity;padding:.25rem 2.5rem .5rem 0;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
+.chipbar.noscroll:after{display:none}
+.chipbar:after{content:"›";position:absolute;right:0;top:0;bottom:.5rem;width:2.5rem;display:flex;align-items:center;justify-content:flex-end;padding-right:.3rem;font-size:1.6rem;color:var(--accent);background:linear-gradient(90deg,transparent,var(--primary-bg) 60%);pointer-events:none}
+.chip{flex:0 0 auto;scroll-snap-align:start;display:flex;align-items:center;gap:.45rem;background:var(--card-bg);color:var(--text-main);border:1px solid #475569;border-radius:999px;padding:.55rem 1rem;font:inherit;font-size:.9rem;cursor:pointer;min-height:44px}
+.chip .dot{width:.6rem;height:.6rem;border-radius:50%;background:var(--c)}
+.chip .x{display:none;font-size:.8rem;opacity:.9}
+.chip[aria-pressed=true]{background:var(--c);color:#0f172a;border-color:var(--c);font-weight:600}
+.chip[aria-pressed=true] .dot{background:#0f172a}.chip[aria-pressed=true] .x{display:inline}
+.hint{font-size:.8rem;color:var(--text-muted);margin:.25rem 0 0}
+.mosaic{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem}
+.group{background:#111c33;border:1px solid #334155;border-radius:10px;padding:.6rem;transition:opacity .25s}
+.group.dim{display:none}
+.gh{font-weight:700;font-size:.85rem;text-transform:uppercase;letter-spacing:.05em;margin:0 0 .5rem .2rem}
+.tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:.4rem}
+.mosaic.solo{grid-template-columns:1fr}.mosaic.solo .tiles{grid-template-columns:repeat(3,1fr)}
+.tile{position:relative;padding:0;border:2px solid transparent;border-radius:6px;overflow:hidden;cursor:pointer;background:#000;aspect-ratio:16/9}
+.tile img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
+.tile .ts{position:absolute;left:.3rem;bottom:.3rem;background:rgba(15,23,42,.85);color:#fff;font-size:.7rem;padding:.05rem .35rem;border-radius:4px}
+.tile.on{border-color:var(--c);box-shadow:0 0 0 2px var(--c)}
+@media (hover:hover){.tile:hover img{transform:scale(1.08)}}
+.detail{margin-top:1rem;background:var(--card-bg);border:1px solid #334155;border-radius:10px;overflow:hidden;display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr)}
+.detail[hidden]{display:none}
+.detail img{width:100%;display:block}
+.detail .info{padding:1rem 1.25rem;min-width:0}
+.detail h3{margin:.2rem 0 .4rem;font-size:1.05rem}
+.detail .when{color:var(--accent);font-weight:700;font-size:.85rem}
+.detail blockquote{margin:.6rem 0;padding:.5rem .75rem;border-left:3px solid var(--accent);background:#0f172a;color:var(--text-muted);font-size:.9rem;overflow-wrap:anywhere}
+.nav{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.5rem}
+.nav button{background:#334155;color:#fff;border:0;border-radius:4px;padding:.5rem .9rem;font:inherit;cursor:pointer;min-height:40px}
+.detail .btn{margin-top:0}
+.video-item{background:var(--card-bg);border-left:4px solid var(--accent);border-radius:8px;padding:1.25rem 1.5rem;margin-bottom:1.25rem}
+.video-item h3{margin-top:0}
+.video-meta{color:var(--text-muted);font-size:.85rem;margin-bottom:.5rem}
+.muted{color:var(--text-muted)}
+details.tr{margin-top:1rem}
+details.tr summary{cursor:pointer;color:var(--accent);font-weight:600;padding:.4rem 0}
+.transcript-box{background:#0b1220;color:#e2e8f0;padding:1rem;border-radius:6px;max-height:320px;overflow-y:auto;font-family:"Courier New",monospace;font-size:.85rem;line-height:1.5;white-space:pre-wrap;border:1px solid #334155}
+.secondary{max-width:640px;margin:1rem auto 0}
+.secondary figcaption{text-align:center;color:var(--text-muted);font-size:.85rem}
+@media (max-width:760px){body{padding:1rem}h1{font-size:1.8rem}.mosaic{grid-template-columns:1fr}.mosaic.solo .tiles{grid-template-columns:repeat(2,1fr)}.tiles{grid-template-columns:repeat(3,1fr)}.detail{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
 <div class="container">
@@ -32,8 +76,12 @@
         <h1>DAQRI Research & Learning Archive</h1>
         <p style="color: var(--text-muted);">A curated overview of DAQRI's Augmented Reality hardware, software scenarios, and enterprise deployments.</p>
     </header>
-    <!-- Visual Reference -->
-    <img src="daqri-case-studies.png" alt="DAQRI Video Case Studies & AR Scenarios Compilation" class="hero-image">
+<section class="hero" aria-label="Interactive frame mosaic">
+<div class="chipbar"><div class="chips" role="group" aria-label="Filter by video"><button class="chip" data-v="v1" aria-pressed="false" style="--c:#38bdf8"><span class="dot"></span>AREA floor interview<span class="x" aria-hidden="true">✕</span></button><button class="chip" data-v="v2" aria-pressed="false" style="--c:#a78bfa"><span class="dot"></span>Worksense Tag demo<span class="x" aria-hidden="true">✕</span></button><button class="chip" data-v="v3" aria-pressed="false" style="--c:#f472b6"><span class="dot"></span>Roy Ashok keynote<span class="x" aria-hidden="true">✕</span></button></div></div>
+<p class="hint">Tap a chip to show one video, tap it again to clear. Tap any frame for details.</p>
+<div class="mosaic" id="mosaic"><div class="group" data-v="v1"><div class="gh" style="color:#38bdf8">AREA floor interview</div><div class="tiles"><button class="tile" data-i="0" style="--c:#38bdf8"><img src="frames/v1-12.jpg" alt="DAQRI (Augmented Reality for Enterprise Alliance) at 0:12" loading="lazy"><span class="ts">0:12</span></button><button class="tile" data-i="1" style="--c:#38bdf8"><img src="frames/v1-50.jpg" alt="DAQRI (Augmented Reality for Enterprise Alliance) at 0:50" loading="lazy"><span class="ts">0:50</span></button><button class="tile" data-i="2" style="--c:#38bdf8"><img src="frames/v1-90.jpg" alt="DAQRI (Augmented Reality for Enterprise Alliance) at 1:30" loading="lazy"><span class="ts">1:30</span></button><button class="tile" data-i="3" style="--c:#38bdf8"><img src="frames/v1-130.jpg" alt="DAQRI (Augmented Reality for Enterprise Alliance) at 2:10" loading="lazy"><span class="ts">2:10</span></button><button class="tile" data-i="4" style="--c:#38bdf8"><img src="frames/v1-170.jpg" alt="DAQRI (Augmented Reality for Enterprise Alliance) at 2:50" loading="lazy"><span class="ts">2:50</span></button><button class="tile" data-i="5" style="--c:#38bdf8"><img src="frames/v1-200.jpg" alt="DAQRI (Augmented Reality for Enterprise Alliance) at 3:20" loading="lazy"><span class="ts">3:20</span></button></div></div><div class="group" data-v="v2"><div class="gh" style="color:#a78bfa">Worksense Tag demo</div><div class="tiles"><button class="tile" data-i="6" style="--c:#a78bfa"><img src="frames/v2-555.jpg" alt="Paul Chen (DAQRI): AR Productivity 101 Powered by DAQRI Worksense at 9:15" loading="lazy"><span class="ts">9:15</span></button><button class="tile" data-i="7" style="--c:#a78bfa"><img src="frames/v2-720.jpg" alt="Paul Chen (DAQRI): AR Productivity 101 Powered by DAQRI Worksense at 12:00" loading="lazy"><span class="ts">12:00</span></button><button class="tile" data-i="8" style="--c:#a78bfa"><img src="frames/v2-760.jpg" alt="Paul Chen (DAQRI): AR Productivity 101 Powered by DAQRI Worksense at 12:40" loading="lazy"><span class="ts">12:40</span></button><button class="tile" data-i="9" style="--c:#a78bfa"><img src="frames/v2-800.jpg" alt="Paul Chen (DAQRI): AR Productivity 101 Powered by DAQRI Worksense at 13:20" loading="lazy"><span class="ts">13:20</span></button><button class="tile" data-i="10" style="--c:#a78bfa"><img src="frames/v2-900.jpg" alt="Paul Chen (DAQRI): AR Productivity 101 Powered by DAQRI Worksense at 15:00" loading="lazy"><span class="ts">15:00</span></button><button class="tile" data-i="11" style="--c:#a78bfa"><img src="frames/v2-1060.jpg" alt="Paul Chen (DAQRI): AR Productivity 101 Powered by DAQRI Worksense at 17:40" loading="lazy"><span class="ts">17:40</span></button></div></div><div class="group" data-v="v3"><div class="gh" style="color:#f472b6">Roy Ashok keynote</div><div class="tiles"><button class="tile" data-i="12" style="--c:#f472b6"><img src="frames/v3-286.jpg" alt="Roy Ashok on the true potential of augmented reality at 4:46" loading="lazy"><span class="ts">4:46</span></button><button class="tile" data-i="13" style="--c:#f472b6"><img src="frames/v3-492.jpg" alt="Roy Ashok on the true potential of augmented reality at 8:12" loading="lazy"><span class="ts">8:12</span></button><button class="tile" data-i="14" style="--c:#f472b6"><img src="frames/v3-704.jpg" alt="Roy Ashok on the true potential of augmented reality at 11:44" loading="lazy"><span class="ts">11:44</span></button><button class="tile" data-i="15" style="--c:#f472b6"><img src="frames/v3-957.jpg" alt="Roy Ashok on the true potential of augmented reality at 15:57" loading="lazy"><span class="ts">15:57</span></button><button class="tile" data-i="16" style="--c:#f472b6"><img src="frames/v3-1003.jpg" alt="Roy Ashok on the true potential of augmented reality at 16:43" loading="lazy"><span class="ts">16:43</span></button><button class="tile" data-i="17" style="--c:#f472b6"><img src="frames/v3-1248.jpg" alt="Roy Ashok on the true potential of augmented reality at 20:48" loading="lazy"><span class="ts">20:48</span></button></div></div></div>
+<div class="detail" id="detail" hidden><img id="dimg" alt=""><div class="info"><div class="when" id="dwhen"></div><h3 id="dtitle"></h3><blockquote id="dquote"></blockquote><div class="nav"><a class="btn" id="dlink" target="_blank" rel="noopener">Watch from here ▶</a><button id="prev">‹ Prev</button><button id="next">Next ›</button><button id="close">Close ✕</button></div></div></div>
+</section>
     <section>
         <h2>Key Video Scenarios & Hardware Demos</h2>
         <div class="grid">
@@ -77,6 +125,179 @@
             <li><h4>IBM & Emerson</h4><p>Partnered to integrate DAQRI's augmented reality overlays with their existing enterprise software, leveraging industrial workflow data.</p></li>
         </ul>
     </section>
+    <section>
+        <h2>Talks & Interviews</h2>
+        <div class="video-item" id="v1" style="border-left-color:#38bdf8"><h3>1. DAQRI (Augmented Reality for Enterprise Alliance)</h3><div class="video-meta">Published: 2017-02-04 | Channel: Augmented Reality for Enterprise Alliance (AREA) | Views: 81</div><p>A floor interview discussing DAQRI&#x27;s product line integration into field service and construction blueprint workflows using smart helmets and smart glasses.</p><a href="https://www.youtube.com/watch?v=ORAHrclBoFk" target="_blank" rel="noopener" class="btn">Watch on YouTube</a><details class="tr"><summary>Transcript</summary><div class="transcript-box">[00:00:12] sure sure so I&#x27;m Reagan when I&#x27;m director marketing communications for daiquiri and we&#x27;re here Fiesta here to show off our newest product a trademark
+[00:00:20] sachet chief SN mmos eye sunglasses shorts as Mark Lazarus is our newest product line in our hardware ecosystem is the same family of Zachary&#x27;s part
+[00:00:30] helmet and where we see it coming to play is it fits right into that workflow where the source of it was designed for
+[00:00:38] field service engineer this is more for implanting place so it would be given example of an engineer might be provided to high-end visualization of what a
+[00:00:48] final projects look like it&#x27;s going to take a duck the blueprints of that and design that in the office push those blueprints and work construction out to those workers and fields where in the
+[00:00:57] helmet they complete the project and then we go back to the work I&#x27;m to wearing the glass to go through the contraction of the of the building so it really just fit in nicely with
+[00:01:07] where EPA are identified as people oppose the things that make your son that device 2000 being sure sure so
+[00:01:18] we&#x27;re actually a pretty a pretty nice presence isn&#x27;t here up somewhere in the NFL moon shone on the glasses we&#x27;re also part of the play for food in Southall
+[00:01:27] showing all helmet and that&#x27;s actually been the first time at CES where we&#x27;ve done a full 12 1 then the flasher was a little more curated experiences we have
+[00:01:35] so many issues there&#x27;s still a long line of people interested but yes it definitely helped my head we&#x27;re trying it out to go to a feedback those dinner
+[00:01:44] later it feels there that night 2016 and most actually was doing and how you gonna system on it sure so this is a great PS is a great way to kind of book
+[00:01:52] in this right so last year in 2016 we announce the newest version Zachary&#x27;s for helping with our partnership with himself you can use chemical processes
+[00:02:01] we reported their keynote and that really kind of kicked off the year of smart helmet a daiquiri we also had some really interesting acquisition to that
+[00:02:10] year and develops our daiquiri smart closet I had them in flavors vehicles so that&#x27;s been also very exciting so we&#x27;re now starting to really see a delivery on
+[00:02:19] the promise of bringing a are everywhere and that brought us right into 2017 we finished with late q3 of the developer edition of gatherings or helmet and roll
+[00:02:30] out of that early adopters program and then right into our partnership in Autodesk view with forested and an Autodesk intrepid 360 integration and
+[00:02:40] then couple of years with peanut butter and examine three to limit my son that to someone else be
+[00:02:48] of memphis 2017 oh my god can&#x27;t tell ya Bob but right now you can go on and reserve your pair of glasses and all the
+[00:02:57] websites that will be should be named tune of the year all of us by then the latecomers already
+[00:03:06] approached the experiment your classes and really giving knife thrust feedback we&#x27;re going to see product launches proposed helmet and last flavor out of
+[00:03:14] the year and then another exciting stuff that I&#x27;ll tell you about a sequence that is you don&#x27;t need me yeah and everything</div></details></div><div class="video-item" id="v2" style="border-left-color:#a78bfa"><h3>2. Paul Chen (DAQRI): AR Productivity 101 Powered by DAQRI Worksense</h3><div class="video-meta">Published: 2018-07-16 | Channel: AWE XR | Views: 233</div><p>A detailed presentation on integrating the DAQRI Worksense platform into enterprise operations, focusing on the &quot;Tag&quot; application for displaying real-time IoT data over physical assets.</p><a href="https://www.youtube.com/watch?v=9iJ8xO8zbN8" target="_blank" rel="noopener" class="btn">Watch on YouTube</a><details class="tr"><summary>Transcript</summary><div class="transcript-box">[00:00:07] thanks very much for attending this afternoon that was a great talk by Vinny I will refer to it during mine there were some points he made which were very
+[00:00:15] interesting as Jeff mentioned my name is Paul Chen I&#x27;m a director of product management for daiquiri I work on our device operating systems as well as one
+[00:00:25] of our new work cents applications which is the subject of today&#x27;s talk the title is a our productivity 101 powered by daiquiri work cents I&#x27;ll explain what
+[00:00:35] daiquiri work cents is but in general we&#x27;re trying to bring a are to our customers so that their workforces can actually benefit through the use of AR
+[00:00:44] in their day to day jobs those of you who are familiar with daiquiri know that we&#x27;ve been building professional-grade
+[00:00:52] augmented reality for about eight years now we are headquartered down in Los Angeles we do have offices in Europe as well over the past eight years we&#x27;ve had
+[00:01:03] hundreds of conversations with our customers about how they plan to use augmented reality how they can use it to enhance their workforces that&#x27;s our goal
+[00:01:12] what we&#x27;ve heard what they&#x27;ve told us and what we&#x27;ve learned is that their workforces can really benefit from the use of AR when those work verses are
+[00:01:23] performing complex tasks on high-value assets now those assets can be buildings they can be factories they can be the
+[00:01:32] facilities or the equipment inside those buildings and factories it can be assembly lines in a factory it can be even the things that come off the
+[00:01:40] assembly lines like airplanes or tractors all through those assets life cycles their workforces are performing
+[00:01:50] complex tasks from the initial concept and design of those assets through the building the implementation construction
+[00:01:57] of those assets then into the multi years of operation and maintenance of those assets then finally to
+[00:02:05] retrofitting remodeling giving those assets a second life through all of those phases their workforces are doing very complicated
+[00:02:13] and they found that augmented reality could really help those workers become more productive more accurate more efficient reduced down times improve
+[00:02:22] cost reductions profitability we&#x27;ve seen studies about how AR can help workers in these situations what workers have needed though is software to help them
+[00:02:32] do that I understand this is the develop track it&#x27;s a little odd for me because what I&#x27;m telling today is that right out of the box
+[00:02:40] Dekker is now providing software applications that our customers can use to derive benefit from AR immediately but don&#x27;t worry not all hope is lost we
+[00:02:51] do have api&#x27;s available also because we understand customers always want something a little bit different than what we offer there is ample opportunity to create bespoke custom applications
+[00:03:01] using our api&#x27;s customers have also told us that augmented reality is not the
+[00:03:10] point they&#x27;re not just buying it for fun they want to actually use it and get benefit from it so a daiquiri we understand we have to package up a
+[00:03:17] complete solutions so we have developed both the hardware two years ago we introduced the daiquiri smart helmet some of you may be familiar with that
+[00:03:25] product last year at awwe we announced our smart glasses which is on the market currently today and at this year&#x27;s awwe
+[00:03:35] we&#x27;re announcing our software suite which is called work sense and it&#x27;s essentially a suite of five productivity apps for AR that give our customers AR
+[00:03:44] benefits right out of the box we package up the hardware with the software now with also integrations to back-end business systems so that customers can
+[00:03:53] access all that leveraged existing content and make it available in their glasses in all of those conversations we
+[00:04:04] have with the customers they told us what their workforce needs were and we heard a lot of repeating stories from them and we were able to bucket them
+[00:04:13] into five essential categories or tasks the first one is very common show this applies to all markets all industries a worker is out in the field or in the
+[00:04:22] factory comes across something that is either AB normal or unfamiliar and would like to get help they want to show this issue to somebody else this is very prevalent in
+[00:04:31] the market today it goes by other names such as remote expert remote assistant remote assistance in the healthcare field that&#x27;s telemedicine so very very
+[00:04:40] common use case we captured that as a task we call show and we are now developing or have developed an application that we call show that
+[00:04:49] allows someone wearing smart glasses to show that issue or case to a remote expert a second use case that we heard repeatedly was the ability to scan their
+[00:05:00] existing environment I heard a talk yesterday from the US Navy they design their modern ships using 3d models but they find that once the ship goes to sea
+[00:05:08] gets deployed there are changes made new equipment gets installed changes and configurations get made clearly they don&#x27;t have time to go back and update
+[00:05:16] the 3d models so they need a way to go and scan what exists so that they can further plan other changes of their retrogrades or upgrades retrofits so we
+[00:05:25] have captured that need as a task we call scan and we&#x27;re developing an application that runs on the glasses to enable you to view your existing
+[00:05:33] surroundings and in real time build a 3d mesh or scanned environment the third example is called tag we heard a use
+[00:05:42] case where workforces are in their environment and they want to see priority data about certain assets that they&#x27;re looking at they want to see
+[00:05:50] performance data asset maintenance data we have now an application that we call tag that allows you to now access that data in context Institute on the assets
+[00:06:00] that you&#x27;re looking at and that&#x27;s actually the focus of this talk so the the remainder of this talk will be about tag but just to round out the other two
+[00:06:08] applications that we&#x27;re talking about there&#x27;s a need to work with models obviously this is very common in the AEC architecture engineering construction
+[00:06:17] industry they work with 2d drawings 3d models they want to be able to view them in augmented reality in context of the site they&#x27;re using so that they can
+[00:06:26] check designs with clients they can make sure that equipment is laid out properly materials are installed properly and even good for retrofitting and
+[00:06:37] construction later so we&#x27;ve captured that as a need we called model and we&#x27;re developing an application that would work on the smart glasses right away and finally guide all workforces often
+[00:06:48] need work instructions from novices doing tasks for the first few times even for seasoned experienced professionals sometimes the work instructions change
+[00:06:57] sometimes things are updated sometimes they need reminded not to skip steps so providing work instructions in augmented
+[00:07:06] reality enables them to make sure everything is done properly and accurately and we&#x27;ve captured that as an app that we now call guide but today
+[00:07:15] I&#x27;ll focus on tag so for the rest of this talk we&#x27;ll talk about tag I&#x27;ll show you how you can use tag using our smart glasses I have a video that shows you
+[00:07:26] what that looks like then we&#x27;ll go sort of behind the scenes on how you set up tag although this is done using the app itself but there is
+[00:07:33] again ample opportunity to use API is to develop custom bespoke apps and then finally we&#x27;ll talk about some use cases so that you might start the game how
+[00:07:42] customers might start using tag in their environments we&#x27;re giving tag sort of the tagline of just in place asset data
+[00:07:53] this of course is an analogy to just-in-time inventory management we&#x27;re now providing the ability to get the right data at the right place so the
+[00:08:03] right person at the right time can do the right things make the right decision and save a lot of money and make us all more profitable basically you are
+[00:08:10] creating virtual contents which is attached to physical items so now you have authentic reality and then you configure those tags to connect to your
+[00:08:19] back-end enterprise systems so whether it&#x27;s an IBM Maximo asset management system whether it&#x27;s sa P Leonardo it could also be performance data IBM
+[00:08:28] Watson IOT Siemens mind sphere AWS IOT platform your Enterprise has lots of data typically it&#x27;s available to someone
+[00:08:37] sitting at his or her desk using a browser-based dashboard but for the worker on the shop floor or in the factory looking at the asset they often
+[00:08:45] don&#x27;t have access to that information unless of course they&#x27;re saddled with a or a tablet the advantage of viewing this information live through the smart
+[00:08:55] glasses of course is that since its head warned the workers hands are free and the worker can continue to use tools manipulate equipment do things while
+[00:09:04] having that the information available right in their view I have a video showing you what tag looks like this
+[00:09:14] video was shot through our daiquiri smart glasses the smart glasses have the capability to record exactly what the user sees both through the see-through
+[00:09:22] displays as well as the augmented reality content this is in one of our daiquiri labs and I will attempt to
+[00:09:32] control this video I&#x27;ll start and stop it at certain points so I&#x27;m wearing the smart glasses and I knew it would do that the control always disappears too
+[00:09:41] quickly I want to stop it just at the beginning so you see this application header this is the tag application it&#x27;s
+[00:09:50] very minimal so that it&#x27;s unobtrusive to the user who&#x27;s trying to do some tasks or perform some work essentially tags are placed in the real world and we
+[00:10:00] group them into what we call workspaces there&#x27;s a place in your environment that you are now tagging so the first thing a user might do is look at the information
+[00:10:08] about that workspace to make sure he or she is looking at the right set of tags so there&#x27;s information about the workspace you can sort of see it here
+[00:10:18] one caveat is that our field of view camera is very wide and the actual augmented content looks a bit small but I just trust me that when I tell you
+[00:10:29] when you put on the smart glasses come see us in the booth it&#x27;s actually quite bright and large in your field of view so what I&#x27;m doing now is I&#x27;m looking at
+[00:10:36] tags that are attached to that black piece of equipment with the display down in the bottom left side the tags are going to present information about that
+[00:10:44] assets my job as an inspector is now to do some performance monitoring on that asset you might recognize that asset
+[00:10:52] it&#x27;s it&#x27;s a portable nuclear fusion reactor just like we all have at home maybe yours is newer and smaller than than we have we have in our lab but essentially we
+[00:11:00] power our labs and most of Southern California using this reactor but my job is now to monitor the performance the tags are located in space but connected
+[00:11:11] to the machine I see the tag closest to the fusion reactor is red that indicates to me that there&#x27;s probably an issue a little bit before in the video when the tags are
+[00:11:21] far away they&#x27;re just ikana fied a small circle so if you have say tens or hundreds of tags in your workspace you&#x27;re not deluged with a lot of
+[00:11:29] information but we retain the status of those tags so I can immediately pick out red tags in the sea of tags in front of
+[00:11:37] me and quickly hone in on those pieces of equipment that need attention so continuing on with the video in the
+[00:11:45] story when I hover over the tag using our gaze into el UI paradigm some
+[00:11:54] information immediately opens up about the tag so in this case we&#x27;re looking at the core temperature of this particular asset this nuclear reactor is on the IOT it&#x27;s sending data back up into the cloud
+[00:12:04] I&#x27;ve configured my tag to access that data and now as a technician walking up with the smart glasses I can now access this back-end performance data I can see
+[00:12:14] the temperature of the core is at 157 million degrees Kelvin very normal for fusion reactors so I&#x27;m not concerned about that there must be something else
+[00:12:22] that&#x27;s causing the issue so I can expand this tag we have the ability to connect multiple pieces of information to a tag
+[00:12:32] our user interface displays six at a time you might have multiple pages of six but essentially you can view multiple pieces of data about any
+[00:12:43] particular asset so in this case besides the core temperature we&#x27;re looking at the power input 763 megawatts going into the reactor to make sure all the plasma
+[00:12:51] stays contained that&#x27;s four again very normal the internal pressure is 43 million Giga Pascal&#x27;s again it&#x27;s in the normal range for a nuclear reactor I
+[00:13:01] want to make sure I&#x27;m working on the correct correct reactor there&#x27;s a photo of the reactor here which can be expanded this information could also be asset serial
+[00:13:11] number information from a Maximo database it can be any kind of information in this case I expand the photo to make sure I&#x27;m looking at the
+[00:13:19] right model of the reactor and then finally there&#x27;s another parameter called the lithium blanket integrity it&#x27;s at a certain level of percentage I may not
+[00:13:28] know what that means so there&#x27;s some text here that explains what it is it&#x27;s hard to read again but in the glasses it&#x27;s quite clear it explains that the
+[00:13:35] lithium blanket prevents high-energy neutrons from exiting the reactor and causing physical bodily harm to my tissues if it&#x27;s below 85 percent then
+[00:13:43] I&#x27;m going to start to feel the onset of birth defects and so right now it&#x27;s 68 percent I&#x27;m not feeling very healthy posted on the column is some safety
+[00:13:52] protocol information and very fortunately the very first piece of information is if the lithium blanket integrity is less than 85 percent then
+[00:14:00] go turn this knob on the reactor and increase the lithium blankets so luckily my hands are free I&#x27;ve got smart glasses on meanwhile I pinned the integrity
+[00:14:09] chart in the world space and as I crank the dial I see the integrity is increasing I&#x27;m feeling healthier and healthier and I&#x27;m probably happy I won&#x27;t
+[00:14:19] be growing a third arm anytime soon so now that I&#x27;ve rectified the situation I can mark my tag status as green everything&#x27;s back to normal
+[00:14:27] I can unpin this information close it and then close the safety protocol data that I had referred to so tag here has
+[00:14:36] helped me inspect monitor get data about this assets and perform some maintenance through troubleshooting in the past I might have had to call somebody back at
+[00:14:46] a control room tell me what are those parameters which ones out of line that person might not be available at that moment they might be doing something else so then the issue would be delayed
+[00:14:55] and I would be irradiated probably in a very irreversible manner so in this piece of tags can definitely help my
+[00:15:03] work my workflow so now you&#x27;ve seen how tags work let&#x27;s talk about how to set them up I mentioned there are workspaces
+[00:15:11] this is how you organize your tags in the environment you might have multiple places in your environment where you&#x27;ve got tags set up different works
+[00:15:19] basis you need to tell the application which set of tags you want to work with so you scan what we call the workspace selector this is simply a QR code that&#x27;s
+[00:15:27] mounted somewhere in the environment you scan that with the glasses and now the glasses knows I&#x27;m working with this set of tags finally you need to register
+[00:15:36] those tags in the world obviously it would be great if we had object recognition if we could look at any particular piece of equipment and know
+[00:15:45] that it was nuclear reactor model 1005 and place the tags right on it the view area talked we just heard very interesting stuff there model targets is
+[00:15:53] definitely on the right track you heard all the best practices there are caveats where the models work don&#x27;t work it&#x27;s it&#x27;s an unsolved problem yet we&#x27;re making good progress but for now we have
+[00:16:04] to rely on a visual targets so in the workspace you&#x27;ll place a visual image target we call it the landmark after scanning that target with the glasses
+[00:16:12] you&#x27;ve basically told the system that is the origin of my coordinate system and tags are then displayed relative to that landmark then you can create tags it&#x27;s
+[00:16:25] actually quite simple to create tags you don&#x27;t need any extra software any extra hardware you don&#x27;t have to get a consultant&#x27;s for the contract you can do it all yourself using the smart glasses
+[00:16:33] you have user interface that allows you to create new tags place them where you want in the environments on the assets next engages valves buttons etc you can
+[00:16:44] provide them names and then you&#x27;ll want to configure them to connect potentially to your back-end systems so they can show data this is typically done with
+[00:16:53] fairly tech centric URLs restful api is OPC da calls etc so this is best done say using computer and we&#x27;ve based we&#x27;ve
+[00:17:03] created a tag web application a companion app where after you create your tags you can then go on the web and very easily configure them so another quick video I&#x27;m back in my daiquiri lab
+[00:17:16] working on my nuclear reactor there are two tags associated with that reactor the data tag that we saw earlier and the safety protocols I&#x27;m now going to add a
+[00:17:25] new tag I get a little icon this is now placing the tag in the world I place it in the XY and then I place and the Z I find it useful to often step
+[00:17:34] to the side and I can really gauge the Z depth so I have a new tag I&#x27;m placing on the column it of course has no content yet since I just created it but I will
+[00:17:42] edit its name and what I want to do is show say the asset maintenance schedule so the technician can come up and realize when things need to be done and
+[00:17:51] at what time so we have an on-screen keyboard in our glasses I&#x27;m going to change the name of the tag to say schedule and then I&#x27;ll save the name
+[00:18:00] clearly you don&#x27;t want to be typing an extremely long RESTful API using this on-screen keyboard so I&#x27;ll set the tag status to be yellow advisory this is
+[00:18:09] information I save the tag and now there it is present in my user interface and then what I want to do is then configure
+[00:18:18] it so I go to the web I go to the tag web application and I sign in using my decklid credentials and then I get a list of all the workspaces to which I
+[00:18:27] have access in this particular case we&#x27;re working with the nuclear fusion reactor NFR for workspace so I just click on that and I enter into that
+[00:18:37] workspace I see the tags there&#x27;s the safety protocols tag and the nuclear fusion data tag and now the newest created tag is the schedule tag so I
+[00:18:46] want to configure this I click into that tag again there&#x27;s no data year there yet but I&#x27;m going to add some content now click the button I&#x27;m going to add an
+[00:18:57] image and in this case I&#x27;m accessing my Maximo database which stores an image of the particular asset maintenance schedule so after having typed all that
+[00:19:06] in I click Save now this tag has a piece of content it&#x27;s called maintenance schedule and you can see the URL for the
+[00:19:15] path to getting that image then I go back to the glasses this is immediately available the server is already synced we pull data every two seconds on the
+[00:19:26] going back to my new tag I just for proof this is the same workspace every two seconds with all the data there&#x27;s
+[00:19:35] 154 Kelvin that the fusion reactor currently is running then I go up to my new schedule tag and now attached to it as a JPEG of the maintenance schedule
+[00:19:44] for each components with the reactor and the time periods that maintenance needs to be performed so this is useful information that I think the technicians will use
+[00:19:52] when they&#x27;re doing their inspections so I just walked you through a use case of
+[00:20:01] performance monitoring I was an inspector looking at that particular reactor I was able to get live
+... (transcript truncated for brevity)</div></details></div><div class="video-item" id="v3" style="border-left-color:#f472b6"><h3>3. Roy Ashok on the true potential of augmented reality</h3><div class="video-meta">Published: 2018-07-14 | Channel: UNLEASH | Views: 440</div><p>A comprehensive keynote by the CEO of DAQRI exploring the fundamental paradigm shift AR represents, from historical compute paradigms to deploying AR value primarily in high-value asset workflows (aerospace, turbines, etc.) and empowering the digital workforce.</p><a href="https://www.youtube.com/watch?v=8eo_LoBYTGA" target="_blank" rel="noopener" class="btn">Watch on YouTube</a><p class="muted"><em>Captions are not available for this video. Watch it on YouTube.</em></p></div>
+        <figure class="secondary"><img src="daqri-case-studies.png" alt="DAQRI Video Case Studies & AR Scenarios Compilation" class="hero-image" style="margin-bottom:.5rem"><figcaption>AR scenario visual reference</figcaption></figure>
+    </section>
 </div>
+<script>
+const D=[{"v": "v1", "src": "frames/v1-12.jpg", "t": 12, "label": "0:12", "title": "DAQRI (Augmented Reality for Enterprise Alliance)", "quote": "[00:00:12] sure sure so I'm Reagan when I'm director marketing communications for daiquiri and we're here Fiesta here to show off our newest product a trademark", "url": "https://www.youtube.com/watch?v=ORAHrclBoFk&t=12s", "color": "#38bdf8"}, {"v": "v1", "src": "frames/v1-50.jpg", "t": 50, "label": "0:50", "title": "DAQRI (Augmented Reality for Enterprise Alliance)", "quote": "[00:00:48] final projects look like it's going to take a duck the blueprints of that and design that in the office push those blueprints and work construction out to those workers and fields where in the", "url": "https://www.youtube.com/watch?v=ORAHrclBoFk&t=50s", "color": "#38bdf8"}, {"v": "v1", "src": "frames/v1-90.jpg", "t": 90, "label": "1:30", "title": "DAQRI (Augmented Reality for Enterprise Alliance)", "quote": "[00:01:27] showing all helmet and that's actually been the first time at CES where we've done a full 12 1 then the flasher was a little more curated experiences we have", "url": "https://www.youtube.com/watch?v=ORAHrclBoFk&t=90s", "color": "#38bdf8"}, {"v": "v1", "src": "frames/v1-130.jpg", "t": 130, "label": "2:10", "title": "DAQRI (Augmented Reality for Enterprise Alliance)", "quote": "[00:02:10] year and develops our daiquiri smart closet I had them in flavors vehicles so that's been also very exciting so we're now starting to really see a delivery on", "url": "https://www.youtube.com/watch?v=ORAHrclBoFk&t=130s", "color": "#38bdf8"}, {"v": "v1", "src": "frames/v1-170.jpg", "t": 170, "label": "2:50", "title": "DAQRI (Augmented Reality for Enterprise Alliance)", "quote": "[00:02:48] of memphis 2017 oh my god can't tell ya Bob but right now you can go on and reserve your pair of glasses and all the", "url": "https://www.youtube.com/watch?v=ORAHrclBoFk&t=170s", "color": "#38bdf8"}, {"v": "v1", "src": "frames/v1-200.jpg", "t": 200, "label": "3:20", "title": "DAQRI (Augmented Reality for Enterprise Alliance)", "quote": "[00:03:14] the year and then another exciting stuff that I'll tell you about a sequence that is you don't need me yeah and everything", "url": "https://www.youtube.com/watch?v=ORAHrclBoFk&t=200s", "color": "#38bdf8"}, {"v": "v2", "src": "frames/v2-555.jpg", "t": 555, "label": "9:15", "title": "Paul Chen (DAQRI): AR Productivity 101 Powered by DAQRI Worksense", "quote": "[00:09:14] video was shot through our daiquiri smart glasses the smart glasses have the capability to record exactly what the user sees both through the see-through", "url": "https://www.youtube.com/watch?v=9iJ8xO8zbN8&t=555s", "color": "#a78bfa"}, {"v": "v2", "src": "frames/v2-720.jpg", "t": 720, "label": "12:00", "title": "Paul Chen (DAQRI): AR Productivity 101 Powered by DAQRI Worksense", "quote": "[00:11:54] information immediately opens up about the tag so in this case we're looking at the core temperature of this particular asset this nuclear reactor is on the IOT it's sending data back up into the cloud", "url": "https://www.youtube.com/watch?v=9iJ8xO8zbN8&t=720s", "color": "#a78bfa"}, {"v": "v2", "src": "frames/v2-760.jpg", "t": 760, "label": "12:40", "title": "Paul Chen (DAQRI): AR Productivity 101 Powered by DAQRI Worksense", "quote": "[00:12:32] our user interface displays six at a time you might have multiple pages of six but essentially you can view multiple pieces of data about any", "url": "https://www.youtube.com/watch?v=9iJ8xO8zbN8&t=760s", "color": "#a78bfa"}, {"v": "v2", "src": "frames/v2-800.jpg", "t": 800, "label": "13:20", "title": "Paul Chen (DAQRI): AR Productivity 101 Powered by DAQRI Worksense", "quote": "[00:13:19] right model of the reactor and then finally there's another parameter called the lithium blanket integrity it's at a certain level of percentage I may not", "url": "https://www.youtube.com/watch?v=9iJ8xO8zbN8&t=800s", "color": "#a78bfa"}, {"v": "v2", "src": "frames/v2-900.jpg", "t": 900, "label": "15:00", "title": "Paul Chen (DAQRI): AR Productivity 101 Powered by DAQRI Worksense", "quote": "[00:14:55] and I would be irradiated probably in a very irreversible manner so in this piece of tags can definitely help my", "url": "https://www.youtube.com/watch?v=9iJ8xO8zbN8&t=900s", "color": "#a78bfa"}, {"v": "v2", "src": "frames/v2-1060.jpg", "t": 1060, "label": "17:40", "title": "Paul Chen (DAQRI): AR Productivity 101 Powered by DAQRI Worksense", "quote": "[00:17:34] to the side and I can really gauge the Z depth so I have a new tag I'm placing on the column it of course has no content yet since I just created it but I will", "url": "https://www.youtube.com/watch?v=9iJ8xO8zbN8&t=1060s", "color": "#a78bfa"}, {"v": "v3", "src": "frames/v3-286.jpg", "t": 286, "label": "4:46", "title": "Roy Ashok on the true potential of augmented reality", "quote": "Slide: \"New Compute Paradigm\" (mainframe, PC, mobile, visual) (no captions available for this video)", "url": "https://www.youtube.com/watch?v=8eo_LoBYTGA&t=286s", "color": "#f472b6"}, {"v": "v3", "src": "frames/v3-492.jpg", "t": 492, "label": "8:12", "title": "Roy Ashok on the true potential of augmented reality", "quote": "Slide: \"Our mission is to make workforces more effective with professional grade AR\" (no captions available for this video)", "url": "https://www.youtube.com/watch?v=8eo_LoBYTGA&t=492s", "color": "#f472b6"}, {"v": "v3", "src": "frames/v3-704.jpg", "t": 704, "label": "11:44", "title": "Roy Ashok on the true potential of augmented reality", "quote": "Slide: \"Customers adopting augmented reality today\" (no captions available for this video)", "url": "https://www.youtube.com/watch?v=8eo_LoBYTGA&t=704s", "color": "#f472b6"}, {"v": "v3", "src": "frames/v3-957.jpg", "t": 957, "label": "15:57", "title": "Roy Ashok on the true potential of augmented reality", "quote": "Slide: \"Wind turbine hub inspection with DAQRI AR\" (Siemens) (no captions available for this video)", "url": "https://www.youtube.com/watch?v=8eo_LoBYTGA&t=957s", "color": "#f472b6"}, {"v": "v3", "src": "frames/v3-1003.jpg", "t": 1003, "label": "16:43", "title": "Roy Ashok on the true potential of augmented reality", "quote": "Fire Department headset repair, City of Los Angeles (no captions available for this video)", "url": "https://www.youtube.com/watch?v=8eo_LoBYTGA&t=1003s", "color": "#f472b6"}, {"v": "v3", "src": "frames/v3-1248.jpg", "t": 1248, "label": "20:48", "title": "Roy Ashok on the true potential of augmented reality", "quote": "DAQRI Worksense (no captions available for this video)", "url": "https://www.youtube.com/watch?v=8eo_LoBYTGA&t=1248s", "color": "#f472b6"}];const cb=document.querySelector('.chipbar'),ch=cb.querySelector('.chips');function ov(){cb.classList.toggle('noscroll',ch.scrollWidth<=ch.clientWidth+2||ch.scrollLeft+ch.clientWidth>=ch.scrollWidth-4)}ch.addEventListener('scroll',ov);addEventListener('resize',ov);ov();let cur=-1,filt=null;
+const tiles=[...document.querySelectorAll('.tile')],det=document.getElementById('detail');
+function vis(){return tiles.filter(t=>!t.closest('.group').classList.contains('dim')).map(t=>+t.dataset.i)}
+function show(i){cur=i;const d=D[i];tiles.forEach(t=>t.classList.toggle('on',+t.dataset.i===i));
+dimg.src=d.src;dimg.alt=d.title+' at '+d.label;dwhen.textContent='▶ '+d.label;dtitle.textContent=d.title;dquote.textContent=d.quote;dlink.href=d.url;det.hidden=false;det.style.setProperty('--accent',d.color);
+const r=det.getBoundingClientRect();if(r.bottom>innerHeight||r.top<0)det.scrollIntoView({behavior:'smooth',block:'nearest'})}
+tiles.forEach(t=>t.addEventListener('click',()=>show(+t.dataset.i)));
+function step(n){const v=vis();let k=v.indexOf(cur);k=(k+n+v.length)%v.length;show(v[k])}
+prev.onclick=()=>step(-1);next.onclick=()=>step(1);close.onclick=()=>{det.hidden=true;tiles.forEach(t=>t.classList.remove('on'));cur=-1};
+document.querySelectorAll('.chip').forEach(c=>c.addEventListener('click',()=>{filt=filt===c.dataset.v?null:c.dataset.v;
+document.querySelectorAll('.chip').forEach(x=>x.setAttribute('aria-pressed',x.dataset.v===filt));
+document.querySelectorAll('.group').forEach(g=>g.classList.toggle('dim',!!filt&&g.dataset.v!==filt));
+mosaic.classList.toggle('solo',!!filt);if(cur>=0&&filt&&D[cur].v!==filt){close.click()}}));
+document.addEventListener('keydown',e=>{if(det.hidden)return;if(e.key==='ArrowRight')step(1);if(e.key==='ArrowLeft')step(-1);if(e.key==='Escape')close.click()});
+</script>
 </body>
 </html>
