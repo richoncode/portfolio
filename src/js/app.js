@@ -50,6 +50,19 @@ const state = {
 
 // Tabs whose content is chronological; each defaults to newest → oldest
 const TIME_ORDERED_TABS = new Set(['experience', 'timeline', 'projects', 'devices', 'research', 'learning']);
+const DAQRI_RETRO_HREF = 'assets/archive/quintar/daqri-case-studies/';
+const DAQRI_RETRO_LABEL = 'DAQRI retrospective: AR through the visor';
+
+function daqriRetroLinkHtml(card) {
+  const img = card
+    ? `<img src="${DAQRI_RETRO_HREF}post-image.png" alt="">`
+    : '';
+  return `<a class="retrospective-link${card ? ' retrospective-card' : ''}" href="${DAQRI_RETRO_HREF}">${img}${escapeHtml(DAQRI_RETRO_LABEL)}</a>`;
+}
+
+function isDaqriEmployer(exp) {
+  return !!(exp && (exp.id === 'daqri' || exp.company === 'DAQRI'));
+}
 const tabSortNewestFirst = {
   experience: true,
   timeline:   true,
@@ -379,6 +392,7 @@ function renderIntro() {
     letterHtml = `
       <div class="intro-letter">
         <p>I have shipped <span class="hover-tip" data-summary="${escapeHtml(launchesList)}">8 zero-to-one spatial AI launches</span>. I work to deeply understand experience goals and translate that into architecture and code that considers the brutal constraints of processors, memory, battery, network, and heat. My zero-to-one methodology is built on the ability to debug and optimize the entire system, from cloud infrastructure down to the firmware.</p>
+        <p>${daqriRetroLinkHtml()}</p>
         <p>I accelerate Spatial AI &amp; AR projects by turning leading research into rapid demos, blending the first principles of core research with product objectives while optimizing features to adapt to hardware capabilities. I leverage deep experience with human biomechanics, auditory, and vision systems to guide spatial features and avoid common pitfalls of bias, fatigue, and confusion. By working across all staffing levels and roles, I level up and align knowledge and perceptions across the entire team.</p>
         <p>Combining deep technical knowledge with a continuous curiosity about innovation, I dig in to understand exactly how implementations are working and how they can improve. My perseverance allows me to get to the root of a problem, understand the first principles affecting an outcome, and devise effective solutions. As a technical leader, I ensure the product ships by putting viable options on the table. Spatial AI &amp; AR often demands trade-offs between human needs and the limits of the current generation of technology; a rich product roadmap must account for these shifts as the tech evolves.</p>
         <p>If you are building the future of spatial computing and AR and need a leader who has repeatedly crossed the finish line from prototype to product, let's talk.</p>
@@ -679,6 +693,7 @@ function renderTimeline() {
       rolesHtml += `
         <div class="role">
           <h3 class="role-title">${escapeHtml(role.title)} ${roleTypeBadges}</h3>
+          ${isDaqriEmployer(exp) ? daqriRetroLinkHtml() : ''}
           <div class="admin-field">id: ${escapeHtml(role.id)}</div>
           <ul class="achievement-list">${achHtml}</ul>
         </div>`;
@@ -1001,7 +1016,7 @@ function renderCareerTimeline() {
 
     // Role titles
     const roleTitles = exp.roles
-      .map(r => `<div class="tl-role-title">${escapeHtml(r.title)}</div>`)
+      .map(r => `<div class="tl-role-title">${escapeHtml(r.title)}</div>${isDaqriEmployer(exp) ? daqriRetroLinkHtml() : ''}`)
       .join('');
 
     // Dates
@@ -1154,6 +1169,7 @@ function renderDevices() {
             <span class="device-years">${escapeHtml(device.yearsLabel || '')}</span>
           </div>
           ${device.role ? `<div class="device-role">${escapeHtml(device.role)}</div>` : ''}
+          ${device.id === 'daqri-xr-smart-helmet' ? daqriRetroLinkHtml(true) : ''}
         </div>
         ${deviceSectionHtml('Management', device.management)}
         ${deviceSectionHtml('Hands-on technical', device.handsOn)}
@@ -1207,6 +1223,7 @@ function renderProjects() {
             <span class="learn-date">${dateStr}</span>
           </div>
           ${p.description ? `<p class="learn-card-desc">${escapeHtml(p.description)}</p>` : ''}
+          ${/daqri/i.test(p.title || '') ? daqriRetroLinkHtml() : ''}
           ${tagHtml}
         </div>`;
     }).join('');
@@ -1587,9 +1604,13 @@ function renderResearch() {
     const titleEl = titleHref
       ? `<a class="patent-title" href="${titleHref}" target="_blank" rel="noopener">${escapeHtml(r.title)}</a>`
       : `<span class="patent-title">${escapeHtml(r.title)}</span>`;
+    const thumb = r.id === 'daqri-retrospective'
+      ? `<a class="retrospective-card" href="${titleHref}"><img src="${DAQRI_RETRO_HREF}post-image.png" alt=""></a>`
+      : '';
     return `
       <div class="patent-card" data-id="${escapeHtml(r.id)}" data-summary="${escapeHtml(r.summary)}">
         <div class="patent-header">
+          ${thumb}
           <div class="patent-title-row">
             ${titleEl}
             <button class="patent-toggle" data-id="${escapeHtml(r.id)}" aria-expanded="false">Summary ▸</button>

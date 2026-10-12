@@ -4768,6 +4768,15 @@
   ],
   "research": [
     {
+      "id": "daqri-retrospective",
+      "title": "DAQRI retrospective: AR through the visor",
+      "url": "assets/archive/quintar/daqri-case-studies/",
+      "date": "",
+      "subject": "Industrial AR",
+      "summary": "A curated look at DAQRI augmented reality hardware, software scenarios, and enterprise deployments, seen through the visor.",
+      "tags": "AR · Industrial · Spatial"
+    },
+    {
       "id": "firesim-audio",
       "title": "FireSim Audio — Synthesized Fire from a Live WebGPU Campfire",
       "url": "../webartests/experiments/firesimaudio/live/examples/playback/",
