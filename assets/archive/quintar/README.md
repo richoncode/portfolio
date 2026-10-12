@@ -1,12 +1,12 @@
 # Quintar
 
-Internal archive. These files are not linked from the public site. Keep them off `video.html`, Research, Devices, and the index until Richard says to publish.
+Internal archive. The DAQRI retrospective at `daqri-case-studies/` is public and linked from the portfolio. Keep every other file in this folder off `video.html`, Research, Devices, and the index.
 
 The repository is public and GitHub Pages serves files by path, so a known URL can reach a file even when the site UI does not link to it.
 
 ## Pages
 
-- `daqri-case-studies/` — DAQRI Research & Learning Archive (AR case studies, hardware demos, and enterprise engagements). Unlisted.
+- `daqri-case-studies/` — DAQRI: Early Industrial Spatial Computing. Public, and linked as “DAQRI retrospective: AR through the visor”.
 
 ## Clips
 

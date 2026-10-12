@@ -440,6 +440,27 @@ main { padding: 28px 0 60px; }
   gap: 6px;
 }
 
+.retrospective-link {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+.retrospective-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  max-width: 280px;
+}
+.retrospective-card img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
 /* ─── Achievement Items ───────────────────── */
 .achievement-list {
   list-style: none;
