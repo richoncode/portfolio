@@ -27,7 +27,7 @@
 
   <p>Then an urgent problem landed. The book page images behind "Look Inside the Book" lived on neglected machines with expiring leases, and the developers and team who built the system were long gone. I enjoy a challenge, and I had never shipped a large-scale network service into production, so I took it on. I dug in, figured out how the system worked, and documented it.</p>
 
-  <p>It was bad. The fleet of over 50 machines was very old, and the secondary copies of the page images were long gone. Every few weeks another machine died, and its page images went with it. There was no easy way to recreate them: we scan physical books two pages at a time. The scanning is automated, but still costly. <span class="todo">[TODO: scale — how many page images / books / TB? Resume figures vary: 80 TB migrated, 220 million images served, 500 million unique pages]</span></p>
+  <p>It was bad. The fleet of over 50 machines was very old, and the secondary copies of the page images were long gone. Every few weeks another machine died, and its page images went with it. There was no easy way to recreate them: we scan physical books two pages at a time. The scanning is automated, but still costly. Over 50 machines held about 80 TB, roughly 500 million book page images.</p>
 
   <p>I made a plan. Step one: archive the surviving page images into AWS S3. My scripts drove dozens of machines pushing images in parallel, verifying each image and tracking the inventory. The machines were old and flaky and would lock up or reboot; the scripts restarted, found the last archived page, and carried on.</p>
 
