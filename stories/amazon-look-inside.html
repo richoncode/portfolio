@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Saving Look Inside the Book (archive)</title>
+  <link rel="stylesheet" href="../src/css/main.css">
+  <style>
+    body { background: var(--bg); color: var(--text); font-family: var(--font); margin: 0; padding: 2rem; }
+    main { max-width: 760px; margin: 0 auto; }
+    .label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-2); }
+    .note { font-family: var(--mono); font-size: 0.72rem; color: var(--orange); }
+    p { line-height: 1.85; }
+    a { color: var(--accent); }
+    code { font-family: var(--mono); font-size: 0.85em; background: var(--bg-card); border: 1px solid var(--border); border-radius: 4px; padding: 0 0.3em; }
+    .todo { color: var(--orange); }
+  </style>
+</head>
+<body>
+<main>
+  <p class="label"><a href="index.html">Stories</a> · Archive draft</p>
+  <h1>Saving Look Inside the Book</h1>
+  <p class="note">Archive note: Amazon.com, Mar 2007 – Apr 2008 (from resume timeline). Role: <span class="todo">[TODO: confirm team/role title — resume lists Senior Software Development Engineer, Scaled Cloud Services]</span></p>
+
+  <p>I joined Amazon because I was excited about the Kindle: its form factor, its e-paper display, and a Freescale processor I already knew. An always-connected device that needed only occasional recharging was a compelling option for ubiquitous computing.</p>
+
+  <p>Then an urgent problem landed. The book page images behind "Look Inside the Book" lived on neglected machines with expiring leases, and the developers and team who built the system were long gone. I enjoy a challenge, and I had never shipped a large-scale network service into production, so I took it on. I dug in, figured out how the system worked, and documented it.</p>
+
+  <p>It was bad. The fleet of over 50 machines was very old, and the secondary copies of the page images were long gone. Every few weeks another machine died, and its page images went with it. There was no easy way to recreate them: we scan physical books two pages at a time. The scanning is automated, but still costly. <span class="todo">[TODO: scale — how many page images / books / TB? Resume figures vary: 80 TB migrated, 220 million images served, 500 million unique pages]</span></p>
+
+  <p>I made a plan. Step one: archive the surviving page images into AWS S3. My scripts drove dozens of machines pushing images in parallel, verifying each image and tracking the inventory. The machines were old and flaky and would lock up or reboot; the scripts restarted, found the last archived page, and carried on.</p>
+
+  <p>While that ran, the S3 team contacted me urgently: "What the #### are you doing, and how fast can you slow it down? You are using up S3 drive space faster than we can add new machines." I added throttles and worked closely with the AWS team to coordinate the scale. They understood the urgency: any day, another machine could die and take tens of thousands of book page images with it.</p>
+
+  <p>Of course, one did. It crashed, rebooted, and on reboot immediately formatted all its disks. I had little deep experience with Linux hardware internals then, and I learned something I would not have imagined existed: a BIOS setting that wiped the disks on reboot. I verified the setting was off on every remaining machine. The surprise was that none had wiped in all the years before; I assume the setting got switched on later in the machine's life.</p>
+
+  <p>With throttled replication running smoothly, I had time to design a replacement page-image service and learn the tools and technology to build it. Defining the spec and designing the architecture was fun, and it was not common in the consumer-focused ubiquitous computing products I had built.</p>
+
+  <p>Along the way I jumped into several emergencies on unrelated services: an Oracle server that crashed with a memory dump on Christmas Eve, and a worker script that started deleting an internal video file archive. Each one taught me the value of systems that diagnose and repair themselves and report and alert effectively. So I set a high bar for diagnostic code and dashboards in the new service. It ended up about 20% functional code and 80% diagnostic code: code that detected failure modes, attempted recovery, logged events, triggered hard alerting, performed automatic resets, and handled general logging. I was not aiming for a ratio; I only noticed it later.</p>
+
+  <p>The result: the service worked. It was reliable and cheap, built entirely on AWS (S3 and EC2), and it is still in use more than ten years later.</p>
+
+  <h2>Still running (October 2026)</h2>
+  <p>Amazon's "Read sample" viewer is now Kindle for Web (<code>read.amazon.com/sample</code>), but a print book's sample still loads page images named the way I designed them, for example <code>0785238921.01.S001.JUMBOXXX.jpg</code>: the ISBN, <code>.01</code>, a base-36 page code (<code>S001</code>), and the <code>JUMBOXXX</code> size. Today they come through CloudFront signed URLs, a layer added later; CloudFront launched in November 2008, after my time on the service.</p>
+</main>
+</body>
+</html>
