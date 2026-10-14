@@ -141,7 +141,7 @@
         "confirm": false,
         "bullets": [
           "Kindle developer API architecture: defined application UI APIs enabling e-paper interactions for launch experiences on the Kindle e-reader.",
-          "Book page service alongside that launch work: proposed and created a petabyte-scale, low-latency web service for 900,000 book-page images, reducing delivery time by 30%. Served 220 million images (90+ terabytes) worldwide, with caching for Europe, Asia, and the Americas."
+          "Book page service alongside that launch work: proposed and created a petabyte-scale, low-latency web service for 500 million book-page images, reducing delivery time by 30%. Served 500 million images (80 TB) worldwide, with caching for Europe, Asia, and the Americas."
         ]
       }
     },

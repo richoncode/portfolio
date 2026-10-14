@@ -2859,7 +2859,7 @@
           "achievements": [
             {
               "id": "amz-a1",
-              "text": "Proposed and created peta-byte scale low-latency high-demand web service for 900,000 book page images, reducing delivery time by 30%. Served 220 million images (90+ terabytes) worldwide with caching for Europe, Asia, and Americas.",
+              "text": "Proposed and created peta-byte scale low-latency high-demand web service for 500 million book page images, reducing delivery time by 30%. Served 500 million images (80 TB) worldwide with caching for Europe, Asia, and Americas.",
               "tags": {
                 "type": [
                   "ic"
@@ -2879,14 +2879,14 @@
                 "customers": [],
                 "impact": {
                   "metric": "delivery time reduction",
-                  "value": "30% for 900K books; 220M images, 90TB worldwide"
+                  "value": "30% for 500 million book page images, 80 TB worldwide"
                 },
                 "hasMetric": true
               }
             },
             {
               "id": "amz-a2",
-              "text": "Developed and maintained scripts to migrate 80TB of data from 25 legacy storage servers to Amazon S3. Service is self-diagnosing with logging, dashboard, and notifications.",
+              "text": "Developed and maintained scripts to migrate 80 TB of page images from over 50 legacy storage servers to Amazon S3. Service is self-diagnosing with logging, dashboard, and notifications.",
               "tags": {
                 "type": [
                   "ic"
@@ -2926,7 +2926,7 @@
           ]
         }
       ],
-      "summary": "**Petabyte-scale, low-latency cloud services** — 900K book-page image delivery 3× faster, 80TB migration to **Amazon S3**, and **Kindle developer API** architecture for launch."
+      "summary": "**Petabyte-scale, low-latency cloud services** — 500 million book-page image delivery 3× faster, 80 TB migration to **Amazon S3**, and **Kindle developer API** architecture for launch."
     },
     {
       "id": "microsoft-2nd",
