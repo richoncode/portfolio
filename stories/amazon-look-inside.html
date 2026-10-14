@@ -14,6 +14,8 @@
     p { line-height: 1.85; }
     a { color: var(--accent); }
     code { font-family: var(--mono); font-size: 0.85em; background: var(--bg-card); border: 1px solid var(--border); border-radius: 4px; padding: 0 0.3em; }
+    pre { margin: 0.75rem 0 0; }
+    pre code { display: block; font-size: 0.72rem; line-height: 1.5; white-space: pre-wrap; overflow-wrap: anywhere; border-radius: var(--radius); padding: 0.75rem 1rem; color: var(--text-2); }
     .todo { color: var(--orange); }
   </style>
 </head>
@@ -43,6 +45,10 @@
 
   <h2>Still running (October 2026)</h2>
   <p>Amazon's "Read sample" viewer is now Kindle for Web (<code>read.amazon.com/sample</code>), but a print book's sample still loads page images named the way I designed them, for example <code>0785238921.01.S001.JUMBOXXX.jpg</code>: the ISBN, <code>.01</code>, a base-36 page code (<code>S001</code>), and the <code>JUMBOXXX</code> size. Today they come through CloudFront signed URLs, a layer added later; CloudFront launched in November 2008, after my time on the service.</p>
+
+  <h2>Verified page image (Oct 14, 2026)</h2>
+  <p>This is the page image from the Read sample of print ISBN 0785238921. The signed link expires.</p>
+  <pre><code>https://d1b14unh5d6w7g.cloudfront.net/0785238921.01.S001.JUMBOXXX.jpg?Expires=1792082166&amp;Signature=WnUoi9VR9uM8BhsfqTBtx4YMYPwKW-sWHd~G6cLpMqi4eZCb6BABZ~DpFwahc3~82GAf4PYTo6d9MaqpOup0wKvhVYMJx6Z7Gy8jAT-kalWi623Xd99cGXpjvh4-cb6oDuJbwIOp5hMBQc2nDaerpZ8gWbk3GZo7tFrtU-Iez0A_&amp;Key-Pair-Id=APKAIUO27P366FGALUMQ</code></pre>
 </main>
 </body>
 </html>
