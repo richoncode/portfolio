@@ -16,7 +16,16 @@ A short LinkedIn post that joins the conversation around Google’s open-source 
 
 ## Analysis
 
-Prior Goldfish consensus still stands on craft: one thesis, one payoff, ≤2 in-body details, claim-language guardrails, sources in first comment. The thesis cut above resolves Blockers 1–3. Remaining before draft: CTA question, visual yes/no, first-comment link list, planning HTML sections.
+Prior Goldfish consensus still stands on craft: one thesis, one payoff, ≤2 in-body details, claim-language guardrails, sources in first comment. The thesis cut above resolves Blockers 1–3. All pre-draft opens now resolved: CTA, visual (Anatomy animation → video), first-comment links (all four), planning HTML (brief + beats storyboard).
+
+## Beats storyboard (~220 words)
+
+| # | Beat | Frame | Line |
+| --- | --- | --- | --- |
+| 1 | **Pain** | Wall of plain text between AI and human | Complex designs don’t travel well in thin text-only docs (AI ↔ human). |
+| 2 | **EGM** | Elephant drafts → Goldfish reviews cold | Complete design before construction; Elephant plans, Goldfish review. |
+| 3 | **Yes, and** | Same doc as rich HTML panels | Those design docs as rich HTML — diagram / mock / sim / status where each fits. |
+| 4 | **Close** | Optional try-line → question | “Have rich docs changed how you review agent work?” |
 
 ## Goals vs. Non-Goals
 
@@ -40,7 +49,10 @@ Prior Goldfish consensus still stands on craft: one thesis, one payoff, ≤2 in-
 | EGM role | Design-first cousin; not ranked as SOTA |
 | Author detail in-body | HTML as visual+text collaboration surface; md as past bottleneck (one line) |
 | Claim language | “EGM describes…”, “I’ll be trying…”, “I’m curious…” — no proof numbers |
-| Close | TBD — question to practitioners |
+| Close | **Locked:** “Have rich docs changed how you review agent work?” |
+| Visual | **Locked:** Anatomy-style animation → video (MD vs HTML dual pathways, same human; prompt drafted for Anatomy machine) |
+| First-comment links | **Locked:** all four — Google Open Source blog, egm.dev, GitHub repo, Dave Rensin Medium essay |
+| Planning HTML | **Locked:** brief + beats storyboard |
 | Series | Unused concepts logged below for future posts |
 
 **Recommended beats (~220 words):**
@@ -65,7 +77,7 @@ Prior Goldfish consensus still stands on craft: one thesis, one payoff, ≤2 in-
 * https://opensource.googleblog.com/2026/10/introducing-elephant-goldfish-model-plugin.html
 * https://egm.dev/
 * https://github.com/google/elephant-goldfish-model
-* Dave Rensin essay (linked from the blog)
+* https://drensin.medium.com/elephants-goldfish-and-the-new-golden-age-of-software-engineering-c33641a48874
 
 ## Goldfish run notes
 

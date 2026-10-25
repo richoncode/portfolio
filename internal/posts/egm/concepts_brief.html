@@ -32,6 +32,12 @@ a{color:var(--accent)}
 @media(max-width:720px){.g2{grid-template-columns:1fr}}
 .flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:10px;margin:14px 0}
 .step{flex:1 1 140px;background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:12px;min-width:120px}
+.sb{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:14px 0;counter-reset:sb}
+@media(max-width:720px){.sb{grid-template-columns:1fr}}
+.sbc{background:var(--panel2);border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:10px;padding:12px}
+.sbc .n{font-size:22px;font-weight:800;color:var(--gold)}
+.sbc .lbl{font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--accent);text-transform:uppercase}
+.sbc .frame{margin:8px 0;padding:10px;border:1px dashed var(--line);border-radius:8px;font-size:12.5px;color:var(--muted);min-height:58px}
 .step b{display:block;color:var(--gold);font-size:12px;letter-spacing:.04em;margin-bottom:4px}
 .arrow{align-self:center;color:var(--muted);font-size:20px}
 .diagram{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;overflow:auto}
@@ -60,7 +66,7 @@ code{font-size:12.5px;background:#12151c;padding:1px 5px;border-radius:4px}
     <span class="pill">Author: Richard Bailey</span>
     <span class="pill">2026-10-25</span>
     <span class="pill lock" id="statusChip">Status: thesis locked</span>
-    <span class="pill warn">CTA: TBD</span>
+    <span class="pill lock">CTA: locked</span>
   </div>
 
   <section class="card thesis">
@@ -122,7 +128,16 @@ code{font-size:12.5px;background:#12151c;padding:1px 5px;border-radius:4px}
     <div class="arrow">→</div>
     <div class="step"><b>3 · YES, AND</b>Those docs as rich HTML — diagram / mock / sim / status where each fits.</div>
     <div class="arrow">→</div>
-    <div class="step"><b>4 · CLOSE</b>Optional try-line + question to practitioners <span class="tag park">TBD</span></div>
+    <div class="step"><b>4 · CLOSE</b>Optional try-line + “Have rich docs changed how you review agent work?” <span class="tag go">Locked</span></div>
+  </div>
+
+  <h2>2b · Beats storyboard</h2>
+  <p class="muted small">Visual sequence of the ~220-word post — one card per beat, left to right.</p>
+  <div class="sb">
+    <div class="sbc"><div class="n">1</div><div class="lbl">Pain</div><div class="frame">Wall of plain text between AI and human; the complex design gets lost.</div><div class="small">Complex designs don’t travel well in thin text-only docs (AI ↔ human).</div></div>
+    <div class="sbc"><div class="n">2</div><div class="lbl">EGM</div><div class="frame">Elephant drafts the complete design → Goldfish reviews it cold.</div><div class="small">Complete design before construction; Elephant plans, Goldfish review.</div></div>
+    <div class="sbc"><div class="n">3</div><div class="lbl">Yes, and</div><div class="frame">Same doc as rich HTML: diagram · mock · sim · status panels.</div><div class="small">Those design docs as rich HTML — the best tool per aspect, where each fits.</div></div>
+    <div class="sbc"><div class="n">4</div><div class="lbl">Close</div><div class="frame">Optional “I’ll be trying…” line → question to readers.</div><div class="small"><b>“Have rich docs changed how you review agent work?”</b></div></div>
   </div>
 
   <h2>3 · Goals vs non-goals</h2>
@@ -156,7 +171,10 @@ code{font-size:12.5px;background:#12151c;padding:1px 5px;border-radius:4px}
         <tr><td>EGM role</td><td>Design-first cousin; not labeled SOTA</td></tr>
         <tr><td>Author detail in-body</td><td>HTML as visual+text surface; md as past bottleneck (one line)</td></tr>
         <tr><td>Claim language</td><td>“EGM describes…”, “I’ll be trying…”, “I’m curious…” — no proof numbers</td></tr>
-        <tr><td>Close / CTA</td><td class="muted">TBD — question to practitioners</td></tr>
+        <tr><td>Close / CTA</td><td><b>Locked</b> — “Have rich docs changed how you review agent work?”</td></tr>
+        <tr><td>Visual</td><td><b>Locked</b> — Anatomy-style animation → video: MD vs HTML dual pathways, same human; prompt drafted for the Anatomy machine</td></tr>
+        <tr><td>First-comment links</td><td><b>Locked</b> — all four: Google Open Source blog, egm.dev, GitHub repo, Dave Rensin Medium essay</td></tr>
+        <tr><td>Planning HTML</td><td><b>Locked</b> — brief + beats storyboard (this page)</td></tr>
         <tr><td>Unused concepts</td><td>Parked in backlog for future posts</td></tr>
       </tbody>
     </table>
@@ -203,14 +221,13 @@ code{font-size:12.5px;background:#12151c;padding:1px 5px;border-radius:4px}
     <li><a href="https://opensource.googleblog.com/2026/10/introducing-elephant-goldfish-model-plugin.html">Google Open Source Blog — EGM plugin (2026-10-22)</a></li>
     <li><a href="https://egm.dev/">egm.dev</a></li>
     <li><a href="https://github.com/google/elephant-goldfish-model">github.com/google/elephant-goldfish-model</a></li>
-    <li>Dave Rensin essay (linked from the blog)</li>
+    <li><a href="https://drensin.medium.com/elephants-goldfish-and-the-new-golden-age-of-software-engineering-c33641a48874">Dave Rensin — Elephants, Goldfish and the New Golden Age of Software Engineering (Medium)</a></li>
   </ul>
 
   <h2>7 · Still open</h2>
   <div class="card">
     <ul class="small" style="margin-bottom:0">
-      <li>Closing question / CTA</li>
-      <li>Cover visual yes/no (own diagram, not EGM OG art)</li>
+      <li>Produce Anatomy animation + video from the drafted prompt</li>
       <li>Draft body + first comment</li>
       <li>Optional: re-run Goldfish on the narrowed thesis</li>
     </ul>
@@ -232,7 +249,7 @@ code{font-size:12.5px;background:#12151c;padding:1px 5px;border-radius:4px}
   "blocks": ["D-EGM-POST.P1.DRAFT"],
   "artifacts": {
     "spine": "design-first (EGM) × rich HTML collaboration docs",
-    "cta": null,
+    "cta": "Have rich docs changed how you review agent work?", "visual": "anatomy_animation_video", "planning_html": "brief+beats_storyboard",
     "visual": null
   },
   "artifacts": {
