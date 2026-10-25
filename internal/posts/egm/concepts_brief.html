@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Concepts brief — EGM LinkedIn post</title>
+<style>
+:root{
+  --bg:#0d0d0d; --panel:#161a22; --panel2:#1c2230; --line:#2a3240;
+  --fg:#e8eaef; --muted:#9aa3b5; --accent:#5b9bd5; --gold:#d4a84b;
+  --green:#6fcf97; --amber:#f2b84b; --red:#eb6f6f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif}
+.wrap{max-width:960px;margin:0 auto;padding:32px 22px 80px}
+.kicker{color:var(--accent);letter-spacing:.12em;text-transform:uppercase;font-size:11px;font-weight:700}
+h1{font-size:28px;line-height:1.2;margin:8px 0 6px;color:#fff}
+h2{font-size:18px;color:var(--accent);margin:36px 0 10px;padding-top:8px;border-top:1px solid var(--line)}
+h3{font-size:14px;color:var(--gold);margin:18px 0 8px;text-transform:uppercase;letter-spacing:.06em}
+p,li{color:var(--fg)}
+.muted{color:var(--muted)}
+.small{font-size:13px}
+a{color:var(--accent)}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 18px}
+.pill{display:inline-block;padding:3px 10px;border-radius:999px;font-size:12px;font-weight:600;border:1px solid var(--line);background:var(--panel2)}
+.pill.lock{border-color:#3a5a3a;color:var(--green);background:#132318}
+.pill.warn{border-color:#5a4a20;color:var(--amber);background:#241c10}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:12px 0}
+.thesis{border-left:4px solid var(--gold);background:linear-gradient(135deg,#1a1810,var(--panel))}
+.grid{display:grid;gap:14px}
+.g2{grid-template-columns:1fr 1fr}
+@media(max-width:720px){.g2{grid-template-columns:1fr}}
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:10px;margin:14px 0}
+.step{flex:1 1 140px;background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:12px;min-width:120px}
+.step b{display:block;color:var(--gold);font-size:12px;letter-spacing:.04em;margin-bottom:4px}
+.arrow{align-self:center;color:var(--muted);font-size:20px}
+.diagram{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;overflow:auto}
+.diagram svg{display:block;margin:0 auto;max-width:100%;height:auto}
+.legend{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px;font-size:12px;color:var(--muted)}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:middle}
+table{width:100%;border-collapse:collapse;font-size:13.5px;margin:8px 0}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--gold);font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+ul{margin:6px 0 10px;padding-left:1.2em}
+.tag{font-size:11px;font-weight:700;padding:2px 7px;border-radius:6px;background:#262c3b;color:var(--muted);margin-right:4px}
+.tag.park{background:#3a2e12;color:var(--amber)}
+.tag.go{background:#173326;color:var(--green)}
+.status-bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:8px}
+#statusChip{font-variant-numeric:tabular-nums}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:12.5px}
+code{font-size:12.5px;background:#12151c;padding:1px 5px;border-radius:4px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="kicker">EGM brainstorm · concepts brief</div>
+  <h1>LinkedIn post: Elephant-Goldfish Model</h1>
+  <p class="muted small">Rich HTML twin of <code>concepts_brief.md</code> — same source of truth, with diagrams. Working folder <code>/workspace/egm-post/</code>.</p>
+  <div class="meta">
+    <span class="pill">Author: Richard Bailey</span>
+    <span class="pill">2026-10-25</span>
+    <span class="pill lock" id="statusChip">Status: thesis locked</span>
+    <span class="pill warn">CTA: TBD</span>
+  </div>
+
+  <section class="card thesis">
+    <h3 style="margin-top:0">Locked thesis</h3>
+    <p>EGM’s idea of <b>rich, highly complete design documentation before construction</b> can be taken further when those design docs are <b>rich HTML</b> — using the best visual and text tools for each aspect of the design (diagrams, mocks, sims, status, explainers).</p>
+    <p class="muted small" style="margin-bottom:0"><b>Commonality with EGM:</b> design-first, complete specs before build. <b>Lived friction:</b> markdown often bottlenecked AI→human communication of complex concepts. Tone: collaborative “yes, and” — not a format war, not judging EGM’s evidence.</p>
+  </section>
+
+  <h2>1 · How EGM and rich HTML meet</h2>
+  <div class="diagram" aria-label="EGM flow vs rich HTML enhancement">
+    <svg viewBox="0 0 880 260" xmlns="http://www.w3.org/2000/svg" role="img">
+      <title>Design-first flow: Elephant plans, Goldfish review, then build — design docs as rich HTML</title>
+      <defs>
+        <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#9aa3b5"/></marker>
+      </defs>
+      <rect x="20" y="30" width="160" height="70" rx="10" fill="#1c2230" stroke="#5b9bd5"/>
+      <text x="100" y="58" text-anchor="middle" fill="#5b9bd5" font-size="12" font-weight="700">ELEPHANT</text>
+      <text x="100" y="78" text-anchor="middle" fill="#e8eaef" font-size="11">Deep-context design</text>
+      <line x1="180" y1="65" x2="230" y2="65" stroke="#9aa3b5" stroke-width="2" marker-end="url(#arr)"/>
+
+      <rect x="230" y="20" width="200" height="90" rx="10" fill="#231d10" stroke="#d4a84b"/>
+      <text x="330" y="48" text-anchor="middle" fill="#d4a84b" font-size="12" font-weight="700">DESIGN DOC</text>
+      <text x="330" y="68" text-anchor="middle" fill="#e8eaef" font-size="11">Complete before build</text>
+      <text x="330" y="88" text-anchor="middle" fill="#9aa3b5" font-size="10">EGM: markdown · You: rich HTML</text>
+      <line x1="430" y1="65" x2="480" y2="65" stroke="#9aa3b5" stroke-width="2" marker-end="url(#arr)"/>
+
+      <rect x="480" y="30" width="160" height="70" rx="10" fill="#1c2230" stroke="#6fcf97"/>
+      <text x="560" y="58" text-anchor="middle" fill="#6fcf97" font-size="12" font-weight="700">GOLDFISH</text>
+      <text x="560" y="78" text-anchor="middle" fill="#e8eaef" font-size="11">Fresh zero-context review</text>
+      <line x1="640" y1="65" x2="690" y2="65" stroke="#9aa3b5" stroke-width="2" marker-end="url(#arr)"/>
+
+      <rect x="690" y="30" width="160" height="70" rx="10" fill="#1c2230" stroke="#9aa3b5"/>
+      <text x="770" y="58" text-anchor="middle" fill="#9aa3b5" font-size="12" font-weight="700">BUILD</text>
+      <text x="770" y="78" text-anchor="middle" fill="#e8eaef" font-size="11">Coding agents execute</text>
+
+      <rect x="230" y="140" width="420" height="100" rx="12" fill="#161a22" stroke="#2a3240"/>
+      <text x="440" y="168" text-anchor="middle" fill="#d4a84b" font-size="12" font-weight="700">RICH HTML ENHANCEMENT (this post’s “yes, and”)</text>
+      <text x="300" y="198" text-anchor="middle" fill="#e8eaef" font-size="11">Diagram</text>
+      <text x="390" y="198" text-anchor="middle" fill="#e8eaef" font-size="11">UI mock</text>
+      <text x="480" y="198" text-anchor="middle" fill="#e8eaef" font-size="11">Concept sim</text>
+      <text x="570" y="198" text-anchor="middle" fill="#e8eaef" font-size="11">Status / log</text>
+      <text x="440" y="222" text-anchor="middle" fill="#9aa3b5" font-size="10">Best tool per aspect — same design-first goal as EGM</text>
+      <line x1="330" y1="110" x2="330" y2="140" stroke="#d4a84b" stroke-width="1.5" stroke-dasharray="4 3"/>
+      <line x1="440" y1="110" x2="440" y2="140" stroke="#d4a84b" stroke-width="1.5" stroke-dasharray="4 3"/>
+    </svg>
+    <div class="legend">
+      <span><i style="background:#5b9bd5"></i>Elephant</span>
+      <span><i style="background:#d4a84b"></i>Design artifact</span>
+      <span><i style="background:#6fcf97"></i>Goldfish</span>
+      <span><i style="background:#9aa3b5"></i>Build</span>
+    </div>
+  </div>
+
+  <h2>2 · Post beats (~220 words)</h2>
+  <div class="flow">
+    <div class="step"><b>1 · PAIN</b>Complex designs don’t travel well in thin text-only docs (AI ↔ human).</div>
+    <div class="arrow">→</div>
+    <div class="step"><b>2 · EGM</b>Complete design before construction; Elephant plans, Goldfish review.</div>
+    <div class="arrow">→</div>
+    <div class="step"><b>3 · YES, AND</b>Those docs as rich HTML — diagram / mock / sim / status where each fits.</div>
+    <div class="arrow">→</div>
+    <div class="step"><b>4 · CLOSE</b>Optional try-line + question to practitioners <span class="tag park">TBD</span></div>
+  </div>
+
+  <h2>3 · Goals vs non-goals</h2>
+  <div class="grid g2">
+    <div class="card">
+      <h3 style="margin-top:0"><span class="tag go">In</span> This post</h3>
+      <ul class="small">
+        <li>One thesis: design-first (EGM) × rich HTML collaboration docs</li>
+        <li>One-line EGM explainer</li>
+        <li>Optional “I’ll try Q&amp;A / isolated Goldfish and see how they perform”</li>
+        <li>~200–300 words; keyword first line; links in first comment; no hashtags</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 style="margin-top:0"><span class="tag park">Out</span> Not this post</h3>
+      <ul class="small">
+        <li>Format war or correcting EGM evidence</li>
+        <li>Full hub / ID / JSON tutorial</li>
+        <li>Measured Goldfish advantages</li>
+        <li>MCP sandbox deep-dive; Spatial F1 audio (other agent)</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>4 · Decisions</h2>
+  <div class="card" style="padding:0;overflow:hidden">
+    <table>
+      <thead><tr><th>Decision</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td>Thesis spine</td><td><b>Locked</b> — rich complete design docs further enhanced as rich HTML</td></tr>
+        <tr><td>EGM role</td><td>Design-first cousin; not labeled SOTA</td></tr>
+        <tr><td>Author detail in-body</td><td>HTML as visual+text surface; md as past bottleneck (one line)</td></tr>
+        <tr><td>Claim language</td><td>“EGM describes…”, “I’ll be trying…”, “I’m curious…” — no proof numbers</td></tr>
+        <tr><td>Close / CTA</td><td class="muted">TBD — question to practitioners</td></tr>
+        <tr><td>Unused concepts</td><td>Parked in backlog for future posts</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>5 · Backlog (future posts)</h2>
+  <div class="diagram">
+    <svg viewBox="0 0 880 200" xmlns="http://www.w3.org/2000/svg" role="img">
+      <title>Parked concepts for later posts</title>
+      <rect x="20" y="20" width="200" height="70" rx="8" fill="#1c2230" stroke="#f2b84b"/>
+      <text x="120" y="50" text-anchor="middle" fill="#f2b84b" font-size="11" font-weight="700">PLAN IDs</text>
+      <text x="120" y="70" text-anchor="middle" fill="#e8eaef" font-size="10">D1.APP / D1.MCP.P1.2</text>
+      <rect x="240" y="20" width="200" height="70" rx="8" fill="#1c2230" stroke="#f2b84b"/>
+      <text x="340" y="50" text-anchor="middle" fill="#f2b84b" font-size="11" font-weight="700">JSON DEPS</text>
+      <text x="340" y="70" text-anchor="middle" fill="#e8eaef" font-size="10">Orchestrator unblock</text>
+      <rect x="460" y="20" width="200" height="70" rx="8" fill="#1c2230" stroke="#f2b84b"/>
+      <text x="560" y="50" text-anchor="middle" fill="#f2b84b" font-size="11" font-weight="700">ISOLATION</text>
+      <text x="560" y="70" text-anchor="middle" fill="#e8eaef" font-size="10">Leaky vs MCP sandbox</text>
+      <rect x="680" y="20" width="180" height="70" rx="8" fill="#1c2230" stroke="#f2b84b"/>
+      <text x="770" y="50" text-anchor="middle" fill="#f2b84b" font-size="11" font-weight="700">ANTICIPATION</text>
+      <text x="770" y="70" text-anchor="middle" fill="#e8eaef" font-size="10">Built before asked</text>
+      <rect x="20" y="110" width="280" height="70" rx="8" fill="#1c2230" stroke="#f2b84b"/>
+      <text x="160" y="140" text-anchor="middle" fill="#f2b84b" font-size="11" font-weight="700">HUB → REPO MIRROR</text>
+      <text x="160" y="160" text-anchor="middle" fill="#e8eaef" font-size="10">Checked-in design copies</text>
+      <rect x="320" y="110" width="260" height="70" rx="8" fill="#1c2230" stroke="#f2b84b"/>
+      <text x="450" y="140" text-anchor="middle" fill="#f2b84b" font-size="11" font-weight="700">GOLDFISH METRICS</text>
+      <text x="450" y="160" text-anchor="middle" fill="#e8eaef" font-size="10">Tokens / quality when tried</text>
+      <rect x="600" y="110" width="260" height="70" rx="8" fill="#1c2230" stroke="#f2b84b"/>
+      <text x="730" y="140" text-anchor="middle" fill="#f2b84b" font-size="11" font-weight="700">META PLAN HTML</text>
+      <text x="730" y="160" text-anchor="middle" fill="#e8eaef" font-size="10">This workflow as the demo</text>
+    </svg>
+  </div>
+  <ul class="small muted">
+    <li>Readable plan IDs and sequential multi-doc plans</li>
+    <li>Embedded JSON deps + orchestrator; snapshot-shareable HTML</li>
+    <li>Hub mirrored into project <code>docs/</code></li>
+    <li>Isolation leaks vs hard MCP-only sandboxes</li>
+    <li>Same-context “built features before asked”</li>
+    <li>Token/quality watch when Goldfish is tried; Rensin quote angles</li>
+  </ul>
+
+  <h2>6 · Sources (first comment)</h2>
+  <ul class="small">
+    <li><a href="https://opensource.googleblog.com/2026/10/introducing-elephant-goldfish-model-plugin.html">Google Open Source Blog — EGM plugin (2026-10-22)</a></li>
+    <li><a href="https://egm.dev/">egm.dev</a></li>
+    <li><a href="https://github.com/google/elephant-goldfish-model">github.com/google/elephant-goldfish-model</a></li>
+    <li>Dave Rensin essay (linked from the blog)</li>
+  </ul>
+
+  <h2>7 · Still open</h2>
+  <div class="card">
+    <ul class="small" style="margin-bottom:0">
+      <li>Closing question / CTA</li>
+      <li>Cover visual yes/no (own diagram, not EGM OG art)</li>
+      <li>Draft body + first comment</li>
+      <li>Optional: re-run Goldfish on the narrowed thesis</li>
+    </ul>
+  </div>
+
+  <footer>
+    Goldfish BRAINSTORM 2026-10-25 · Markdown twin: <code>concepts_brief.md</code> · Embedded machine status below.
+  </footer>
+</div>
+
+<!-- Machine-readable twin: deps / status for orchestrators (stays aligned with prose) -->
+<script type="application/json" id="egm-plan">
+{
+  "id": "D-EGM-POST.P1.BRIEF",
+  "title": "LinkedIn post — Elephant-Goldfish Model",
+  "status": "brainstorm_thesis_locked",
+  "updated": "2026-10-25",
+  "depends_on": [],
+  "blocks": ["D-EGM-POST.P1.DRAFT"],
+  "artifacts": {
+    "spine": "design-first (EGM) × rich HTML collaboration docs",
+    "cta": null,
+    "visual": null
+  },
+  "artifacts": {
+    "md": "concepts_brief.md",
+    "html": "concepts_brief.html"
+  },
+  "backlog": [
+    "plan-ids",
+    "json-deps",
+    "hub-mirror",
+    "isolation",
+    "anticipation",
+    "goldfish-metrics",
+    "meta-plan-html"
+  ]
+}
+</script>
+<script>
+(function(){
+  try{
+    var d=JSON.parse(document.getElementById('egm-plan').textContent);
+    var el=document.getElementById('statusChip');
+    if(el&&d.status) el.textContent='Status: '+d.status.replace(/_/g,' ');
+  }catch(e){}
+})();
+</script>
+</body>
+</html>
