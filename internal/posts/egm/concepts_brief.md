@@ -27,6 +27,12 @@ Prior Goldfish consensus still stands on craft: one thesis, one payoff, ≤2 in-
 | 3 | **Yes, and** | Same doc as rich HTML panels | Those design docs as rich HTML — diagram / mock / sim / status where each fits. |
 | 4 | **Close** | Optional try-line → question | “Have rich docs changed how you review agent work?” |
 
+## Anatomy assets
+
+- Interactive: [dark](anatomy/design-doc-pathways/design-doc-pathways.html) · [light](anatomy/design-doc-pathways/design-doc-pathways-light.html) · [video player](anatomy/design-doc-pathways/video.html)
+- Video: [dark MP4](anatomy/design-doc-pathways/export/design-doc-pathways-dark.mp4) · [light MP4](anatomy/design-doc-pathways/export/design-doc-pathways-light.mp4)
+- Stills: [cover dark](anatomy/design-doc-pathways/shots/cover-dark.png) · [cover light](anatomy/design-doc-pathways/shots/cover-light.png) · [still dark](anatomy/design-doc-pathways/export/still-dark.png) · [still light](anatomy/design-doc-pathways/export/still-light.png)
+
 ## Goals vs. Non-Goals
 
 * **In-Scope Goals:**
@@ -50,7 +56,7 @@ Prior Goldfish consensus still stands on craft: one thesis, one payoff, ≤2 in-
 | Author detail in-body | HTML as visual+text collaboration surface; md as past bottleneck (one line) |
 | Claim language | “EGM describes…”, “I’ll be trying…”, “I’m curious…” — no proof numbers |
 | Close | **Locked:** “Have rich docs changed how you review agent work?” |
-| Visual | **Locked:** Anatomy-style animation → video (MD vs HTML dual pathways, same human; prompt drafted for Anatomy machine) |
+| Visual | **Locked:** Anatomy-style animation → video (MD vs HTML dual pathways, same human) — **produced & imported** (see Anatomy assets) |
 | First-comment links | **Locked:** all four — Google Open Source blog, egm.dev, GitHub repo, Dave Rensin Medium essay |
 | Planning HTML | **Locked:** brief + beats storyboard |
 | Series | Unused concepts logged below for future posts |
@@ -83,3 +89,9 @@ Prior Goldfish consensus still stands on craft: one thesis, one payoff, ≤2 in-
 
 * Six-lens BRAINSTORM 2026-10-25; synthesizer nesting N/A — parallel dispatch.
 * Working folder: `/workspace/egm-post/`
+
+## Still open
+
+- ~~Anatomy animation + video~~ — produced & imported
+- Draft body + first comment
+- Optional: re-run Goldfish on narrowed thesis
