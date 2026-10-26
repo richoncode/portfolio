@@ -19,8 +19,6 @@ Not a recording. A Web Audio engine locked to RPM and throttle, same idea as the
 
 Unofficial fan demo. Not affiliated with Formula 1. Links in the first comment.
 
-What would you want to hear next from live-timing data?
-
 ---
 
 ## First comment (copy)
