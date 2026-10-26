@@ -13,6 +13,8 @@ Race-day telemetry, with sound from the physics
 
 US Grand Prix day at Circuit of the Americas. I put a car on that track in the browser using OpenF1 data from a prior Austin weekend on the same circuit — not today’s live feed — and asked what it should sound like when the surroundings change.
 
+I do a lot of rapid vibe coding with different AIs just to compare what they can actually ship. This one came together over the weekend while I had a couple of movies on in the background.
+
 Not a recording. A Web Audio engine locked to RPM and throttle, same idea as the Forza physics audio I’ve written about before. Ray probes look at walls and bridges and drive a continuous reverb — hard and close gets wetter; open air stays dry. Crowd, wind, and tire ride along.
 
 Unofficial fan demo. Not affiliated with Formula 1. Links in the first comment.
