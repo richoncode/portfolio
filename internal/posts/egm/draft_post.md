@@ -1,8 +1,8 @@
 # Draft — LinkedIn post (EGM × rich HTML)
 
 **Status:** draft for Richard review — do not post  
-**Visual:** attach dark MP4 (or cover still) from `anatomy/design-doc-pathways/export/`  
-**Word count (body):** ~240
+**Visual:** attach light MP4 (or cover still) from `anatomy/design-doc-pathways/export/`  
+**Word count (body):** ~210
 
 ---
 
@@ -10,13 +10,13 @@
 
 Design docs that agents and humans can both actually review
 
-Google’s Elephant-Goldfish Model (EGM) puts the hard work where it belongs: finish a rich design *before* construction. An Elephant session holds deep context and co-writes the spec; a Goldfish session reviews it cold, with no shared blind spots.
+Google just shipped the Elephant-Goldfish Model. An Elephant session stays in the deep context and co-writes the design. A Goldfish session reviews it cold, so you don’t get the same blind spots twice. Finish the design before you build — that part I like.
 
-I’ve felt the same pressure from the other side of the desk. When a design only lives as a long markdown wall, complex ideas don’t travel well between the model and me—tables without pictures, flows you have to imagine, status you have to reconstruct. That text-only surface becomes the bottleneck.
+What I keep running into is the format of the design itself. Long markdown is fine for prose. It’s rough for anything with a flow, a layout, or a status you need to *see*. I end up reconstructing the picture in my head, and so does the model.
 
-So I’m taking EGM’s design-first idea a step further for my own agent work: keep the complete spec, but make the collaboration surface rich HTML when it helps—diagrams, mocks, sims, status panels—using the best visual or text tool for each part of the design. Same goal as EGM; a clearer shared picture while we’re still deciding.
+So for my own agent work I’m keeping the full spec, but when a piece needs a diagram, a mock, or a small sim, I put that in rich HTML and leave the rest as text. Same design-first idea as EGM — just a surface we can both look at while we’re still deciding.
 
-I’ll be trying clarifying Q&A and isolated Goldfish-style reviews on those docs, and I’m curious how they perform.
+I’m going to try clarifying Q&A and Goldfish-style reviews on those docs and see how they perform.
 
 Have rich docs changed how you review agent work?
 
@@ -29,7 +29,7 @@ Sources / further reading:
 • Google Open Source Blog — Introducing the Elephant-Goldfish Model plugin (2026-10-22): https://opensource.googleblog.com/2026/10/introducing-elephant-goldfish-model-plugin.html  
 • egm.dev: https://egm.dev/  
 • GitHub — google/elephant-goldfish-model: https://github.com/google/elephant-goldfish-model  
-• Dave Rensin — Elephants, Goldfish and the New Golden Age of Software Engineering: https://drensin.medium.com/elephants-goldfish-and-the-new-golden-age-of-software-engineering-c33641a48874  
+• Dave Rensin — Elephants, Goldfish and the New Golden Age of Software Engineering: https://drensin.medium.com/elephants-goldfish-and-the-new-golden-age-of-software-engineering-c33641a48874
 
 (Video: dual pathways — markdown review vs rich HTML — same human, fewer clarification loops.)
 
