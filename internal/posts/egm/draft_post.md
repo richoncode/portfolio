@@ -8,7 +8,7 @@
 
 ## Post body (copy)
 
-Design docs that agents and humans can both actually review
+Design docs agents and humans can review more effectively
 
 Google just shipped the Elephant-Goldfish Model. An Elephant session stays in the deep context and co-writes the design. A Goldfish session reviews it cold, so you don’t get the same blind spots twice. Finish the design before you build — that part I like.
 
