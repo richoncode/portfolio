@@ -1,6 +1,6 @@
 # Draft — LinkedIn post (EGM × rich HTML)
 
-**Status:** draft for Richard review — do not post  
+**Status:** posted 2026-10-25 — https://lnkd.in/p/gw8Tb-2j  
 **Visual:** attach light MP4 (or cover still) from `anatomy/design-doc-pathways/export/`  
 **Word count (body):** ~210
 
