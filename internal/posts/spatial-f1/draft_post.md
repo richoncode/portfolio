@@ -12,7 +12,7 @@
 
 Race-day telemetry, with sound that comes from the physics
 
-US Grand Prix day at Circuit of the Americas. I put a car on that track in the browser with OpenF1 car data — RPM, throttle, gear, brake, speed from a cached Austin race window — and asked what it should *sound* like when the surroundings change.
+US Grand Prix day at Circuit of the Americas. I put a car on that track in the browser with OpenF1 car data — RPM, throttle, gear, brake, speed from a prior Austin race weekend on this same circuit, not today’s live feed — and asked what it should *sound* like when the surroundings change.
 
 Not a recording of a real F1 car. A Web Audio engine voice locked to the telemetry: pitch from RPM, load from throttle, a short accent on gear changes. Presets are configuration (high-rev V6 and a few others), not a sample library. It’s a stand-in until a fuller engine sim can take the same inputs — same habit as other physical-modeling work I’ve done: synthesize from the state.
 
