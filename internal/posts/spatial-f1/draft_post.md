@@ -1,10 +1,10 @@
 # Draft — LinkedIn post (Spatial F1 · race day audio)
 
 **Status:** draft for Richard review — do not post  
-**Pending:** MuddleAndMix accuracy pass on audio/reverb claims  
-**Visual:** OBS clip of Spatial F1 chase + audible engine/reverb (light LinkedIn UI)  
+**Accuracy:** MuddleAndMix briefing 2026-10-25  
+**Visual:** OBS ~20–40s — unmute → play → Chase → into dual-sided stands then under bridge; Show on; Max reverb up; optional mute engine to hear crowd/wind. Cover: freeze under bridge with probe fan + wet bars.  
 **Demo:** https://richoncode.github.io/webartests/explainers/spatial-f1/  
-**Word count (body):** ~220
+**Word count (body):** ~230
 
 ---
 
@@ -12,11 +12,11 @@
 
 Race-day telemetry, with sound that comes from the physics
 
-It’s US Grand Prix day at Circuit of the Americas. I built a small browser demo that puts a car on that track using OpenF1 car data — real RPM, throttle, gear, and speed from a cached race window — and then asks a simple question: what should that car *sound* like?
+US Grand Prix day at Circuit of the Americas. I put a car on that track in the browser with OpenF1 car data — RPM, throttle, gear, brake, speed from a cached Austin race window — and asked what it should *sound* like when the surroundings change.
 
-Not a recording. A Web Audio engine voice dyno-locked to the telemetry: pitch follows RPM, load follows throttle, gear changes get a short accent. The voicing is configuration (V6 and a few other presets), not a sample library. Same physical-modeling habit I’ve used on other sims — synthesize from the state, don’t play a file.
+Not a recording of a real F1 car. A Web Audio engine voice locked to the telemetry: pitch from RPM, load from throttle, a short accent on gear changes. Presets are configuration (high-rev V6 and a few others), not a sample library. It’s a stand-in until a fuller engine sim can take the same inputs — same habit as other physical-modeling work I’ve done: synthesize from the state.
 
-Then the room. Side and overhead ray probes look at what’s around the car — walls, bridges, open sky — and drive an I3DL2-style reverb so the note changes when the surroundings change. You can toggle the reverb and the probe rays on the page.
+Then the room. About a hundred ray probes look left, right, and up at what’s around the car — buildings, footbridges, open sky — and drive an I3DL2-style reverb. Hard surfaces and near hits push the wetness up continuously; open air falls back toward quiet. Nature rarely jumps, so the mapping stays continuous instead of flipping with hard conditionals. Crowd, wind, and tire cues ride along too. You can show the probe hits and the wet meter on the page.
 
 Unofficial fan demo. Not affiliated with Formula 1. Link in the first comment.
 
@@ -28,15 +28,17 @@ What would you want to hear next from live-timing data?
 
 Spatial F1 (COTA / OpenF1): https://richoncode.github.io/webartests/explainers/spatial-f1/
 
-How the car_data fields map into the engine view: https://richoncode.github.io/webartests/explainers/spatial-f1/engine-data-mapping.html
+How car_data maps into the engine view: https://richoncode.github.io/webartests/explainers/spatial-f1/engine-data-mapping.html
 
 OpenF1: https://openf1.org/
 
-(Engine Sim by Ange Yaghi is later work — this page uses an in-browser synth locked to the trace.)
+(In-browser synth locked to the trace — not recorded F1 engines. Fuller Engine Sim path is later work.)
 
 ---
 
-## Notes for Richard
-- Race session today: OpenF1 session_key 11396, Austin, 2026-10-25 20:00–22:00 UTC. Demo cache is still 2025 Austin (9888) — say “race data from COTA” / don’t claim today’s live feed unless MM swapped cache.
-- Avoid Quintar / spatial-intelligence framing.
-- Video: chase cam with reverb + probe viz on for ~20–40s; record with OBS tab audio.
+## Accuracy lock (from MuddleAndMix)
+- Cache: Austin race session 9888, driver 1 laps 52–53 (+ other cars). Do **not** claim today’s live 11396 feed.
+- Engine: Web Audio synth; V6 default live; not full physical engine sim / not Engine Sim WASM yet.
+- Reverb: continuous hardness×rolloff wetness; Min/Max only; ~97 rays; material tables are design tables not measured venue acoustics.
+- Also audible: crowd on grandstands, speed wind, tire from corner/brake g.
+- Don’t: Quintar product, official F1/FIA audio, AI framing, Send/Wet/bridgeWeight, years fluff.
