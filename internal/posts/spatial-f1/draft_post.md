@@ -1,6 +1,6 @@
 # Draft — LinkedIn post (Spatial F1 · race day audio)
 
-**Status:** draft for Richard review — do not post  
+**Status:** posted 2026-10-26 — https://lnkd.in/p/gCkPj24e  
 **Accuracy:** MuddleAndMix briefing 2026-10-25 (+ PR #131 defaults)  
 **Visual:** OBS ~20–40s — Chase into stands / under bridge; Max reverb up. Cover: under bridge with probes + wet bars.  
 **Demo:** https://richoncode.github.io/webartests/explainers/spatial-f1/

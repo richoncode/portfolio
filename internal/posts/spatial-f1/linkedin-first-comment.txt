@@ -1,0 +1,7 @@
+Try the demo: https://richoncode.github.io/webartests/explainers/spatial-f1/
+
+How the OpenF1 fields map to the engine: https://richoncode.github.io/webartests/explainers/spatial-f1/engine-data-mapping.html
+
+OpenF1: https://openf1.org/
+
+Earlier Forza / physics-audio post: https://www.linkedin.com/posts/richoncode_throwbackthursday-webgpu-threejs-activity-7513982778485448704-qLxd

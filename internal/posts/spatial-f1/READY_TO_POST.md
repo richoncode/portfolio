@@ -1,6 +1,7 @@
 # Spatial F1 — LinkedIn ready package
 
-**Do not auto-post.** Richard posts from LinkedIn UI.
+**Posted 2026-10-26** — https://lnkd.in/p/gCkPj24e  
+Richard posted from LinkedIn UI (do not re-post).
 
 ## Attach
 - Video: `spatial-f1-linkedin.mp4` (56s, 1920×1080, H.264 + AAC stereo) — LinkedIn-ready remux/encode from your OBS `.mkv`
