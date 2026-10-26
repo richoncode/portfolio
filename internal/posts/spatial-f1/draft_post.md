@@ -23,13 +23,14 @@ Unofficial fan demo. Not affiliated with Formula 1. Links in the first comment.
 
 ## First comment (copy)
 
-Spatial F1: https://richoncode.github.io/webartests/explainers/spatial-f1/
+https://richoncode.github.io/webartests/explainers/spatial-f1/
 
-Engine data mapping: https://richoncode.github.io/webartests/explainers/spatial-f1/engine-data-mapping.html
+https://richoncode.github.io/webartests/explainers/spatial-f1/engine-data-mapping.html
 
-OpenF1: https://openf1.org/
+https://openf1.org/
 
-Forza / physics-audio thread: https://www.linkedin.com/posts/richoncode_throwbackthursday-webgpu-threejs-activity-7513982778485448704-qLxd
+https://www.linkedin.com/posts/richoncode_throwbackthursday-webgpu-threejs-activity-7513982778485448704-qLxd
+
 
 ---
 

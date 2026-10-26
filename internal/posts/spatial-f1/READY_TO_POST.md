@@ -17,11 +17,13 @@ Not a recording. A Web Audio engine locked to RPM and throttle, same idea as the
 
 Unofficial fan demo. Not affiliated with Formula 1. Links in the first comment.
 
-## First comment (paste after post goes live)
-Spatial F1: https://richoncode.github.io/webartests/explainers/spatial-f1/
+## First comment (copy)
 
-Engine data mapping: https://richoncode.github.io/webartests/explainers/spatial-f1/engine-data-mapping.html
+https://richoncode.github.io/webartests/explainers/spatial-f1/
 
-OpenF1: https://openf1.org/
+https://richoncode.github.io/webartests/explainers/spatial-f1/engine-data-mapping.html
 
-Forza / physics-audio thread: https://www.linkedin.com/posts/richoncode_throwbackthursday-webgpu-threejs-activity-7513982778485448704-qLxd
+https://openf1.org/
+
+https://www.linkedin.com/posts/richoncode_throwbackthursday-webgpu-threejs-activity-7513982778485448704-qLxd
+
