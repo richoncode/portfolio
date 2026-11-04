@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Concepts brief — Lacuna #MCPMonday</title>
+<style>
+:root{
+  --bg:#0d0d0d; --panel:#161a22; --panel2:#1c2230; --line:#2a3240;
+  --fg:#e8eaef; --muted:#9aa3b5; --accent:#5b9bd5; --gold:#d4a84b;
+  --green:#6fcf97; --amber:#f2b84b; --red:#eb6f6f; --glow:#7dd3fc;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif}
+.wrap{max-width:960px;margin:0 auto;padding:32px 22px 80px}
+.kicker{color:var(--accent);letter-spacing:.12em;text-transform:uppercase;font-size:11px;font-weight:700}
+h1{font-size:28px;line-height:1.2;margin:8px 0 6px;color:#fff}
+h2{font-size:18px;color:var(--accent);margin:36px 0 10px;padding-top:8px;border-top:1px solid var(--line)}
+h3{font-size:14px;color:var(--gold);margin:18px 0 8px;text-transform:uppercase;letter-spacing:.06em}
+p,li{color:var(--fg)}
+.muted{color:var(--muted)}
+.small{font-size:13px}
+a{color:var(--accent)}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 18px}
+.pill{display:inline-block;padding:3px 10px;border-radius:999px;font-size:12px;font-weight:600;border:1px solid var(--line);background:var(--panel2)}
+.pill.lock{border-color:#3a5a3a;color:var(--green);background:#132318}
+.pill.warn{border-color:#5a4a20;color:var(--amber);background:#241c10}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:12px 0}
+.thesis{border-left:4px solid var(--gold);background:linear-gradient(135deg,#1a1810,var(--panel))}
+.grid{display:grid;gap:14px}
+.g2{grid-template-columns:1fr 1fr}
+@media(max-width:720px){.g2{grid-template-columns:1fr}}
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:10px;margin:14px 0}
+.step{flex:1 1 140px;background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:12px;min-width:120px}
+.step b{display:block;color:var(--gold);font-size:12px;letter-spacing:.04em;margin-bottom:4px}
+.arrow{align-self:center;color:var(--muted);font-size:20px}
+.diagram{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;overflow:auto}
+.diagram svg{display:block;margin:0 auto;max-width:100%;height:auto}
+.legend{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px;font-size:12px;color:var(--muted)}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px;vertical-align:middle}
+table{width:100%;border-collapse:collapse;font-size:13.5px;margin:8px 0}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--gold);font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+ul{margin:6px 0 10px;padding-left:1.2em}
+code{font-size:12.5px;background:#12151c;padding:1px 5px;border-radius:4px}
+pre.post{white-space:pre-wrap;background:#12151c;border:1px solid var(--line);border-radius:10px;padding:16px;font:14px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:#dce3f0;margin:8px 0}
+.copy-row{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 4px}
+.btn{appearance:none;border:1px solid var(--line);background:var(--panel2);color:var(--fg);border-radius:8px;padding:6px 12px;font:12px/1.2 inherit;cursor:pointer}
+.btn:hover{border-color:var(--accent);color:#fff}
+.wire{display:grid;grid-template-rows:auto 1fr auto;min-height:280px;background:#0f131a;border:1px dashed var(--line);border-radius:12px;overflow:hidden}
+.wire-top{display:flex;gap:8px;padding:10px 12px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.chip{font-size:11px;padding:4px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+.chip.on{border-color:var(--glow);color:var(--glow);background:#0c1a24}
+.wire-mid{position:relative;min-height:180px}
+.wire-bot{padding:10px 12px;border-top:1px solid var(--line);font-size:12px;color:var(--muted)}
+.ask{background:#1a2230;border:1px solid #334155;border-radius:10px;padding:12px 14px;margin:16px 0}
+.ask b{color:var(--amber)}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:12.5px}
+#deps{display:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="kicker">#MCPMonday · post proposal</div>
+  <h1>Lacuna Research MCP — Monday Nov 9</h1>
+  <p class="muted small">Rich HTML proposal for Richard to review. Demo not built yet. Working copy also at <code>/workspace/mcpmonday/2026-11-09-lacuna/</code>.</p>
+  <div class="meta">
+    <span class="pill">Author: Richard Bailey</span>
+    <span class="pill">Verified 2026-11-04</span>
+    <span class="pill warn">Status: draft — awaiting build yes</span>
+    <span class="pill">Slot: Mon Nov 9 · demo needed by Fri</span>
+  </div>
+
+  <section class="card thesis">
+    <h3 style="margin-top:0">One-line pitch</h3>
+    <p style="margin-bottom:0"><b>Lacuna gives an agent a map of ML research — including ideas nobody has published yet</b> — via 13 read-only MCP tools, no account or key. The demo shows published-paper clusters as solid nodes and a Lacuna-generated proposal as a glowing bridge between them.</p>
+  </section>
+
+  <h2>1 · Why this pick</h2>
+  <div class="grid g2">
+    <div class="card">
+      <h3 style="margin-top:0">Verified today</h3>
+      <ul class="small">
+        <li>Endpoint live: <code>https://lacuna.tiptreesystems.com/api/mcp</code> (initialize 200)</li>
+        <li>Remote HTTP, read-only, <b>no auth</b></li>
+        <li>13 tools (search → directions → papers → hypotheses)</li>
+        <li>Live HRTF search returned <em>A Thousand Simulated Heads…</em></li>
+        <li>Not on our hub yet (earthdata, huggingface, mapbox, scenario)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 style="margin-top:0">Fit for Richard</h3>
+      <ul class="small">
+        <li>Spatial audio / HRTF is a real thread (firesim, Spatial F1, Audio Anecdotes)</li>
+        <li>AR depth / occlusion sits next to Magic Leap / DAQRI / Quintar work</li>
+        <li>Honest labeling of published vs generated = trustworthy brand tone</li>
+        <li>Zero signup friction → demo can ship this week</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>2 · Demo concept — “The idea that isn’t a paper yet”</h2>
+  <p class="muted small">Hero is a full-viewport light constellation. Solid nodes = real research directions (paper counts). Glowing node = Lacuna-generated proposal bridging two clusters. Card slides in with title + short abstract.</p>
+
+  <div class="diagram" aria-label="Constellation hero diagram">
+    <svg viewBox="0 0 900 420" xmlns="http://www.w3.org/2000/svg" role="img">
+      <defs>
+        <radialGradient id="gGlow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#7dd3fc" stop-opacity="0.9"/>
+          <stop offset="55%" stop-color="#38bdf8" stop-opacity="0.35"/>
+          <stop offset="100%" stop-color="#0ea5e9" stop-opacity="0"/>
+        </radialGradient>
+        <filter id="soft"><feGaussianBlur stdDeviation="6"/></filter>
+      </defs>
+      <rect width="900" height="420" rx="12" fill="#0f131a"/>
+      <!-- faint grid -->
+      <g stroke="#1e293b" stroke-width="1">
+        <path d="M0 105 H900 M0 210 H900 M0 315 H900"/>
+        <path d="M150 0 V420 M300 0 V420 M450 0 V420 M600 0 V420 M750 0 V420"/>
+      </g>
+      <!-- edges -->
+      <g stroke="#334155" stroke-width="1.5" fill="none">
+        <path d="M180 120 L420 200"/>
+        <path d="M420 200 L680 110"/>
+        <path d="M420 200 L260 320"/>
+        <path d="M420 200 L700 300"/>
+        <path d="M180 120 L260 320" stroke-dasharray="4 4" opacity="0.5"/>
+        <path d="M680 110 L700 300" stroke-dasharray="4 4" opacity="0.5"/>
+      </g>
+      <!-- bridge edges to glow -->
+      <g stroke="#38bdf8" stroke-width="2" opacity="0.7" fill="none">
+        <path d="M180 120 L480 250"/>
+        <path d="M680 110 L480 250"/>
+      </g>
+      <!-- solid direction nodes -->
+      <g>
+        <circle cx="180" cy="120" r="18" fill="#1e3a5f" stroke="#5b9bd5" stroke-width="2"/>
+        <text x="180" y="124" text-anchor="middle" fill="#e8eaef" font-size="11" font-family="system-ui">HRTF</text>
+        <text x="180" y="152" text-anchor="middle" fill="#9aa3b5" font-size="10" font-family="system-ui">dir 10339 · papers</text>
+
+        <circle cx="680" cy="110" r="18" fill="#1e3a5f" stroke="#5b9bd5" stroke-width="2"/>
+        <text x="680" y="114" text-anchor="middle" fill="#e8eaef" font-size="11" font-family="system-ui">MRI</text>
+        <text x="680" y="142" text-anchor="middle" fill="#9aa3b5" font-size="10" font-family="system-ui">population priors</text>
+
+        <circle cx="260" cy="320" r="16" fill="#1e3a5f" stroke="#5b9bd5" stroke-width="2"/>
+        <text x="260" y="324" text-anchor="middle" fill="#e8eaef" font-size="10" font-family="system-ui">AR depth</text>
+        <text x="260" y="348" text-anchor="middle" fill="#9aa3b5" font-size="10" font-family="system-ui">dir 8752</text>
+
+        <circle cx="700" cy="300" r="16" fill="#1e3a5f" stroke="#5b9bd5" stroke-width="2"/>
+        <text x="700" y="304" text-anchor="middle" fill="#e8eaef" font-size="10" font-family="system-ui">sim→real</text>
+        <text x="700" y="328" text-anchor="middle" fill="#9aa3b5" font-size="10" font-family="system-ui">dir 28194 · 531</text>
+
+        <circle cx="420" cy="200" r="14" fill="#1e3a5f" stroke="#5b9bd5" stroke-width="2"/>
+        <text x="420" y="204" text-anchor="middle" fill="#e8eaef" font-size="10" font-family="system-ui">audio</text>
+      </g>
+      <!-- glowing proposal -->
+      <circle cx="480" cy="250" r="42" fill="url(#gGlow)" filter="url(#soft)"/>
+      <circle cx="480" cy="250" r="16" fill="#0c4a6e" stroke="#7dd3fc" stroke-width="3"/>
+      <text x="480" y="254" text-anchor="middle" fill="#e0f2fe" font-size="11" font-weight="700" font-family="system-ui">✦</text>
+      <!-- proposal card -->
+      <g>
+        <rect x="520" y="220" width="340" height="100" rx="10" fill="#161a22" stroke="#38bdf8" stroke-width="1.5"/>
+        <text x="536" y="244" fill="#7dd3fc" font-size="10" font-weight="700" font-family="system-ui" letter-spacing="1">GENERATED PROPOSAL — NOT A PAPER</text>
+        <text x="536" y="268" fill="#fff" font-size="13" font-family="system-ui">A Thousand Simulated Heads</text>
+        <text x="536" y="288" fill="#9aa3b5" font-size="11" font-family="system-ui">MRI-derived population priors for</text>
+        <text x="536" y="304" fill="#9aa3b5" font-size="11" font-family="system-ui">sparse HRTF personalization</text>
+      </g>
+      <text x="24" y="28" fill="#5b9bd5" font-size="11" font-family="system-ui" letter-spacing="1.5">HERO · CONSTELLATION</text>
+      <text x="24" y="400" fill="#64748b" font-size="11" font-family="system-ui">Solid = published-paper clusters · Glow = Lacuna-generated bridge · Snapshot of real MCP calls</text>
+    </svg>
+    <div class="legend">
+      <span><i style="background:#5b9bd5"></i>Published direction</span>
+      <span><i style="background:#7dd3fc;box-shadow:0 0 8px #7dd3fc"></i>Generated proposal</span>
+      <span><i style="background:#334155;border-radius:2px"></i>Related-paper edge</span>
+    </div>
+  </div>
+
+  <h3>Interaction wire (below-the-fold chips)</h3>
+  <div class="wire card" style="padding:0">
+    <div class="wire-top">
+      <span class="chip on">Spatial audio (HRTF)</span>
+      <span class="chip">AR depth &amp; occlusion</span>
+      <span class="chip">Acoustic sim-to-real</span>
+      <span class="chip">Robot hearing</span>
+    </div>
+    <div class="wire-mid">
+      <svg viewBox="0 0 900 160" xmlns="http://www.w3.org/2000/svg" width="100%" height="160">
+        <text x="24" y="28" fill="#9aa3b5" font-size="11" font-family="system-ui">Tool-chip strip (real call path)</text>
+        <g font-family="ui-monospace,Menlo,monospace" font-size="12">
+          <rect x="24" y="48" width="150" height="36" rx="8" fill="#1c2230" stroke="#2a3240"/>
+          <text x="99" y="71" text-anchor="middle" fill="#d4a84b">search_lacuna</text>
+          <text x="186" y="71" fill="#64748b">→</text>
+          <rect x="206" y="48" width="150" height="36" rx="8" fill="#1c2230" stroke="#2a3240"/>
+          <text x="281" y="71" text-anchor="middle" fill="#d4a84b">get_direction</text>
+          <text x="368" y="71" fill="#64748b">→</text>
+          <rect x="388" y="48" width="190" height="36" rx="8" fill="#1c2230" stroke="#2a3240"/>
+          <text x="483" y="71" text-anchor="middle" fill="#d4a84b">get_direction_papers</text>
+          <text x="590" y="71" fill="#64748b">→</text>
+          <rect x="610" y="48" width="160" height="36" rx="8" fill="#0c1a24" stroke="#38bdf8"/>
+          <text x="690" y="71" text-anchor="middle" fill="#7dd3fc">get_hypothesis</text>
+        </g>
+        <text x="24" y="120" fill="#9aa3b5" font-size="12" font-family="system-ui">Click solid node → paper orbit · Click glow → proposal card + Lacuna link · Download 1200×1200 post image (light)</text>
+      </svg>
+    </div>
+    <div class="wire-bot">Honest hero label: solid nodes = published clusters; glowing card = generated proposal, not a paper; page is a snapshot of real MCP calls.</div>
+  </div>
+
+  <h2>3 · Tool map (13 read-only)</h2>
+  <div class="diagram">
+    <svg viewBox="0 0 900 340" xmlns="http://www.w3.org/2000/svg" role="img">
+      <rect width="900" height="340" rx="8" fill="#0f131a"/>
+      <text x="24" y="32" fill="#5b9bd5" font-size="11" font-family="system-ui" letter-spacing="1.5">LACUNA MCP · NO KEY</text>
+      <!-- center -->
+      <rect x="340" y="140" width="220" height="60" rx="12" fill="#1e3a5f" stroke="#5b9bd5" stroke-width="2"/>
+      <text x="450" y="166" text-anchor="middle" fill="#fff" font-size="14" font-family="system-ui" font-weight="700">search_lacuna</text>
+      <text x="450" y="186" text-anchor="middle" fill="#9aa3b5" font-size="11" font-family="system-ui">entry · query → graph</text>
+      <!-- left column directions -->
+      <g font-family="system-ui" font-size="12">
+        <rect x="40" y="60" width="200" height="44" rx="8" fill="#1c2230" stroke="#2a3240"/>
+        <text x="140" y="87" text-anchor="middle" fill="#e8eaef">get_direction</text>
+        <rect x="40" y="118" width="200" height="44" rx="8" fill="#1c2230" stroke="#2a3240"/>
+        <text x="140" y="145" text-anchor="middle" fill="#e8eaef">get_direction_papers</text>
+        <rect x="40" y="176" width="200" height="44" rx="8" fill="#0c1a24" stroke="#38bdf8"/>
+        <text x="140" y="203" text-anchor="middle" fill="#7dd3fc">get_hypothesis</text>
+        <rect x="40" y="234" width="200" height="44" rx="8" fill="#1c2230" stroke="#2a3240"/>
+        <text x="140" y="261" text-anchor="middle" fill="#e8eaef">get_paper / get_resource</text>
+      </g>
+      <!-- right column people/org -->
+      <g font-family="system-ui" font-size="12">
+        <rect x="660" y="60" width="200" height="44" rx="8" fill="#1c2230" stroke="#2a3240"/>
+        <text x="760" y="87" text-anchor="middle" fill="#e8eaef">get_author_*</text>
+        <rect x="660" y="118" width="200" height="44" rx="8" fill="#1c2230" stroke="#2a3240"/>
+        <text x="760" y="145" text-anchor="middle" fill="#e8eaef">get_venue_context</text>
+        <rect x="660" y="176" width="200" height="44" rx="8" fill="#1c2230" stroke="#2a3240"/>
+        <text x="760" y="203" text-anchor="middle" fill="#e8eaef">get_institution_*</text>
+        <rect x="660" y="234" width="200" height="44" rx="8" fill="#1c2230" stroke="#2a3240"/>
+        <text x="760" y="261" text-anchor="middle" fill="#e8eaef">neighbors / context</text>
+      </g>
+      <g stroke="#334155" stroke-width="1.5" fill="none">
+        <path d="M240 82 H340"/>
+        <path d="M240 140 H340"/>
+        <path d="M240 198 H340"/>
+        <path d="M240 256 H340"/>
+        <path d="M560 170 H660"/>
+        <path d="M560 140 H660"/>
+        <path d="M560 198 H660"/>
+        <path d="M560 256 H660"/>
+      </g>
+      <text x="24" y="320" fill="#64748b" font-size="11" font-family="system-ui">Docs: lacuna.tiptreesystems.com/mcp · GitHub: tiptreesystems/lacuna-research-mcp</text>
+    </svg>
+  </div>
+
+  <h2>4 · Seed topics (baked from live calls)</h2>
+  <table>
+    <thead><tr><th>Chip</th><th>Direction / signal</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>Spatial audio (HRTF)</td><td>dir 10339 · hypothesis “A Thousand Simulated Heads…”</td><td>Verified 2026-11-04</td></tr>
+      <tr><td>AR depth &amp; occlusion</td><td>dir 8752 — depth perception ambiguity in AR</td><td>Seed ready</td></tr>
+      <tr><td>Acoustic sim-to-real</td><td>dir 28194 — 531 papers</td><td>Seed ready</td></tr>
+      <tr><td>Robot hearing</td><td>hypotheses from 2026-10-29 check</td><td>Seed ready</td></tr>
+    </tbody>
+  </table>
+
+  <h2>5 · LinkedIn post draft</h2>
+  <p class="muted small">~200–300 words · keyword first line · no hashtags in body · CTA as question · links in first comment only.</p>
+  <div class="copy-row"><button class="btn" type="button" onclick="copyBlock('postBody')">Copy post</button></div>
+  <pre class="post" id="postBody">#MCPMonday: Lacuna gives an agent a map of machine learning research, including ideas nobody has published yet.
+
+Lacuna groups papers into research directions, links them to authors, venues, code and datasets, and generates research proposals that sit in the gaps between directions. Its MCP server exposes all of that as 13 read-only tools, and it needs no account or key.
+
+For the demo I asked it about the corners I work in: spatial audio, depth in AR, and getting simulated sound to match the real world. Each solid node is a real cluster of published papers. The glowing one is a proposal Lacuna generated to bridge two of them. For spatial audio it came back with an idea for personalizing head-related transfer functions from a thousand MRI-derived simulated heads.
+
+The page labels which parts are published work and which are generated, so nobody mistakes a proposal for a paper. You can click through to the sources, download a 1200 by 1200 image of any view, and copy the connect URL at the bottom.
+
+When you've used an AI tool to look for research gaps, did it surface something genuinely new, or mostly restate what you already knew?</pre>
+
+  <h2>6 · First comment draft</h2>
+  <p class="muted small">Human-readable English · full naked URLs · no markdown links.</p>
+  <div class="copy-row"><button class="btn" type="button" onclick="copyBlock('commentBody')">Copy first comment</button></div>
+  <pre class="post" id="commentBody">Demo page: https://richoncode.github.io/webartests/mcpmondays/lacuna/
+
+Lacuna MCP docs: https://lacuna.tiptreesystems.com/mcp
+
+Source on GitHub: https://github.com/tiptreesystems/lacuna-research-mcp
+
+The URL to add in your MCP client (no key needed): https://lacuna.tiptreesystems.com/api/mcp
+
+Once connected, try asking for the research directions closest to your own work, then ask for a generated proposal that bridges two of them and check its source papers.
+
+All #MCPMonday demos: https://richoncode.github.io/webartests/mcpmondays/</pre>
+
+  <h2>7 · Build plan (if yes)</h2>
+  <div class="flow">
+    <div class="step"><b>1 · Bake data</b>Live MCP calls → JSON for 4 seeds (directions, papers, hypotheses).</div>
+    <span class="arrow">→</span>
+    <div class="step"><b>2 · Page</b><code>mcpmondays/lacuna/</code> constellation + chips + tool strip + download image.</div>
+    <span class="arrow">→</span>
+    <div class="step"><b>3 · Hub</b>Link from <code>mcpmondays/</code> index next to earthdata / hf / mapbox / scenario.</div>
+    <span class="arrow">→</span>
+    <div class="step"><b>4 · Package</b>Ready-by-Friday for weekend record · light 1200×1200 cover.</div>
+  </div>
+
+  <h2>8 · Decision</h2>
+  <div class="ask">
+    <p><b>Ask:</b> Build the Lacuna demo for Monday Nov 9, or swap in Cloudflare (drafted for Nov 2, never built/posted; still interesting per 10/30) and move Lacuna to Nov 16?</p>
+    <p class="muted small" style="margin-bottom:0">Demo needs to be ready by Friday so you can record over the weekend. Nothing posts without your OK.</p>
+  </div>
+  <div class="grid g2">
+    <div class="card">
+      <h3 style="margin-top:0">Lacuna (recommended)</h3>
+      <ul class="small">
+        <li>No auth · ships this week</li>
+        <li>New to hub · strong spatial-audio hook</li>
+        <li>Visual story (published vs generated) is crisp</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 style="margin-top:0">Cloudflare backup</h3>
+      <ul class="small">
+        <li>Drafted for Nov 2 · never built</li>
+        <li>Needs OAuth / API token path</li>
+        <li>Keep as Nov 9 if Lacuna slips, or Nov 16</li>
+      </ul>
+    </div>
+  </div>
+
+  <footer>
+    Sources: <a href="https://lacuna.tiptreesystems.com/mcp">Lacuna MCP docs</a> ·
+    <a href="https://github.com/tiptreesystems/lacuna-research-mcp">GitHub</a> ·
+    live hypothesis check 2026-11-04 · Cloudflare pick archived under <code>mcpmonday/2026-11-02-cloudflare/</code>.
+  </footer>
+</div>
+
+<script type="application/json" id="deps">
+{
+  "id": "MCP.LACUNA.P1",
+  "title": "Lacuna #MCPMonday Nov 9 proposal",
+  "status": "draft_awaiting_build_yes",
+  "dependsOn": [],
+  "blocks": ["MCP.LACUNA.DEMO", "MCP.LACUNA.POST"],
+  "demoPath": "mcpmondays/lacuna/",
+  "endpoint": "https://lacuna.tiptreesystems.com/api/mcp",
+  "backup": "cloudflare-2026-11-02",
+  "deadline": "2026-11-06 demo ready for weekend record"
+}
+</script>
+<script>
+function copyBlock(id){
+  const t = document.getElementById(id).innerText;
+  navigator.clipboard.writeText(t).then(()=>{
+    const b = event.target; const old = b.textContent; b.textContent = 'Copied'; setTimeout(()=>b.textContent=old,1200);
+  });
+}
+</script>
+</body>
+</html>

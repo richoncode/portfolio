@@ -1,0 +1,11 @@
+Demo page: https://richoncode.github.io/webartests/mcpmondays/lacuna/
+
+Lacuna MCP docs: https://lacuna.tiptreesystems.com/mcp
+
+Source on GitHub: https://github.com/tiptreesystems/lacuna-research-mcp
+
+The URL to add in your MCP client (no key needed): https://lacuna.tiptreesystems.com/api/mcp
+
+Once connected, try asking for the research directions closest to your own work, then ask for a generated proposal that bridges two of them and check its source papers.
+
+All #MCPMonday demos: https://richoncode.github.io/webartests/mcpmondays/

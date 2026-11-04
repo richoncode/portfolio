@@ -1,0 +1,9 @@
+#MCPMonday: Lacuna gives an agent a map of machine learning research, including ideas nobody has published yet.
+
+Lacuna groups papers into research directions, links them to authors, venues, code and datasets, and generates research proposals that sit in the gaps between directions. Its MCP server exposes all of that as 13 read-only tools, and it needs no account or key.
+
+For the demo I asked it about the corners I work in: spatial audio, depth in AR, and getting simulated sound to match the real world. Each solid node is a real cluster of published papers. The glowing one is a proposal Lacuna generated to bridge two of them. For spatial audio it came back with an idea for personalizing head-related transfer functions from a thousand MRI-derived simulated heads.
+
+The page labels which parts are published work and which are generated, so nobody mistakes a proposal for a paper. You can click through to the sources, download a 1200 by 1200 image of any view, and copy the connect URL at the bottom.
+
+When you've used an AI tool to look for research gaps, did it surface something genuinely new, or mostly restate what you already knew?
