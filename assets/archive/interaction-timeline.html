@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='3.5' fill='%230a66c2'/%3E%3C/svg%3E">
+  <title>User interaction timeline — Richard Bailey</title>
+  <!--
+    Unlisted on purpose. Do not add this URL to index.html, video.html,
+    styleguide.html, internal/index.html, stories, cover-cv, nav, or any
+    other site index unless Richard asks.
+    Dates follow src/data/resume.json. Windows Phone has no role-level span;
+    the label 2010–2011 is the dated Windows Phone entry (Sep 2010 – Jan 2011),
+    before Kinect (May 2011). Automotive Platform (Apr 2008 – Aug 2011) is
+    grouped with Clarion AutoPC on one stop, placed at the AutoPC position.
+    NADA copy is Richard's correction: pen/stylus UI for field workers.
+  -->
+  <style>
+    :root {
+      --bg: #f3f2ef;
+      --bg-card: #ffffff;
+      --border: #e6e4df;
+      --border-hover: #cfcbc4;
+      --text: #191919;
+      --text-2: #666666;
+      --accent: #0a66c2;
+      --accent-2: #004182;
+      --font: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+      --mono: "SF Mono", "Fira Code", "Cascadia Code", ui-monospace, monospace;
+      --radius: 8px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { color-scheme: light; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .page {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 28px max(24px, env(safe-area-inset-right)) 48px max(24px, env(safe-area-inset-left));
+    }
+
+    .top {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 16px;
+    }
+
+    .kicker {
+      margin: 0;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-2);
+    }
+
+    h1 {
+      margin: 4px 0 0;
+      font-size: 1.9rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+    }
+
+    .sub {
+      margin: 6px 0 0;
+      color: var(--text-2);
+      font-size: 0.95rem;
+      line-height: 1.45;
+    }
+
+    .toolbar {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-shrink: 0;
+    }
+
+    .mode {
+      display: flex;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .tab {
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid transparent;
+      color: var(--text-2);
+      cursor: pointer;
+      font-family: var(--font);
+      font-size: 0.9rem;
+      font-weight: 500;
+      padding: 8px 20px;
+      margin-bottom: -1px;
+    }
+
+    .tab:hover { color: var(--text); }
+
+    .tab--active {
+      border-bottom-color: var(--accent);
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .era-count {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin: 0;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--text-2);
+      white-space: nowrap;
+    }
+
+    .era-count .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .timeline-shell {
+      position: relative;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+
+    .timeline-shell:hover { border-color: var(--border-hover); }
+
+    .playhead {
+      position: absolute;
+      z-index: 3;
+      left: 50%;
+      top: 10px;
+      width: 2px;
+      height: 28px;
+      background: var(--accent);
+      transform: translateX(-50%);
+      pointer-events: none;
+    }
+
+    .playhead::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: -6px;
+      transform: translateX(-50%);
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 6px solid var(--accent);
+    }
+
+    .scroller {
+      display: flex;
+      align-items: flex-start;
+      overflow-x: auto;
+      overscroll-behavior-x: contain;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+      scrollbar-color: var(--border-hover) transparent;
+      cursor: grab;
+    }
+
+    .scroller.is-dragging { cursor: grabbing; }
+
+    .scroller::-webkit-scrollbar { height: 8px; }
+    .scroller::-webkit-scrollbar-thumb {
+      background: var(--border-hover);
+      border-radius: var(--radius);
+    }
+    .scroller::-webkit-scrollbar-track { background: transparent; }
+
+    .spacer { flex: 0 0 auto; align-self: stretch; }
+
+    .track {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 18px 0 14px;
+      position: relative;
+    }
+
+    .track::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 23px;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .stop { flex: 0 0 210px; width: 210px; }
+
+    .stop button {
+      display: block;
+      width: 100%;
+      margin: 0;
+      padding: 0 12px 4px;
+      border: 0;
+      background: transparent;
+      color: inherit;
+      font-family: inherit;
+      text-align: center;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .stop-dot {
+      display: block;
+      width: 11px;
+      height: 11px;
+      margin: 0 auto 12px;
+      border: 2px solid var(--border-hover);
+      border-radius: 50%;
+      background: var(--bg-card);
+      position: relative;
+      z-index: 1;
+    }
+
+    .stop.is-active .stop-dot {
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .stop-org {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 600;
+      line-height: 1.3;
+      color: var(--text);
+    }
+
+    .stop.is-active .stop-org { color: var(--accent); }
+
+    .stop-role,
+    .stop-years {
+      display: block;
+      margin-top: 3px;
+      color: var(--text-2);
+      font-size: 0.72rem;
+      line-height: 1.35;
+    }
+
+    .stop-years {
+      margin-top: 6px;
+      font-family: var(--mono);
+      white-space: nowrap;
+    }
+
+    .hint {
+      margin: 8px 0 0;
+      font-size: 0.72rem;
+      color: var(--text-2);
+    }
+
+    .detail {
+      position: relative;
+      margin-top: 16px;
+      min-height: 220px;
+    }
+
+    .panel {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
+
+    .panel:hover { border-color: var(--border-hover); }
+
+    .panel h2 {
+      margin: 0;
+      font-size: 1.45rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    .role {
+      margin: 4px 0 0;
+      color: var(--accent-2);
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .years {
+      margin: 6px 0 0;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--text-2);
+      white-space: nowrap;
+    }
+
+    .blurb {
+      margin: 16px 0 0;
+      padding-left: 12px;
+      border-left: 2px solid var(--accent);
+      font-size: 1rem;
+      line-height: 1.85;
+    }
+
+    .body p {
+      margin: 12px 0 0;
+      font-size: 1rem;
+      line-height: 1.85;
+    }
+
+    .block {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+
+    .block:first-child {
+      margin-top: 4px;
+      padding-top: 0;
+      border-top: 0;
+    }
+
+    .block .years { margin-top: 0; }
+
+    .more { margin: 16px 0 0; }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover { text-decoration: underline; }
+
+    .panel--rise { animation: rise 640ms cubic-bezier(.2, .7, .2, 1) both; }
+    .panel--fade { animation: fade 180ms ease both; }
+
+    .panel.is-leaving {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      z-index: 0;
+      pointer-events: none;
+      animation: leave 420ms ease forwards;
+    }
+
+    .panel--rise { position: relative; z-index: 1; }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(28px); }
+      to { opacity: 1; transform: none; }
+    }
+
+    @keyframes fade {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes leave {
+      from { opacity: 1; transform: none; }
+      to { opacity: 0; transform: translateY(-16px); }
+    }
+
+    .foot {
+      margin: 28px 0 0;
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      color: var(--text-2);
+      opacity: 0.4;
+    }
+
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    .stop button:focus-visible { outline-offset: -2px; border-radius: var(--radius); }
+
+    @media (prefers-reduced-motion: reduce) {
+      .panel--rise,
+      .panel--fade,
+      .panel.is-leaving { animation: none; }
+    }
+
+    @media (max-width: 720px) {
+      .page { padding: 20px 16px 36px; }
+      .top { flex-direction: column; align-items: flex-start; gap: 12px; }
+      h1 { font-size: 1.6rem; }
+      .stop { flex-basis: 168px; width: 168px; }
+      .panel { padding: 16px; }
+      .panel h2 { font-size: 1.25rem; }
+      .years { white-space: normal; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="top">
+      <div>
+        <p class="kicker">User interaction</p>
+        <h1>Richard Bailey</h1>
+        <p class="sub">Interface chronology. Years are on this page so the order is easy to read.</p>
+      </div>
+      <div class="toolbar">
+        <div class="mode" role="group" aria-label="Timeline mode">
+          <button type="button" class="tab tab--active" id="mode-scroll" aria-pressed="true">Scroll</button>
+          <button type="button" class="tab" id="mode-animate" aria-pressed="false">Animate</button>
+        </div>
+        <p class="era-count"><span class="dot" aria-hidden="true"></span><span id="count">1 of 14</span></p>
+      </div>
+    </header>
+
+    <div class="timeline-shell">
+      <div class="playhead" aria-hidden="true"></div>
+      <div class="scroller" id="scroller" tabindex="0" role="region" aria-roledescription="timeline" aria-label="Interaction eras">
+        <div class="spacer" id="spacer-start"></div>
+        <ol class="track" id="track"></ol>
+        <div class="spacer" id="spacer-end"></div>
+      </div>
+    </div>
+    <p class="hint" id="hint">Scroll or drag the timeline. Arrow keys step one era.</p>
+    <div class="detail" id="detail"></div>
+    <p class="visually-hidden" id="live" aria-live="polite"></p>
+    <p class="foot">Direct URL only.</p>
+
+    <noscript>
+      <ol>
+        <li>Hughes — Software Engineer, Training Simulations (Apr 1990 – Mar 1991). Spatial map touch-screen UI over 3D fire simulations.</li>
+        <li>AC&amp;E Ltd. — Engineering Manager (Apr 1993 – May 1995). Timeline, scheduling, and network control UI.</li>
+        <li>Ifusion — Engineering Manager (Sep 1996 – Mar 1997). Dynamic UI authoring from live content feeds.</li>
+        <li>NADA — Consultant / Developer / Architect (Mar 1997 – Dec 1997). Pen/stylus UI for field workers.</li>
+        <li>Microsoft Automotive — Clarion AutoPC (Dec 1998 – Jan 2002) and Automotive Platform (Apr 2008 – Aug 2011). Automotive HMI frameworks, multimodal / speech.</li>
+        <li>Xbox Forza Motorsport — Turn 10 (Jan 2002 – May 2005). Spatial audio / physics feel as interaction.</li>
+        <li>Visual Studio — XAML Designer (May 2005 – Jan 2007). UI-layout interactions and extensibility frameworks.</li>
+        <li>Windows Phone — UX frameworks (2010–2011). UX framework APIs.</li>
+        <li>Kinect — Xbox One / Windows (May 2011 – Mar 2015). Gesture / natural interaction.</li>
+        <li>DAQRI — Director / Chief Software Architect (Mar 2015 – Jun 2016). Smart Helmet XR visor UI.</li>
+        <li>Margrave Technologies — Founder (Jun 2016 – Nov 2017). Extensible VR UI for social media engagement.</li>
+        <li>Magic Leap — Senior Director Software (Nov 2017 – Nov 2020). Spatial AR platform and applications.</li>
+        <li>Niantic — Senior Director, Lightship ARDK (Nov 2020 – Aug 2022). Developer-facing spatial interaction SDK.</li>
+        <li>Quintar — VP Engineering &amp; Principal Engineer (Sep 2022 – present). VisionOS / spatial sports experiences.</li>
+      </ol>
+    </noscript>
+  </div>
+
+  <script>
+    /* Resume spans: see the comment in <head>. Blurbs are Richard's corrections. */
+    const ERAS = [
+      {
+        id: "hughes",
+        org: "Hughes",
+        role: "Software Engineer, Training Simulations",
+        stripRole: "Software Engineer",
+        years: "Apr 1990 – Mar 1991",
+        stripYears: "1990–1991",
+        blurb: "Spatial map touch-screen UI over 3D fire simulations.",
+        paragraphs: [
+          "Firefighter and airbase attack preparedness simulations: dynamic fire sequences and bombing-pattern extrapolation, with CAV laser-disc world rendering and interactive overlay graphics."
+        ]
+      },
+      {
+        id: "ace",
+        org: "AC&E Ltd.",
+        role: "Engineering Manager",
+        stripRole: "Engineering Manager",
+        years: "Apr 1993 – May 1995",
+        stripYears: "1993–1995",
+        blurb: "Timeline, scheduling, and network control UI.",
+        paragraphs: [
+          "Architect and development lead for video-conference scheduling and control, and for DCME/SONET/ATM operations software for NEC: real-time models of network hardware racks, configuration, and status."
+        ]
+      },
+      {
+        id: "ifusion",
+        org: "Ifusion",
+        role: "Engineering Manager",
+        stripRole: "Engineering Manager",
+        years: "Sep 1996 – Mar 1997",
+        stripYears: "1996–1997",
+        blurb: "Dynamic UI authoring from live content feeds.",
+        paragraphs: [
+          "Content authoring tools for a push-media service. The pipeline crawled, extracted, indexed, and reformatted live feeds into the interface."
+        ]
+      },
+      {
+        id: "nada",
+        org: "NADA",
+        role: "Consultant / Developer / Architect",
+        stripRole: "Consultant",
+        years: "Mar 1997 – Dec 1997",
+        stripYears: "1997",
+        blurb: "Pen/stylus UI for field workers.",
+        paragraphs: []
+      },
+      {
+        id: "automotive",
+        org: "Microsoft Automotive",
+        role: "Clarion AutoPC / Automotive Platform",
+        stripRole: "HMI frameworks",
+        years: "Dec 1998 – Jan 2002 · Apr 2008 – Aug 2011",
+        stripYears: "1998–2002",
+        blurb: "Automotive HMI frameworks, multimodal / speech.",
+        paragraphs: [],
+        blocks: [
+          {
+            label: "Dec 1998 – Jan 2002 · Clarion AutoPC",
+            text: "Developer-facing UI framework for in-car HMI: interaction controls, customizable themes, multimodal input, and embedded speech-controlled devices. C++, MFC, and ARM."
+          },
+          {
+            label: "Apr 2008 – Aug 2011 · Automotive Platform",
+            text: "Developer-facing APIs for latency-critical in-car UI, including a native C++ extension for XAML on Windows Automotive with hardware 2D and 3D acceleration. Shipped to automaker programs including Ford Sync, BMW, and Toyota. Grouped with AutoPC on this stop; on the calendar it comes after Visual Studio."
+          }
+        ]
+      },
+      {
+        id: "forza",
+        org: "Xbox Forza Motorsport",
+        role: "Turn 10",
+        stripRole: "Turn 10",
+        years: "Jan 2002 – May 2005",
+        stripYears: "2002–2005",
+        blurb: "Spatial audio / physics feel as interaction.",
+        paragraphs: [
+          "Spatial audio, haptic physics, and rendering for Forza Motorsport 1. I3DL2 reverberation was generated from the 3D world mesh, and car and engine sound was simulated from physics in the world model."
+        ]
+      },
+      {
+        id: "xaml",
+        org: "Visual Studio",
+        role: "XAML Designer",
+        stripRole: "XAML Designer",
+        years: "May 2005 – Jan 2007",
+        stripYears: "2005–2007",
+        blurb: "UI-layout interactions and extensibility frameworks.",
+        paragraphs: [
+          "Layout interactions inside the Visual Studio XAML designer, and a developer-facing framework for custom editors and adorners. Performance work kept those interactions low-latency."
+        ]
+      },
+      {
+        id: "phone",
+        org: "Windows Phone",
+        role: "UX frameworks",
+        stripRole: "UX frameworks",
+        years: "2010–2011",
+        stripYears: "2010–2011",
+        blurb: "UX framework APIs.",
+        paragraphs: [
+          "Technical lead for Windows Phone UX frameworks and runtimes. Developer-facing XAML APIs for public apps, with managed-native interop so apps could use phone shell experiences. Early production apps proved the frameworks and drove API changes before release."
+        ]
+      },
+      {
+        id: "kinect",
+        org: "Kinect",
+        role: "Xbox One / Windows",
+        stripRole: "Xbox One / Windows",
+        years: "May 2011 – Mar 2015",
+        stripYears: "2011–2015",
+        blurb: "Gesture / natural interaction.",
+        paragraphs: [
+          "Body-tracking spatial interactions and a developer API shipped in Windows and Xbox, including a designed migration from heuristic gesture rules toward reinforcement learning. A spatial UI API drove latency-critical interface from hand motion. Skeletal tools recorded and played back gestures.",
+          "An interaction pass that tested as more natural let people finish the same tests in 80% less time. Xbox One Kinect work (Oct 2013 – Mar 2015) turned body movement into on-screen interaction."
+        ]
+      },
+      {
+        id: "daqri",
+        org: "DAQRI",
+        role: "Director / Chief Software Architect",
+        stripRole: "Director & Architect",
+        years: "Mar 2015 – Jun 2016",
+        stripYears: "2015–2016",
+        blurb: "Smart Helmet XR visor UI.",
+        paragraphs: [
+          "Industrial AR hard hat. A Unity and C# spatial framework for factory and field UI: latency-critical panels placed head-relative, body-relative, and in the world, plus task checklists, digital gauges, status, photo log, and proximity alerts."
+        ],
+        link: {
+          href: "quintar/daqri-case-studies/",
+          label: "DAQRI retrospective: AR through the visor"
+        }
+      },
+      {
+        id: "margrave",
+        org: "Margrave Technologies",
+        role: "Founder",
+        stripRole: "Founder",
+        years: "Jun 2016 – Nov 2017",
+        stripYears: "2016–2017",
+        blurb: "Extensible VR UI for social media engagement.",
+        paragraphs: [
+          "Margrave VR Social Sharing SDK: a cross-platform Unity plugin for social sharing and interaction from inside VR, across headset models."
+        ]
+      },
+      {
+        id: "magicleap",
+        org: "Magic Leap",
+        role: "Senior Director Software",
+        stripRole: "Senior Director",
+        years: "Nov 2017 – Nov 2020",
+        stripYears: "2017–2020",
+        blurb: "Spatial AR platform and applications.",
+        paragraphs: [
+          "Spatial AR platform and applications across Magic Leap 1 and 2. C++ frameworks for multi-headset collaboration, shared spatial context between applications, and companion apps on PC, Mac, and iOS streaming 3D. Gesture interaction was part of the device-stack work."
+        ]
+      },
+      {
+        id: "niantic",
+        org: "Niantic",
+        role: "Senior Director, Lightship ARDK",
+        stripRole: "Lightship ARDK",
+        years: "Nov 2020 – Aug 2022",
+        stripYears: "2020–2022",
+        blurb: "Developer-facing spatial interaction SDK.",
+        paragraphs: [
+          "Lightship ARDK on iOS, Android, and Unity. Spatial UX APIs for visual positioning, segmentation, and 3D interaction, with samples and documentation for developers building those interactions. Launched at AWE."
+        ]
+      },
+      {
+        id: "quintar",
+        org: "Quintar",
+        role: "VP Engineering & Principal Engineer",
+        stripRole: "VP Engineering",
+        years: "Sep 2022 – present",
+        stripYears: "2022–present",
+        blurb: "VisionOS / spatial sports experiences.",
+        paragraphs: [
+          "Spatial sports experiences on visionOS, and on iOS, Android, and Meta Quest, for PGA Tour, MLB, NBA, NASCAR, and FIFA.",
+          "In 2023, the streaming 3D renderer (time series presenter) ran multithreaded at 100 fps by separating network data and preparation from per-frame rendering. That path is the stereo pipeline for sport augmentations, with a sync API for low-latency SharePlay using Swift concurrency, Metal, and RealityKit."
+        ]
+      }
+    ];
+
+    const scroller = document.getElementById("scroller");
+    const track = document.getElementById("track");
+    const spacerStart = document.getElementById("spacer-start");
+    const spacerEnd = document.getElementById("spacer-end");
+    const detail = document.getElementById("detail");
+    const countEl = document.getElementById("count");
+    const hint = document.getElementById("hint");
+    const live = document.getElementById("live");
+    const scrollBtn = document.getElementById("mode-scroll");
+    const animateBtn = document.getElementById("mode-animate");
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+    const stops = [];
+    let mode = "scroll";
+    let active = -1;
+    let target = 0;
+    let programmatic = false;
+    let suppressClick = false;
+    let firstPaint = true;
+    let rafId = 0;
+    let lastTs = 0;
+    let holdUntil = 0;
+    let stepTimer = 0;
+    let drag = null;
+
+    function el(tag, className, text) {
+      const node = document.createElement(tag);
+      if (className) node.className = className;
+      if (text != null) node.textContent = text;
+      return node;
+    }
+
+    function buildStops() {
+      ERAS.forEach((era, i) => {
+        const li = el("li", "stop");
+        li.dataset.index = String(i);
+        const button = document.createElement("button");
+        button.type = "button";
+        button.append(
+          el("span", "stop-dot"),
+          el("span", "stop-org", era.org),
+          el("span", "stop-role", era.stripRole),
+          el("span", "stop-years", era.stripYears)
+        );
+        button.addEventListener("click", () => {
+          if (suppressClick) return;
+          centerIndex(i, mode === "scroll");
+        });
+        li.appendChild(button);
+        track.appendChild(li);
+        stops.push(li);
+      });
+    }
+
+    function layout() {
+      if (!stops.length) return;
+      const stopW = stops[0].getBoundingClientRect().width;
+      const pad = Math.max(0, (scroller.clientWidth - stopW) / 2);
+      spacerStart.style.flexBasis = pad + "px";
+      spacerEnd.style.flexBasis = pad + "px";
+      spacerStart.style.width = pad + "px";
+      spacerEnd.style.width = pad + "px";
+    }
+
+    function markerX() {
+      const view = scroller.getBoundingClientRect();
+      return view.left + view.width / 2;
+    }
+
+    function stopCenterX(stop) {
+      const rect = stop.getBoundingClientRect();
+      return rect.left + rect.width / 2;
+    }
+
+    function centerScrollLeft(i) {
+      return scroller.scrollLeft + (stopCenterX(stops[i]) - markerX());
+    }
+
+    function nearestIndex() {
+      const mid = markerX();
+      let best = 0;
+      let bestDist = Infinity;
+      stops.forEach((stop, i) => {
+        const dist = Math.abs(stopCenterX(stop) - mid);
+        if (dist < bestDist) {
+          bestDist = dist;
+          best = i;
+        }
+      });
+      return best;
+    }
+
+    function eraPitch() {
+      if (stops.length < 2) return 210;
+      return stops[1].offsetLeft - stops[0].offsetLeft;
+    }
+
+    function centerIndex(i, smooth) {
+      target = i;
+      const left = Math.max(0, centerScrollLeft(i));
+      if (smooth && !reduceMotion.matches) {
+        programmatic = true;
+        scroller.scrollTo({ left: left, behavior: "smooth" });
+      } else {
+        scroller.scrollLeft = left;
+      }
+    }
+
+    function buildPanel(i, motionClass) {
+      const era = ERAS[i];
+      const panel = el("article", "panel" + (motionClass ? " " + motionClass : ""));
+      panel.dataset.era = era.id;
+      panel.append(
+        el("h2", null, era.org),
+        el("p", "role", era.role),
+        el("p", "years", era.years),
+        el("p", "blurb", era.blurb)
+      );
+      if (era.blocks && era.blocks.length) {
+        const body = el("div", "body");
+        era.blocks.forEach((block) => {
+          const section = el("div", "block");
+          section.append(el("p", "years", block.label), el("p", null, block.text));
+          body.appendChild(section);
+        });
+        panel.appendChild(body);
+      } else if (era.paragraphs && era.paragraphs.length) {
+        const body = el("div", "body");
+        era.paragraphs.forEach((text) => body.appendChild(el("p", null, text)));
+        panel.appendChild(body);
+      }
+      if (era.link) {
+        const more = el("p", "more");
+        const a = el("a", null, era.link.label);
+        a.href = era.link.href;
+        more.appendChild(a);
+        panel.appendChild(more);
+      }
+      return panel;
+    }
+
+    function paint(i) {
+      stops.forEach((stop, idx) => {
+        const on = idx === i;
+        stop.classList.toggle("is-active", on);
+        const button = stop.querySelector("button");
+        if (on) button.setAttribute("aria-current", "true");
+        else button.removeAttribute("aria-current");
+      });
+      countEl.textContent = (i + 1) + " of " + ERAS.length;
+      const era = ERAS[i];
+      live.textContent = era.org + ". " + era.years + ". " + era.blurb;
+
+      const previous = detail.querySelector(".panel:not(.is-leaving)");
+      const rise = !firstPaint && mode === "animate" && !reduceMotion.matches;
+      if (previous && rise) {
+        detail.querySelectorAll(".is-leaving").forEach((node) => node.remove());
+        previous.classList.remove("panel--rise", "panel--fade");
+        previous.classList.add("is-leaving");
+        window.setTimeout(() => {
+          if (previous.isConnected) previous.remove();
+        }, 450);
+      } else if (previous) {
+        previous.remove();
+      }
+      const motion = firstPaint ? "" : (rise ? "panel--rise" : "panel--fade");
+      if (reduceMotion.matches) {
+        detail.querySelectorAll(".is-leaving").forEach((node) => node.remove());
+      }
+      detail.appendChild(buildPanel(i, motion));
+      firstPaint = false;
+    }
+
+    function updateActive() {
+      const i = nearestIndex();
+      if (!programmatic) target = i;
+      if (i === active) return;
+      active = i;
+      paint(i);
+    }
+
+    function step(dir) {
+      const next = Math.min(ERAS.length - 1, Math.max(0, target + dir));
+      centerIndex(next, mode === "scroll");
+    }
+
+    function setMode(next) {
+      if (next === mode) return;
+      mode = next;
+      scrollBtn.classList.toggle("tab--active", mode === "scroll");
+      scrollBtn.setAttribute("aria-pressed", mode === "scroll" ? "true" : "false");
+      animateBtn.classList.toggle("tab--active", mode === "animate");
+      animateBtn.setAttribute("aria-pressed", mode === "animate" ? "true" : "false");
+      hint.textContent = mode === "scroll"
+        ? "Scroll or drag the timeline. Arrow keys step one era."
+        : "The timeline moves left on its own. Detail rises as each era passes the marker.";
+      if (mode === "animate") startAnimate();
+      else stopAnimate();
+    }
+
+    function startAnimate() {
+      stopAnimate();
+      if (reduceMotion.matches) {
+        stepTimer = window.setInterval(() => {
+          const next = (active + 1) % ERAS.length;
+          centerIndex(next, false);
+        }, 3400);
+        return;
+      }
+      lastTs = 0;
+      holdUntil = 0;
+      rafId = window.requestAnimationFrame(tick);
+    }
+
+    function stopAnimate() {
+      if (rafId) window.cancelAnimationFrame(rafId);
+      rafId = 0;
+      if (stepTimer) window.clearInterval(stepTimer);
+      stepTimer = 0;
+      holdUntil = 0;
+    }
+
+    function tick(ts) {
+      if (mode !== "animate") return;
+      if (!lastTs) lastTs = ts;
+      const dt = Math.min(48, ts - lastTs);
+      lastTs = ts;
+      const end = Math.max(0, centerScrollLeft(ERAS.length - 1));
+      if (holdUntil) {
+        if (ts >= holdUntil) {
+          holdUntil = 0;
+          scroller.scrollLeft = Math.max(0, centerScrollLeft(0));
+        }
+      } else {
+        const speed = Math.max(1, eraPitch()) / 3.4;
+        const nextLeft = scroller.scrollLeft + speed * (dt / 1000);
+        if (nextLeft >= end - 0.5) {
+          scroller.scrollLeft = end;
+          holdUntil = ts + 1300;
+        } else {
+          scroller.scrollLeft = nextLeft;
+        }
+      }
+      rafId = window.requestAnimationFrame(tick);
+    }
+
+    scrollBtn.addEventListener("click", () => setMode("scroll"));
+    animateBtn.addEventListener("click", () => setMode("animate"));
+
+    scroller.addEventListener("scroll", () => updateActive(), { passive: true });
+    scroller.addEventListener("scrollend", () => {
+      programmatic = false;
+      target = active;
+    });
+
+    document.addEventListener("wheel", (event) => {
+      if (mode !== "scroll") return;
+      if (detail.contains(event.target)) return;
+      const raw = Math.abs(event.deltaX) > Math.abs(event.deltaY) ? event.deltaX : event.deltaY;
+      if (!raw) return;
+      let pixels = raw;
+      if (event.deltaMode === 1) pixels = raw * 16;
+      else if (event.deltaMode === 2) pixels = raw * scroller.clientWidth;
+      event.preventDefault();
+      programmatic = false;
+      scroller.scrollLeft += pixels;
+    }, { passive: false });
+
+    scroller.addEventListener("pointerdown", (event) => {
+      if (mode !== "scroll" || event.pointerType !== "mouse" || event.button !== 0) return;
+      programmatic = false;
+      drag = { id: event.pointerId, x: event.clientX, left: scroller.scrollLeft, moved: false };
+    });
+
+    scroller.addEventListener("pointermove", (event) => {
+      if (!drag || drag.id !== event.pointerId) return;
+      const dx = event.clientX - drag.x;
+      if (!drag.moved && Math.abs(dx) < 5) return;
+      if (!drag.moved) {
+        drag.moved = true;
+        scroller.setPointerCapture(event.pointerId);
+        scroller.classList.add("is-dragging");
+      }
+      scroller.scrollLeft = drag.left - dx;
+    });
+
+    function endDrag(event) {
+      if (!drag || (event && drag.id !== event.pointerId)) return;
+      if (drag.moved) {
+        suppressClick = true;
+        window.setTimeout(() => { suppressClick = false; }, 0);
+      }
+      drag = null;
+      scroller.classList.remove("is-dragging");
+    }
+
+    scroller.addEventListener("pointerup", endDrag);
+    scroller.addEventListener("pointercancel", endDrag);
+
+    document.addEventListener("keydown", (event) => {
+      const tag = event.target && event.target.tagName;
+      if (tag === "INPUT" || tag === "TEXTAREA") return;
+      if (event.key === "ArrowRight") {
+        event.preventDefault();
+        step(1);
+      } else if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        step(-1);
+      } else if (event.key === "Home") {
+        event.preventDefault();
+        centerIndex(0, mode === "scroll");
+      } else if (event.key === "End") {
+        event.preventDefault();
+        centerIndex(ERAS.length - 1, mode === "scroll");
+      }
+    });
+
+    window.addEventListener("resize", () => {
+      const keep = active < 0 ? 0 : active;
+      layout();
+      centerIndex(keep, false);
+    });
+
+    buildStops();
+    layout();
+    centerIndex(0, false);
+    updateActive();
+  </script>
+</body>
+</html>
